@@ -1,0 +1,205 @@
+<!-- ═══════════════════════════════════════════
+     PILATES COMPANY KI-ASSISTENT WIDGET
+     Einbinden: Diesen Code vor </body> einfügen
+═══════════════════════════════════════════ -->
+<div id="pcBot" style="position:fixed;bottom:7rem;right:1.5rem;z-index:9998;font-family:'DM Sans',system-ui,sans-serif;">
+  <!-- Toggle Button -->
+  <button id="pcBotToggle" onclick="pcToggleChat()" style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#b0796e,#d9a49a);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(176,121,110,.4);display:flex;align-items:center;justify-content:center;transition:all .3s;margin-left:auto;">
+    <svg id="pcBotIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    <svg id="pcBotClose" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+
+  <!-- Chat Window -->
+  <div id="pcBotWindow" style="display:none;position:absolute;bottom:70px;right:0;width:380px;max-height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(44,40,37,.15);border:1px solid rgba(44,40,37,.06);overflow:hidden;animation:pcSlideUp .3s ease;">
+    
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#b0796e,#d9a49a);padding:1.25rem;color:#fff;">
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;">Frag uns alles</div>
+      <div style="font-size:.8rem;opacity:.85;margin-top:.2rem;">KI-Assistent der Pilates Company</div>
+    </div>
+
+    <!-- Messages -->
+    <div id="pcBotMessages" style="padding:1rem;height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem;">
+      <!-- Welcome Message -->
+      <div class="pcMsg pcBot">
+        <p>Hallo! Ich bin der KI-Assistent der Pilates Company. Stell mir eine Frage zu unseren Kursen, Preisen, Memberships oder dem Studio.</p>
+      </div>
+      <!-- Quick Questions -->
+      <div id="pcQuickQ" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+        <button class="pcQBtn" onclick="pcAskQuick(this)">Was kostet eine Membership?</button>
+        <button class="pcQBtn" onclick="pcAskQuick(this)">Gibt es ein Probetraining?</button>
+        <button class="pcQBtn" onclick="pcAskQuick(this)">Welche Kurse bietet ihr an?</button>
+        <button class="pcQBtn" onclick="pcAskQuick(this)">Wie buche ich einen Kurs?</button>
+        <button class="pcQBtn" onclick="pcAskQuick(this)">Wo ist das Studio?</button>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div style="padding:.75rem 1rem;border-top:1px solid rgba(44,40,37,.08);display:flex;gap:.5rem;align-items:center;">
+      <input id="pcBotInput" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')pcSend()" style="flex:1;padding:.6rem .85rem;border:1px solid rgba(44,40,37,.12);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#d9a49a'" onblur="this.style.borderColor='rgba(44,40,37,.12)'">
+      <button onclick="pcSend()" style="width:36px;height:36px;border-radius:50%;background:#d9a49a;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;" onmouseover="this.style.background='#b0796e'" onmouseout="this.style.background='#d9a49a'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes pcSlideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.pcMsg{max-width:88%;font-size:.9rem;line-height:1.6;}
+.pcMsg p{margin:0;}
+.pcBot{align-self:flex-start;background:#f5ede9;padding:.75rem 1rem;border-radius:14px 14px 14px 4px;color:#2c2825;}
+.pcUser{align-self:flex-end;background:#b0796e;padding:.75rem 1rem;border-radius:14px 14px 4px 14px;color:#fff;}
+.pcQBtn{padding:.4rem .75rem;background:#faf7f4;border:1px solid rgba(44,40,37,.1);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.78rem;color:#5a5450;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.pcQBtn:hover{border-color:#d9a49a;background:#f5ede9;color:#2c2825;}
+.pcTyping{align-self:flex-start;background:#f5ede9;padding:.75rem 1rem;border-radius:14px 14px 14px 4px;}
+.pcTyping span{display:inline-block;width:6px;height:6px;background:#b0796e;border-radius:50%;margin:0 2px;animation:pcDot 1.4s infinite both;}
+.pcTyping span:nth-child(2){animation-delay:.2s;}
+.pcTyping span:nth-child(3){animation-delay:.4s;}
+@keyframes pcDot{0%,80%,100%{transform:scale(.4);opacity:.4}40%{transform:scale(1);opacity:1}}
+@media(max-width:480px){
+  #pcBotWindow{width:calc(100vw - 2rem);right:-0.5rem;max-height:70vh;}
+}
+</style>
+
+<script>
+var pcChatOpen = false;
+var pcHistory = [];
+
+function pcToggleChat() {
+  pcChatOpen = !pcChatOpen;
+  document.getElementById('pcBotWindow').style.display = pcChatOpen ? 'block' : 'none';
+  document.getElementById('pcBotIcon').style.display = pcChatOpen ? 'none' : 'block';
+  document.getElementById('pcBotClose').style.display = pcChatOpen ? 'block' : 'none';
+  if (pcChatOpen) document.getElementById('pcBotInput').focus();
+}
+
+function pcAskQuick(btn) {
+  var q = btn.textContent;
+  document.getElementById('pcQuickQ').style.display = 'none';
+  pcAddMsg(q, 'pcUser');
+  pcGetAnswer(q);
+}
+
+function pcSend() {
+  var input = document.getElementById('pcBotInput');
+  var q = input.value.trim();
+  if (!q) return;
+  input.value = '';
+  document.getElementById('pcQuickQ').style.display = 'none';
+  pcAddMsg(q, 'pcUser');
+  pcGetAnswer(q);
+}
+
+function pcAddMsg(text, cls) {
+  var div = document.createElement('div');
+  div.className = 'pcMsg ' + cls;
+  div.innerHTML = '<p>' + text + '</p>';
+  document.getElementById('pcBotMessages').appendChild(div);
+  pcScrollBottom();
+}
+
+function pcScrollBottom() {
+  var m = document.getElementById('pcBotMessages');
+  m.scrollTop = m.scrollHeight;
+}
+
+function pcShowTyping() {
+  var div = document.createElement('div');
+  div.className = 'pcTyping';
+  div.id = 'pcTypingIndicator';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  document.getElementById('pcBotMessages').appendChild(div);
+  pcScrollBottom();
+}
+
+function pcHideTyping() {
+  var el = document.getElementById('pcTypingIndicator');
+  if (el) el.remove();
+}
+
+function pcGetAnswer(question) {
+  pcShowTyping();
+
+  var systemPrompt = "Du bist der freundliche KI-Assistent der Pilates Company Luebeck. Antworte kurz und hilfreich (max 100 Woerter). Du-Form, warm, sachlich, keine Emojis.\n\n" +
+    "STUDIO INFOS:\n" +
+    "- Adresse: Segeberger Str. 1, 23617 Stockelsdorf (bei Luebeck)\n" +
+    "- Telefon: 0451 - 160 830 19 (Sofortnachricht hinterlassen, 24h erreichbar, Rueckruf)\n" +
+    "- E-Mail: info@pilatescompany.de\n" +
+    "- Instagram: @my.pilatescompany\n" +
+    "- Inhaberin: Hanna Wrobel\n\n" +
+    "KURSE:\n" +
+    "- Classic Pilates (Matte), Reformer-Pilates, Yoga, Aerial Yoga, Pilates Workout\n" +
+    "- Ueber 30 Kurse pro Woche, Mo-Sa\n" +
+    "- Reformer max 1:5-1:8 Teilnehmer, Aerial max 1:7, Matte max 1:10\n" +
+    "- 55 Min pro Kurs (Aerial 75-85 Min)\n\n" +
+    "AKTUELLE PREISE (Eversports, Mai 2026):\n" +
+    "- SUMMER GLOW START: 69 Euro/Monat (3 Monate), dann 89 Euro/Monat, 4 Credits - BESTES EINSTIEGSANGEBOT!\n" +
+    "- 12 Mon. Mattenpilates & Yoga: 59 Euro/Monat, 8 Credits\n" +
+    "- 1 Mon. Mattenpilates & Yoga: 69 Euro/Monat, 8 Credits\n" +
+    "- 1 Mon. Reformer & others: 89 Euro/Monat, 4 Credits\n" +
+    "- 12 Mon. Reformer & others: 89 Euro/Monat, 8 Credits\n" +
+    "- Drop-In: 28 Euro (Einzelkurs)\n" +
+    "- 5er-Pass: 119 Euro (5 Einheiten, 12 Wochen)\n" +
+    "- Probestunde: 16 Euro\n" +
+    "- KOSTENLOSES PROBETRAINING fuer Neukunden!\n\n" +
+    "BUCHUNG: Ueber Eversports (eversports.de/s/pilates-company)\n" +
+    "GUTSCHEIN: Reformer-Pilates Gutschein 28 Euro (eversports.de/org/widget/f67272f0-50e6-441a-9f7c-446d315076a3)\n\n" +
+    "EMPFEHLUNG: Empfiehl immer eine Membership als beste Option. Summer Glow Start ist das beste Einstiegsangebot fuer Reformer. Fuer Neukunden immer das kostenlose Probetraining erwaehnen.\n\n" +
+    "TELEFON: Wenn jemand anrufen moechte: 0451 - 160 830 19. Man kann dort 24h eine Sofortnachricht hinterlassen und bekommt einen Rueckruf.";
+
+  pcHistory.push({ role: 'user', content: question });
+
+  var messages = [{ role: 'user', content: systemPrompt + '\n\nBisheriger Verlauf:\n' + pcHistory.map(function(m) { return m.role + ': ' + m.content; }).join('\n') + '\n\nAntworte jetzt auf die letzte Frage.' }];
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 250, messages: messages })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    pcHideTyping();
+    var answer = '';
+    if (d.content) d.content.forEach(function(b) { if (b.type === 'text') answer += b.text; });
+    if (answer) {
+      pcHistory.push({ role: 'assistant', content: answer });
+      pcAddMsg(answer.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'), 'pcBot');
+    } else {
+      pcFallback(question);
+    }
+  })
+  .catch(function() {
+    pcHideTyping();
+    pcFallback(question);
+  });
+}
+
+function pcFallback(q) {
+  var ql = q.toLowerCase();
+  var a = '';
+
+  if (ql.match(/preis|kost|membership|mitglied|abo/)) {
+    a = 'Unsere Memberships starten ab 59 Euro/Monat. Das beste Einstiegsangebot ist der Summer Glow Start fuer 69 Euro/Monat (3 Monate). Einzeltickets kosten 28 Euro. Fuer Neukunden gibt es ein kostenloses Probetraining! Alle Preise findest du auf unserer <a href="preise.html" style="color:#b0796e;">Preise-Seite</a>.';
+  } else if (ql.match(/probe|kostenlos|gratis|test|schnupper/)) {
+    a = 'Ja, als Neukunde bekommst du ein kostenloses Probetraining! Einfach auf unserer <a href="probetraining.html" style="color:#b0796e;">Probetraining-Seite</a> anmelden. Wir freuen uns auf dich!';
+  } else if (ql.match(/kurs|angebot|reformer|yoga|aerial|pilates|matte/)) {
+    a = 'Wir bieten Classic Pilates, Reformer-Pilates, Yoga, Aerial Yoga und Pilates Workout an. Ueber 30 Kurse pro Woche, Montag bis Samstag. Mehr Details auf unserer <a href="kurse.html" style="color:#b0796e;">Kurse-Seite</a>.';
+  } else if (ql.match(/buch|anmeld|reserv|termin/)) {
+    a = 'Du kannst Kurse direkt ueber <a href="https://www.eversports.de/s/pilates-company" target="_blank" style="color:#b0796e;">Eversports</a> buchen. Oder ruf uns an: 0451 - 160 830 19 (Sofortnachricht hinterlassen, 24h erreichbar).';
+  } else if (ql.match(/wo |adresse|standort|anfahrt|stockelsdorf/)) {
+    a = 'Unser Studio ist in der Segeberger Str. 1, 23617 Stockelsdorf (bei Luebeck). Parkplaetze sind direkt am Haus.';
+  } else if (ql.match(/telefon|anruf|kontakt|erreich/)) {
+    a = 'Du erreichst uns unter 0451 - 160 830 19. Hinterlasse einfach eine Sofortnachricht — wir sind 24 Stunden erreichbar und rufen zurueck. Oder schreib uns: info@pilatescompany.de';
+  } else if (ql.match(/gutschein|geschenk|verschenk/)) {
+    a = 'Wir bieten Gutscheine fuer Reformer-Pilates an (28 Euro). Du kannst sie direkt auf unserer <a href="gutschein.html" style="color:#b0796e;">Gutschein-Seite</a> kaufen.';
+  } else if (ql.match(/summer|glow|aktion|angebot|rabatt|spar/)) {
+    a = 'Unser bestes Angebot: Summer Glow Start fuer nur 69 Euro/Monat (3 Monate), danach 89 Euro/Monat. 4 Reformer-Credits pro Monat — so guenstig bekommst du Reformer-Training nicht mehr! Details auf unserer <a href="preise.html" style="color:#b0796e;">Preise-Seite</a>.';
+  } else {
+    a = 'Danke fuer deine Frage! Am besten erreichst du uns direkt unter 0451 - 160 830 19 (Sofortnachricht hinterlassen, 24h erreichbar) oder per E-Mail an info@pilatescompany.de. Wir helfen dir gerne weiter!';
+  }
+
+  pcHistory.push({ role: 'assistant', content: a });
+  pcAddMsg(a, 'pcBot');
+}
+</script>

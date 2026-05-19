@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frag uns – Pilates Company Lübeck</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: #fdf9f7;
+    height: 100vh; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .header {
+    background: #d9a49a;
+    color: #fff;
+    padding: 14px 18px;
+    display: flex; align-items: center; gap: 11px; flex-shrink: 0;
+  }
+  .header-icon {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.2); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 17px;
+  }
+  .header-text h3 { font-size: 14px; font-weight: 600; }
+  .header-text p { font-size: 11px; opacity: 0.8; margin-top: 1px; }
+  .header-status { margin-left: auto; display: flex; align-items: center; gap: 5px; font-size: 11px; opacity: 0.85; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .messages {
+    flex: 1; overflow-y: auto; padding: 14px 13px;
+    display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+  }
+  .msg {
+    max-width: 88%; padding: 11px 13px; border-radius: 14px;
+    font-size: 13.5px; line-height: 1.6; animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1} }
+  .msg-bot {
+    background: #fff; border: 1px solid #ede8e4;
+    border-bottom-left-radius: 4px; align-self: flex-start; color: #2a2a2a;
+  }
+  .msg-user {
+    background: #d9a49a; color: #fff;
+    border-bottom-right-radius: 4px; align-self: flex-end;
+  }
+
+  .typing {
+    display: flex; gap: 4px; padding: 13px 15px;
+    background: #fff; border: 1px solid #ede8e4;
+    border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start;
+  }
+  .typing span {
+    width: 7px; height: 7px; border-radius: 50%; background: #d9a49a;
+    animation: bounce 1.2s infinite;
+  }
+  .typing span:nth-child(2){animation-delay:.2s} .typing span:nth-child(3){animation-delay:.4s}
+  @keyframes bounce { 0%,80%,100%{transform:translateY(0);opacity:.4} 40%{transform:translateY(-6px);opacity:1} }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 13px 8px; }
+  .chip {
+    background: #fff; border: 1px solid #e0d8d4; border-radius: 20px;
+    padding: 6px 12px; font-size: 12.5px; color: #b07d76;
+    cursor: pointer; font-family: inherit; transition: all 0.15s; white-space: nowrap;
+  }
+  .chip:hover { background: #d9a49a; color: #fff; border-color: #d9a49a; }
+
+  .input-row {
+    padding: 9px 13px 13px; display: flex; gap: 8px; flex-shrink: 0;
+    background: #fdf9f7; border-top: 1px solid #ede8e4;
+  }
+  .input {
+    flex: 1; border: 1px solid #e0d8d4; border-radius: 22px;
+    padding: 9px 15px; font-size: 13.5px; font-family: inherit;
+    background: #fff; outline: none; color: #2a2a2a; height: 40px;
+    transition: border-color .15s;
+  }
+  .input:focus { border-color: #d9a49a; }
+  .send-btn {
+    width: 40px; height: 40px; background: #d9a49a; border: none;
+    border-radius: 50%; cursor: pointer; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+    transition: background .15s;
+  }
+  .send-btn:hover { background: #c8857a; }
+  .send-btn svg { width: 17px; height: 17px; fill: #fff; }
+  .send-btn:disabled { opacity: 0.4; cursor: default; }
+
+  .hint { margin-top: 8px; padding-top: 8px; border-top: 1px solid #f5f0ed; font-size: 11.5px; color: #aaa; }
+  .hint a { color: #b07d76; text-decoration: none; font-weight: 500; }
+  .hint a:hover { text-decoration: underline; }
+  .cta-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .cta-btn {
+    background: #d9a49a; color: #fff; border: none; border-radius: 8px;
+    padding: 8px 13px; font-size: 12.5px; cursor: pointer; font-family: inherit;
+    text-decoration: none; display: inline-block; transition: background .15s;
+  }
+  .cta-btn:hover { background: #c8857a; }
+  .cta-btn.outline { background: transparent; color: #b07d76; border: 1px solid #d9a49a; }
+  .cta-btn.outline:hover { background: #d9a49a; color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-icon">🌸</div>
+  <div class="header-text">
+    <h3>Pilates Company Lübeck</h3>
+    <p>Deine persönliche Beraterin</p>
+  </div>
+  <div class="header-status"><div class="dot"></div>Online</div>
+</div>
+
+<div class="messages" id="msgs"></div>
+<div class="chips" id="chips"></div>
+
+<div class="input-row">
+  <input class="input" id="inp" type="text" placeholder="Deine Frage …" autocomplete="off">
+  <button class="send-btn" id="sendBtn" onclick="send()">
+    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+  </button>
+</div>
+
+<script>
+const STARTER = ['Kostenloses Probetraining','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
+
+const msgs = document.getElementById('msgs');
+const inp = document.getElementById('inp');
+const sendBtn = document.getElementById('sendBtn');
+const chipsEl = document.getElementById('chips');
+let history = [];
+let count = 0;
+
+function addMsg(html, isUser) {
+  const el = document.createElement('div');
+  el.className = 'msg ' + (isUser ? 'msg-user' : 'msg-bot');
+  el.innerHTML = html;
+  msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
+}
+function showTyping() {
+  const el = document.createElement('div');
+  el.className = 'typing'; el.id = 'typing';
+  el.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
+}
+function hideTyping() { const e = document.getElementById('typing'); if(e) e.remove(); }
+function setChips(arr) {
+  chipsEl.innerHTML = '';
+  arr.forEach(l => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.textContent = l;
+    b.onclick = () => { inp.value = l; send(); };
+    chipsEl.appendChild(b);
+  });
+}
+
+async function send() {
+  const text = inp.value.trim();
+  if (!text || sendBtn.disabled) return;
+  inp.value = ''; setChips([]); sendBtn.disabled = true;
+  addMsg(text, true);
+  history.push({ role: 'user', content: text });
+  showTyping();
+
+  try {
+    const res = await fetch('/.netlify/functions/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history })
+    });
+    const data = await res.json();
+    hideTyping();
+    const reply = data.reply || 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
+    history.push({ role: 'assistant', content: reply });
+    count++;
+
+    addMsg(reply + '<div class="hint"><a href="probetraining.html" target="_parent">Probetraining anfragen</a> · <a href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>', false);
+
+    if (count >= 8) {
+      const el = document.createElement('div');
+      el.className = 'msg msg-bot';
+      el.innerHTML = 'Du hast viele tolle Fragen gestellt! Am besten lernen wir uns persönlich kennen – komm einfach zu einem kostenlosen Probetraining oder ruf uns an.<div class="cta-row"><a class="cta-btn" href="probetraining.html" target="_parent">Probetraining buchen</a><a class="cta-btn outline" href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>';
+      msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
+      count = 0;
+    } else {
+      const l = text.toLowerCase();
+      if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
+      else if (l.match(/reformer/)) setChips(['Was kostet Reformer Membership?','Summer Glow Start','Unterschied Matte vs Reformer']);
+      else if (l.match(/preis|kostet|member|abo/)) setChips(['Summer Glow 69 €','5er-Pass 119 €','Wellpass-Zuzahlung']);
+      else if (l.match(/aerial|yoga|fliegen|hänge/)) setChips(['Wer unterrichtet Aerial?','Ist Aerial für Anfänger?','Kursplan ansehen']);
+      else if (l.match(/trainer|team|wer/)) setChips(['Welche Trainerin passt zu mir?','Probetraining buchen','Alle Kurse anzeigen']);
+      else setChips(['Probetraining anfragen','Kursplan ansehen','Membership-Vergleich']);
+    }
+  } catch(e) {
+    hideTyping();
+    addMsg('Ein Fehler ist aufgetreten. Ruf uns gerne an: <strong>0451 - 160 830 19</strong>', false);
+  }
+  sendBtn.disabled = false; inp.focus();
+}
+
+inp.addEventListener('keydown', e => { if(e.key === 'Enter') send(); });
+window.onload = () => {
+  addMsg('Hallo! Ich bin deine persönliche Beraterin der Pilates Company Lübeck. Ich helfe dir bei Fragen zu Kursen, Preisen, Membership und Probetraining.', false);
+  setChips(STARTER);
+};
+</script>
+</body>
+</html>

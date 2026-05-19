@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung – Pilates Company Lübeck</title>
+<meta name="description" content="Datenschutzerklärung gemäß DSGVO">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #d9a49a;
+    --rose-light: #f5ede9;
+    --rose-dark:  #b0796e;
+    --cream:      #faf7f4;
+    --warm-gray:  #8a847d;
+    --text:       #2c2825;
+    --text-mid:   #5a5450;
+    --border:     rgba(44,40,37,.1);
+    --sans:       'DM Sans', system-ui, sans-serif;
+    --heading:    'Playfair Display', serif;
+    --radius:     12px;
+    --nav-h:      136px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    padding-top: var(--nav-h);
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading);
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+
+  h1 { font-size: 4.5rem; line-height: 1.1; }
+  h2 { font-size: 2.5rem; line-height: 1.2; }
+  h3 { font-size: 1.75rem; line-height: 1.3; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(250,247,244,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; width: 100%;
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-family: var(--sans);
+    font-size: 1.5rem; font-weight: 400;
+    color: var(--text); text-decoration: none;
+    letter-spacing: .02em;
+    cursor: pointer;
+  }
+  .logo span { color: var(--rose-dark); }
+  .nav-links {
+    display: flex; align-items: center; gap: 1.25rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: .78rem; font-weight: 400; letter-spacing: .03em;
+    text-decoration: none; color: var(--text-mid);
+    text-transform: uppercase;
+    transition: color .2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--rose-dark); }
+  .nav-cta {
+    background: var(--rose);
+    color: #fff !important;
+    padding: .45rem 1rem;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    white-space: nowrap;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--rose-dark) !important; color: #fff !important; }
+
+  .nav-instagram {
+    display: flex; align-items: center;
+    color: var(--text-mid) !important;
+    transition: color .2s !important;
+    padding: 0 !important;
+  }
+  .nav-instagram:hover { color: var(--rose-dark) !important; }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--text); border-radius: 2px;
+    transition: .3s;
+  }
+  .mobile-menu {
+    display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: var(--cream); z-index: 99;
+    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding: 4rem 1rem 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--heading); font-size: 2rem; font-weight: 300;
+    color: var(--text); text-decoration: none;
+    transition: color .2s;
+  }
+  .mobile-menu a:hover { color: var(--rose-dark); }
+
+  /* ── PAGES ── */
+  .page { display: none; min-height: 100vh; padding-top: var(--nav-h); }
+  .page.active { display: block; }
+
+  /* ── SHARED ── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 5rem 0; }
+  .section-sm { padding: 3rem 0; }
+
+  h1 { font-family: var(--heading); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
+  h2 { font-family: var(--heading); font-weight: 300; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
+  h3 { font-family: var(--heading); font-weight: 400; font-size: 1.5rem; line-height: 1.3; }
+  h4 { font-family: var(--heading); font-weight: 500; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-dark); }
+
+  .tag {
+    display: inline-block;
+    font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--rose-dark); background: var(--rose-light);
+    padding: .3rem .75rem; border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: .75rem 2rem; border-radius: 100px;
+    font-family: var(--sans); font-size: .875rem; font-weight: 500;
+    letter-spacing: .04em; text-decoration: none; cursor: pointer;
+    transition: .2s; border: none;
+  }
+  .btn-primary { background: var(--rose); color: #fff; }
+  .btn-primary:hover { background: var(--rose-dark); }
+  .btn-outline {
+    background: transparent; color: var(--text);
+    border: 1.5px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--rose); color: var(--rose-dark); }
+
+  .divider { height: 1px; background: var(--border); margin: 0; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--rose);
+    padding: 1.5rem 0 1.25rem;
+  }
+  .stats-grid {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap;
+  }
+  .stat-item {
+    flex: 1; min-width: 160px;
+    text-align: center; padding: 1rem 2rem;
+  }
+  .stat-num {
+    font-family: var(--sans);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300; color: #fff;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
+    color: rgba(255,255,255,.75); margin-top: .4rem; font-weight: 400;
+  }
+  .stat-divider {
+    width: 1px; height: 40px;
+    background: rgba(255,255,255,.3);
+    flex-shrink: 0;
+  }
+  .stats-note {
+    text-align: center; margin-top: 1rem;
+    font-size: .75rem; color: rgba(255,255,255,.6);
+    letter-spacing: .05em;
+  }
+  @media (max-width: 640px) {
+    .stat-divider { display: none; }
+    .stat-item { min-width: 50%; }
+  }
+
+
+  .hero {
+    min-height: unset;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 4rem;
+    padding: 2.5rem 2rem 2.5rem 0;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .hero-text { max-width: 560px; }
+  .hero-text h1 { margin-bottom: 1.5rem; }
+  .hero-text p { font-size: 1.1rem; color: var(--text-mid); margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-why {
+    background: var(--rose-light);
+    border-radius: 20px;
+    padding: 2.5rem;
+  }
+  .hero-why h4 { margin-bottom: 1.5rem; }
+  .hero-why-items { display: flex; flex-direction: column; gap: 0; }
+  .hero-why-item {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(217,164,154,.25);
+  }
+  .hero-why-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .hero-why-item:first-child { padding-top: 0; }
+  .hero-why-num {
+    font-family: var(--heading); font-size: 2rem;
+    color: var(--rose-dark); font-weight: 300;
+    line-height: 1; min-width: 3rem; text-align: right;
+    flex-shrink: 0;
+  }
+  .hero-why-item strong {
+    display: block; font-size: .95rem; font-weight: 500;
+    color: var(--text); margin-bottom: .2rem;
+  }
+  .hero-why-item p { font-size: .85rem; color: var(--text-mid); line-height: 1.55; margin: 0; }
+
+
+  .hqc-inner {
+    background: var(--rose);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    width: 100%; min-height: 420px;
+    position: relative; overflow: hidden;
+  }
+  .hqc-inner::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    pointer-events: none;
+  }
+  .hqc-inner::after {
+    content: '';
+    position: absolute; bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.06);
+    pointer-events: none;
+  }
+  .hqc-deco {
+    font-family: var(--heading); font-size: 5rem;
+    color: rgba(255,255,255,.25); line-height: .8;
+    margin-bottom: 1rem;
+  }
+  .hqc-text {
+    font-family: var(--sans); font-style: italic;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: #fff; font-weight: 300; line-height: 1.45;
+    margin-bottom: 1.25rem;
+  }
+  .hqc-cite {
+    font-family: var(--sans); font-style: normal;
+    font-size: .85rem; color: rgba(255,255,255,.75);
+    letter-spacing: .06em;
+  }
+  .hqc-divider {
+    width: 40px; height: 1.5px;
+    background: rgba(255,255,255,.35);
+    margin: 1.5rem 0;
+  }
+  .hqc-meta { display: flex; flex-direction: column; gap: .2rem; }
+  .hqc-label {
+    font-family: var(--sans); font-weight: 500;
+    font-size: .9rem; color: #fff; letter-spacing: .04em;
+  }
+  .hqc-sub {
+    font-size: .8rem; color: rgba(255,255,255,.65);
+    letter-spacing: .06em;
+  }
+
+  .angebote-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .angebot-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 2rem 1.5rem;
+    transition: .25s;
+  }
+  .angebot-card:hover { border-color: var(--rose); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(217,164,154,.15); }
+  .angebot-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--rose-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+    font-family: var(--heading); font-size: 1.4rem; color: var(--rose-dark);
+  }
+  .angebot-card h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+  .angebot-card p { font-size: .9rem; color: var(--text-mid); line-height: 1.6; }
+
+  .warum-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 3rem; margin-top: 4rem;
+  }
+  .warum-item { }
+  .warum-num {
+    font-family: var(--heading); font-size: 3rem; color: var(--rose);
+    font-weight: 300; line-height: 1;
+    margin-bottom: .5rem;
+  }
+  .warum-item h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+  .warum-item p { font-size: .9rem; color: var(--text-mid); }
+
+  .ausbildung-banner {
+    background: var(--rose-light);
+    border-radius: var(--radius);
+    padding: 4rem;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: center;
+  }
+  .ausbildung-banner h2 { margin-bottom: 1rem; }
+  .ausbildung-banner p { color: var(--text-mid); max-width: 560px; }
+
+  /* ── TRAINER PAGE ── */
+  .page-hero {
+    background: var(--rose-light);
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+  .page-hero .tag { margin-bottom: 1rem; }
+  .page-hero p { color: var(--text-mid); margin-top: 1rem; font-size: 1.05rem; }
+
+  .quote-banner {
+    background: var(--rose-dark);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .quote-banner blockquote {
+    font-family: var(--sans); font-style: italic;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: #fff; font-weight: 300; line-height: 1.4;
+  }
+  .quote-banner cite {
+    display: block; font-family: var(--sans);
+    font-style: normal; font-size: .85rem;
+    color: rgba(255,255,255,.7); margin-top: .75rem; letter-spacing: .08em;
+  }
+
+  .trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem; margin-top: 3rem;
+  }
+  .trainer-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: .25s;
+  }
+  .trainer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+  .trainer-img {
+    width: 100%; height: 280px;
+    background: var(--rose-light);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .trainer-img img { width: 100%; height: 100%; object-fit: cover; }
+  .trainer-img--logo { background: var(--rose-light); display: flex; align-items: center; justify-content: center; }
+  .trainer-img--logo img { width: 70%; height: 70%; object-fit: contain; }
+  .trainer-img-placeholder {
+    font-family: var(--heading); font-size: 3rem; color: var(--rose);
+  }
+  .trainer-info { padding: 1.5rem; }
+  .trainer-info h3 { margin-bottom: .25rem; }
+  .trainer-specialty {
+    font-size: .85rem; color: var(--rose-dark);
+    font-weight: 500; letter-spacing: .03em;
+  }
+
+  /* ── KURSE PAGE ── */
+  .kurs-intro {
+    max-width: 700px; margin: 0 auto; text-align: center;
+  }
+  .kurs-intro p { color: var(--text-mid); margin-top: 1rem; font-size: 1.05rem; }
+
+  .kurs-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem; margin-top: 3rem;
+  }
+  .kurs-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: .25s;
+  }
+  .kurs-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+  .kurs-img {
+    height: 200px; background: var(--rose-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--heading); font-size: 4rem; color: var(--rose);
+    overflow: hidden;
+  }
+  .kurs-body { padding: 1.5rem; }
+  .kurs-body h3 { margin-bottom: .5rem; }
+  .kurs-body p { font-size: .9rem; color: var(--text-mid); margin-bottom: 1rem; }
+
+  .eversports-box {
+    background: var(--rose-light); border-radius: var(--radius);
+    padding: 3rem; text-align: center; margin-top: 4rem;
+  }
+  .eversports-box h3 { margin-bottom: .75rem; }
+  .eversports-box p { color: var(--text-mid); margin-bottom: 1.5rem; }
+
+  /* ── HANNA VIDEO ── */
+  .hanna-video-wrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(44,40,37,.12);
+  }
+  .hanna-video-caption {
+    display: flex; align-items: center; gap: .5rem;
+    padding: .75rem 1rem;
+    background: #fff;
+    font-size: .85rem; color: var(--text-mid);
+    border-top: 1px solid var(--border);
+  }
+  .hanna-video-caption strong { color: var(--text); }
+
+  /* ── PROBETRAINING INTRO ── */
+  .probe-intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .probe-intro-text { max-width: 480px; }
+  .probe-intro-video { width: 100%; }
+
+  /* ── PROBETRAINING ── */
+  .probe-banner {
+    width: 100%; height: 260px; overflow: hidden;
+  }
+  .probe-banner img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+  }
+  @media (max-width: 640px) {
+    .probe-banner { height: 280px; }
+  }
+
+  .probe-img-wrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    height: 500px;
+  }
+  .probe-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .probe-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .probe-steps { margin-top: 2rem; }
+  .probe-step {
+    display: flex; gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .probe-step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: var(--heading); font-size: 2rem; color: var(--rose);
+    font-weight: 300; line-height: 1; min-width: 2.5rem;
+  }
+  .step-content h3 { font-size: 1.05rem; margin-bottom: .25rem; }
+  .step-content p { font-size: .9rem; color: var(--text-mid); }
+
+  .probe-cta-box {
+    background: var(--rose-light); border-radius: var(--radius);
+    padding: 2.5rem; position: sticky; top: 100px;
+  }
+  .probe-cta-box h3 { margin-bottom: .75rem; }
+  .probe-cta-box p { color: var(--text-mid); margin-bottom: 1.5rem; font-size: .95rem; }
+  .contact-info { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .5rem; }
+  .contact-info a {
+    color: var(--text-mid); text-decoration: none; font-size: .9rem;
+    transition: color .2s;
+  }
+  .contact-info a:hover { color: var(--rose-dark); }
+
+  /* ── GUTSCHEINE ── */
+  .gutschein-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .gutschein-options { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .gutschein-option {
+    background: #fff; border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: .2s;
+  }
+  .gutschein-option:hover, .gutschein-option.selected {
+    border-color: var(--rose); background: var(--rose-light);
+  }
+  .gutschein-option .label { font-weight: 500; }
+  .gutschein-option .price {
+    font-family: var(--sans); font-size: 1.4rem;
+    color: var(--rose-dark);
+  }
+  .gutschein-steps { margin-top: 2.5rem; }
+  .gutschein-step {
+    display: flex; gap: 1rem; margin-bottom: 1rem;
+  }
+  .gutschein-step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--rose); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .8rem; font-weight: 500; flex-shrink: 0; margin-top: 2px;
+  }
+  .gutschein-step-text { font-size: .9rem; color: var(--text-mid); }
+  .gutschein-step-text strong { color: var(--text); }
+
+  .gutschein-card-preview {
+    background: linear-gradient(135deg, var(--rose-dark), #c4877c);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    text-align: center; color: #fff;
+    position: sticky; top: 100px;
+  }
+  .gutschein-card-preview .g-label {
+    font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    opacity: .8; margin-bottom: 1rem;
+  }
+  .gutschein-card-preview .g-title {
+    font-family: var(--heading); font-size: 1.8rem; font-weight: 300;
+    margin-bottom: .5rem;
+  }
+  .gutschein-card-preview .g-studio {
+    font-size: .9rem; opacity: .7; margin-bottom: 2rem;
+  }
+  .gutschein-card-preview .g-value {
+    font-family: var(--heading); font-size: 4rem; font-weight: 300;
+    line-height: 1;
+  }
+  .gutschein-card-preview .g-info {
+    font-size: .8rem; opacity: .6; margin-top: 1rem; line-height: 1.6;
+  }
+
+  /* ── KONTAKT ── */
+  .kontakt-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .kontakt-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+  .kontakt-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .kontakt-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--rose-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .kontakt-item h4 { font-size: .8rem; letter-spacing: .08em; color: var(--warm-gray); margin-bottom: .2rem; text-transform: uppercase; }
+  .kontakt-item a, .kontakt-item p { color: var(--text); text-decoration: none; font-size: .95rem; }
+  .kontakt-item a:hover { color: var(--rose-dark); }
+
+  .kontakt-form { }
+  .form-row { margin-bottom: 1.25rem; }
+  .form-row label {
+    display: block; font-size: .8rem; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--warm-gray);
+    margin-bottom: .4rem;
+  }
+  .form-row input, .form-row textarea {
+    width: 100%; padding: .8rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px; background: #fff;
+    font-family: var(--sans); font-size: .95rem; color: var(--text);
+    transition: border-color .2s;
+    outline: none;
+  }
+  .form-row input:focus, .form-row textarea:focus { border-color: var(--rose); }
+  .form-row textarea { resize: vertical; min-height: 130px; }
+  .form-checkbox {
+    display: flex; gap: .75rem; align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  .form-checkbox input { margin-top: 4px; accent-color: var(--rose); }
+  .form-checkbox label { font-size: .85rem; color: var(--text-mid); line-height: 1.5; }
+
+  .map-embed {
+    border-radius: var(--radius); overflow: hidden;
+    height: 280px; margin-top: 2rem;
+    border: 1px solid var(--border);
+  }
+  .map-embed iframe { width: 100%; height: 100%; border: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text); color: rgba(255,255,255,.7);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+  }
+  .footer-brand .logo { color: #fff; }
+  .footer-brand .logo span { color: var(--rose); }
+  .footer-brand p { margin-top: .75rem; font-size: .875rem; line-height: 1.7; }
+  .footer-col h4 {
+    font-family: var(--sans); font-size: .75rem;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: #fff; font-weight: 500; margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,.6); text-decoration: none;
+    font-size: .875rem; transition: color .2s;
+    cursor: pointer;
+  }
+  .footer-col ul li a:hover { color: var(--rose); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .8rem;
+  }
+  .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+  .footer-bottom a:hover { color: var(--rose); }
+
+  /* ── SUMMER GLOW BANNER ── */
+  .summer-glow-banner {
+    background: linear-gradient(135deg, var(--rose-dark), #c4877c);
+    border-radius: var(--radius);
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .summer-glow-price {
+    text-align: center;
+    background: rgba(255,255,255,.1);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    min-width: 160px;
+  }
+  @media (max-width: 640px) {
+    .summer-glow-banner { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    .summer-glow-price { text-align: left; }
+  }
+
+  /* ── PREISE ── */
+  .preise-kategorie { margin-bottom: 1rem; }
+  .preise-kat-header { margin-bottom: 2rem; }
+  .preise-kat-header h4 { margin-bottom: .3rem; }
+  .preise-kat-header p { font-size: .9rem; color: var(--text-mid); }
+
+  .preise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .preise-grid--3 {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .preis-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+    transition: .2s;
+  }
+  .preis-card:hover { border-color: var(--rose); box-shadow: 0 6px 20px rgba(217,164,154,.15); }
+  .preis-card--featured {
+    border-color: var(--rose);
+    background: var(--rose-light);
+  }
+  .preis-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--rose); color: #fff;
+    font-size: .7rem; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; padding: .25rem .65rem;
+    border-radius: 100px;
+  }
+  .preis-top { margin-bottom: 1.5rem; }
+  .preis-name {
+    font-family: var(--sans); font-size: 1.25rem;
+    font-weight: 400; margin-bottom: .35rem; color: var(--text);
+  }
+  .preis-desc { font-size: .85rem; color: var(--text-mid); line-height: 1.55; }
+  .preis-bottom { }
+  .preis-amount {
+    font-family: var(--heading); font-size: 2.5rem;
+    font-weight: 300; color: var(--rose-dark); line-height: 1;
+  }
+  .preis-cent { font-size: 1.4rem; }
+  .preis-unit { font-family: var(--sans); font-size: .85rem; color: var(--text-mid); font-weight: 400; }
+  .preis-note { font-size: .78rem; color: var(--warm-gray); margin-top: .4rem; }
+
+  .preise-divider {
+    height: 1px; background: var(--border);
+    margin: 3.5rem 0;
+  }
+
+  .preise-einstieg {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .preise-einstieg-text h3 { margin: .5rem 0 .75rem; }
+  .preise-einstieg-text p { color: var(--text-mid); font-size: .95rem; }
+  .preise-einstieg-note {
+    background: var(--cream); border-radius: var(--radius);
+    padding: 2rem; border: 1px solid var(--border);
+  }
+
+  /* ── STUDIO NEWS ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+  .news-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: .25s;
+  }
+  .news-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.07); transform: translateY(-2px); }
+  .news-card-img {
+    width: 100%; height: 200px;
+    background: var(--rose-light);
+    overflow: hidden;
+  }
+  .news-card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .news-card-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .news-card-img-placeholder img { width: 60%; height: 60%; object-fit: contain; }
+  .news-card-body { padding: 1.5rem; }
+  .news-card-meta {
+    display: flex; gap: .75rem; align-items: center;
+    margin-bottom: .75rem;
+  }
+  .news-card-kat {
+    font-size: .72rem; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--rose-dark);
+    background: var(--rose-light); padding: .2rem .65rem;
+    border-radius: 100px;
+  }
+  .news-card-datum {
+    font-size: .8rem; color: var(--warm-gray);
+  }
+  .news-card-titel {
+    font-family: var(--sans); font-size: 1.25rem;
+    font-weight: 400; margin-bottom: .6rem; color: var(--text);
+    line-height: 1.3;
+  }
+  .news-card-text {
+    font-size: .88rem; color: var(--text-mid);
+    line-height: 1.65;
+    display: -webkit-box; -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .news-card-video {
+    margin-top: 1rem;
+  }
+  .news-card-autor {
+    font-size: .75rem; color: var(--warm-gray); letter-spacing: .03em;
+  }
+    font-size: .85rem; color: var(--rose-dark);
+    text-decoration: none; font-weight: 500;
+  }
+  .news-card-video a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .news-grid { grid-template-columns: 1fr; }
+  }
+
+
+  .studio-banner {
+    width: 100%; height: 320px; overflow: hidden;
+  }
+  .studio-banner img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+  @media (max-width: 640px) {
+    .studio-banner { height: 220px; }
+  }
+
+  /* ── PODCASTS ── */
+  .podcast-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+  .podcast-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.75rem 2rem;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    grid-template-rows: auto auto;
+    gap: .5rem 1.25rem;
+    transition: .2s;
+  }
+  .podcast-card:hover { border-color: var(--rose); box-shadow: 0 6px 20px rgba(217,164,154,.12); }
+  .podcast-icon { grid-row: 1; grid-column: 1; font-size: 1.75rem; line-height: 1; padding-top: .25rem; }
+  .podcast-info { grid-row: 1; grid-column: 2; }
+  .podcast-num { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; margin-bottom: .3rem; }
+  .podcast-title { font-family: var(--sans); font-size: 1.2rem; font-weight: 400; margin-bottom: .4rem; color: var(--text); }
+  .podcast-desc { font-size: .875rem; color: var(--text-mid); line-height: 1.6; }
+  .podcast-player { grid-row: 2; grid-column: 2; width: 100%; height: 40px; margin-top: .75rem; accent-color: var(--rose); }
+
+
+    .preise-einstieg { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* ══════════════════════════════════
+     RESPONSIVE – TABLET (≤900px)
+  ══════════════════════════════════ */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-why { order: -1; }
+    .probe-layout, .gutschein-layout, .kontakt-layout { grid-template-columns: 1fr; }
+    .probe-intro-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .probe-cta-box, .gutschein-card-preview { position: static; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .preise-einstieg { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-grid { flex-wrap: wrap; }
+    .stat-item { min-width: 45%; }
+    .stat-divider { display: none; }
+  }
+
+  /* ══════════════════════════════════
+     RESPONSIVE – MOBILE (≤640px)
+  ══════════════════════════════════ */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 640px) {
+    /* Nav */
+    :root { --nav-h: 80px; }
+    nav { height: 80px; }
+    .page { padding-top: 80px; }
+    .mobile-menu { top: 80px; }
+    .logo img { height: 100px !important; }
+
+    /* Typography */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.2rem; }
+
+    /* Spacing */
+    .container { padding: 0 1.25rem; }
+    .section { padding: 3rem 0; }
+    .section-sm { padding: 2rem 0; }
+
+    /* Hero */
+    .hero { padding: 1.5rem 1.25rem; gap: 1.5rem; grid-template-columns: 1fr; }
+    .hero-why { order: 1; }
+    .hero-text { order: 0; }
+    .hero-text h1 { color: var(--text); }
+    .hero-text p { color: var(--text-mid); }
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn { text-align: center; }
+    .hero-why { padding: 1.5rem; }
+    .hero-why-item { gap: 1rem; }
+    .hero-why-num { font-size: 1.5rem; min-width: 2.5rem; }
+
+    /* Stats */
+    .stats-bar { padding: 2rem 0; }
+    .stats-grid { gap: 0; }
+    .stat-item { min-width: 50%; padding: 1rem; }
+    .stat-num { font-size: 2.2rem; }
+    .stat-label { font-size: .7rem; }
+
+    /* Cards */
+    .angebote-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .trainer-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .kurs-grid { grid-template-columns: 1fr; }
+    .preise-grid { grid-template-columns: 1fr; }
+    .preise-grid--3 { grid-template-columns: 1fr; }
+
+    /* Trainer card image */
+    .trainer-img { height: 200px; }
+
+    /* Probe */
+    .probe-layout { gap: 2rem; }
+    .probe-cta-box { padding: 1.5rem; }
+    .probe-img-wrap { height: 260px; }
+
+    /* Gutschein */
+    .gutschein-layout { gap: 2rem; }
+    .gutschein-card-preview { padding: 2rem 1.5rem; }
+    .gutschein-card-preview .g-value { font-size: 3rem; }
+
+    /* Kontakt */
+    .kontakt-layout { gap: 2rem; }
+    .map-embed { height: 220px; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: .75rem; text-align: center; }
+    footer { padding: 3rem 0 1.5rem; }
+
+    /* Page hero sections */
+    .page-hero { padding: 3rem 0 2.5rem; }
+
+    /* Ausbildung page */
+    #page-ausbildung .container > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+    /* Buttons */
+    .btn { padding: .7rem 1.5rem; }
+
+    /* Quote card */
+    .hqc-inner { padding: 2rem 1.5rem; min-height: 320px; }
+    .hqc-text { font-size: 1.2rem; }
+
+    /* Kurs img */
+    .kurs-img { height: 160px; }
+
+    /* Podcasts */
+    .podcast-card { grid-template-columns: 1fr; }
+    .podcast-icon { grid-row: 1; grid-column: 1; }
+    .podcast-info { grid-row: 2; grid-column: 1; }
+    .podcast-player { grid-row: 3; grid-column: 1; }
+
+    /* Preise einstieg */
+    .preise-einstieg-text div { flex-direction: column; }
+  }
+
+  /* ══════════════════════════════════
+     RESPONSIVE – SMALL MOBILE (≤380px)
+  ══════════════════════════════════ */
+  @media (max-width: 380px) {
+    .trainer-grid { grid-template-columns: 1fr; }
+    .stat-item { min-width: 100%; }
+    h1 { font-size: 1.9rem; }
+  }
+
+
+  /* ── IMPRESSUM / DATENSCHUTZ ── */
+  .legal-content {
+    max-width: 780px; margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+  .legal-content h1 { margin-bottom: 2rem; }
+  .legal-content h2 { font-size: 1.4rem; margin: 2rem 0 .75rem; }
+  .legal-content p, .legal-content li { color: var(--text-mid); margin-bottom: .75rem; font-size: .95rem; }
+  .legal-content ul { padding-left: 1.25rem; }
+  .legal-content a { color: var(--rose-dark); }
+
+  /* animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .page.active .hero-text,
+  .page.active .page-hero {
+    animation: fadeUp .6s ease both;
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html" style="display:flex; align-items:center;">
+      <img src="logo.png" alt="Pilates Company Lübeck" style="height:70px; width:auto; display:block;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="kurse.html">KURSE</a></li>
+      <li><a href="preise.html">PREISE</a></li>
+      <li><a href="trainer.html">TRAINER</a></li>
+      <li><a href="ausbildung.html">AUSBILDUNG</a></li>
+      <li><a href="studio-news.html">STUDIO NEWS</a></li>
+      <li><a href="gutschein.html">GUTSCHEIN</a></li>
+      <li><a href="downloads.html">DOWNLOADS</a></li>
+      <li><a href="probetraining.html" class="nav-cta">PROBETRAINING BUCHEN</a></li>
+      <li>
+        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menü">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="kurse.html">KURSE</a>
+  <a href="preise.html">PREISE</a>
+  <a href="trainer.html">TRAINER</a>
+  <a href="ausbildung.html">AUSBILDUNG</a>
+  <a href="studio-news.html">STUDIO NEWS</a>
+  <a href="gutschein.html">GUTSCHEIN</a>
+  <a href="downloads.html">DOWNLOADS</a>
+  <a href="probetraining.html" style="color: var(--rose); font-weight: 500;">PROBETRAINING BUCHEN</a>
+  <a href="kontakt.html">KONTAKT</a>
+  <a href="https://www.instagram.com/my.pilatescompany" target="_blank">INSTAGRAM</a>
+</div>
+
+<main>
+<div class="legal-content">
+    <h1>Datenschutzerklärung</h1>
+    <p><strong>Pilates Company Lübeck</strong><br>Stand: Mai 2026</p>
+    <p>Diese Datenschutzerklärung informiert Sie gemäß Art. 13 und 14 der Datenschutz-Grundverordnung (DSGVO) über die Verarbeitung Ihrer personenbezogenen Daten durch die Pilates Company Lübeck. Ihre Privatsphäre ist uns wichtig – wir gehen verantwortungsvoll mit Ihren Daten um.</p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>Pilates Company Lübeck<br>Kontakt per E-Mail oder über das Kontaktformular auf unserer Website<br>Website: <a href="https://pilatescompany.de">pilatescompany.de</a></p>
+
+    <h2>2. Kategorien der verarbeiteten Daten</h2>
+    <p>Wir verarbeiten folgende Kategorien personenbezogener Daten:</p>
+    <ul>
+      <li><strong>Kontaktdaten:</strong> Name, E-Mail-Adresse, Telefonnummer, Adresse</li>
+      <li><strong>Vertragsdaten:</strong> Kursbuchungen, Trainingshistorie, Zahlungsinformationen</li>
+      <li><strong>Nutzungsdaten:</strong> Besuchte Seiten, Zeitstempel, IP-Adressen, Browser-Informationen</li>
+      <li><strong>Marketing-Daten:</strong> Interessensgruppen, Newsletter-Abonnement-Status</li>
+    </ul>
+
+    <h2>3. Rechtsgrundlagen der Datenverarbeitung</h2>
+    <p>Wir verarbeiten Ihre Daten auf Grundlage der folgenden Rechtsgrundlagen:</p>
+    <ul>
+      <li>Art. 6 Abs. 1 S. 1 Buchst. a DSGVO: Mit Ihrer ausdrücklichen Einwilligung</li>
+      <li>Art. 6 Abs. 1 S. 1 Buchst. b DSGVO: Zur Erfüllung eines Vertrags</li>
+      <li>Art. 6 Abs. 1 S. 1 Buchst. c DSGVO: Zur Erfüllung einer rechtlichen Verpflichtung</li>
+      <li>Art. 6 Abs. 1 S. 1 Buchst. f DSGVO: Berechtigtes Interesse (z.B. Sicherheit, Marketing)</li>
+    </ul>
+
+    <h2>4. HubSpot CRM</h2>
+    <h3>4.1 Verarbeitete Daten</h3>
+    <p>Wenn Sie eine Anfrage zum Probetraining oder Kontaktformular einreichen, werden Ihre Daten (Name, E-Mail, Telefonnummer) in unser HubSpot CRM-System übertragen und dort gespeichert.</p>
+    <h3>4.2 Zweck</h3>
+    <p>Kundenverwaltung, Kommunikation, Newsletter-Versand, Marketing-Kampagnen</p>
+    <h3>4.3 Auftragsverarbeiter</h3>
+    <p>HubSpot, Inc. (USA) — Datenverarbeitung basierend auf Standard-Vertragsklauseln (Art. 46 DSGVO)</p>
+    <h3>4.4 Speicherdauer</h3>
+    <p>Daten werden solange gespeichert, wie die Geschäftsbeziehung besteht, mindestens gemäß gesetzlicher Aufbewahrungspflichten. Sie können jederzeit widerrufen und die Löschung fordern.</p>
+
+    <h2>5. Google Analytics</h2>
+    <h3>5.1 Verarbeitete Daten</h3>
+    <p>IP-Adresse (pseudonymisiert), Browser-Typ, Besuchsdauer, Verweilzeit auf Seiten, Referrer, Gerätetyp</p>
+    <h3>5.2 Zweck</h3>
+    <p>Analyse von Website-Nutzung, Verbesserung der Benutzerfreundlichkeit, Erkennung von Zugriffstrends</p>
+    <h3>5.3 Auftragsverarbeiter</h3>
+    <p>Google Ireland Limited, Google LLC (USA) — Standard-Vertragsklauseln, Privacy Shield-Äquivalent</p>
+    <h3>5.4 Speicherdauer</h3>
+    <p>Daten werden nach 26 Monaten automatisch gelöscht</p>
+    <h3>5.5 Opt-Out</h3>
+    <p>Sie können die Erfassung durch Google Analytics deaktivieren, indem Sie die Google Analytics Opt-Out Browser Extension installieren oder in Ihrem Google-Konto die Datenschutzeinstellungen anpassen.</p>
+
+    <h2>6. Eversports Booking-System</h2>
+    <h3>6.1 Verarbeitete Daten</h3>
+    <p>Buchungsdaten, Name, E-Mail, Telefonnummer, Kurswahl, Zahlungsdaten (bei Kartenverkauf)</p>
+    <h3>6.2 Zweck</h3>
+    <p>Kursverwaltung, Buchungsabwicklung, Kundenkommunikation</p>
+    <h3>6.3 Auftragsverarbeiter</h3>
+    <p>Eversports GmbH (Deutschland) — DSGVO-konform, Standard-Vertragsklauseln</p>
+    <h3>6.4 Speicherdauer</h3>
+    <p>Daten werden für die Dauer der Kundenbeziehung sowie gemäß Aufbewahrungspflichten gespeichert</p>
+
+    <h2>7. Cookies und Tracking-Technologien</h2>
+    <h3>7.1 Was sind Cookies?</h3>
+    <p>Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden und die Website-Nutzung erleichtern.</p>
+    <h3>7.2 Arten von Cookies</h3>
+    <ul>
+      <li><strong>Notwendige Cookies:</strong> Für Sicherheit und Funktionalität erforderlich (Session-Cookies)</li>
+      <li><strong>Analytics-Cookies:</strong> Zur Analyse von Website-Nutzung (Google Analytics)</li>
+      <li><strong>Marketing-Cookies:</strong> Für gezieltes Marketing (mit Einwilligung)</li>
+      <li><strong>Funktions-Cookies:</strong> Für Nutzereinstellungen und Präferenzen</li>
+    </ul>
+    <h3>7.3 Cookie-Verwaltung</h3>
+    <p>Sie können Cookies in Ihren Browser-Einstellungen verwalten oder ablehnen. Ein Widerruf ist jederzeit möglich. Das Blockieren notwendiger Cookies kann die Website-Funktionalität beeinträchtigen.</p>
+
+    <h2>8. Ihre Rechte</h2>
+    <p>Gemäß DSGVO haben Sie folgende Rechte:</p>
+    <ul>
+      <li><strong>Auskunftsrecht (Art. 15):</strong> Sie können erfragen, welche Daten wir speichern</li>
+      <li><strong>Berichtigungsrecht (Art. 16):</strong> Fehlerhafte Daten können korrigiert werden</li>
+      <li><strong>Löschungsrecht (Art. 17):</strong> Daten können unter bestimmten Bedingungen gelöscht werden</li>
+      <li><strong>Recht auf Einschränkung (Art. 18):</strong> Die Verarbeitung kann unter bestimmten Bedingungen eingeschränkt werden</li>
+      <li><strong>Datenübertragbarkeit (Art. 20):</strong> Ihre Daten können in strukturierter Form übertragen werden</li>
+      <li><strong>Widerspruchsrecht (Art. 21):</strong> Sie können der Verarbeitung widersprechen</li>
+      <li><strong>Recht auf Beschwerde:</strong> Sie können sich an die Datenschutzbehörde wenden</li>
+    </ul>
+
+    <h2>9. Datensicherheit</h2>
+    <p>Wir verwenden technische und organisatorische Maßnahmen, um Ihre Daten zu schützen:</p>
+    <ul>
+      <li>SSL-/TLS-Verschlüsselung für Datenübertragung</li>
+      <li>Passwortschutz und Zugriffskontrolle</li>
+      <li>Regelmäßige Sicherheitsüberprüfungen</li>
+      <li>Datenschutzrichtlinien für Mitarbeiter</li>
+    </ul>
+
+    <h2>10. Kontakt für Datenschutzanfragen</h2>
+    <p>Für Anfragen zum Datenschutz, zur Ausübung Ihrer Rechte oder bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns:</p>
+    <p><strong>Pilates Company Lübeck</strong><br>Kontaktformular: <a href="kontakt.html">pilatescompany.de/kontakt</a></p>
+    <p>Wir werden Ihre Anfrage innerhalb von 30 Tagen bearbeiten.</p>
+
+    <h2>11. Datenschutzbehörde</h2>
+    <p><strong>Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein</strong><br>Holländerbahn 49<br>24105 Kiel<br>E-Mail: poststelle@ldsh.de<br>Website: datenschutz.schleswig-holstein.de</p>
+
+    <h2>Änderungen dieser Datenschutzerklärung</h2>
+    <p>Diese Datenschutzerklärung kann jederzeit aktualisiert werden, um Änderungen in unseren Datenschutzpraktiken oder rechtlichen Anforderungen widerzuspiegeln. Die aktuellste Version ist immer auf unserer Website verfügbar.</p>
+    <p><em>Letzte Aktualisierung: Mai 2026</em></p>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+</main>
+
+<footer style="background: var(--text); color: white; padding: 4rem 0 2rem;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+      
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h4>
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8;">
+          Segeberger Str. 1<br>
+          23617 Stockelsdorf<br>
+          <br>
+          <strong>Telefon:</strong> <a href="tel:+4945116083019" style="color: var(--rose); text-decoration: none;">0451 - 160 830 19</a><br><span style="font-size:.8rem;color:var(--text-mid);">Sofortnachricht hinterlassen — 24h erreichbar. Wir rufen zurueck.</span><br>
+          <strong>Email:</strong> <a href="mailto:info@pilatescompany.de" style="color: var(--rose); text-decoration: none;">info@pilatescompany.de</a>
+        </p>
+      </div>
+      
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+          <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Home</a></li>
+          <li><a href="kurse.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Kurse</a></li>
+          <li><a href="preise.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Preise</a></li>
+          <li><a href="trainer.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Trainer</a></li>
+          <li><a href="ausbildung.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Ausbildung</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+          <li><a href="studio-news.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Studio News</a></li>
+          <li><a href="gutschein.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
+          <li><a href="downloads.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Downloads</a></li>
+          <li><a href="probetraining.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Probetraining</a></li>
+          <li><a href="kontakt.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+          <li><a href="impressum.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Impressum</a></li>
+          <li><a href="datenschutz.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">
+        © 2026 Pilates Company Lübeck. Alle Rechte vorbehalten. | 
+        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" style="color: var(--rose); text-decoration: none;">Instagram</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <div id="wa-bubble" style="display:none;">
+    <div id="wa-bubble-header">
+      <div id="wa-bubble-avatar">PC</div>
+      <div>
+        <div id="wa-bubble-name">Pilates Company Lübeck</div>
+        <div id="wa-bubble-status" class="wa-online">● Online</div>
+      </div>
+      <button id="wa-bubble-close" onclick="document.getElementById('wa-bubble').style.display='none'">✕</button>
+    </div>
+    <div id="wa-bubble-body">
+      <div id="wa-bubble-msg">Hallo! 👋 Wie können wir dir helfen? Schreib uns einfach – wir antworten so schnell wie möglich.</div>
+      <div id="wa-bubble-hours">🕐 Erreichbar: Mo–Sa 8–20 Uhr</div>
+    </div>
+    <a href="https://wa.me/491751266117?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Probetraining!" target="_blank" id="wa-bubble-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.414A9.963 9.963 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.115l-.292-.174-3.035.862.872-3.012-.19-.308A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+      WhatsApp öffnen
+    </a>
+  </div>
+
+  <style>
+    #wa-btn {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999;
+      background: #25d366; color: white;
+      border-radius: 50px; padding: .85rem 1.25rem;
+      display: flex; align-items: center; gap: .6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      text-decoration: none; font-size: .9rem; font-weight: 500;
+      transition: transform .2s, box-shadow .2s;
+    }
+    #wa-btn:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
+    #wa-bubble {
+      position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 9998;
+      width: 300px; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+      font-family: var(--sans); animation: waFadeIn .2s ease;
+    }
+    @keyframes waFadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    #wa-bubble-header {
+      background: #075e54; color: white;
+      padding: 1rem 1rem; display: flex; align-items: center; gap: .75rem;
+    }
+    #wa-bubble-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #d9a49a; display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 600; color: white; flex-shrink: 0;
+    }
+    #wa-bubble-name { font-weight: 600; font-size: .9rem; }
+    #wa-bubble-status { font-size: .75rem; margin-top: .1rem; }
+    #wa-bubble-status.wa-online { color: #9de09d; }
+    #wa-bubble-status.wa-offline { color: rgba(255,255,255,.6); }
+    #wa-bubble-close {
+      margin-left: auto; background: none; border: none; color: white;
+      cursor: pointer; font-size: 1rem; padding: .25rem; opacity: .7;
+    }
+    #wa-bubble-close:hover { opacity: 1; }
+    #wa-bubble-body { background: #ece5dd; padding: 1rem; }
+    #wa-bubble-msg {
+      background: white; border-radius: 0 8px 8px 8px;
+      padding: .75rem; font-size: .85rem; color: #333;
+      box-shadow: 0 1px 2px rgba(0,0,0,.1); margin-bottom: .75rem;
+      line-height: 1.5;
+    }
+    #wa-bubble-hours {
+      font-size: .78rem; color: #666; text-align: center; margin-bottom: .75rem;
+    }
+    #wa-bubble-cta {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      background: #25d366; color: white; border-radius: 8px;
+      padding: .75rem; text-decoration: none; font-size: .9rem; font-weight: 500;
+      transition: background .2s;
+    }
+    #wa-bubble-cta:hover { background: #1ebe5d; }
+  </style>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('wa-btn');
+      var bubble = document.getElementById('wa-bubble');
+      var status = document.getElementById('wa-bubble-status');
+
+      // Erreichbarkeit prüfen: Mo–Sa 8–20 Uhr (deutsche Zeit)
+      function checkAvailability() {
+        var now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Berlin' }));
+        var day = now.getDay(); // 0=So, 1=Mo, ..., 6=Sa
+        var hour = now.getHours();
+        var available = day >= 1 && day <= 6 && hour >= 8 && hour < 20;
+        if (status) {
+          status.textContent = available ? '● Online' : '● Antwortet bald';
+          status.className = available ? 'wa-online' : 'wa-offline';
+        }
+      }
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isOpen = bubble.style.display !== 'none';
+        bubble.style.display = isOpen ? 'none' : 'block';
+        if (!isOpen) checkAvailability();
+      });
+
+      checkAvailability();
+    })();
+  </script>
+
+<script src="script.js"></script>
+
+
+
+
+
+<!-- PILATES COMPANY FLOATING BUTTONS -->
+<div id="pcFloating" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9998;display:flex;flex-direction:column;gap:.6rem;align-items:flex-end;font-family:'DM Sans',system-ui,sans-serif;">
+  <div id="pcChatWin" style="display:none;width:380px;max-height:480px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(44,40,37,.15);border:1px solid rgba(44,40,37,.06);overflow:hidden;animation:pcSlide .3s ease;">
+    <div style="background:linear-gradient(135deg,#b0796e,#d9a49a);padding:1.1rem 1.25rem;color:#fff;display:flex;justify-content:space-between;align-items:center;">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.1rem;">Frag uns alles</div><div style="font-size:.75rem;opacity:.85;">KI-Assistent der Pilates Company</div></div>
+      <button onclick="pcToggle()" style="background:none;border:none;color:#fff;cursor:pointer;font-size:1.2rem;padding:4px;">&#x2715;</button>
+    </div>
+    <div id="pcMsgs" style="padding:1rem;height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:.6rem;">
+      <div class="pcM pcB"><p>Hallo! Ich bin der KI-Assistent der Pilates Company. Stell mir eine Frage zu unseren Kursen, Preisen oder dem Studio.</p></div>
+      <div id="pcQQ" style="display:flex;flex-wrap:wrap;gap:.35rem;">
+        <button class="pcQ" onclick="pcQuick(this)">Was kostet eine Membership?</button>
+        <button class="pcQ" onclick="pcQuick(this)">Gibt es ein Probetraining?</button>
+        <button class="pcQ" onclick="pcQuick(this)">Welche Kurse bietet ihr an?</button>
+        <button class="pcQ" onclick="pcQuick(this)">Wo ist das Studio?</button>
+      </div>
+    </div>
+    <div style="padding:.6rem .75rem;border-top:1px solid rgba(44,40,37,.08);display:flex;gap:.4rem;">
+      <input id="pcIn" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')pcSendMsg()" style="flex:1;padding:.55rem .75rem;border:1px solid rgba(44,40,37,.12);border-radius:100px;font-family:inherit;font-size:.88rem;outline:none;">
+      <button onclick="pcSendMsg()" style="width:34px;height:34px;border-radius:50%;background:#d9a49a;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+    </div>
+  </div>
+  <div style="display:flex;gap:.5rem;align-items:center;">
+    <a onclick="pcToggle()" style="display:flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;background:linear-gradient(135deg,#b0796e,#d9a49a);color:#fff;border-radius:50px;cursor:pointer;box-shadow:0 4px 20px rgba(176,121,110,.35);text-decoration:none;font-size:.88rem;font-weight:500;transition:all .2s;white-space:nowrap;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      Frag mich was
+    </a>
+    <a href="https://wa.me/491751266117" target="_blank" style="display:flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;background:#25d366;color:#fff;border-radius:50px;box-shadow:0 4px 20px rgba(37,211,102,.35);text-decoration:none;font-size:.88rem;font-weight:500;transition:all .2s;white-space:nowrap;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.414A9.963 9.963 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      Chat mit uns
+    </a>
+  </div>
+</div>
+<style>
+@keyframes pcSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.pcM{max-width:88%;font-size:.88rem;line-height:1.6}.pcM p{margin:0}
+.pcB{align-self:flex-start;background:#f5ede9;padding:.65rem .9rem;border-radius:12px 12px 12px 3px;color:#2c2825}
+.pcU{align-self:flex-end;background:#b0796e;padding:.65rem .9rem;border-radius:12px 12px 3px 12px;color:#fff}
+.pcQ{padding:.35rem .65rem;background:#faf7f4;border:1px solid rgba(44,40,37,.1);border-radius:100px;font-family:inherit;font-size:.75rem;color:#5a5450;cursor:pointer;transition:all .2s}
+.pcQ:hover{border-color:#d9a49a;background:#f5ede9}
+.pcTy{align-self:flex-start;background:#f5ede9;padding:.65rem .9rem;border-radius:12px 12px 12px 3px}
+.pcTy span{display:inline-block;width:5px;height:5px;background:#b0796e;border-radius:50%;margin:0 2px;animation:pcD 1.4s infinite both}
+.pcTy span:nth-child(2){animation-delay:.2s}.pcTy span:nth-child(3){animation-delay:.4s}
+@keyframes pcD{0%,80%,100%{transform:scale(.4);opacity:.4}40%{transform:scale(1);opacity:1}}
+@media(max-width:480px){#pcChatWin{width:calc(100vw - 2rem)}}
+</style>
+<script src="pc-chat.js"></script>
+
+</body>
+</html>

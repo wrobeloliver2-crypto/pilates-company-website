@@ -1,0 +1,32 @@
+# Redirects von alten URLs (mit trailing slash) zu neuen HTML-Seiten
+/kurse/ /kurse.html 301
+/kurse /kurse.html 301
+/preise/ /preise.html 301
+/preise /preise.html 301
+/trainer/ /trainer.html 301
+/trainer /trainer.html 301
+/probetraining/ /probetraining.html 301
+/probetraining /probetraining.html 301
+/ausbildung/ /ausbildung.html 301
+/ausbildung /ausbildung.html 301
+/studio-news/ /studio-news.html 301
+/studio-news /studio-news.html 301
+/kontakt/ /kontakt.html 301
+/kontakt /kontakt.html 301
+/gutschein/ /gutschein.html 301
+/gutschein /gutschein.html 301
+/downloads/ /downloads.html 301
+/downloads /downloads.html 301
+/impressum/ /impressum.html 301
+/impressum /impressum.html 301
+/datenschutz/ /datenschutz.html 301
+/datenschutz /datenschutz.html 301
+
+# Redirects von alten Single-Page Anchor-Links
+/index.html#kurse /kurse.html 301
+/index.html#preise /preise.html 301
+/index.html#probetraining /probetraining.html 301
+/index.html#trainer /trainer.html 301
+/index.html#ausbildung /ausbildung.html 301
+/index.html#studio-news /studio-news.html 301
+/index.html#kontakt /kontakt.html 301

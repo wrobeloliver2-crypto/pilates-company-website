@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dein persönlicher Pilates-Berater – Pilates Company Lübeck</title>
+<meta name="description" content="Finde in 60 Sekunden das passende Angebot bei Pilates Company Lübeck.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.assistant-wrap{max-width:680px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.assistant-header{text-align:center;margin-bottom:2.5rem}
+.assistant-header h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:#2c2825;margin-bottom:.5rem;line-height:1.2}
+.assistant-header p{color:#5a5450;font-size:1rem}
+.progress-wrap{margin-bottom:2rem}
+.progress-bar{height:6px;background:#f0ebe7;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#d9a49a,#b0796e);border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
+.progress-label{display:flex;justify-content:space-between;font-size:.78rem;color:#8a847d;margin-top:.5rem}
+.question-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 2px 20px rgba(44,40,37,.06);border:1px solid rgba(44,40,37,.06);animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.question-card h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:#2c2825;margin-bottom:1.25rem;line-height:1.3}
+.question-card .subtitle{font-size:.9rem;color:#8a847d;margin-top:-.75rem;margin-bottom:1.25rem}
+.answers{display:flex;flex-direction:column;gap:.75rem}
+.answer-btn{display:flex;align-items:center;padding:1rem 1.25rem;background:#faf7f4;border:2px solid transparent;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.95rem;color:#2c2825;transition:all .2s;text-align:left;width:100%}
+.answer-btn:hover{border-color:#d9a49a;background:#f5ede9}
+.answer-btn.selected{border-color:#b0796e;background:#f5ede9;font-weight:500}
+.multi-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media(max-width:480px){.multi-grid{grid-template-columns:1fr}}
+.multi-btn{display:flex;align-items:center;gap:.6rem;padding:.85rem 1rem;background:#faf7f4;border:2px solid transparent;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.9rem;color:#2c2825;transition:all .2s}
+.multi-btn:hover{border-color:#d9a49a}
+.multi-btn.selected{border-color:#b0796e;background:#f5ede9;font-weight:500}
+.multi-btn .check{width:20px;height:20px;border:2px solid #ccc;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .2s;flex-shrink:0}
+.multi-btn.selected .check{background:#b0796e;border-color:#b0796e;color:#fff}
+.next-btn{margin-top:1rem;padding:.85rem 2rem;background:#d9a49a;color:#fff;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .2s;display:none;width:100%}
+.next-btn:hover{background:#b0796e}
+.next-btn.visible{display:block}
+.ki-explanation{color:#2c2825;font-size:.95rem;line-height:1.7;margin-bottom:1.5rem;padding:1.25rem;background:#f5ede9;border-radius:14px;border-left:4px solid #b0796e}
+.ki-explanation p{margin-bottom:.75rem}
+.ki-explanation p:last-child{margin-bottom:0}
+.ki-loading{text-align:center;padding:1.5rem;color:#8a847d}
+.ki-loading .dots span{animation:blink 1.4s infinite both;font-size:1.5rem}
+.ki-loading .dots span:nth-child(2){animation-delay:.2s}
+.ki-loading .dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:0}40%{opacity:1}}
+.offer-card{background:#fff;border:2px solid rgba(44,40,37,.08);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:.75rem;transition:all .2s;position:relative;overflow:hidden}
+.offer-card:hover{border-color:#d9a49a;box-shadow:0 4px 16px rgba(217,164,154,.15)}
+.offer-card.recommended{border-color:#b0796e;background:linear-gradient(135deg,#faf7f4,#f5ede9)}
+.offer-badge{position:absolute;top:0;right:0;background:#b0796e;color:#fff;font-size:.7rem;font-weight:600;padding:.3rem .75rem;border-radius:0 12px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.offer-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;color:#2c2825;margin-bottom:.25rem}
+.offer-price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:#b0796e}
+.offer-price small{font-size:.85rem;font-weight:400;color:#8a847d}
+.offer-details{font-size:.85rem;color:#5a5450;margin-top:.4rem;line-height:1.5}
+.offer-cta{display:inline-block;margin-top:.75rem;padding:.6rem 1.5rem;background:#d9a49a;color:#fff;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;text-decoration:none;transition:background .2s}
+.offer-cta:hover{background:#b0796e}
+.offer-card.free .offer-cta{background:#25d366}
+.offer-card.free .offer-cta:hover{background:#1da851}
+.comparison-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.85rem}
+.comparison-table th{background:#f5ede9;padding:.6rem .75rem;text-align:left;font-weight:500;color:#2c2825;border-bottom:2px solid #d9a49a}
+.comparison-table td{padding:.6rem .75rem;border-bottom:1px solid #f0ebe7;color:#5a5450}
+.comparison-table tr.highlight td{background:#faf7f4;font-weight:500;color:#2c2825}
+.comparison-table .price-per-unit{font-weight:600;color:#b0796e}
+.restart-btn{margin-top:1.5rem;padding:.7rem 1.5rem;background:none;border:2px solid rgba(44,40,37,.15);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.85rem;color:#5a5450;cursor:pointer;transition:all .2s;display:block;width:fit-content;margin-left:auto;margin-right:auto}
+.restart-btn:hover{border-color:#d9a49a;color:#b0796e}
+.step{display:none}.step.active{display:block}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+<a class="logo" href="index.html" style="display:flex;align-items:center;"><img src="logo.png" alt="Pilates Company Lübeck" style="height:70px;width:auto;display:block;"></a>
+<ul class="nav-links"><li><a href="index.html">HOME</a></li><li><a href="kurse.html">KURSE</a></li><li><a href="preise.html">PREISE</a></li><li><a href="trainer.html">TRAINER</a></li><li><a href="ausbildung.html">AUSBILDUNG</a></li><li><a href="studio-news.html">STUDIO NEWS</a></li><li><a href="gutschein.html">GUTSCHEIN</a></li><li><a href="downloads.html">DOWNLOADS</a></li></ul>
+<a href="probetraining.html" class="nav-cta">PROBETRAINING BUCHEN</a>
+<a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg></a>
+<button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="kurse.html">Kurse</a><a href="preise.html">Preise</a><a href="trainer.html">Trainer</a><a href="ausbildung.html">Ausbildung</a><a href="studio-news.html">Studio News</a><a href="gutschein.html">Gutschein</a><a href="downloads.html">Downloads</a><a href="probetraining.html" style="background:#d9a49a;color:#fff;padding:.75rem 1.5rem;border-radius:100px;">Probetraining</a></div>
+<main><div class="assistant-wrap">
+<div class="assistant-header"><h1>Finde dein perfektes Angebot</h1><p>In 4 kurzen Fragen zur passenden Membership</p></div>
+<div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><div class="progress-label"><span id="progressStep">Frage 1 von 4</span><span id="progressPercent">0%</span></div></div>
+<div class="step active" id="step1"><div class="question-card"><h2>Warst du schon mal bei uns im Training?</h2><div class="answers"><button class="answer-btn" onclick="selectAnswer(1,'new')">Nein, ich bin neu hier</button><button class="answer-btn" onclick="selectAnswer(1,'returning')">Ja, ich war schon mal da</button></div></div></div>
+<div class="step" id="step2"><div class="question-card"><h2>Wie oft im Monat moechtest du trainieren?</h2><div class="answers"><button class="answer-btn" onclick="selectAnswer(2,'4')">4x im Monat (1x pro Woche)</button><button class="answer-btn" onclick="selectAnswer(2,'8')">8x im Monat (2x pro Woche)</button><button class="answer-btn" onclick="selectAnswer(2,'unsure')">Weiss ich noch nicht</button></div></div></div>
+<div class="step" id="step3"><div class="question-card"><h2>Welche Kurstypen interessieren dich?</h2><p class="subtitle">Du kannst mehrere auswaehlen</p><div class="multi-grid" id="courseTypes"><button class="multi-btn" onclick="toggleCourse(this,'classic')"><span class="check"></span> Classic Pilates</button><button class="multi-btn" onclick="toggleCourse(this,'reformer')"><span class="check"></span> Reformer</button><button class="multi-btn" onclick="toggleCourse(this,'aerial')"><span class="check"></span> Aerial / Flying</button><button class="multi-btn" onclick="toggleCourse(this,'yoga')"><span class="check"></span> Yoga</button></div><button class="next-btn" id="step3Next" onclick="selectAnswer(3,selectedTypes)">Weiter</button></div></div>
+<div class="step" id="step4"><div class="question-card"><h2>Was passt besser zu deinem Lebensstil?</h2><div class="answers"><button class="answer-btn" onclick="selectAnswer(4,'longterm')">Ich plane langfristig und regelmaessig</button><button class="answer-btn" onclick="selectAnswer(4,'flexible')">Ich brauche viel Flexibilitaet</button></div></div></div>
+<div class="step" id="stepResult"></div>
+</div></main>
+<script>
+var answers={},selectedTypes=[],currentStep=1,totalSteps=4;
+function updateProgress(s){var p=Math.min(Math.round((s-1)/totalSteps*100),100);document.getElementById('progressFill').style.width=p+'%';document.getElementById('progressStep').textContent=s<=totalSteps?'Frage '+s+' von '+totalSteps:'Fertig!';document.getElementById('progressPercent').textContent=p+'%';}
+function selectAnswer(s,v){answers[s]=v;var el=document.getElementById('step'+s);el.querySelectorAll('.answer-btn').forEach(function(b){b.classList.remove('selected')});if(event&&event.currentTarget&&event.currentTarget.classList.contains('answer-btn'))event.currentTarget.classList.add('selected');setTimeout(function(){document.getElementById('step'+s).classList.remove('active');currentStep=s+1;if(s<totalSteps){document.getElementById('step'+(s+1)).classList.add('active');updateProgress(s+1)}else{showResult();updateProgress(totalSteps+1)}},300);}
+function toggleCourse(btn,type){btn.classList.toggle('selected');var c=btn.querySelector('.check');if(btn.classList.contains('selected')){selectedTypes.push(type);c.textContent='\u2713'}else{selectedTypes=selectedTypes.filter(function(t){return t!==type});c.textContent=''}document.getElementById('step3Next').classList.toggle('visible',selectedTypes.length>0);}
+
+var P={
+  sg:{n:'Summer Glow Start',p:69,pa:89,c:4,m:3,u:17.25},
+  r1:{n:'1 Monat Reformer & others',p:89,c:4,m:1,u:22.25},
+  r12:{n:'12 Monate Reformer & others',p:89,c:8,m:12,u:11.13},
+  m1:{n:'1 Monat Mattenpilates & Yoga',p:69,c:8,m:1,u:8.63},
+  m12:{n:'12 Monate Mattenpilates & Yoga',p:59,c:8,m:12,u:7.38},
+  fp:{n:'5er-Pass',p:119,c:5,m:0,u:23.80},
+  di:{n:'Drop-In Ticket',p:28,c:1,m:0,u:28.00},
+  pt:{n:'Kostenloses Probetraining',p:0,c:1,m:0,u:0}
+};
+
+function showResult(){
+  var status=answers[1],freq=answers[2],types=answers[3],plan=answers[4];
+  var isNew=status==='new',wr=types.indexOf('reformer')!==-1||types.indexOf('aerial')!==-1,is8=freq==='8',is4=freq==='4',isU=freq==='unsure',isL=plan==='longterm';
+  var rec,alt,comp;
+
+  if(wr){
+    if(is8&&isL){rec=P.r12;alt=P.sg}
+    else{rec=P.sg;alt=is8?P.r12:P.r1}
+  }else{
+    if(is8&&isL){rec=P.m12;alt=P.m1}
+    else{rec=P.m1;alt=P.m12}
+  }
+
+  comp=[
+    {o:rec.n,pm:rec.p+(rec.m===3?' (3 Mon.)':''),c:rec.c,u:rec.u.toFixed(2).replace('.',','),hi:true},
+    {o:alt.n,pm:alt.p+(alt.m===3?' (3 Mon.)':''),c:alt.c,u:alt.u.toFixed(2).replace('.',','),hi:false},
+    {o:P.fp.n,pm:'119 einm.',c:5,u:'23,80',hi:false},
+    {o:P.di.n,pm:'28 einm.',c:1,u:'28,00',hi:false}
+  ];
+
+  var h='<div class="result-card"><div class="question-card">';
+  h+='<h2>Deine persoenliche Empfehlung</h2>';
+  h+='<div class="ki-explanation" id="kiExplanation"><div class="ki-loading">Wir analysieren dein Profil<div class="dots"><span>.</span><span>.</span><span>.</span></div></div></div>';
+
+  // Empfohlene Membership
+  h+='<div class="offer-card recommended"><span class="offer-badge">Empfohlen</span>';
+  h+='<div class="offer-name">'+rec.n+'</div>';
+  h+='<div class="offer-price">'+rec.p+'\u20ac <small>/ Monat</small></div>';
+  h+='<div class="offer-details">'+rec.c+' Credits/Monat';
+  if(rec.m===3)h+=' \u00b7 3 Monate Mindestlaufzeit \u00b7 Danach '+rec.pa+'\u20ac/Monat';
+  if(rec.m===12)h+=' \u00b7 12 Monate Laufzeit \u00b7 Bester Preis pro Einheit';
+  if(rec.m===1)h+=' \u00b7 Monatlich kuendbar';
+  h+='</div><a href="https://www.eversports.de/sp/pilates-company" class="offer-cta" target="_blank">Jetzt buchen</a></div>';
+
+  // Alternative Membership
+  h+='<div class="offer-card"><div class="offer-name">'+alt.n+'</div>';
+  h+='<div class="offer-price">'+alt.p+'\u20ac <small>/ Monat</small></div>';
+  h+='<div class="offer-details">'+alt.c+' Credits/Monat';
+  if(alt.m===3)h+=' \u00b7 3 Monate Mindestlaufzeit \u00b7 Danach '+alt.pa+'\u20ac/Monat';
+  if(alt.m===12)h+=' \u00b7 12 Monate Laufzeit';
+  if(alt.m===1)h+=' \u00b7 Monatlich kuendbar';
+  h+='</div><a href="https://www.eversports.de/sp/pilates-company" class="offer-cta" target="_blank">Jetzt buchen</a></div>';
+
+  if(isNew){
+    h+='<div class="offer-card free"><div class="offer-name">Kostenloses Probetraining</div>';
+    h+='<div class="offer-price">0\u20ac</div>';
+    h+='<div class="offer-details">Lerne uns und unser Studio kennen \u2013 voellig unverbindlich. Ideal als erster Schritt vor der Membership.</div>';
+    h+='<a href="probetraining.html" class="offer-cta">Jetzt kostenlos buchen</a></div>';
+  }
+
+  h+='<h3 style="font-family:Playfair Display,serif;font-size:1.1rem;font-weight:400;margin:1.5rem 0 .75rem;color:#2c2825">Preisvergleich: Warum sich eine Membership lohnt</h3>';
+  h+='<table class="comparison-table"><thead><tr><th>Option</th><th>Preis</th><th>Einheiten</th><th>Pro Einheit</th></tr></thead><tbody>';
+  comp.forEach(function(r){h+='<tr'+(r.hi?' class="highlight"':'')+'><td>'+r.o+'</td><td>'+r.pm+'\u20ac</td><td>'+r.c+'/Monat</td><td class="price-per-unit">'+r.u+'\u20ac</td></tr>'});
+  h+='</tbody></table>';
+  h+='<button class="restart-btn" onclick="restart()">Nochmal starten</button>';
+  h+='</div></div>';
+
+  document.getElementById('stepResult').innerHTML=h;
+  document.getElementById('stepResult').classList.add('active');
+  document.querySelector('.progress-wrap').style.display='none';
+  loadKI(rec,alt,isNew,wr,freq,plan,types);
+}
+
+function loadKI(rec,alt,isNew,wr,freq,plan,types){
+  var ts=types.join(', '),fs=freq==='4'?'4x im Monat':freq==='8'?'8x im Monat':'noch unsicher',ps=plan==='longterm'?'langfristig':'flexibel',ss=isNew?'Neukunde':'Rueckkehrer';
+  var prompt='Du bist der freundliche Berater der Pilates Company Luebeck. Ein '+ss+' moechte '+fs+' trainieren, interessiert sich fuer '+ts+' und plant '+ps+'.\n\nEmpfiehl die "'+rec.n+'" ('+rec.p+' Euro/Monat, '+rec.c+' Credits) als beste Wahl. Erklaere in 3-4 Saetzen WARUM diese Membership besser ist als Einzeltickets (28 Euro) oder der 5er-Pass (119 Euro fuer 5 Einheiten = 23,80 Euro/Einheit). Nenne den konkreten Preis pro Einheit ('+rec.u.toFixed(2).replace('.',',')+' Euro) und die monatliche Ersparnis. ';
+  if(isNew)prompt+='Erwaehne das kostenlose Probetraining als idealen ersten Schritt. ';
+  prompt+='Erwaehne die "'+alt.n+'" ('+alt.p+' Euro/Monat, '+alt.c+' Credits) als Alternative und erklaere den Unterschied. Schreibe auf Deutsch, duze den Kunden, sei warm und einladend aber sachlich. Keine Emojis. Maximal 120 Woerter.';
+
+  fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:300,messages:[{role:'user',content:prompt}]})})
+  .then(function(r){return r.json()})
+  .then(function(d){
+    var t='';if(d.content)d.content.forEach(function(b){if(b.type==='text')t+=b.text});
+    if(t){var ps=t.split('\n\n').filter(function(p){return p.trim()});document.getElementById('kiExplanation').innerHTML=ps.map(function(p){return'<p>'+p+'</p>'}).join('')}
+    else fallback(rec,alt,isNew);
+  }).catch(function(){fallback(rec,alt,isNew)});
+}
+
+function fallback(rec,alt,isNew){
+  var u=rec.u.toFixed(2).replace('.',','),sv=Math.round((28-rec.u)*rec.c);
+  var h='<p>Basierend auf deinen Angaben ist die <strong>'+rec.n+'</strong> die beste Wahl fuer dich. Mit '+rec.c+' Einheiten pro Monat zahlst du nur '+u+' Euro pro Training \u2013 gegenueber 28 Euro beim Einzelticket sparst du so rund '+sv+' Euro jeden Monat.</p>';
+  h+='<p>Alternativ bietet sich die <strong>'+alt.n+'</strong> fuer '+alt.p+' Euro/Monat an';
+  if(alt.c>rec.c)h+=', mit '+alt.c+' Credits fuer noch mehr Trainingseinheiten.';
+  else if(alt.p<rec.p)h+=', wenn du langfristig den besten Preis moechtest.';
+  else h+=', wenn du erstmal ohne lange Bindung starten moechtest.';
+  h+='</p>';
+  if(isNew)h+='<p>Unser Tipp: Starte mit dem kostenlosen Probetraining und entscheide dann in Ruhe, welche Membership am besten zu dir passt.</p>';
+  document.getElementById('kiExplanation').innerHTML=h;
+}
+
+function restart(){answers={};selectedTypes=[];currentStep=1;document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});document.getElementById('step1').classList.add('active');document.getElementById('stepResult').innerHTML='';document.querySelectorAll('.answer-btn,.multi-btn').forEach(function(b){b.classList.remove('selected');var c=b.querySelector('.check');if(c)c.textContent=''});document.getElementById('step3Next').classList.remove('visible');document.querySelector('.progress-wrap').style.display='block';updateProgress(1);}
+updateProgress(1);
+</script>
+</body>
+</html>
