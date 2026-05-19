@@ -408,7 +408,12 @@ document.addEventListener('DOMContentLoaded', () => {
     arr.forEach(l => {
       const b = document.createElement('button');
       b.className = 'pc-chip'; b.textContent = l;
-      b.onclick = () => { document.getElementById('pc-qa-input').value = l; sendMsg(); };
+      b.onclick = () => {
+        if (l === 'Alle Preise ansehen') { window.location.href = 'preise.html'; return; }
+        if (l === 'Probetraining buchen') { window.location.href = 'probetraining.html'; return; }
+        if (l === 'Kursplan ansehen') { window.open('https://eversports.de/s/pilates-company-luebeck', '_blank'); return; }
+        document.getElementById('pc-qa-input').value = l; sendMsg();
+      };
       ch.appendChild(b);
     });
   }
@@ -434,18 +439,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const reply = (data && data.reply) ? data.reply : 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
       pcHistory.push({ role: 'assistant', content: reply });
       pcCount++;
-      const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml + '<div class="pc-hint"><a href="probetraining.html">Probetraining anfragen</a> · <a href="tel:045116083019">0451 - 160 830 19</a></div>');
+      const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml + '<div class="pc-hint"><a href="probetraining.html">Probetraining anfragen</a> · <a href="https://wa.me/491516083019" target="_blank">WhatsApp</a></div>');
       if (pcCount >= 8) {
         const el = document.createElement('div');
         el.className = 'pc-msg pc-msg-bot';
-        el.innerHTML = 'Du hast viele tolle Fragen gestellt! Komm einfach zu einem kostenlosen Probetraining oder ruf uns an.<div class="pc-cta-row"><a class="pc-cta-btn" href="probetraining.html">Probetraining buchen</a><a class="pc-cta-btn outline" href="tel:045116083019">0451 - 160 830 19</a></div>';
+        el.innerHTML = 'Du hast viele tolle Fragen gestellt! Komm einfach zu einem kostenlosen Probetraining oder ruf uns an.<div class="pc-cta-row"><a class="pc-cta-btn" href="probetraining.html">Probetraining buchen</a><a class="pc-cta-btn outline" href="https://wa.me/491516083019" target="_blank">WhatsApp</a></div>';
         document.getElementById('pc-qa-msgs').appendChild(el);
         pcCount = 0;
       } else {
         const l = text.toLowerCase();
         if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
         else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Summer Glow 69 €','Matte vs Reformer']);
-        else if (l.match(/preis|kostet|member|abo/)) setChips(['Summer Glow 69 €','5er-Pass 119 €','Wellpass-Zuzahlung']);
+        else if (l.match(/preis|kostet|member|abo/)) setChips(['Summer Glow 69 €/Monat','Alle Preise ansehen','Probetraining buchen']);
         else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Kursplan ansehen']);
         else setChips(['Probetraining anfragen','Kursplan ansehen','Membership-Vergleich']);
       }
