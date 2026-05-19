@@ -217,67 +217,242 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ── FLOATING Q&A BUTTON + MODAL (alle Seiten) ──
 (function() {
-  // Modal einbinden falls noch nicht vorhanden
-  if (!document.getElementById('pc-qa-overlay')) {
-    const wrap = document.createElement('div');
-    wrap.innerHTML = `
-      <div id="pc-qa-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9000;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px);" onclick="if(event.target===this)closePcQA()">
-        <div style="background:#fff;border-radius:20px;max-width:460px;width:100%;height:580px;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.25);">
-          <button onclick="closePcQA()" style="position:absolute;top:.75rem;right:.75rem;background:rgba(0,0,0,.12);border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:.9rem;color:#fff;z-index:10;display:flex;align-items:center;justify-content:center;line-height:1;">✕</button>
-          <iframe src="/pc-assistant.html" style="width:100%;height:100%;border:none;" frameborder="0"></iframe>
-        </div>
-      </div>
-      <style>
-        @media(max-width:640px){
-          #pc-qa-overlay > div { height:85vh !important; border-radius:20px 20px 0 0 !important; }
-          #pc-qa-overlay { align-items:flex-end !important; padding:0 !important; }
-        }
-      </style>`;
-    document.body.appendChild(wrap);
-  }
+  if (document.getElementById('pc-qa-overlay')) return;
 
-  function openPcQA() {
-    document.getElementById('pc-qa-overlay').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closePcQA() {
-    document.getElementById('pc-qa-overlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-  window.openPcQA = openPcQA;
-  window.closePcQA = closePcQA;
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') closePcQA(); });
-
-  // Floating Button Styles
+  // Styles
   const style = document.createElement('style');
   style.textContent = `
+    #pc-qa-overlay {
+      display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
+      z-index:9000;align-items:center;justify-content:center;
+      padding:1rem;backdrop-filter:blur(3px);
+    }
+    #pc-qa-overlay.open { display:flex; }
+    #pc-qa-box {
+      background:#fdf9f7;border-radius:20px;max-width:460px;width:100%;
+      height:580px;overflow:hidden;position:relative;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+      display:flex;flex-direction:column;font-family:'DM Sans',sans-serif;
+    }
+    #pc-qa-header {
+      background:#d9a49a;color:#fff;padding:14px 18px;
+      display:flex;align-items:center;gap:11px;flex-shrink:0;
+    }
+    #pc-qa-header-icon {
+      width:36px;height:36px;background:rgba(255,255,255,.2);
+      border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;
+    }
+    #pc-qa-close {
+      margin-left:auto;background:rgba(255,255,255,.2);border:none;color:#fff;
+      border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:16px;
+      display:flex;align-items:center;justify-content:center;
+    }
+    #pc-qa-msgs {
+      flex:1;overflow-y:auto;padding:14px 13px;
+      display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;
+    }
+    .pc-msg {
+      max-width:88%;padding:11px 13px;border-radius:14px;
+      font-size:13.5px;line-height:1.6;animation:pcFade .2s ease;
+    }
+    @keyframes pcFade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+    .pc-msg-bot {
+      background:#fff;border:1px solid #ede8e4;
+      border-bottom-left-radius:4px;align-self:flex-start;color:#2a2a2a;
+    }
+    .pc-msg-user {
+      background:#d9a49a;color:#fff;
+      border-bottom-right-radius:4px;align-self:flex-end;
+    }
+    .pc-typing {
+      display:flex;gap:4px;padding:13px 15px;background:#fff;
+      border:1px solid #ede8e4;border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;
+    }
+    .pc-typing span {
+      width:7px;height:7px;border-radius:50%;background:#d9a49a;
+      animation:pcBounce 1.2s infinite;
+    }
+    .pc-typing span:nth-child(2){animation-delay:.2s}
+    .pc-typing span:nth-child(3){animation-delay:.4s}
+    @keyframes pcBounce{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
+    #pc-qa-chips {display:flex;flex-wrap:wrap;gap:6px;padding:2px 13px 8px;}
+    .pc-chip {
+      background:#fff;border:1px solid #e0d8d4;border-radius:20px;
+      padding:6px 12px;font-size:12.5px;color:#b07d76;
+      cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;
+    }
+    .pc-chip:hover{background:#d9a49a;color:#fff;border-color:#d9a49a;}
+    #pc-qa-input-row {
+      padding:9px 13px 13px;display:flex;gap:8px;flex-shrink:0;
+      background:#fdf9f7;border-top:1px solid #ede8e4;
+    }
+    #pc-qa-input {
+      flex:1;border:1px solid #e0d8d4;border-radius:22px;
+      padding:9px 15px;font-size:13.5px;font-family:inherit;
+      background:#fff;outline:none;color:#2a2a2a;height:40px;
+    }
+    #pc-qa-input:focus{border-color:#d9a49a;}
+    #pc-qa-send {
+      width:40px;height:40px;background:#d9a49a;border:none;
+      border-radius:50%;cursor:pointer;display:flex;align-items:center;
+      justify-content:center;flex-shrink:0;transition:background .15s;
+    }
+    #pc-qa-send:hover{background:#c8857a;}
+    #pc-qa-send:disabled{opacity:.4;cursor:default;}
+    .pc-hint{margin-top:8px;padding-top:8px;border-top:1px solid #f5f0ed;font-size:11.5px;color:#aaa;}
+    .pc-hint a{color:#b07d76;text-decoration:none;font-weight:500;}
+    .pc-cta-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+    .pc-cta-btn{background:#d9a49a;color:#fff;border:none;border-radius:8px;padding:8px 13px;font-size:12.5px;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;}
+    .pc-cta-btn.outline{background:transparent;color:#b07d76;border:1px solid #d9a49a;}
     #pc-float-btn {
-      position: fixed; top: 50%; right: 0;
-      transform: translateY(-50%);
-      z-index: 8000;
-      background: #d9a49a; color: #fff;
-      border: none; border-radius: 10px 0 0 10px;
-      padding: 14px 16px;
-      font-size: 14px; font-weight: 600; font-family: inherit;
-      cursor: pointer; display: flex; align-items: center; gap: 8px;
-      box-shadow: -3px 0 16px rgba(217,164,154,0.45);
-      transition: padding 0.2s, box-shadow 0.2s;
-      white-space: nowrap;
+      position:fixed;top:50%;right:0;transform:translateY(-50%);
+      z-index:8000;background:#d9a49a;color:#fff;border:none;
+      border-radius:10px 0 0 10px;padding:14px 16px;
+      font-size:14px;font-weight:600;font-family:inherit;
+      cursor:pointer;display:flex;align-items:center;gap:8px;
+      box-shadow:-3px 0 16px rgba(217,164,154,.45);
+      transition:padding .2s,box-shadow .2s;white-space:nowrap;
     }
-    #pc-float-btn:hover {
-      padding-right: 22px;
-      box-shadow: -5px 0 22px rgba(217,164,154,0.6);
-    }
-    #pc-float-btn svg { flex-shrink: 0; }
-    @media(max-width:640px) {
-      #pc-float-btn { font-size: 13px; padding: 12px 13px; }
+    #pc-float-btn:hover{padding-right:22px;box-shadow:-5px 0 22px rgba(217,164,154,.6);}
+    @media(max-width:640px){
+      #pc-qa-box{height:85vh;border-radius:20px 20px 0 0;}
+      #pc-qa-overlay{align-items:flex-end;padding:0;}
+      #pc-float-btn{font-size:13px;padding:12px 13px;}
     }
   `;
   document.head.appendChild(style);
 
+  // Modal HTML
+  const overlay = document.createElement('div');
+  overlay.id = 'pc-qa-overlay';
+  overlay.onclick = function(e){ if(e.target===overlay) closePcQA(); };
+  overlay.innerHTML = `
+    <div id="pc-qa-box">
+      <div id="pc-qa-header">
+        <div id="pc-qa-header-icon">🌸</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;">Pilates Company Lübeck</div>
+          <div style="font-size:11px;opacity:.8;margin-top:1px;">Deine persönliche Beraterin</div>
+        </div>
+        <button id="pc-qa-close" onclick="closePcQA()">✕</button>
+      </div>
+      <div id="pc-qa-msgs"></div>
+      <div id="pc-qa-chips"></div>
+      <div id="pc-qa-input-row">
+        <input id="pc-qa-input" type="text" placeholder="Deine Frage …" autocomplete="off">
+        <button id="pc-qa-send">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  // Floating Button
   const btn = document.createElement('button');
   btn.id = 'pc-float-btn';
-  btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>Frag mich was`;
+  btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>Frag mich was';
   btn.onclick = openPcQA;
   document.body.appendChild(btn);
+
+  // Chat Logic
+  const STARTER = ['Kostenloses Probetraining','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
+  let pcHistory = [], pcCount = 0, pcInit = false;
+
+  function openPcQA() {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (!pcInit) { pcInit = true; initChat(); }
+  }
+  function closePcQA() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.openPcQA = openPcQA;
+  window.closePcQA = closePcQA;
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closePcQA(); });
+
+  function initChat() {
+    addBotMsg('Hallo! Ich bin deine persönliche Beraterin der Pilates Company Lübeck. Ich helfe dir bei Fragen zu Kursen, Preisen, Membership und Probetraining.');
+    setChips(STARTER);
+    document.getElementById('pc-qa-send').onclick = sendMsg;
+    document.getElementById('pc-qa-input').addEventListener('keydown', e => { if(e.key==='Enter') sendMsg(); });
+  }
+
+  function addBotMsg(html) {
+    const msgs = document.getElementById('pc-qa-msgs');
+    const el = document.createElement('div');
+    el.className = 'pc-msg pc-msg-bot';
+    el.innerHTML = html;
+    msgs.appendChild(el);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function addUserMsg(text) {
+    const msgs = document.getElementById('pc-qa-msgs');
+    const el = document.createElement('div');
+    el.className = 'pc-msg pc-msg-user';
+    el.textContent = text;
+    msgs.appendChild(el);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function showTyping() {
+    const msgs = document.getElementById('pc-qa-msgs');
+    const el = document.createElement('div');
+    el.className = 'pc-typing'; el.id = 'pc-typing';
+    el.innerHTML = '<span></span><span></span><span></span>';
+    msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
+  }
+  function hideTyping() { const e = document.getElementById('pc-typing'); if(e) e.remove(); }
+  function setChips(arr) {
+    const ch = document.getElementById('pc-qa-chips');
+    ch.innerHTML = '';
+    arr.forEach(l => {
+      const b = document.createElement('button');
+      b.className = 'pc-chip'; b.textContent = l;
+      b.onclick = () => { document.getElementById('pc-qa-input').value = l; sendMsg(); };
+      ch.appendChild(b);
+    });
+  }
+
+  async function sendMsg() {
+    const inp = document.getElementById('pc-qa-input');
+    const sendBtn = document.getElementById('pc-qa-send');
+    const text = inp.value.trim();
+    if (!text || sendBtn.disabled) return;
+    inp.value = ''; setChips([]); sendBtn.disabled = true;
+    addUserMsg(text);
+    pcHistory.push({ role: 'user', content: text });
+    showTyping();
+    try {
+      const res = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: pcHistory })
+      });
+      const data = await res.json();
+      hideTyping();
+      const reply = data.reply || 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
+      pcHistory.push({ role: 'assistant', content: reply });
+      pcCount++;
+      addBotMsg(reply + '<div class="pc-hint"><a href="probetraining.html">Probetraining anfragen</a> · <a href="tel:045116083019">0451 - 160 830 19</a></div>');
+      if (pcCount >= 8) {
+        const el = document.createElement('div');
+        el.className = 'pc-msg pc-msg-bot';
+        el.innerHTML = 'Du hast viele tolle Fragen gestellt! Komm einfach zu einem kostenlosen Probetraining oder ruf uns an.<div class="pc-cta-row"><a class="pc-cta-btn" href="probetraining.html">Probetraining buchen</a><a class="pc-cta-btn outline" href="tel:045116083019">0451 - 160 830 19</a></div>';
+        document.getElementById('pc-qa-msgs').appendChild(el);
+        pcCount = 0;
+      } else {
+        const l = text.toLowerCase();
+        if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
+        else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Summer Glow 69 €','Matte vs Reformer']);
+        else if (l.match(/preis|kostet|member|abo/)) setChips(['Summer Glow 69 €','5er-Pass 119 €','Wellpass-Zuzahlung']);
+        else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Kursplan ansehen']);
+        else setChips(['Probetraining anfragen','Kursplan ansehen','Membership-Vergleich']);
+      }
+    } catch(e) {
+      hideTyping();
+      addBotMsg('Ein Fehler ist aufgetreten. Ruf uns gerne an: <strong>0451 - 160 830 19</strong>');
+    }
+    sendBtn.disabled = false;
+    document.getElementById('pc-qa-input').focus();
+  }
 })();
