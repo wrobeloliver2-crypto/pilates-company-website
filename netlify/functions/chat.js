@@ -67,6 +67,7 @@ EMPFEHLUNGSLOGIK (für Membership-Empfehlung):
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
+        // Fallback: claude-3-5-haiku-20241022
         max_tokens: 400,
         system: SYSTEM,
         messages: messages
@@ -74,6 +75,14 @@ EMPFEHLUNGSLOGIK (für Membership-Empfehlung):
     });
 
     const data = await response.json();
+    if (!response.ok) {
+      console.error('API Error:', JSON.stringify(data));
+      return {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({ reply: 'API Fehler: ' + (data.error?.message || JSON.stringify(data)) })
+      };
+    }
     const reply = data.content?.[0]?.text || 'Entschuldigung, ich konnte keine Antwort generieren.';
 
     return {
