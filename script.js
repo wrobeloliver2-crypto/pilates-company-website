@@ -428,12 +428,13 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: pcHistory })
       });
-      const data = await res.json();
+      let data;
+      try { data = await res.json(); } catch(jsonErr) { data = { reply: 'Fehler beim Lesen der Antwort.' }; }
       hideTyping();
-      const reply = data.reply || 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
+      const reply = (data && data.reply) ? data.reply : 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
       pcHistory.push({ role: 'assistant', content: reply });
       pcCount++;
-      addBotMsg(reply + '<div class="pc-hint"><a href="probetraining.html">Probetraining anfragen</a> · <a href="tel:045116083019">0451 - 160 830 19</a></div>');
+      const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml + '<div class="pc-hint"><a href="probetraining.html">Probetraining anfragen</a> · <a href="tel:045116083019">0451 - 160 830 19</a></div>');
       if (pcCount >= 8) {
         const el = document.createElement('div');
         el.className = 'pc-msg pc-msg-bot';
