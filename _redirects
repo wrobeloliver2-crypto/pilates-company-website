@@ -1,7 +1,5 @@
 # Redirects von alten URLs (mit trailing slash) zu neuen HTML-Seiten
 /kurse/ /kurse.html 301
-/kurse /kurse.html 301
-/preise/ /preise.html 301
 /preise /preise.html 301
 /trainer/ /trainer.html 301
 /trainer /trainer.html 301
@@ -21,6 +19,10 @@
 /impressum /impressum.html 301
 /datenschutz/ /datenschutz.html 301
 /datenschutz /datenschutz.html 301
+/datenschutzerklaerung/ /datenschutz.html 301
+/datenschutzerklaerung /datenschutz.html 301
+/challenge/ /challenge.html 301
+/challenge /challenge.html 301
 
 # Redirects von alten Single-Page Anchor-Links
 /index.html#kurse /kurse.html 301
