@@ -461,5 +461,5 @@ document.addEventListener('DOMContentLoaded', () => {
     sendBtn.disabled = false;
     document.getElementById('pc-qa-input').focus();
   }
-
+})();
  
