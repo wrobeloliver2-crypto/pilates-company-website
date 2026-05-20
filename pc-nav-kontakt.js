@@ -4,12 +4,16 @@
   document.head.appendChild(s);
   function init() {
     var nav = document.querySelector('.nav-links');
-    if (!nav || nav.querySelector('.nav-kontakt-wrap')) return;
+    if (!nav) return;
+    // nav-cta (Probetraining Buchen) ausblenden
+    var cta = nav.querySelector('.nav-cta');
+    if (cta && cta.parentNode) cta.parentNode.style.display = 'none';
+    if (nav.querySelector('.nav-kontakt-wrap')) return;
     var dl = Array.from(nav.querySelectorAll('li')).find(function(li){var a=li.querySelector('a');return a&&(a.href||'').indexOf('downloads')>-1;});
     if (!dl) return;
     var li = document.createElement('li');
     li.innerHTML = '<div class="nav-kontakt-wrap">'+
-      '<a href="kontakt.html" class="nav-kontakt-btn nav-kontakt-btn--grey">✉ Kontakt</a>'+
+      '<a href="kontakt.html" class="nav-kontakt-btn nav-kontakt-btn--grey">Kontakt</a>'+
       '<a href="probetraining.html" class="nav-kontakt-btn nav-kontakt-btn--rose">Probetraining</a>'+
       '<a href="https://wa.me/491751266117" target="_blank" class="nav-kontakt-btn nav-kontakt-btn--wa">WhatsApp</a>'+
     '</div>';
