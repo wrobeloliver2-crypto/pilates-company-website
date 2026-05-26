@@ -10,6 +10,7 @@
 /downloads.html /downloads 301
 /impressum.html /impressum 301
 /datenschutz.html /datenschutzerklaerung 301
+/datenschutzerklaerung.html /datenschutzerklaerung 301
 /challenge.html /challenge 301
 
 # Trailing slash Redirects zu Clean-URLs
@@ -25,6 +26,7 @@
 /impressum/ /impressum 301
 /datenschutzerklaerung/ /datenschutzerklaerung 301
 /challenge/ /challenge 301
+/datenschutz/ /datenschutzerklaerung 301
 
 # Redirects von alten Single-Page Anchor-Links
 /index.html#kurse /kurse 301
