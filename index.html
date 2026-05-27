@@ -115,17 +115,24 @@
   .mobile-menu {
     display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
     background: var(--cream); z-index: 99;
-    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
     overflow-y: auto; -webkit-overflow-scrolling: touch;
-    padding: 4rem 1rem 2rem;
+    padding: 2rem 1rem;
   }
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
-    font-family: var(--heading); font-size: 2rem; font-weight: 300;
+    font-family: var(--heading); font-size: 1.3rem; font-weight: 300;
     color: var(--text); text-decoration: none;
-    transition: color .2s;
+    transition: color .2s; text-align: center; width: 100%;
   }
   .mobile-menu a:hover { color: var(--rose-dark); }
+  .mobile-menu a[href="probetraining.html"] {
+    background: var(--rose); color: #fff !important;
+    padding: .6rem 1.5rem; border-radius: 100px;
+    font-size: 1rem; font-weight: 500;
+    display: block; text-align: center; width: auto;
+    margin-top: .5rem;
+  }
 
   /* ── PAGES ── */
   .page { display: none; min-height: 100vh; padding-top: var(--nav-h); }
@@ -1098,7 +1105,7 @@
   <a href="challenge.html">VIDEOS</a>
   <a href="gutschein.html">GUTSCHEIN</a>
   <a href="downloads.html">DOWNLOADS</a>
-  <a href="probetraining.html" style="color: var(--rose); font-weight: 500;">PROBETRAINING BUCHEN</a>
+  <a href="probetraining.html">PROBETRAINING BUCHEN</a>
   <a href="kontakt.html">KONTAKT</a>
   <a href="https://www.instagram.com/my.pilatescompany" target="_blank">INSTAGRAM</a>
 </div>
