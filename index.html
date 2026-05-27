@@ -241,6 +241,44 @@
     color: var(--text); margin-bottom: .2rem;
   }
   .hero-why-item p { font-size: .85rem; color: var(--text-mid); line-height: 1.55; margin: 0; }
+  /* ── HERO SLIDER ── */
+  .hero-slider {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--rose-light);
+  }
+  .hero-slider-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .hero-slide.active { opacity: 1; }
+  .hero-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-slide-dots {
+    position: absolute;
+    bottom: 1rem; left: 50%; transform: translateX(-50%);
+    display: flex; gap: .5rem; z-index: 2;
+  }
+  .hero-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(255,255,255,.5);
+    border: none; cursor: pointer; padding: 0;
+    transition: background .3s, transform .3s;
+  }
+  .hero-dot.active { background: #fff; transform: scale(1.3); }
+
 
 
   .hqc-inner {
@@ -1050,37 +1088,26 @@
         <a class="btn btn-outline" href="kurse.html">Kursplan ansehen</a>
       </div>
     </div>
-    <div class="hero-why">
-      <h4>Warum Pilates Company</h4>
-      <div class="hero-why-items">
-        <div class="hero-why-item">
-          <div class="hero-why-num">10+</div>
-          <div>
-            <strong>Erfahrene Trainerinnen</strong>
-            <p>Zertifizierte Expertinnen begleiten dich persönlich auf deinem Weg.</p>
-          </div>
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slider-track">
+        <div class="hero-slide active">
+          <img src="kurs-pilates.jpg" alt="Classic Pilates – Pilates Company Lübeck">
         </div>
-        <div class="hero-why-item">
-          <div class="hero-why-num">30+</div>
-          <div>
-            <strong>Kurse pro Woche</strong>
-            <p>Ein vollgepackter Wochenplan – morgens, mittags, abends. Du findest immer einen Platz.</p>
-          </div>
+        <div class="hero-slide">
+          <img src="Hanna_Reformer.png" alt="Reformer Pilates – Pilates Company Lübeck" style="object-position:center 45%;">
         </div>
-        <div class="hero-why-item">
-          <div class="hero-why-num">5</div>
-          <div>
-            <strong>Kursformate</strong>
-            <p>Classic Pilates, Reformer, Yoga, Aerial Yoga – für jeden Körper das Passende.</p>
-          </div>
+        <div class="hero-slide">
+          <img src="Bild_yoga_hanna.png" alt="Yoga – Pilates Company Lübeck" style="object-position:center 65%;">
         </div>
-        <div class="hero-why-item">
-          <div class="hero-why-num">1:5</div>
-          <div>
-            <strong>Trainer-Teilnehmer-Verhältnis</strong>
-            <p>Reformer max. 1:5–1:8 · Aerial max. 1:7 · Pilates & Yoga Matte max. 1:10</p>
-          </div>
+        <div class="hero-slide">
+          <img src="Gemini_Generated_Image_8zhhzf8zhhzf8zhh.png" alt="Aerial Yoga – Pilates Company Lübeck" style="object-fit:contain; object-position:center; background:#f5ede9;">
         </div>
+      </div>
+      <div class="hero-slide-dots">
+        <button class="hero-dot active" onclick="goToSlide(0)"></button>
+        <button class="hero-dot" onclick="goToSlide(1)"></button>
+        <button class="hero-dot" onclick="goToSlide(2)"></button>
+        <button class="hero-dot" onclick="goToSlide(3)"></button>
       </div>
     </div>
   </div>
