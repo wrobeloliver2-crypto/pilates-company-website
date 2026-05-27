@@ -1,3 +1,6 @@
+# www-Canonical: alle non-www auf www umleiten
+https://pilatescompany.de/* https://www.pilatescompany.de/:splat 301!
+
 # Redirects von .html zu Clean-URLs (SEO-korrekt)
 /kurse.html /kurse 301
 /preise.html /preise 301
