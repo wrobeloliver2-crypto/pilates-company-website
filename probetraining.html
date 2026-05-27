@@ -23,18 +23,12 @@
     flex-shrink: 0;
     width: 180px;
   }
-  @media (max-width: 640px) {
-    .probe-intro-flex {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .probe-intro-flex-video {
-      width: 100%;
-      max-width: 260px;
-      align-self: center;
+  /* HubSpot Formular + probe-layout: auf Mobile einspaltigen erzwingen */
+  @media (max-width: 900px) {
+    .probe-layout {
+      grid-template-columns: 1fr !important;
     }
   }
-  /* HubSpot Formular: auf Mobile einspaltigen erzwingen */
   @media (max-width: 640px) {
     #hubspot-form-wrapper .hs-form fieldset {
       max-width: 100% !important;
