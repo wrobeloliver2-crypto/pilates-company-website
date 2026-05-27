@@ -37,4 +37,5 @@
 /index.html#studio-news /studio-news 301
 /index.html#kontakt /kontakt 301
 
-/wellpass  /wellpass.html  200
+/wellpass.html /wellpass 301
+/wellpass/ /wellpass 301
