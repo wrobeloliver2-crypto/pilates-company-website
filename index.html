@@ -249,9 +249,6 @@
     aspect-ratio: 4/3;
     background: var(--rose-light);
   }
-  @media (max-width: 640px) {
-    .hero-slider { aspect-ratio: 3/4; }
-  }
   .hero-slide {
     position: absolute;
     inset: 0;
@@ -1119,33 +1116,8 @@
     </div>
     <div class="hero-slider" id="heroSlider">
 
-      <!-- Slide 0: Stats -->
-      <div class="hero-slide hero-slide-stat active">
-        <div class="hero-slide-stat">
-          <h4>Warum Pilates Company</h4>
-          <div class="slide-stat-items">
-            <div class="slide-stat-item">
-              <div class="slide-stat-num">10+</div>
-              <div><strong>Erfahrene Trainerinnen</strong><p>Zertifizierte Expertinnen begleiten dich persönlich auf deinem Weg.</p></div>
-            </div>
-            <div class="slide-stat-item">
-              <div class="slide-stat-num">30+</div>
-              <div><strong>Kurse pro Woche</strong><p>Morgens, mittags, abends – du findest immer einen Platz.</p></div>
-            </div>
-            <div class="slide-stat-item">
-              <div class="slide-stat-num">5</div>
-              <div><strong>Kursformate</strong><p>Classic Pilates, Reformer, Yoga, Aerial Yoga & mehr.</p></div>
-            </div>
-            <div class="slide-stat-item">
-              <div class="slide-stat-num">1:5</div>
-              <div><strong>Trainer-Teilnehmer-Verhältnis</strong><p>Reformer max. 1:5–1:8 · Aerial max. 1:7 · Matte max. 1:10</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Slide 1: Pilates -->
-      <div class="hero-slide hero-slide-img">
+      <div class="hero-slide hero-slide-img active">
         <img src="kurs-pilates.jpg" alt="Classic Pilates – Pilates Company Lübeck" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
 
@@ -1163,7 +1135,29 @@
         <button class="hero-dot active" onclick="heroGoTo(0)"></button>
         <button class="hero-dot" onclick="heroGoTo(1)"></button>
         <button class="hero-dot" onclick="heroGoTo(2)"></button>
-        <button class="hero-dot" onclick="heroGoTo(3)"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WARUM PILATES COMPANY – statisch unter der Slideshow -->
+  <div style="background:var(--rose-light);border-radius:20px;border:1px solid var(--border);padding:2.5rem;margin-top:2rem;">
+    <h4 style="margin-bottom:1.5rem;">Warum Pilates Company</h4>
+    <div class="slide-stat-items">
+      <div class="slide-stat-item">
+        <div class="slide-stat-num">10+</div>
+        <div><strong>Erfahrene Trainerinnen</strong><p>Zertifizierte Expertinnen begleiten dich persönlich auf deinem Weg.</p></div>
+      </div>
+      <div class="slide-stat-item">
+        <div class="slide-stat-num">30+</div>
+        <div><strong>Kurse pro Woche</strong><p>Morgens, mittags, abends – du findest immer einen Platz.</p></div>
+      </div>
+      <div class="slide-stat-item">
+        <div class="slide-stat-num">5</div>
+        <div><strong>Kursformate</strong><p>Classic Pilates, Reformer, Yoga, Aerial Yoga & mehr.</p></div>
+      </div>
+      <div class="slide-stat-item">
+        <div class="slide-stat-num">1:5</div>
+        <div><strong>Trainer-Teilnehmer-Verhältnis</strong><p>Reformer max. 1:5–1:8 · Aerial max. 1:7 · Matte max. 1:10</p></div>
       </div>
     </div>
   </div>
