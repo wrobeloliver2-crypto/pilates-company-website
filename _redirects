@@ -1,4 +1,4 @@
-# Redirects von .html zu Clean-URLs (SEO-korrekt)
+# SEO-Fix: .html-URLs auf Clean-URLs redirecten
 /kurse.html /kurse 301
 /preise.html /preise 301
 /trainer.html /trainer 301
@@ -12,21 +12,6 @@
 /datenschutz.html /datenschutzerklaerung 301
 /datenschutzerklaerung.html /datenschutzerklaerung 301
 /challenge.html /challenge 301
-
-# Trailing slash Redirects zu Clean-URLs
-/kurse/ /kurse 301
-/preise/ /preise 301
-/trainer/ /trainer 301
-/probetraining/ /probetraining 301
-/ausbildung/ /ausbildung 301
-/studio-news/ /studio-news 301
-/kontakt/ /kontakt 301
-/gutschein/ /gutschein 301
-/downloads/ /downloads 301
-/impressum/ /impressum 301
-/datenschutzerklaerung/ /datenschutzerklaerung 301
-/challenge/ /challenge 301
-/datenschutz/ /datenschutzerklaerung 301
 
 # Redirects von alten Single-Page Anchor-Links
 /index.html#kurse /kurse 301
