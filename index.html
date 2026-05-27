@@ -249,35 +249,61 @@
     aspect-ratio: 4/3;
     background: var(--rose-light);
   }
-  .hero-slider-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
   .hero-slide {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1.2s ease-in-out;
+    pointer-events: none;
   }
-  .hero-slide.active { opacity: 1; }
-  .hero-slide img {
+  .hero-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .hero-slide-img img {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
   }
+  .hero-slide-stat {
+    width: 100%; height: 100%;
+    background: var(--rose-light);
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+  }
+  .hero-slide-stat h4 {
+    font-family: var(--heading); font-size: 1.1rem;
+    font-weight: 400; color: var(--text-mid);
+    margin-bottom: 1.5rem; letter-spacing: .02em;
+  }
+  .slide-stat-items { display: flex; flex-direction: column; gap: 0; }
+  .slide-stat-item {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(217,164,154,.3);
+  }
+  .slide-stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .slide-stat-item:first-child { padding-top: 0; }
+  .slide-stat-num {
+    font-family: var(--heading); font-size: 2rem;
+    color: var(--rose-dark); font-weight: 300;
+    line-height: 1; min-width: 3rem; text-align: right; flex-shrink: 0;
+  }
+  .slide-stat-item strong { display: block; font-size: .9rem; font-weight: 500; color: var(--text); margin-bottom: .15rem; }
+  .slide-stat-item p { font-size: .8rem; color: var(--text-mid); line-height: 1.5; margin: 0; }
   .hero-slide-dots {
     position: absolute;
     bottom: 1rem; left: 50%; transform: translateX(-50%);
-    display: flex; gap: .5rem; z-index: 2;
+    display: flex; gap: .5rem; z-index: 10;
   }
   .hero-dot {
     width: 7px; height: 7px; border-radius: 50%;
-    background: rgba(255,255,255,.5);
+    background: rgba(176,121,110,.3);
     border: none; cursor: pointer; padding: 0;
     transition: background .3s, transform .3s;
   }
-  .hero-dot.active { background: #fff; transform: scale(1.3); }
+  .hero-dot.active { background: var(--rose-dark); transform: scale(1.3); }
 
 
 
@@ -1089,25 +1115,58 @@
       </div>
     </div>
     <div class="hero-slider" id="heroSlider">
-      <div class="hero-slider-track">
-        <div class="hero-slide active">
-          <img src="kurs-pilates.jpg" alt="Classic Pilates – Pilates Company Lübeck">
-        </div>
-        <div class="hero-slide">
-          <img src="Hanna_Reformer.png" alt="Reformer Pilates – Pilates Company Lübeck" style="object-position:center 45%;">
-        </div>
-        <div class="hero-slide">
-          <img src="Bild_yoga_hanna.png" alt="Yoga – Pilates Company Lübeck" style="object-position:center 65%;">
-        </div>
-        <div class="hero-slide">
-          <img src="Gemini_Generated_Image_8zhhzf8zhhzf8zhh.png" alt="Aerial Yoga – Pilates Company Lübeck" style="object-fit:contain; object-position:center; background:#f5ede9;">
+
+      <!-- Slide 0: Stats -->
+      <div class="hero-slide hero-slide-stat active">
+        <div class="hero-slide-stat">
+          <h4>Warum Pilates Company</h4>
+          <div class="slide-stat-items">
+            <div class="slide-stat-item">
+              <div class="slide-stat-num">10+</div>
+              <div><strong>Erfahrene Trainerinnen</strong><p>Zertifizierte Expertinnen begleiten dich persönlich auf deinem Weg.</p></div>
+            </div>
+            <div class="slide-stat-item">
+              <div class="slide-stat-num">30+</div>
+              <div><strong>Kurse pro Woche</strong><p>Morgens, mittags, abends – du findest immer einen Platz.</p></div>
+            </div>
+            <div class="slide-stat-item">
+              <div class="slide-stat-num">5</div>
+              <div><strong>Kursformate</strong><p>Classic Pilates, Reformer, Yoga, Aerial Yoga & mehr.</p></div>
+            </div>
+            <div class="slide-stat-item">
+              <div class="slide-stat-num">1:5</div>
+              <div><strong>Trainer-Teilnehmer-Verhältnis</strong><p>Reformer max. 1:5–1:8 · Aerial max. 1:7 · Matte max. 1:10</p></div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Slide 1: Pilates -->
+      <div class="hero-slide hero-slide-img">
+        <img src="kurs-pilates.jpg" alt="Classic Pilates – Pilates Company Lübeck" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;">
+      </div>
+
+      <!-- Slide 2: Reformer -->
+      <div class="hero-slide hero-slide-img">
+        <img src="Hanna_Reformer.png" alt="Reformer Pilates – Pilates Company Lübeck" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;">
+      </div>
+
+      <!-- Slide 3: Yoga -->
+      <div class="hero-slide hero-slide-img">
+        <img src="Bild_yoga_hanna.png" alt="Yoga – Pilates Company Lübeck" style="width:100%;height:100%;object-fit:cover;object-position:center 65%;display:block;">
+      </div>
+
+      <!-- Slide 4: Aerial -->
+      <div class="hero-slide hero-slide-img">
+        <img src="Gemini_Generated_Image_8zhhzf8zhhzf8zhh.png" alt="Aerial Yoga – Pilates Company Lübeck" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#f5ede9;">
+      </div>
+
       <div class="hero-slide-dots">
-        <button class="hero-dot active" onclick="goToSlide(0)"></button>
-        <button class="hero-dot" onclick="goToSlide(1)"></button>
-        <button class="hero-dot" onclick="goToSlide(2)"></button>
-        <button class="hero-dot" onclick="goToSlide(3)"></button>
+        <button class="hero-dot active" onclick="heroGoTo(0)"></button>
+        <button class="hero-dot" onclick="heroGoTo(1)"></button>
+        <button class="hero-dot" onclick="heroGoTo(2)"></button>
+        <button class="hero-dot" onclick="heroGoTo(3)"></button>
+        <button class="hero-dot" onclick="heroGoTo(4)"></button>
       </div>
     </div>
   </div>
@@ -1355,6 +1414,35 @@
 
 
 
+
+
+<script>
+(function() {
+  var slides = document.querySelectorAll('#heroSlider .hero-slide');
+  var dots   = document.querySelectorAll('#heroSlider .hero-dot');
+  var cur    = 0;
+  var timer  = null;
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+
+  function next() { goTo(cur + 1); }
+
+  function start() {
+    clearInterval(timer);
+    timer = setInterval(next, 5000);
+  }
+
+  window.heroGoTo = function(n) { goTo(n); start(); };
+
+  start();
+})();
+</script>
 
 <!-- WhatsApp Button -->
 <div style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:8500;font-family:'DM Sans',system-ui,sans-serif;">
