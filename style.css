@@ -842,15 +842,10 @@
     .hero-why { order: -1; }
     .probe-layout, .gutschein-layout, .kontakt-layout { grid-template-columns: 1fr; }
     .probe-intro-layout { grid-template-columns: 1fr; gap: 2rem; }
-  /* Mobile: Probetraining Video kleiner */
-  .probe-intro-video div {
-    max-width: 200px !important;
-  }
-  
-  /* Mobile: Logo größer */
-  .logo img {
-    height: 80px !important;
-  }
+    /* Mobile: Probetraining Video kleiner */
+    .probe-intro-video div {
+      max-width: 200px !important;
+    }
 
     .probe-cta-box, .gutschein-card-preview { position: static; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
