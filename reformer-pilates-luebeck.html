@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reformer Pilates Lübeck & Stockelsdorf | Pilates Company – Jetzt buchen</title>
+<meta name="description" content="Reformer Pilates in Lübeck & Stockelsdorf – gelenkschonendes Ganzkörpertraining am Reformer-Gerät. Kleine Gruppen, zertifizierte Trainerinnen. Jetzt Probetraining buchen!">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.pilatescompany.de/reformer-pilates-luebeck/">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Reformer Pilates Lübeck",
+  "description": "Reformer Pilates in Stockelsdorf bei Lübeck. Gelenkschonendes Ganzkörpertraining am Reformer-Gerät in kleinen Gruppen mit zertifizierten Trainerinnen.",
+  "provider": {
+    "@type": "SportsActivityLocation",
+    "name": "Pilates Company Lübeck",
+    "url": "https://www.pilatescompany.de",
+    "telephone": "+494511608301",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Segeberger Str. 1",
+      "addressLocality": "Stockelsdorf",
+      "postalCode": "23617",
+      "addressCountry": "DE"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Kostenloses Probetraining Reformer Pilates"
+  },
+  "areaServed": ["Lübeck", "Stockelsdorf", "Bad Schwartau", "Ratekau"],
+  "url": "https://www.pilatescompany.de/reformer-pilates-luebeck/"
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #d9a49a;
+    --rose-light: #f5ede9;
+    --rose-dark:  #b0796e;
+    --cream:      #faf7f4;
+    --warm-gray:  #8a847d;
+    --text:       #2c2825;
+    --text-mid:   #5a5450;
+    --border:     rgba(44,40,37,.1);
+    --sans:       'DM Sans', system-ui, sans-serif;
+    --heading:    'Playfair Display', serif;
+    --radius:     12px;
+    --nav-h:      136px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    padding-top: var(--nav-h);
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 { font-family: var(--heading); font-weight: 400; }
+  h1 { font-family: var(--heading); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
+  h2 { font-family: var(--heading); font-weight: 300; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
+  h3 { font-family: var(--heading); font-weight: 400; font-size: 1.5rem; line-height: 1.3; }
+  h4 { font-family: var(--heading); font-weight: 500; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-dark); }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(250,247,244,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; width: 100%;
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-links { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
+  .nav-links a {
+    font-size: .78rem; font-weight: 400; letter-spacing: .03em;
+    text-decoration: none; color: var(--text-mid);
+    text-transform: uppercase; transition: color .2s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--rose-dark); }
+  .nav-cta {
+    background: var(--rose); color: #fff !important;
+    padding: .45rem 1rem; border-radius: 100px;
+    font-weight: 500 !important; white-space: nowrap;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--rose-dark) !important; }
+  .nav-instagram { display: flex; align-items: center; color: var(--text-mid) !important; transition: color .2s !important; padding: 0 !important; }
+  .nav-instagram:hover { color: var(--rose-dark) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+  .mobile-menu {
+    display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: var(--cream); z-index: 99;
+    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    overflow-y: auto; padding: 4rem 1rem 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--heading); font-size: 2rem; font-weight: 300; color: var(--text); text-decoration: none; transition: color .2s; }
+  .mobile-menu a:hover { color: var(--rose-dark); }
+
+  /* ── SHARED ── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 5rem 0; }
+
+  .tag {
+    display: inline-block;
+    font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--rose-dark); background: var(--rose-light);
+    padding: .3rem .75rem; border-radius: 100px; margin-bottom: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: .75rem 2rem; border-radius: 100px;
+    font-family: var(--sans); font-size: .875rem; font-weight: 500;
+    letter-spacing: .04em; text-decoration: none; cursor: pointer;
+    transition: .2s; border: none;
+  }
+  .btn-primary { background: var(--rose); color: #fff; }
+  .btn-primary:hover { background: var(--rose-dark); }
+  .btn-outline { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+  .btn-outline:hover { border-color: var(--rose); color: var(--rose-dark); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 80vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 4rem;
+    padding: 5rem 2rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .hero-text { max-width: 560px; }
+  .hero-text p { color: var(--text-mid); margin: 1.25rem 0 2rem; font-size: 1.05rem; max-width: 480px; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-image {
+    border-radius: 20px; overflow: hidden;
+    aspect-ratio: 4/5; position: relative;
+  }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+
+  /* ── STATS BAR ── */
+  .stats-bar { background: var(--rose); padding: 2rem 0; }
+  .stats-grid { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .stat-item { flex: 1; min-width: 140px; text-align: center; padding: 1rem 2rem; }
+  .stat-num { font-family: var(--sans); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: #fff; line-height: 1; }
+  .stat-label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-top: .4rem; }
+  .stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,.3); flex-shrink: 0; }
+
+  /* ── WHAT IS REFORMER ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .two-col-text { }
+  .two-col-text p { color: var(--text-mid); margin: 1rem 0; }
+  .two-col-img { border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; }
+  .two-col-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── BENEFITS ── */
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .benefit-card {
+    background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 2rem; transition: box-shadow .2s;
+  }
+  .benefit-card:hover { box-shadow: 0 4px 20px rgba(44,40,37,.08); }
+  .benefit-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .benefit-card h3 { font-size: 1.1rem; margin-bottom: .5rem; }
+  .benefit-card p { color: var(--text-mid); font-size: .9rem; }
+
+  /* ── FOR WHOM ── */
+  .target-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .target-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .target-check { color: var(--rose-dark); font-size: 1.2rem; flex-shrink: 0; margin-top: .15rem; }
+  .target-item p { color: var(--text-mid); font-size: .9rem; margin-top: .25rem; }
+
+  /* ── FAQ ── */
+  .faq-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .faq-q {
+    padding: 1.25rem 1.5rem; font-weight: 500; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    background: #fff; transition: background .2s;
+  }
+  .faq-q:hover { background: var(--rose-light); }
+  .faq-q .arrow { transition: transform .3s; font-size: 1.1rem; color: var(--rose-dark); flex-shrink: 0; margin-left: 1rem; }
+  .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+  .faq-a { display: none; padding: 0 1.5rem 1.25rem; background: #fff; color: var(--text-mid); font-size: .95rem; }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── CTA ── */
+  .cta-section { background: var(--rose-light); border-radius: 20px; padding: 4rem; text-align: center; }
+  .cta-section h2 { margin-bottom: 1rem; }
+  .cta-section p { color: var(--text-mid); max-width: 480px; margin: 0 auto 2rem; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb { font-size: .8rem; color: var(--warm-gray); padding: 1rem 0 0; }
+  .breadcrumb a { color: var(--warm-gray); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--rose-dark); }
+  .breadcrumb span { margin: 0 .4rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; min-height: auto; padding: 3rem 1.5rem; }
+    .hero-image { max-width: 480px; }
+    .two-col { grid-template-columns: 1fr; gap: 2rem; }
+    .two-col-img { max-width: 480px; }
+    .cta-section { padding: 2.5rem 1.5rem; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .stat-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html" style="display:flex; align-items:center;">
+      <img src="logo.png" alt="Pilates Company Lübeck" style="height:70px; width:auto; display:block;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="kurse.html" class="active">KURSE</a></li>
+      <li><a href="preise.html">PREISE</a></li>
+      <li><a href="trainer.html">TRAINER</a></li>
+      <li><a href="ausbildung.html">AUSBILDUNG</a></li>
+      <li><a href="studio-news.html">NEWS</a></li>
+      <li><a href="gutschein.html">GUTSCHEIN</a></li>
+      <li><a href="/wellpass">WELLPASS</a></li>
+      <li><a href="downloads.html">DOWNLOADS</a></li>
+      <li><a href="probetraining.html" class="nav-cta">PROBETRAINING BUCHEN</a></li>
+      <li>
+        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="kurse.html">KURSE</a>
+  <a href="preise.html">PREISE</a>
+  <a href="trainer.html">TRAINER</a>
+  <a href="ausbildung.html">AUSBILDUNG</a>
+  <a href="studio-news.html">NEWS</a>
+  <a href="gutschein.html">GUTSCHEIN</a>
+  <a href="downloads.html">DOWNLOADS</a>
+  <a href="/wellpass">WELLPASS</a>
+  <a href="probetraining.html" style="color: var(--rose); font-weight: 500;">PROBETRAINING BUCHEN</a>
+  <a href="kontakt.html">KONTAKT</a>
+  <a href="https://www.instagram.com/my.pilatescompany" target="_blank">INSTAGRAM</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="kurse.html">Kurse</a>
+      <span>›</span>
+      Reformer Pilates Lübeck
+    </nav>
+  </div>
+
+  <section style="padding: 0;">
+    <div class="hero">
+      <div class="hero-text">
+        <span class="tag">Studio Lübeck · Stockelsdorf</span>
+        <h1>Reformer Pilates in Lübeck</h1>
+        <p>Gelenkschonendes Ganzkörpertraining am Reformer-Gerät – in kleinen Gruppen, mit zertifizierten Trainerinnen, im Herzen von Stockelsdorf bei Lübeck. Für Einsteiger und Fortgeschrittene.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="probetraining.html">Kostenloses Probetraining</a>
+          <a class="btn btn-outline" href="kurse.html">Zum Kursplan</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="Hanna_Reformer.png" alt="Reformer Pilates Lübeck – Pilates Company Stockelsdorf" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">max. 8</div>
+        <div class="stat-label">Personen pro Kurs</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Zertifizierte Trainerinnen</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Kurse pro Woche</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">0 €</div>
+        <div class="stat-label">Probetraining</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAS IST REFORMER PILATES -->
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <div class="two-col">
+        <div class="two-col-text">
+          <span class="tag">Was ist Reformer Pilates?</span>
+          <h2>Training am Reformer-Gerät</h2>
+          <p>Der Pilates-Reformer ist ein Trainingsgerät mit einem verschiebbaren Gleitbrett, Federn und Riemen. Durch den variablen Federwiderstand lässt sich die Intensität präzise anpassen – ideal für Rehabilitation, Kraftaufbau und Körperformung.</p>
+          <p>Im Gegensatz zum klassischen Matten-Pilates ermöglicht der Reformer eine deutlich größere Übungsvielfalt und trainiert Kraft, Flexibilität und Körperwahrnehmung gleichzeitig. Dein gesamter Körper wird in jeder Einheit gefordert – gelenkschonend und hocheffizient.</p>
+          <p>In unserem Studio in Stockelsdorf bei Lübeck bieten wir Reformer Pilates in kleinen Gruppen an – maximal 8 Teilnehmerinnen pro Kurs, damit jede Teilnehmerin die Aufmerksamkeit bekommt, die sie verdient.</p>
+          <a href="probetraining.html" class="btn btn-primary" style="margin-top: 1.5rem;">Jetzt Probetraining buchen</a>
+        </div>
+        <div class="two-col-img">
+          <img src="studio-reformer.jpg" alt="Reformer Gerät Pilates Company Lübeck Stockelsdorf" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VORTEILE -->
+  <section class="section" style="background: var(--rose-light);">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <span class="tag">Deine Vorteile</span>
+        <h2>Warum Reformer Pilates?</h2>
+        <p style="color: var(--text-mid); margin-top: .75rem;">Reformer Pilates ist mehr als Training – es ist eine Investition in deinen Körper.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🦴</div>
+          <h3>Gelenkschonend</h3>
+          <p>Der federnde Widerstand des Reformers schont Gelenke und Wirbelsäule. Ideal bei Rückenproblemen, nach Verletzungen oder in der Rehabilitation.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💪</div>
+          <h3>Ganzkörper-Kräftigung</h3>
+          <p>Jede Reformer-Einheit trainiert Core, Beine, Arme und Rücken in einem. Effektiver und ausgewogener als isoliertes Krafttraining.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Für alle Level</h3>
+          <p>Ob Anfänger oder Fortgeschrittene – der Federwiderstand lässt sich stufenlos anpassen. Wir starten dort, wo du gerade bist.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🧘</div>
+          <h3>Haltung & Körpergefühl</h3>
+          <p>Reformer Pilates verbessert messbar die Körperhaltung, schärft die Körperwahrnehmung und reduziert chronische Verspannungen.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">👥</div>
+          <h3>Kleine Gruppen</h3>
+          <p>Maximal 8 Personen pro Kurs in Lübeck & Stockelsdorf. Unsere Trainerinnen können jeden Kursplan individuell begleiten.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📍</div>
+          <h3>Zentral in der Region</h3>
+          <p>Unser Studio liegt in Stockelsdorf – direkt an der Grenze zu Lübeck, gut erreichbar aus Bad Schwartau, Ratekau und dem gesamten Lübecker Umland.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FÜR WEN -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="tag">Für wen ist es geeignet?</span>
+          <h2>Reformer Pilates ist für dich, wenn…</h2>
+          <div class="target-grid" style="grid-template-columns: 1fr;">
+            <div class="target-item">
+              <span class="target-check">✓</span>
+              <div>
+                <strong>Du Rückenprobleme oder Verspannungen hast</strong>
+                <p>Reformer Pilates stärkt die Rumpfmuskulatur und entlastet die Wirbelsäule – viele Ärzte empfehlen es aktiv.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <span class="target-check">✓</span>
+              <div>
+                <strong>Du nach einer Verletzung oder OP wieder trainieren möchtest</strong>
+                <p>Der variable Federwiderstand macht schrittweise Rehabilitation möglich – ohne Überlastung.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <span class="target-check">✓</span>
+              <div>
+                <strong>Du deinen Körper effizient und nachhaltig kräftigen willst</strong>
+                <p>Reformer Pilates bietet in 50 Minuten ein vollständiges Ganzkörpertraining.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <span class="target-check">✓</span>
+              <div>
+                <strong>Du absoluter Anfänger bist</strong>
+                <p>Kein Vorwissen nötig – unsere Trainerinnen begleiten dich vom ersten Tag an persönlich.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="two-col-img" style="aspect-ratio: 4/5;">
+          <img src="kurs-pilates.jpg" alt="Reformer Pilates Kurs Lübeck Stockelsdorf" loading="lazy" style="object-position: center top;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: #fff;">
+    <div class="container" style="max-width: 800px;">
+      <div style="text-align: center; margin-bottom: 1rem;">
+        <span class="tag">Häufige Fragen</span>
+        <h2>FAQ – Reformer Pilates Lübeck</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Was kostet Reformer Pilates bei der Pilates Company Lübeck?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Du kannst mit einem kostenlosen Probetraining starten – ganz ohne Verpflichtung. Danach bieten wir verschiedene Mitgliedschaftsoptionen: Eine Reformer-Mitgliedschaft startet ab 89 €/Monat mit 4 Credits. Alle Preise findest du auf unserer <a href="preise.html" style="color: var(--rose-dark);">Preisseite</a>.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Brauche ich Vorkenntnisse für Reformer Pilates?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Nein – überhaupt nicht. Reformer Pilates bei uns in Stockelsdorf ist für absolute Anfänger genauso geeignet wie für erfahrene Sportler. Unsere zertifizierten Trainerinnen erklären alles Schritt für Schritt und passen die Übungen individuell an.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Wie viele Personen sind in einem Reformer-Kurs?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Maximal 8 Personen pro Reformer-Kurs. Das ist uns wichtig – so kann unsere Trainerin auf jeden einzelnen eingehen, Korrekturen geben und sicherstellen, dass du die Übungen richtig ausführst.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Ist Reformer Pilates auch bei Rückenproblemen geeignet?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Ja – Reformer Pilates gilt sogar als besonders rückenfreundlich. Die Federmechanik des Reformers ermöglicht gelenkschonendes Training, das die Rumpfmuskulatur stärkt und die Wirbelsäule entlastet. Viele unserer Kundinnen kommen gezielt wegen Rückenproblemen. Bitte informiere deine Trainerin beim ersten Termin über Vorerkrankungen.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Wo genau liegt das Studio? Bin ich aus Lübeck gut erreichbar?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Wir befinden uns in der Segeberger Str. 1, 23617 Stockelsdorf – direkt an der Stadtgrenze zu Lübeck. Mit dem Auto in wenigen Minuten erreichbar aus Lübeck, Bad Schwartau und Ratekau. Parkplätze sind vorhanden.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Kann ich Reformer Pilates über Wellpass oder EGYM Wellpass buchen?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Ja! Wir sind Wellpass-Partner. Du kannst ausgewählte Reformer-Kurse über dein Wellpass-Guthaben buchen. Weitere Infos auf unserer <a href="/wellpass" style="color: var(--rose-dark);">Wellpass-Seite</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <span class="tag">Jetzt starten</span>
+        <h2>Dein erstes Reformer Pilates in Lübeck</h2>
+        <p>Starte mit einem kostenlosen Probetraining – ohne Verpflichtung, ohne Mitgliedschaft. Einfach anmelden und erleben.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="probetraining.html">Kostenloses Probetraining</a>
+          <a class="btn btn-outline" href="kontakt.html">Fragen? Schreib uns</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: .85rem; color: var(--warm-gray);">📍 Segeberger Str. 1 · 23617 Stockelsdorf bei Lübeck · <a href="tel:+4945116083019" style="color: var(--rose-dark); text-decoration: none;">0451 - 160 830 19</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="background: var(--text); color: white; padding: 4rem 0 2rem;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h4>
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8;">
+          Segeberger Str. 1<br>23617 Stockelsdorf<br><br>
+          <strong>Telefon:</strong> <a href="tel:+4945116083019" style="color: var(--rose); text-decoration: none;">0451 - 160 830 19</a><br>
+          <strong>Email:</strong> <a href="mailto:info@pilatescompany.de" style="color: var(--rose); text-decoration: none;">info@pilatescompany.de</a>
+        </p>
+      </div>
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+          <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a></li>
+          <li><a href="kurse.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Kurse</a></li>
+          <li><a href="preise.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Preise</a></li>
+          <li><a href="trainer.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Trainer</a></li>
+          <li><a href="probetraining.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Probetraining</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Reformer Pilates</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+          <li><a href="reformer-pilates-luebeck.html" style="color: var(--rose); text-decoration: none;">Reformer Pilates Lübeck</a></li>
+          <li><a href="/wellpass" style="color: rgba(255,255,255,0.8); text-decoration: none;">Wellpass</a></li>
+          <li><a href="gutschein.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
+          <li><a href="kontakt.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+          <li><a href="impressum.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Impressum</a></li>
+          <li><a href="datenschutz.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">
+        © 2026 Pilates Company Lübeck. Alle Rechte vorbehalten. |
+        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" style="color: var(--rose); text-decoration: none;">Instagram</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleFaq(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
