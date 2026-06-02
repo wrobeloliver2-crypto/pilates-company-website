@@ -1507,7 +1507,7 @@
     @media (max-width: 640px) {
       #mobileStickyCta {
         display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-        position: fixed; bottom: 0; left: 0; right: 0; z-index: 9990;
+        position: fixed; bottom: 0; left: 0; right: 0; z-index: 8500;
         background: rgba(250,247,244,.92); backdrop-filter: blur(10px);
         border-top: 1px solid var(--border);
         padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom));
@@ -1518,8 +1518,32 @@
       #mobileStickyCta .btn { padding: .7rem 1.4rem; white-space: nowrap; }
       /* Platz schaffen, damit der Footer nicht verdeckt wird */
       footer { padding-bottom: 6rem !important; }
+      /* Wenn der Chat offen ist, Sticky-Leiste ausblenden, damit sie
+         das Eingabefeld nicht überlappt */
+      body.pc-chat-open #mobileStickyCta { display: none !important; }
     }
   </style>
+
+  <script>
+    /* Beobachtet, ob das "Frag mich was"-Chat-Overlay offen ist,
+       und blendet die Sticky-CTA-Leiste solange aus. */
+    (function () {
+      function sync() {
+        var ov = document.getElementById('pc-qa-overlay');
+        var open = ov && ov.classList.contains('open');
+        document.body.classList.toggle('pc-chat-open', !!open);
+      }
+      var mo = new MutationObserver(sync);
+      function start() {
+        var ov = document.getElementById('pc-qa-overlay');
+        if (ov) { mo.observe(ov, { attributes: true, attributeFilter: ['class'] }); sync(); }
+        else { setTimeout(start, 300); } // script.js fügt das Overlay evtl. später ein
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+      } else { start(); }
+    })();
+  </script>
 
     
 
