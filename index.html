@@ -1070,6 +1070,98 @@
     animation: fadeUp .6s ease both;
   }
 
+  /* ══════════════════════════════════
+     MITGLIEDSCHAFTEN / FUNNEL-SEKTION
+  ══════════════════════════════════ */
+  .preis-teaser {
+    background: var(--text); color: #fff;
+    border-radius: 22px; padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .preis-teaser-pill {
+    display: inline-block; font-size: .72rem; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--rose); background: rgba(217,164,154,.15);
+    padding: .3rem .85rem; border-radius: 100px; margin-bottom: 1.25rem;
+  }
+  .preis-teaser-price {
+    font-family: var(--heading); font-weight: 400;
+    font-size: clamp(2.4rem, 7vw, 3.2rem); line-height: 1; margin-bottom: 1rem;
+  }
+  .preis-teaser-price span { font-size: 1.1rem; color: rgba(255,255,255,.7); }
+  .preis-teaser-note {
+    color: rgba(255,255,255,.78); font-size: .95rem; line-height: 1.7;
+    max-width: 460px; margin: 0 auto 2rem;
+  }
+
+  .plan-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin-top: 2rem;
+  }
+  .plan-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 18px; padding: 2rem 1.5rem;
+    display: flex; flex-direction: column;
+  }
+  .plan-card-featured {
+    background: linear-gradient(135deg, #b0796e, #c4877c);
+    color: #fff; border: none; position: relative;
+    box-shadow: 0 16px 36px rgba(176,121,110,.30);
+  }
+  .plan-badge {
+    position: absolute; top: -.7rem; left: 50%; transform: translateX(-50%);
+    background: var(--text); color: #fff;
+    font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    padding: .3rem .85rem; border-radius: 100px; white-space: nowrap;
+  }
+  .plan-name { font-size: 1.25rem; margin-bottom: .5rem; }
+  .plan-price {
+    font-family: var(--heading); font-weight: 400; font-size: 2.2rem; line-height: 1;
+    margin-bottom: .25rem;
+  }
+  .plan-price span { font-size: .9rem; font-weight: 400; opacity: .7; margin-left: .25rem; }
+  .plan-desc { font-size: .9rem; opacity: .85; margin-bottom: 1.25rem; }
+  .plan-perks { list-style: none; padding: 0; margin: 0 0 1.25rem; flex: 1; }
+  .plan-perks li {
+    font-size: .9rem; padding: .45rem 0 .45rem 1.5rem; position: relative;
+    border-bottom: 1px solid rgba(44,40,37,.07);
+  }
+  .plan-card-featured .plan-perks li { border-bottom-color: rgba(255,255,255,.18); }
+  .plan-perks li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--rose-dark); font-weight: 600;
+  }
+  .plan-card-featured .plan-perks li::before { color: #fff; }
+  .plan-extra { font-size: .8rem; opacity: .7; margin-bottom: 1.25rem; }
+  .btn-soft { background: var(--rose-light); color: var(--rose-dark); text-align: center; }
+  .btn-soft:hover { background: var(--rose); color: #fff; }
+  .btn-light { background: #fff; color: var(--rose-dark); text-align: center; }
+  .btn-light:hover { background: var(--cream); }
+
+  .passes-box {
+    background: var(--rose-light); border-radius: 18px;
+    padding: 2rem; margin-top: 2rem;
+  }
+  .pass-row {
+    display: flex; align-items: center; gap: 1rem;
+    padding: .9rem 0; border-bottom: 1px solid var(--border);
+  }
+  .pass-row:last-child { border-bottom: none; }
+  .pass-name { font-weight: 600; font-size: .95rem; min-width: 90px; }
+  .pass-detail { font-size: .82rem; color: var(--text-mid); flex: 1; }
+  .pass-price { font-family: var(--heading); font-size: 1.3rem; color: var(--rose-dark); }
+  .preis-disclaimer {
+    text-align: center; font-size: .78rem; color: var(--warm-gray);
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .plan-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .plan-card-featured { order: -1; }
+    .preis-teaser { padding: 2rem 1.5rem; }
+    .pass-row { flex-wrap: wrap; gap: .35rem .75rem; }
+    .pass-detail { flex-basis: 100%; order: 3; }
+  }
+
 </style>
 </head>
 <body>
@@ -1142,8 +1234,8 @@
       <h1>Gesundheit beginnt in der Bewegung</h1>
       <p>Pilates, Reformer-Pilates & Yoga mit erfahrenen Trainerinnen – in einer warmen, einladenden Atmosphäre im Herzen von Stockelsdorf.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="probetraining.html">Kostenloses Probetraining</a>
-        <a class="btn btn-outline" href="kurse.html">Kursplan ansehen</a>
+        <a class="btn btn-primary" href="#mitgliedschaften">Mitgliedschaften ansehen</a>
+        <a class="btn btn-outline" href="probetraining.html">Kostenloses Probetraining</a>
       </div>
     </div>
     <div class="hero-slider" id="heroSlider">
@@ -1214,6 +1306,82 @@
   <div class="studio-banner">
     <img src="studio-reformer.jpg" alt="Reformer Studio Pilates Company Lübeck">
   </div>
+
+  <div class="divider"></div>
+
+  <!-- ════ MITGLIEDSCHAFTEN (Funnel-Sektion) ════ -->
+  <section class="section" id="mitgliedschaften">
+    <div class="container">
+
+      <!-- Dunkle Preis-Teaser-Karte -->
+      <div class="preis-teaser">
+        <span class="preis-teaser-pill">Mitgliedschaft</span>
+        <div class="preis-teaser-price">ab 59 € <span>/ Monat</span></div>
+        <p class="preis-teaser-note">Trainiere so oft du möchtest – flexible Tarife für jedes Ziel. Buchung & Verwaltung bequem über Eversports.</p>
+        <a class="btn btn-primary" href="#tarife">Alle Tarife ansehen</a>
+      </div>
+
+      <h4 style="margin-top:3rem;">Mitgliedschaften</h4>
+      <h2 id="tarife">Wähle deinen Tarif</h2>
+
+      <div class="plan-grid">
+
+        <!-- Matte & Yoga -->
+        <div class="plan-card">
+          <h3 class="plan-name">Matte &amp; Yoga</h3>
+          <div class="plan-price">59 €<span>/ Monat</span></div>
+          <p class="plan-desc">8 Credits / Monat</p>
+          <ul class="plan-perks">
+            <li>Alle Matten- &amp; Yoga-Kurse</li>
+            <li>8 Teilnahmen / Monat</li>
+            <li>Buchung über Eversports</li>
+          </ul>
+          <p class="plan-extra">ab 12 Monaten · flexibel 69 €/Mo</p>
+          <a class="btn btn-soft" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">Auswählen</a>
+        </div>
+
+        <!-- Reformer & alle Kurse (hervorgehoben) -->
+        <div class="plan-card plan-card-featured">
+          <span class="plan-badge">Summer Glow</span>
+          <h3 class="plan-name">Reformer &amp; alle Kurse</h3>
+          <div class="plan-price">69 €<span>/ Monat</span></div>
+          <p class="plan-desc">Reformer + alle weiteren Kurse</p>
+          <ul class="plan-perks">
+            <li>Reformer &amp; alle Kursformate</li>
+            <li>4 Credits / Monat</li>
+            <li>Mindestlaufzeit 3 Monate</li>
+          </ul>
+          <p class="plan-extra">Erste 3 Monate je 69 €, danach 89 €</p>
+          <a class="btn btn-light" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">Jetzt sichern</a>
+        </div>
+
+        <!-- Reformer Jahres-Abo -->
+        <div class="plan-card">
+          <h3 class="plan-name">Reformer Jahres-Abo</h3>
+          <div class="plan-price">89 €<span>/ Monat</span></div>
+          <p class="plan-desc">8 Credits / Monat</p>
+          <ul class="plan-perks">
+            <li>Reformer &amp; alle Kursformate</li>
+            <li>8 Teilnahmen / Monat</li>
+            <li>Bester Preis pro Einheit</li>
+          </ul>
+          <p class="plan-extra">Mindestlaufzeit 12 Monate</p>
+          <a class="btn btn-soft" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">Auswählen</a>
+        </div>
+
+      </div>
+
+      <!-- Einzeltickets & Pässe -->
+      <div class="passes-box">
+        <h4 style="margin-bottom:1rem;">Lieber ohne Abo?</h4>
+        <div class="pass-row"><span class="pass-name">Probestunde</span><span class="pass-detail">für alle Kurse · gültig 2 Monate</span><span class="pass-price">16 €</span></div>
+        <div class="pass-row"><span class="pass-name">Drop-In</span><span class="pass-detail">1 Einheit · spontan &amp; flexibel</span><span class="pass-price">28 €</span></div>
+        <div class="pass-row"><span class="pass-name">5er-Pass</span><span class="pass-detail">23,80 € / Kurs · 12 Wochen</span><span class="pass-price">119 €</span></div>
+      </div>
+
+      <p class="preis-disclaimer">Alle Preise inkl. MwSt. Buchungen &amp; Abonnements direkt über Eversports.</p>
+    </div>
+  </section>
 
   <div class="divider"></div>
 
@@ -1329,108 +1497,38 @@
 
 
 
-  <div id="wa-bubble" style="display:none;">
-    <div id="wa-bubble-header">
-      <div id="wa-bubble-avatar">PC</div>
-      <div>
-        <div id="wa-bubble-name">Pilates Company Lübeck</div>
-        <div id="wa-bubble-status" class="wa-online">● Online</div>
-      </div>
-      <button id="wa-bubble-close" onclick="document.getElementById('wa-bubble').style.display='none'">✕</button>
-    </div>
-    <div id="wa-bubble-body">
-      <div id="wa-bubble-msg">Hallo! 👋 Wie können wir dir helfen? Schreib uns einfach – wir antworten so schnell wie möglich.</div>
-      <div id="wa-bubble-hours">🕐 Erreichbar: Mo–Sa 8–20 Uhr</div>
-    </div>
-    <a href="https://wa.me/491751266117?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Probetraining!" target="_blank" id="wa-bubble-cta">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.414A9.963 9.963 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.115l-.292-.174-3.035.862.872-3.012-.19-.308A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
-      WhatsApp öffnen
-    </a>
+  <!-- ════ STICKY MOBIL-CTA ════ -->
+  <div id="mobileStickyCta">
+    <div class="sticky-cta-text"><strong>Mitglied ab 59 €</strong><span>/ Monat</span></div>
+    <a class="btn btn-primary" href="#mitgliedschaften">Mitglied werden</a>
   </div>
-
   <style>
-    #wa-btn {
-      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999;
-      background: #25d366; color: white;
-      border-radius: 50px; padding: .85rem 1.25rem;
-      display: flex; align-items: center; gap: .6rem;
-      box-shadow: 0 4px 20px rgba(37,211,102,.4);
-      text-decoration: none; font-size: .9rem; font-weight: 500;
-      transition: transform .2s, box-shadow .2s;
+    #mobileStickyCta { display: none; }
+    @media (max-width: 640px) {
+      #mobileStickyCta {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        position: fixed; bottom: 0; left: 0; right: 0; z-index: 9990;
+        background: rgba(250,247,244,.92); backdrop-filter: blur(10px);
+        border-top: 1px solid var(--border);
+        padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom));
+      }
+      #mobileStickyCta .sticky-cta-text { font-size: .95rem; line-height: 1.2; }
+      #mobileStickyCta .sticky-cta-text strong { display: block; color: var(--text); }
+      #mobileStickyCta .sticky-cta-text span { font-size: .78rem; color: var(--text-mid); }
+      #mobileStickyCta .btn { padding: .7rem 1.4rem; white-space: nowrap; }
+      /* Platz schaffen, damit der Footer nicht verdeckt wird */
+      footer { padding-bottom: 6rem !important; }
+      /* Redundante Floating-Buttons unten rechts auf Mobil ausblenden –
+         der "Frag mich was"-Assistent (rechts mittig) deckt Kontakt ab,
+         die Sticky-Leiste übernimmt den Conversion-CTA. */
+      #pc-wa-fab { display: none !important; }
+      #pc-call-btn { display: none !important; }
     }
-    #wa-btn:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
-    #wa-bubble {
-      position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 9998;
-      width: 300px; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0,0,0,.18);
-      font-family: var(--sans); animation: waFadeIn .2s ease;
-    }
-    @keyframes waFadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-    #wa-bubble-header {
-      background: #075e54; color: white;
-      padding: 1rem 1rem; display: flex; align-items: center; gap: .75rem;
-    }
-    #wa-bubble-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: #d9a49a; display: flex; align-items: center; justify-content: center;
-      font-size: .75rem; font-weight: 600; color: white; flex-shrink: 0;
-    }
-    #wa-bubble-name { font-weight: 600; font-size: .9rem; }
-    #wa-bubble-status { font-size: .75rem; margin-top: .1rem; }
-    #wa-bubble-status.wa-online { color: #9de09d; }
-    #wa-bubble-status.wa-offline { color: rgba(255,255,255,.6); }
-    #wa-bubble-close {
-      margin-left: auto; background: none; border: none; color: white;
-      cursor: pointer; font-size: 1rem; padding: .25rem; opacity: .7;
-    }
-    #wa-bubble-close:hover { opacity: 1; }
-    #wa-bubble-body { background: #ece5dd; padding: 1rem; }
-    #wa-bubble-msg {
-      background: white; border-radius: 0 8px 8px 8px;
-      padding: .75rem; font-size: .85rem; color: #333;
-      box-shadow: 0 1px 2px rgba(0,0,0,.1); margin-bottom: .75rem;
-      line-height: 1.5;
-    }
-    #wa-bubble-hours {
-      font-size: .78rem; color: #666; text-align: center; margin-bottom: .75rem;
-    }
-    #wa-bubble-cta {
-      display: flex; align-items: center; justify-content: center; gap: .5rem;
-      background: #25d366; color: white; border-radius: 8px;
-      padding: .75rem; text-decoration: none; font-size: .9rem; font-weight: 500;
-      transition: background .2s;
-    }
-    #wa-bubble-cta:hover { background: #1ebe5d; }
   </style>
 
-  <script>
-    (function() {
-      var btn = document.getElementById('wa-btn');
-      var bubble = document.getElementById('wa-bubble');
-      var status = document.getElementById('wa-bubble-status');
+    
 
-      // Erreichbarkeit prüfen: Mo–Sa 8–20 Uhr (deutsche Zeit)
-      function checkAvailability() {
-        var now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Berlin' }));
-        var day = now.getDay(); // 0=So, 1=Mo, ..., 6=Sa
-        var hour = now.getHours();
-        var available = day >= 1 && day <= 6 && hour >= 8 && hour < 20;
-        if (status) {
-          status.textContent = available ? '● Online' : '● Antwortet bald';
-          status.className = available ? 'wa-online' : 'wa-offline';
-        }
-      }
-
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        var isOpen = bubble.style.display !== 'none';
-        bubble.style.display = isOpen ? 'none' : 'block';
-        if (!isOpen) checkAvailability();
-      });
-
-      checkAvailability();
-    })();
-  </script>
+  
 
 <script src="script.js"></script>
  <script src="pc-nav-kontakt.js"></script>
@@ -1469,7 +1567,7 @@
 </script>
 
 <!-- WhatsApp Button -->
-<div style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:8500;font-family:'DM Sans',system-ui,sans-serif;">
+<div id="pc-wa-fab" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:8500;font-family:'DM Sans',system-ui,sans-serif;">
   <a href="https://wa.me/491751266117" target="_blank" style="display:flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;background:#25d366;color:#fff;border-radius:50px;box-shadow:0 4px 20px rgba(37,211,102,.35);text-decoration:none;font-size:.88rem;font-weight:500;white-space:nowrap;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.414A9.963 9.963 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
     Chat mit uns
