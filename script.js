@@ -410,8 +410,8 @@ document.addEventListener('DOMContentLoaded', () => {
       b.className = 'pc-chip'; b.textContent = l;
       b.onclick = () => {
         if (l === 'Alle Preise ansehen') { window.location.href = 'preise.html'; return; }
-        if (l === 'Probetraining buchen') { window.location.href = 'probetraining.html'; return; }
-        if (l === 'Kursplan ansehen') { window.open('https://eversports.de/s/pilates-company-luebeck', '_blank'); return; }
+        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining') { window.location.href = 'probetraining.html'; return; }
+        if (l === 'Kursplan ansehen') { window.open('https://www.eversports.de/sp/pilates-company', '_blank', 'noopener'); return; }
         document.getElementById('pc-qa-input').value = l; sendMsg();
       };
       ch.appendChild(b);
@@ -439,11 +439,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const reply = (data && data.reply) ? data.reply : 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
       pcHistory.push({ role: 'assistant', content: reply });
       pcCount++;
-      const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml + '<div class="pc-hint"><a href="probetraining.html">Probetraining anfragen</a> · <a href="https://wa.me/491516083019" target="_blank">WhatsApp</a></div>');
+      const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml);
       if (pcCount >= 8) {
         const el = document.createElement('div');
         el.className = 'pc-msg pc-msg-bot';
-        el.innerHTML = 'Du hast viele tolle Fragen gestellt! Komm einfach zu einem kostenlosen Probetraining oder ruf uns an.<div class="pc-cta-row"><a class="pc-cta-btn" href="probetraining.html">Probetraining buchen</a><a class="pc-cta-btn outline" href="https://wa.me/491516083019" target="_blank">WhatsApp</a></div>';
+        el.innerHTML = 'Du hast viele tolle Fragen gestellt! 🌸 Am besten erlebst du uns direkt: Komm zu einem kostenlosen Probetraining – ganz unverbindlich. Oder buche deinen Wunschkurs direkt über Eversports.<div class="pc-cta-row"><a class="pc-cta-btn" href="probetraining.html">Kostenloses Probetraining</a><a class="pc-cta-btn outline" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">Direkt buchen</a></div>';
         document.getElementById('pc-qa-msgs').appendChild(el);
         pcCount = 0;
       } else {
@@ -451,8 +451,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
         else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Summer Glow 69 €','Matte vs Reformer']);
         else if (l.match(/preis|kostet|member|abo/)) setChips(['Summer Glow 69 €/Monat','Alle Preise ansehen','Probetraining buchen']);
-        else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Kursplan ansehen']);
-        else setChips(['Probetraining anfragen','Kursplan ansehen','Membership-Vergleich']);
+        else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Kostenloses Probetraining']);
+        else setChips(['Kostenloses Probetraining','Welcher Kurs passt zu mir?','Membership-Vergleich']);
       }
     } catch(e) {
       hideTyping();
