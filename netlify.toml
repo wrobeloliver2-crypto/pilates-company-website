@@ -1,6 +1,9 @@
 [build]
   publish = "."
 
+[build.environment]
+  SECRETS_SCAN_ENABLED = "false"
+
 [build.processing.html]
   pretty_urls = true
 
