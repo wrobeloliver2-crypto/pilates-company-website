@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Chat Logic
   const STARTER = ['Kostenloses Probetraining','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
-  let pcHistory = [], pcCount = 0, pcInit = false;
+  let pcHistory = [], pcCount = 0, pcInit = false, pcCallbackShown = false;
 
   function openPcQA() {
     overlay.classList.add('open');
@@ -440,12 +440,8 @@ document.addEventListener('DOMContentLoaded', () => {
       pcHistory.push({ role: 'assistant', content: reply });
       pcCount++;
       const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml);
-      if (pcCount >= 8) {
-        const el = document.createElement('div');
-        el.className = 'pc-msg pc-msg-bot';
-        el.innerHTML = 'Du hast viele tolle Fragen gestellt! 🌸 Am besten erlebst du uns direkt: Komm zu einem kostenlosen Probetraining – ganz unverbindlich. Oder buche deinen Wunschkurs direkt über Eversports.<div class="pc-cta-row"><a class="pc-cta-btn" href="probetraining.html">Kostenloses Probetraining</a><a class="pc-cta-btn outline" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">Direkt buchen</a></div>';
-        document.getElementById('pc-qa-msgs').appendChild(el);
-        pcCount = 0;
+      if (pcCount >= 10 && !pcCallbackShown) {
+        showCallbackForm();
       } else {
         const l = text.toLowerCase();
         if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
@@ -460,6 +456,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     sendBtn.disabled = false;
     document.getElementById('pc-qa-input').focus();
+  }
+
+  function showCallbackForm() {
+    pcCallbackShown = true;
+    setChips([]);
+    const msgs = document.getElementById('pc-qa-msgs');
+    const el = document.createElement('div');
+    el.className = 'pc-msg pc-msg-bot';
+    el.innerHTML =
+      'Du hast dir viele Gedanken gemacht – schön! 🌸 Am einfachsten klären wir deine offenen Fragen persönlich. ' +
+      'Lass mir einfach deine Nummer da, dann ruft dich unser Team zurück – ganz unverbindlich.' +
+      '<div id="pc-cb-form" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">' +
+        '<input id="pc-cb-name" type="text" placeholder="Dein Name" autocomplete="name" ' +
+          'style="border:1px solid #e0d8d4;border-radius:12px;padding:10px 13px;font-size:13.5px;font-family:inherit;outline:none;">' +
+        '<input id="pc-cb-phone" type="tel" placeholder="Deine Telefonnummer" autocomplete="tel" ' +
+          'style="border:1px solid #e0d8d4;border-radius:12px;padding:10px 13px;font-size:13.5px;font-family:inherit;outline:none;">' +
+        '<textarea id="pc-cb-msg" rows="2" placeholder="Deine Nachricht (optional)" ' +
+          'style="border:1px solid #e0d8d4;border-radius:12px;padding:10px 13px;font-size:13.5px;font-family:inherit;outline:none;resize:vertical;"></textarea>' +
+        '<button id="pc-cb-submit" ' +
+          'style="background:#d9a49a;color:#fff;border:none;border-radius:22px;padding:11px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;">' +
+          'Rückruf anfordern</button>' +
+        '<div id="pc-cb-status" style="font-size:12px;color:#8a847d;text-align:center;"></div>' +
+      '</div>';
+    msgs.appendChild(el);
+    msgs.scrollTop = msgs.scrollHeight;
+
+    document.getElementById('pc-cb-submit').onclick = submitCallback;
+  }
+
+  async function submitCallback() {
+    const nameEl = document.getElementById('pc-cb-name');
+    const phoneEl = document.getElementById('pc-cb-phone');
+    const msgEl = document.getElementById('pc-cb-msg');
+    const btn = document.getElementById('pc-cb-submit');
+    const status = document.getElementById('pc-cb-status');
+
+    const name = nameEl.value.trim();
+    const phone = phoneEl.value.trim();
+    const message = msgEl.value.trim();
+
+    if (!name || !phone) {
+      status.textContent = 'Bitte Name und Telefonnummer angeben.';
+      status.style.color = '#b0796e';
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = 'Wird gesendet …';
+    status.textContent = ''; status.style.color = '#8a847d';
+
+    try {
+      const res = await fetch('/.netlify/functions/sendmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: phone, message: message })
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (res.ok && data.ok) {
+        document.getElementById('pc-cb-form').innerHTML =
+          '<div style="text-align:center;padding:8px;color:#5c8a6b;font-size:13.5px;">' +
+          '✓ Vielen Dank, ' + name.replace(/[<>&]/g, '') + '! Wir melden uns bald bei dir.</div>';
+      } else {
+        status.textContent = 'Das hat leider nicht geklappt. Ruf uns gern an: 0451 - 160 830 19';
+        status.style.color = '#b0796e';
+        btn.disabled = false; btn.textContent = 'Rückruf anfordern';
+      }
+    } catch (e) {
+      status.textContent = 'Das hat leider nicht geklappt. Ruf uns gern an: 0451 - 160 830 19';
+      status.style.color = '#b0796e';
+      btn.disabled = false; btn.textContent = 'Rückruf anfordern';
+    }
   }
 })();
  

@@ -1,0 +1,5 @@
+# Umgebungsvariablen / Secrets - niemals committen
+.env
+.env.*
+*.env
+node_modules/
