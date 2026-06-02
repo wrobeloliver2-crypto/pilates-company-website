@@ -81,6 +81,16 @@
     transition: background .2s !important;
   }
   .nav-cta:hover { background: var(--rose-dark) !important; color: #fff !important; }
+  .nav-en {
+    border: 1.5px solid var(--rose);
+    color: var(--rose-dark) !important;
+    padding: .3rem .7rem;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    white-space: nowrap;
+    transition: background .2s, color .2s;
+  }
+  .nav-en:hover { background: var(--rose); color: #fff !important; }
 
   .nav-instagram {
     display: flex; align-items: center;
