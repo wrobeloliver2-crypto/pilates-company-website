@@ -436,13 +436,19 @@ document.addEventListener('DOMContentLoaded', () => {
       let data;
       try { data = await res.json(); } catch(jsonErr) { data = { reply: 'Fehler beim Lesen der Antwort.' }; }
       hideTyping();
-      const reply = (data && data.reply) ? data.reply : 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
+      let reply = (data && data.reply) ? data.reply : 'Entschuldigung, ich konnte deine Frage nicht beantworten.';
+
+      // Rueckruf-Signal des Assistenten erkennen und aus dem sichtbaren Text entfernen
+      const wantsCallback = /\[\[\s*RUECKRUF\s*\]\]/i.test(reply);
+      reply = reply.replace(/\[\[\s*RUECKRUF\s*\]\]/ig, '').replace(/\n{3,}/g, '\n\n').trim();
+
       pcHistory.push({ role: 'assistant', content: reply });
       pcCount++;
       const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml);
-      if (pcCount >= 10 && !pcCallbackShown) {
+
+      if ((wantsCallback || pcCount >= 10) && !pcCallbackShown) {
         showCallbackForm();
-      } else {
+      } else if (!pcCallbackShown) {
         const l = text.toLowerCase();
         if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
         else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Summer Glow 69 €','Matte vs Reformer']);
