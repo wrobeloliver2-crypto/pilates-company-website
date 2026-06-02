@@ -710,7 +710,13 @@
     position: relative; overflow: hidden;
     transition: .2s;
   }
+  a.preis-card { text-decoration: none; color: inherit; cursor: pointer; }
   .preis-card:hover { border-color: var(--rose); box-shadow: 0 6px 20px rgba(217,164,154,.15); }
+  a.preis-card:hover { transform: translateY(-2px); }
+  .preis-book {
+    margin-top: 1rem; font-size: .82rem; font-weight: 600;
+    color: var(--rose-dark); letter-spacing: .02em;
+  }
   .preis-card--featured {
     border-color: var(--rose);
     background: var(--rose-light);
@@ -1279,7 +1285,7 @@ paProgress(1);
         </div>
         <div class="preise-grid">
 
-          <div class="preis-card">
+          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-top">
               <p class="preis-name">Mattenpilates & Yoga</p>
               <p class="preis-desc">8 Credits/Monat für alle Matten- & Yoga-Kurse</p>
@@ -1287,10 +1293,11 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">59<span class="preis-cent">,00</span><span class="preis-unit"> €/Mo</span></div>
               <p class="preis-note">Mindestlaufzeit 12 Monate · 8 Teilnahmen/Monat</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+            </a>
 
-          <div class="preis-card">
+          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-top">
               <p class="preis-name">Mattenpilates & Yoga</p>
               <p class="preis-desc">8 Credits/Monat – flexibel, monatlich kündbar</p>
@@ -1298,10 +1305,11 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">69<span class="preis-cent">,00</span><span class="preis-unit"> €/Mo</span></div>
               <p class="preis-note">Mindestlaufzeit 1 Monat · 8 Teilnahmen/Monat</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+            </a>
 
-          <div class="preis-card preis-card--featured">
+          <a class="preis-card preis-card--featured" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-badge">Flexibel</div>
             <div class="preis-top">
               <p class="preis-name">Reformer & weitere Kurse</p>
@@ -1310,10 +1318,11 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">89<span class="preis-cent">,00</span><span class="preis-unit"> €/Mo</span></div>
               <p class="preis-note">Mindestlaufzeit 1 Monat · 4 Teilnahmen/Monat</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+            </a>
 
-          <div class="preis-card preis-card--featured">
+          <a class="preis-card preis-card--featured" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-badge">Jahres-Abo</div>
             <div class="preis-top">
               <p class="preis-name">Reformer & weitere Kurse</p>
@@ -1322,8 +1331,9 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">89<span class="preis-cent">,00</span><span class="preis-unit"> €/Mo</span></div>
               <p class="preis-note">Mindestlaufzeit 12 Monate · 8 Teilnahmen/Monat</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+            </a>
 
         </div>
       </div>
@@ -1338,7 +1348,7 @@ paProgress(1);
         </div>
         <div class="preise-grid preise-grid--3">
 
-          <div class="preis-card">
+          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-top">
               <p class="preis-name">Probestunde</p>
               <p class="preis-desc">Starte in die Welt von Pilates – für alle Kurse anwendbar</p>
@@ -1346,10 +1356,11 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">16<span class="preis-unit"> €</span></div>
               <p class="preis-note">1 Einheit · gültig 2 Monate ab Kaufdatum</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+          </a>
 
-          <div class="preis-card">
+          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-top">
               <p class="preis-name">Drop-In Ticket</p>
               <p class="preis-desc">Spontan dabei – für alle Kurse anwendbar</p>
@@ -1357,10 +1368,11 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">28<span class="preis-unit"> €</span></div>
               <p class="preis-note">1 Einheit · flexibel einsetzbar</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+          </a>
 
-          <div class="preis-card">
+          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-top">
               <p class="preis-name">5er-Pass</p>
               <p class="preis-desc">Build Your Routine – Schnupper-Angebot für den Einstieg</p>
@@ -1368,10 +1380,11 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">119<span class="preis-unit"> €</span></div>
               <p class="preis-note">5 Einheiten · gültig 12 Wochen ab 1. Buchung · 23,80 €/Kurs</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+          </a>
 
-          <div class="preis-card">
+          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener noreferrer">
             <div class="preis-top">
               <p class="preis-name">Dranbleiben-Paket</p>
               <p class="preis-desc">Wir buchen dich 12 Wochen fest ein – Dranbleiben leicht gemacht</p>
@@ -1379,8 +1392,9 @@ paProgress(1);
             <div class="preis-bottom">
               <div class="preis-amount">14<span class="preis-cent">,90</span><span class="preis-unit"> €</span></div>
               <p class="preis-note">Dienstleistung · gültig 3 Monate ab Kaufdatum</p>
+              <p class="preis-book">Bei Eversports buchen →</p>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
