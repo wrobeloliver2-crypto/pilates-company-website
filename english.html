@@ -251,6 +251,21 @@
 
   @media (max-width: 880px) {
     .nav-links { display: none; }
+    .nav-links.open {
+      display: flex !important;
+      flex-direction: column;
+      position: absolute;
+      top: 74px;
+      left: 0; right: 0;
+      background: var(--white);
+      padding: 16px 24px 24px;
+      box-shadow: 0 8px 24px rgba(58,51,49,0.10);
+      gap: 14px;
+      z-index: 100;
+    }
+    .nav-links.open .nav-cta {
+      text-align: center;
+    }
     .menu-toggle { display: block; }
     .hero-grid { grid-template-columns: 1fr; }
     .hero-img { order: -1; }
@@ -317,7 +332,7 @@
       <a href="#find">Find Us</a>
       <a href="https://www.eversports.de/sp/pilates-company" class="nav-cta">Book a Class</a>
     </div>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').style.display = (document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex')">☰</button>
+    <button class="menu-toggle" onclick="var nl=document.querySelector('.nav-links'); var open=nl.classList.toggle('open'); nl.style.display=open?'flex':'none';">☰</button>
   </nav>
 </header>
 
