@@ -1007,6 +1007,40 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+  /* ── NAV DROPDOWN MENU ── */
+  .nav-dropdown-wrap { position: relative; }
+  .nav-dropdown-btn {
+    background: none; border: 1px solid var(--border);
+    border-radius: 8px; cursor: pointer;
+    padding: .4rem .5rem; display: flex; align-items: center;
+    gap: 4px; color: var(--text-mid); transition: .2s;
+  }
+  .nav-dropdown-btn:hover { border-color: var(--rose); color: var(--rose-dark); }
+  .nav-dropdown-btn span { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
+  .nav-dropdown {
+    display: none; position: absolute; top: calc(100% + .75rem);
+    right: 0; background: white; border: 1px solid var(--border);
+    border-radius: 14px; padding: .75rem;
+    box-shadow: 0 8px 32px rgba(44,40,37,.12);
+    min-width: 220px; z-index: 200;
+  }
+  .nav-dropdown.open { display: block; }
+  .nav-dropdown a {
+    display: block; padding: .55rem 1rem;
+    font-size: .82rem; font-weight: 500; letter-spacing: .03em;
+    text-transform: uppercase; color: var(--text-mid);
+    text-decoration: none; border-radius: 8px; transition: .15s;
+  }
+  .nav-dropdown a:hover { background: var(--rose-light); color: var(--rose-dark); }
+  .nav-dropdown .dropdown-cta {
+    margin-top: .5rem; padding-top: .5rem;
+    border-top: 1px solid var(--border);
+    color: var(--rose-dark); font-weight: 600;
+  }
+  .nav-dropdown .dropdown-divider {
+    height: 1px; background: var(--border); margin: .4rem .5rem;
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -1079,6 +1113,29 @@
       <li><a href="/wellpass">WELLPASS</a></li>
       <li><a href="downloads.html">DOWNLOADS</a></li>
       <li><a href="/english" class="nav-en" title="English page">🇬🇧 EN</a></li>
+            <li class="nav-dropdown-wrap">
+        <button class="nav-dropdown-btn" onclick="toggleNavDropdown()" aria-label="Alle Seiten">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-dropdown" id="navDropdown">
+          <a href="index.html">Home</a>
+          <a href="kurse.html">Kurse</a>
+          <a href="preise.html">Preise</a>
+          <a href="trainer.html">Trainer</a>
+          <a href="personal-training.html">Personal Training</a>
+          <a href="ausbildung.html">Ausbildung</a>
+          <a href="studio-news.html">Studio News</a>
+          <a href="challenge.html">20×20 Videos Challenge</a>
+          <a href="gutschein.html">Gutschein</a>
+          <a href="wellpass.html">Wellpass</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="/english" class="nav-en">🇬🇧 English</a>
+          <div class="dropdown-divider"></div>
+          <a href="probetraining.html" class="dropdown-cta">Probetraining buchen →</a>
+        </div>
+      </li>
       <li><a href="probetraining.html" class="nav-cta">PROBETRAINING BUCHEN</a></li>
       <li>
         <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
