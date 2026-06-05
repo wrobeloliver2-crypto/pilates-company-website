@@ -11,6 +11,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18174020065"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18174020065');
+    </script>
+  
 <style>
   .probe-intro-flex {
     display: flex;
@@ -285,7 +294,10 @@ window.addEventListener('load', function() {
         for (var i = 0; i < all.length; i++) {
           all[i].style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
         }
-      }
+      },
+            onFormSubmit: function($form) {
+                      gtag('event', 'conversion', {'send_to': 'AW-18174020065/2zNACI3CzLkcEOGThtpD'});
+            }
     });
   }
   loadHubSpotForm();
