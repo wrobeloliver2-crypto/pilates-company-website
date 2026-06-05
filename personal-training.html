@@ -1,227 +1,372 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Training Lübeck – Pilates Company</title>
-  <meta name="description" content="Personal Training in Lübeck, Stockelsdorf & Bad Schwartau. 1:1 Coaching mit erfahrenen Trainern. Jetzt Kontakt aufnehmen!">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .pt-hero {
-      background: linear-gradient(135deg, #2c2c2c 0%, #4a3728 100%);
-      color: #fff;
-      padding: 100px 20px 80px;
-      text-align: center;
-    }
-    .pt-hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    .pt-hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      line-height: 1.7;
-    }
-    .pt-hero .badge {
-      display: inline-block;
-      background: #c9a96e;
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .pt-benefits {
-      padding: 70px 20px;
-      background: #f8f4f0;
-    }
-    .pt-benefits .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .pt-benefits h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 50px;
-      color: #2c2c2c;
-    }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .benefit-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-    .benefit-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    .benefit-card h3 {
-      font-size: 1.2rem;
-      color: #2c2c2c;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    .benefit-card p {
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .pt-form-section {
-      padding: 70px 20px;
-      background: #fff;
-    }
-    .pt-form-section .container {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .pt-form-section h2 {
-      font-size: 2rem;
-      color: #2c2c2c;
-      margin-bottom: 15px;
-    }
-    .pt-form-section .subtitle {
-      color: #666;
-      font-size: 1.05rem;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-    .pt-form-wrapper {
-      background: #f8f4f0;
-      border-radius: 16px;
-      padding: 40px;
-      text-align: left;
-    }
-    .pt-locations {
-      padding: 50px 20px;
-      background: #2c2c2c;
-      color: #fff;
-      text-align: center;
-    }
-    .pt-locations h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      opacity: 0.9;
-    }
-    .location-tags {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .location-tag {
-      background: rgba(201,169,110,0.2);
-      border: 1px solid #c9a96e;
-      color: #c9a96e;
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 0.95rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Training Stockelsdorf – Private Reformer Class | Pilates Company</title>
+<meta name="description" content="1:1 Personal Training am Reformer in Stockelsdorf, direkt an der Grenze zu Luebeck. Private Reformer Class – 60 Minuten, individuell auf dich abgestimmt. Jetzt buchen oder Termin anfragen!">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
+<style>
+.pt-hero {
+  background: linear-gradient(135deg, #2c2c2c 0%, #4a3728 100%);
+  color: #fff;
+  padding: 100px 20px 80px;
+  text-align: center;
+}
+.pt-hero .label {
+  display: inline-block;
+  background: #c9a96e;
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.pt-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.pt-hero p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 620px;
+  margin: 0 auto 14px;
+  line-height: 1.7;
+}
+.pt-hero .location-note {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  margin-bottom: 36px;
+}
+.pt-hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: #c9a96e;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #b8955a; }
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: border-color 0.2s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: #fff; }
+.pt-reformer-section {
+  padding: 70px 20px;
+  background: #f8f4f0;
+}
+.pt-reformer-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .pt-reformer-section .container { grid-template-columns: 1fr; }
+  .pt-hero h1 { font-size: 2rem; }
+}
+.reformer-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+.reformer-image .img-placeholder {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(135deg, #4a3728 0%, #2c2c2c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a96e;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.reformer-content h2 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+}
+.reformer-content .tag {
+  display: inline-block;
+  background: #c9a96e;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.reformer-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.reformer-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.reformer-detail-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 500;
+}
+.book-btn {
+  display: inline-block;
+  background: #2c2c2c;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.book-btn:hover { background: #444; }
+.pt-benefits {
+  padding: 70px 20px;
+  background: #fff;
+}
+.pt-benefits .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.pt-benefits h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #2c2c2c;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+.benefit-card {
+  background: #f8f4f0;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+}
+.benefit-card h3 {
+  font-size: 1.15rem;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.benefit-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.pt-form-section {
+  padding: 70px 20px;
+  background: #f8f4f0;
+}
+.pt-form-section .container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.pt-form-section h2 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 12px;
+}
+.pt-form-section .subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+.pt-form-wrapper {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: left;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+}
+.pt-location-bar {
+  padding: 40px 20px;
+  background: #2c2c2c;
+  color: #fff;
+  text-align: center;
+}
+.pt-location-bar p {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+.location-tags {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.location-tag {
+  background: rgba(201,169,110,0.2);
+  border: 1px solid #c9a96e;
+  color: #c9a96e;
+  padding: 7px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+</style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="logo.png" alt="Pilates Company Lübeck Logo">
-      </a>
-      <ul class="nav-menu">
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Pilates Company Luebeck Logo">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="kurse.html">Kurse</a></li>
+      <li><a href="trainer.html">Trainer</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="probetraining.html" class="nav-cta">Probetraining</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="pt-hero">
+  <div class="label">1:1 Personal Training</div>
+  <h1>Private Reformer Class<br>in Stockelsdorf</h1>
+  <p>Deine persoenliche Einheit am Reformer – individuell abgestimmt auf dein Level, dein Koerpergefuehl und deine Ziele.</p>
+  <p class="location-note">Direkt an der Grenze zu Luebeck · Segeberger Str. 1, Stockelsdorf</p>
+  <div class="pt-hero-ctas">
+    <a href="https://www.eversports.de/sp/pilates-company/product/9e682c7d-a72d-461f-9076-6419fb598e7e" class="btn-primary" target="_blank">Jetzt direkt buchen</a>
+    <a href="#anfrage" class="btn-secondary">Termin anfragen</a>
+  </div>
+</section>
+<section class="pt-reformer-section">
+  <div class="container">
+    <div class="reformer-image">
+      <div class="img-placeholder">Private Reformer Class</div>
+    </div>
+    <div class="reformer-content">
+      <span class="tag">Reformer Training</span>
+      <h2>Private Reformer Class</h2>
+      <p>Ob Einstieg, Technikvertiefung oder gezieltes Training: 60 Minuten ganz fuer dich, mit persoenlicher Begleitung durch eine unserer Trainerinnen am Pilates-Reformer.</p>
+      <p>Das Training wird vollstaendig auf deine Beduerfnisse, dein Tempo und deine Ziele abgestimmt – kein Gruppentraining, keine Kompromisse.</p>
+      <div class="reformer-details">
+        <span class="reformer-detail-item">60 Minuten</span>
+        <span class="reformer-detail-item">1 Person</span>
+        <span class="reformer-detail-item">89,00 EUR / Einheit</span>
+        <span class="reformer-detail-item">Montag bis Freitag</span>
+      </div>
+      <a href="https://www.eversports.de/sp/pilates-company/product/9e682c7d-a72d-461f-9076-6419fb598e7e" class="book-btn" target="_blank">Jetzt buchen ueber Eversports</a>
+    </div>
+  </div>
+</section>
+<section class="pt-benefits">
+  <div class="container">
+    <h2>Warum Personal Training bei uns?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>100 % auf dich zugeschnitten</h3>
+        <p>Kein Gruppentraining – nur du und deine Trainerin. Jede Einheit wird individuell auf deine Ziele und Beduerfnisse angepasst.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Schnellere Ergebnisse</h3>
+        <p>Durch gezieltes Einzelcoaching erreichst du deine Ziele deutlich schneller als im Gruppenkurs.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Zertifizierte Trainerinnen</h3>
+        <p>Unsere erfahrenen Pilates-Trainerinnen begleiten dich Schritt fuer Schritt – ob Anfaenger oder Fortgeschrittener.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Zentral und gut erreichbar</h3>
+        <p>Unser Studio befindet sich in Stockelsdorf, direkt an der Grenze zu Luebeck – schnell und einfach erreichbar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="pt-location-bar">
+  <p>Wir befinden uns in Stockelsdorf – direkt an der Grenze zu Luebeck</p>
+  <div class="location-tags">
+    <span class="location-tag">Stockelsdorf</span>
+    <span class="location-tag">Luebeck (5 min)</span>
+    <span class="location-tag">Bad Schwartau (10 min)</span>
+  </div>
+</div>
+<section class="pt-form-section" id="anfrage">
+  <div class="container">
+    <h2>Termin anfragen</h2>
+    <p class="subtitle">Du moechtest lieber erst Ruecksprache halten? Fuell das Formular aus – wir melden uns schnell bei dir.</p>
+    <div class="pt-form-wrapper">
+      <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+      <script>
+        hbspt.forms.create({
+          region: "eu1",
+          portalId: "147264621",
+          formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732"
+        });
+      </script>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Pilates Company Luebeck</h4>
+      <p>Segeberger Str. 1<br>23617 Stockelsdorf</p>
+      <p>Tel: <a href="tel:+4945116083019">0451 - 160 830 19</a></p>
+      <p><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="kurse.html">Kurse</a></li>
-        <li><a href="trainer.html">Trainer</a></li>
         <li><a href="preise.html">Preise</a></li>
+        <li><a href="trainer.html">Trainer</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="probetraining.html" class="nav-cta">Probetraining</a></li>
       </ul>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="pt-hero">
-    <div class="badge">&#128293; Limitierte Plätze verfügbar</div>
-    <h1>Personal Training<br>in Lübeck & Umgebung</h1>
-    <p>Dein persönlicher Trainer. Dein Tempo. Deine Ziele.<br>
-    Individuelles 1:1 Coaching mit zertifizierten Pilates-Experten – für messbare Ergebnisse.</p>
-  </section>
-
-  <!-- Benefits -->
-  <section class="pt-benefits">
-    <div class="container">
-      <h2>Warum Personal Training bei uns?</h2>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">&#127919;</div>
-          <h3>100% auf dich zugeschnitten</h3>
-          <p>Kein Gruppentraining – nur du und dein Trainer. Jede Einheit wird individuell auf deine Ziele und Bedürfnisse angepasst.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">&#9889;</div>
-          <h3>Schnellere Ergebnisse</h3>
-          <p>Durch gezieltes Einzelcoaching erreichst du deine Ziele deutlich schneller als im Gruppenkurs.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">&#127775;</div>
-          <h3>Zertifizierte Trainer</h3>
-          <p>Unsere erfahrenen Pilates-Trainer begleiten dich Schritt für Schritt – ob Anfänger oder Fortgeschrittener.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">&#128205;</div>
-          <h3>Flexible Zeiten & Orte</h3>
-          <p>Training in unserem Studio in Lübeck, Stockelsdorf oder Bad Schwartau – nach deinem Zeitplan.</p>
-        </div>
-      </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- Locations -->
-  <section class="pt-locations">
-    <h3>Wir trainieren mit dir in:</h3>
-    <div class="location-tags">
-      <span class="location-tag">&#128205; Lübeck</span>
-      <span class="location-tag">&#128205; Stockelsdorf</span>
-      <span class="location-tag">&#128205; Bad Schwartau</span>
-    </div>
-  </section>
-
-  <!-- Contact Form -->
-  <section class="pt-form-section">
-    <div class="container">
-      <h2>Jetzt Kontakt aufnehmen</h2>
-      <p class="subtitle">Schreib uns kurz – wir melden uns innerhalb von 24 Stunden und besprechen alle Details für dein persönliches Training.</p>
-      <div class="pt-form-wrapper">
-        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-        <script>
-          hbspt.forms.create({
-            portalId: "147264621",
-            formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732"
-          });
-        </script>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>&copy; 2025 Pilates Company Lübeck | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  </div>
+  <p class="footer-copy">2026 Pilates Company Luebeck. Alle Rechte vorbehalten.</p>
+</footer>
 </body>
 </html>
