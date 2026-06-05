@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Training Lübeck – Pilates Company</title>
+  <meta name="description" content="Personal Training in Lübeck, Stockelsdorf & Bad Schwartau. 1:1 Coaching mit erfahrenen Trainern. Jetzt Kontakt aufnehmen!">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pt-hero {
+      background: linear-gradient(135deg, #2c2c2c 0%, #4a3728 100%);
+      color: #fff;
+      padding: 100px 20px 80px;
+      text-align: center;
+    }
+    .pt-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .pt-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+    .pt-hero .badge {
+      display: inline-block;
+      background: #c9a96e;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pt-benefits {
+      padding: 70px 20px;
+      background: #f8f4f0;
+    }
+    .pt-benefits .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pt-benefits h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #2c2c2c;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .benefit-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .benefit-card h3 {
+      font-size: 1.2rem;
+      color: #2c2c2c;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .benefit-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .pt-form-section {
+      padding: 70px 20px;
+      background: #fff;
+    }
+    .pt-form-section .container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pt-form-section h2 {
+      font-size: 2rem;
+      color: #2c2c2c;
+      margin-bottom: 15px;
+    }
+    .pt-form-section .subtitle {
+      color: #666;
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .pt-form-wrapper {
+      background: #f8f4f0;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: left;
+    }
+    .pt-locations {
+      padding: 50px 20px;
+      background: #2c2c2c;
+      color: #fff;
+      text-align: center;
+    }
+    .pt-locations h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+    .location-tags {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .location-tag {
+      background: rgba(201,169,110,0.2);
+      border: 1px solid #c9a96e;
+      color: #c9a96e;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Pilates Company Lübeck Logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="kurse.html">Kurse</a></li>
+        <li><a href="trainer.html">Trainer</a></li>
+        <li><a href="preise.html">Preise</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="probetraining.html" class="nav-cta">Probetraining</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-hero">
+    <div class="badge">&#128293; Limitierte Plätze verfügbar</div>
+    <h1>Personal Training<br>in Lübeck & Umgebung</h1>
+    <p>Dein persönlicher Trainer. Dein Tempo. Deine Ziele.<br>
+    Individuelles 1:1 Coaching mit zertifizierten Pilates-Experten – für messbare Ergebnisse.</p>
+  </section>
+
+  <!-- Benefits -->
+  <section class="pt-benefits">
+    <div class="container">
+      <h2>Warum Personal Training bei uns?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">&#127919;</div>
+          <h3>100% auf dich zugeschnitten</h3>
+          <p>Kein Gruppentraining – nur du und dein Trainer. Jede Einheit wird individuell auf deine Ziele und Bedürfnisse angepasst.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#9889;</div>
+          <h3>Schnellere Ergebnisse</h3>
+          <p>Durch gezieltes Einzelcoaching erreichst du deine Ziele deutlich schneller als im Gruppenkurs.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#127775;</div>
+          <h3>Zertifizierte Trainer</h3>
+          <p>Unsere erfahrenen Pilates-Trainer begleiten dich Schritt für Schritt – ob Anfänger oder Fortgeschrittener.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128205;</div>
+          <h3>Flexible Zeiten & Orte</h3>
+          <p>Training in unserem Studio in Lübeck, Stockelsdorf oder Bad Schwartau – nach deinem Zeitplan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section class="pt-locations">
+    <h3>Wir trainieren mit dir in:</h3>
+    <div class="location-tags">
+      <span class="location-tag">&#128205; Lübeck</span>
+      <span class="location-tag">&#128205; Stockelsdorf</span>
+      <span class="location-tag">&#128205; Bad Schwartau</span>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="pt-form-section">
+    <div class="container">
+      <h2>Jetzt Kontakt aufnehmen</h2>
+      <p class="subtitle">Schreib uns kurz – wir melden uns innerhalb von 24 Stunden und besprechen alle Details für dein persönliches Training.</p>
+      <div class="pt-form-wrapper">
+        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            portalId: "147264621",
+            formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732"
+          });
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Pilates Company Lübeck | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
