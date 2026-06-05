@@ -1,3 +1,16 @@
+// Google Ads Conversion Tracking (AW-18174020065)
+(function() {
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18174020065';
+  document.head.appendChild(script);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'AW-18174020065');
+})();
+
 // ══════════════════════════════════════════════════════════════════
 // PILATES COMPANY LÜBECK - MULTI-PAGE WEBSITE JAVASCRIPT
 // Multi-Page: Jede HTML-Datei ist eigenständig (keine showPage mehr)
