@@ -2,371 +2,648 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Training Stockelsdorf – Private Reformer Class | Pilates Company</title>
-<meta name="description" content="1:1 Personal Training am Reformer in Stockelsdorf, direkt an der Grenze zu Luebeck. Private Reformer Class – 60 Minuten, individuell auf dich abgestimmt. Jetzt buchen oder Termin anfragen!">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="1:1 Personal Training am Reformer in Stockelsdorf, direkt an der Grenze zu Lübeck. Private Reformer Class – 60 Minuten, individuell auf dich abgestimmt. Jetzt buchen oder Termin anfragen!">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-.pt-hero {
-  background: linear-gradient(135deg, #2c2c2c 0%, #4a3728 100%);
-  color: #fff;
-  padding: 100px 20px 80px;
-  text-align: center;
-}
-.pt-hero .label {
-  display: inline-block;
-  background: #c9a96e;
-  color: #fff;
-  padding: 6px 18px;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.pt-hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-.pt-hero p {
-  font-size: 1.15rem;
-  opacity: 0.9;
-  max-width: 620px;
-  margin: 0 auto 14px;
-  line-height: 1.7;
-}
-.pt-hero .location-note {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  margin-bottom: 36px;
-}
-.pt-hero-ctas {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  background: #c9a96e;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.2s;
-  display: inline-block;
-}
-.btn-primary:hover { background: #b8955a; }
-.btn-secondary {
-  background: transparent;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  border: 2px solid rgba(255,255,255,0.5);
-  transition: border-color 0.2s;
-  display: inline-block;
-}
-.btn-secondary:hover { border-color: #fff; }
-.pt-reformer-section {
-  padding: 70px 20px;
-  background: #f8f4f0;
-}
-.pt-reformer-section .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-@media (max-width: 768px) {
-  .pt-reformer-section .container { grid-template-columns: 1fr; }
-  .pt-hero h1 { font-size: 2rem; }
-}
-.reformer-image {
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-}
-.reformer-image .img-placeholder {
-  width: 100%;
-  height: 420px;
-  background: linear-gradient(135deg, #4a3728 0%, #2c2c2c 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #c9a96e;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.reformer-content h2 {
-  font-size: 2rem;
-  color: #2c2c2c;
-  margin-bottom: 8px;
-}
-.reformer-content .tag {
-  display: inline-block;
-  background: #c9a96e;
-  color: #fff;
-  padding: 4px 14px;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-.reformer-content p {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.75;
-  margin-bottom: 20px;
-}
-.reformer-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-.reformer-detail-item {
-  background: #fff;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  color: #444;
-  font-weight: 500;
-}
-.book-btn {
-  display: inline-block;
-  background: #2c2c2c;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.2s;
-}
-.book-btn:hover { background: #444; }
-.pt-benefits {
-  padding: 70px 20px;
-  background: #fff;
-}
-.pt-benefits .container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.pt-benefits h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 50px;
-  color: #2c2c2c;
-}
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
-}
-.benefit-card {
-  background: #f8f4f0;
-  border-radius: 12px;
-  padding: 28px;
-  text-align: center;
-}
-.benefit-card h3 {
-  font-size: 1.15rem;
-  color: #2c2c2c;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-.benefit-card p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.pt-form-section {
-  padding: 70px 20px;
-  background: #f8f4f0;
-}
-.pt-form-section .container {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-.pt-form-section h2 {
-  font-size: 2rem;
-  color: #2c2c2c;
-  margin-bottom: 12px;
-}
-.pt-form-section .subtitle {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 36px;
-  line-height: 1.6;
-}
-.pt-form-wrapper {
-  background: #fff;
-  border-radius: 16px;
-  padding: 40px;
-  text-align: left;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.06);
-}
-.pt-location-bar {
-  padding: 40px 20px;
-  background: #2c2c2c;
-  color: #fff;
-  text-align: center;
-}
-.pt-location-bar p {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-bottom: 16px;
-}
-.location-tags {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.location-tag {
-  background: rgba(201,169,110,0.2);
-  border: 1px solid #c9a96e;
-  color: #c9a96e;
-  padding: 7px 18px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-}
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #d9a49a;
+    --rose-light: #f5ede9;
+    --rose-dark:  #b0796e;
+    --cream:      #faf7f4;
+    --warm-gray:  #8a847d;
+    --text:       #2c2825;
+    --text-mid:   #5a5450;
+    --border:     rgba(44,40,37,.1);
+    --sans:       'DM Sans', system-ui, sans-serif;
+    --heading:    'Playfair Display', serif;
+    --radius:     12px;
+    --nav-h:      136px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    padding-top: var(--nav-h);
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1 { font-family: var(--heading); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
+  h2 { font-family: var(--heading); font-weight: 300; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
+  h3 { font-family: var(--heading); font-weight: 400; font-size: 1.5rem; line-height: 1.3; }
+  h4 { font-family: var(--heading); font-weight: 500; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-dark); }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(250,247,244,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; width: 100%;
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-links {
+    display: flex; align-items: center; gap: 1.25rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: .78rem; font-weight: 400; letter-spacing: .03em;
+    text-decoration: none; color: var(--text-mid);
+    text-transform: uppercase;
+    transition: color .2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--rose-dark); }
+  .nav-cta {
+    background: var(--rose);
+    color: #fff !important;
+    padding: .45rem 1rem;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    white-space: nowrap;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--rose-dark) !important; color: #fff !important; }
+  .nav-instagram {
+    display: flex; align-items: center;
+    color: var(--text-mid) !important;
+    transition: color .2s !important;
+    padding: 0 !important;
+  }
+  .nav-instagram:hover { color: var(--rose-dark) !important; }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--text); border-radius: 2px;
+    transition: .3s;
+  }
+  .mobile-menu {
+    display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: var(--cream); z-index: 99;
+    flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding: 2rem 1rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--heading); font-size: 1.3rem; font-weight: 300;
+    color: var(--text); text-decoration: none;
+    transition: color .2s; text-align: center; width: 100%;
+  }
+  .mobile-menu a:hover { color: var(--rose-dark); }
+  .mobile-menu a.mm-cta {
+    background: var(--rose); color: #fff !important;
+    padding: .6rem 1.5rem; border-radius: 100px;
+    font-size: 1rem; font-weight: 500;
+    display: block; text-align: center; width: auto;
+    margin-top: .5rem;
+  }
+
+  /* ── SHARED ── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 5rem 0; }
+  .narrow { max-width: 760px; }
+
+  .tag {
+    display: inline-block;
+    font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--rose-dark); background: var(--rose-light);
+    padding: .35rem .9rem; border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .85rem 2rem; border-radius: 100px;
+    font-family: var(--sans); font-size: .9rem; font-weight: 500;
+    letter-spacing: .04em; text-decoration: none; cursor: pointer;
+    transition: .2s; border: none;
+  }
+  .btn-primary { background: var(--rose); color: #fff; }
+  .btn-primary:hover { background: var(--rose-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--text);
+    border: 1.5px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--rose); color: var(--rose-dark); }
+  .btn-dark { background: var(--text); color: #fff; }
+  .btn-dark:hover { background: #1c1916; transform: translateY(-1px); }
+
+  .eyebrow {
+    font-size: .8rem; font-weight: 500; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--rose-dark);
+    margin-bottom: 1rem;
+  }
+
+  /* ── HERO ── */
+  .pt-hero {
+    display: grid; grid-template-columns: 1.05fr .95fr;
+    align-items: center; gap: 4.5rem;
+    padding: 3.5rem 2rem 4rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .pt-hero-text { max-width: 540px; }
+  .pt-hero-text h1 { margin-bottom: 1.5rem; }
+  .pt-hero-text .lede { font-size: 1.15rem; color: var(--text-mid); margin-bottom: 1.5rem; line-height: 1.8; }
+  .pt-hero-loc {
+    display: flex; align-items: center; gap: .55rem;
+    font-size: .9rem; color: var(--warm-gray); margin-bottom: 2.25rem;
+  }
+  .pt-hero-loc::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--rose); flex-shrink: 0;
+  }
+  .pt-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .pt-hero-photo {
+    position: relative;
+    border-radius: 24px; overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: 0 24px 60px rgba(176,121,110,.22);
+  }
+  .pt-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
+  .pt-hero-badge {
+    position: absolute; left: 1.25rem; bottom: 1.25rem;
+    background: rgba(250,247,244,.94);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    display: flex; align-items: baseline; gap: .6rem;
+    box-shadow: 0 8px 24px rgba(44,40,37,.12);
+  }
+  .pt-hero-badge .price { font-family: var(--heading); font-size: 2rem; font-weight: 400; color: var(--rose-dark); line-height: 1; }
+  .pt-hero-badge .unit { font-size: .82rem; color: var(--text-mid); }
+
+  /* ── CLASS / PRICE SECTION ── */
+  .class-wrap {
+    display: grid; grid-template-columns: 1.3fr .7fr;
+    gap: 3.5rem; align-items: start;
+  }
+  .class-text h2 { margin-bottom: 1.25rem; }
+  .class-text p { color: var(--text-mid); margin-bottom: 1.1rem; font-size: 1.02rem; line-height: 1.8; }
+  .class-card {
+    background: var(--rose-light);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: sticky; top: calc(var(--nav-h) + 1rem);
+  }
+  .class-card .cc-label { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; }
+  .class-card .cc-price {
+    font-family: var(--heading); font-weight: 300;
+    font-size: 3.25rem; line-height: 1; color: var(--text);
+    margin: .5rem 0 .25rem;
+  }
+  .class-card .cc-price span { font-size: 1rem; color: var(--text-mid); font-family: var(--sans); }
+  .class-facts { list-style: none; margin: 1.75rem 0; display: flex; flex-direction: column; }
+  .class-facts li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: .85rem 0;
+    border-bottom: 1px solid rgba(176,121,110,.18);
+    font-size: .95rem;
+  }
+  .class-facts li:last-child { border-bottom: none; }
+  .class-facts .fk { color: var(--text-mid); }
+  .class-facts .fv { font-weight: 500; color: var(--text); }
+  .class-card .btn { width: 100%; justify-content: center; }
+  .class-card .cc-note { font-size: .8rem; color: var(--warm-gray); text-align: center; margin-top: .9rem; }
+
+  /* ── ABLAUF / STEPS ── */
+  .ablauf { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .ablauf-head { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+  .ablauf-head p { color: var(--text-mid); margin-top: 1rem; font-size: 1.05rem; }
+  .steps {
+    max-width: 760px; margin: 0 auto;
+    display: flex; flex-direction: column;
+  }
+  .step {
+    display: grid; grid-template-columns: 4.5rem 1fr;
+    gap: 1.5rem; align-items: start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: var(--heading); font-size: 2.5rem; font-weight: 300;
+    color: var(--rose); line-height: .9;
+  }
+  .step-body h3 { font-size: 1.2rem; margin-bottom: .35rem; }
+  .step-body p { color: var(--text-mid); font-size: .95rem; line-height: 1.7; }
+
+  /* ── WARUM ── */
+  .warum-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem; margin-top: 3.5rem;
+  }
+  .warum-num {
+    font-family: var(--heading); font-size: 2.5rem; color: var(--rose);
+    font-weight: 300; line-height: 1; margin-bottom: .75rem;
+  }
+  .warum-item h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+  .warum-item p { font-size: .92rem; color: var(--text-mid); line-height: 1.65; }
+
+  /* ── FULL-BLEED STUDIO BANNER ── */
+  .studio-banner { position: relative; height: 460px; overflow: hidden; }
+  .studio-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block; }
+  .studio-banner-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(44,40,37,.55) 0%, rgba(44,40,37,.15) 55%, transparent 100%);
+    display: flex; align-items: center;
+  }
+  .studio-banner-overlay .container { width: 100%; }
+  .studio-banner-overlay h2 { color: #fff; max-width: 520px; }
+  .studio-banner-overlay p { color: rgba(255,255,255,.85); max-width: 460px; margin-top: 1rem; font-size: 1.05rem; }
+
+  /* ── STANDORT ── */
+  .standort {
+    background: var(--rose-light);
+    border-radius: 20px;
+    padding: 3.5rem;
+    text-align: center;
+  }
+  .standort p { color: var(--text-mid); margin: 1rem auto 1.75rem; max-width: 540px; }
+  .loc-tags { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+  .loc-tag {
+    background: #fff; border: 1px solid rgba(176,121,110,.3);
+    color: var(--rose-dark); padding: .5rem 1.2rem; border-radius: 100px;
+    font-size: .88rem; font-weight: 500;
+  }
+
+  /* ── FORM ── */
+  .form-section { }
+  .form-head { text-align: center; max-width: 600px; margin: 0 auto 2.5rem; }
+  .form-head p { color: var(--text-mid); margin-top: 1rem; }
+  .form-wrapper {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.75rem;
+    max-width: 680px; margin: 0 auto;
+    box-shadow: 0 8px 30px rgba(44,40,37,.05);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text); color: rgba(255,255,255,.7);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+  }
+  .footer-brand img { height: 64px; width: auto; filter: brightness(0) invert(1); opacity: .92; }
+  .footer-brand p { margin-top: 1rem; font-size: .875rem; line-height: 1.8; }
+  .footer-brand a { color: rgba(255,255,255,.7); text-decoration: none; }
+  .footer-brand a:hover { color: var(--rose); }
+  .footer-col h4 {
+    font-family: var(--sans); font-size: .75rem;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: #fff; font-weight: 500; margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,.6); text-decoration: none;
+    font-size: .875rem; transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: var(--rose); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .8rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+  .footer-bottom a:hover { color: var(--rose); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .pt-hero-text, .pt-hero-photo { animation: fadeUp .7s ease both; }
+    .pt-hero-photo { animation-delay: .12s; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 980px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .pt-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 2rem 2rem 3rem; }
+    .pt-hero-photo { aspect-ratio: 3/2; max-height: 460px; }
+    .class-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    .class-card { position: static; }
+    .warum-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (max-width: 640px) {
+    :root { --nav-h: 84px; }
+    body { padding-top: 84px; }
+    .mobile-menu { top: 84px; }
+    .container { padding: 0 1.25rem; }
+    .section { padding: 3.25rem 0; }
+    .pt-hero { padding: 1.5rem 1.25rem 2.5rem; }
+    .pt-hero-actions { flex-direction: column; }
+    .pt-hero-actions .btn { width: 100%; justify-content: center; }
+    .class-card, .standort { padding: 2rem 1.5rem; }
+    .warum-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+    .studio-banner { height: 340px; }
+    .form-wrapper { padding: 1.75rem 1.25rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .step { grid-template-columns: 3rem 1fr; gap: 1rem; }
+    .step-num { font-size: 2rem; }
+  }
+
 </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Pilates Company Luebeck Logo">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="logo.png" alt="Pilates Company Lübeck" style="height:70px; width:auto; display:block;">
     </a>
-    <ul class="nav-menu">
-      <li><a href="kurse.html">Kurse</a></li>
-      <li><a href="trainer.html">Trainer</a></li>
-      <li><a href="preise.html">Preise</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="probetraining.html" class="nav-cta">Probetraining</a></li>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="kurse.html">KURSE</a></li>
+      <li><a href="preise.html">PREISE</a></li>
+      <li><a href="trainer.html">TRAINER</a></li>
+      <li><a href="personal-training.html" class="active">PERSONAL TRAINING</a></li>
+      <li><a href="ausbildung.html">AUSBILDUNG</a></li>
+      <li><a href="studio-news.html">STUDIO NEWS</a></li>
+      <li><a href="challenge.html" style="color: var(--rose-dark); font-weight: 500;">20×20 CHALLENGE</a></li>
+      <li><a href="probetraining.html" class="nav-cta">PROBETRAINING BUCHEN</a></li>
+      <li>
+        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+      </li>
     </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menü">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
-<section class="pt-hero">
-  <div class="label">1:1 Personal Training</div>
-  <h1>Private Reformer Class<br>in Stockelsdorf</h1>
-  <p>Deine persoenliche Einheit am Reformer – individuell abgestimmt auf dein Level, dein Koerpergefuehl und deine Ziele.</p>
-  <p class="location-note">Direkt an der Grenze zu Luebeck · Segeberger Str. 1, Stockelsdorf</p>
-  <div class="pt-hero-ctas">
-    <a href="https://www.eversports.de/sp/pilates-company/product/9e682c7d-a72d-461f-9076-6419fb598e7e" class="btn-primary" target="_blank">Jetzt direkt buchen</a>
-    <a href="#anfrage" class="btn-secondary">Termin anfragen</a>
-  </div>
-</section>
-<section class="pt-reformer-section">
-  <div class="container">
-    <div class="reformer-image">
-      <img src="personal-training-reformer.jpg" alt="Private Reformer Class – 1:1 Personal Training am Pilates Reformer in Stockelsdorf" style="width:100%;height:420px;object-fit:cover;display:block;">
-    </div>
-    <div class="reformer-content">
-      <span class="tag">Reformer Training</span>
-      <h2>Private Reformer Class</h2>
-      <p>Ob Einstieg, Technikvertiefung oder gezieltes Training: 60 Minuten ganz fuer dich, mit persoenlicher Begleitung durch eine unserer Trainerinnen am Pilates-Reformer.</p>
-      <p>Das Training wird vollstaendig auf deine Beduerfnisse, dein Tempo und deine Ziele abgestimmt – kein Gruppentraining, keine Kompromisse.</p>
-      <div class="reformer-details">
-        <span class="reformer-detail-item">60 Minuten</span>
-        <span class="reformer-detail-item">1 Person</span>
-        <span class="reformer-detail-item">89,00 EUR / Einheit</span>
-        <span class="reformer-detail-item">Montag bis Freitag</span>
-      </div>
-      <a href="https://www.eversports.de/sp/pilates-company/product/9e682c7d-a72d-461f-9076-6419fb598e7e" class="book-btn" target="_blank">Jetzt buchen ueber Eversports</a>
-    </div>
-  </div>
-</section>
-<section class="pt-benefits">
-  <div class="container">
-    <h2>Warum Personal Training bei uns?</h2>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <h3>100 % auf dich zugeschnitten</h3>
-        <p>Kein Gruppentraining – nur du und deine Trainerin. Jede Einheit wird individuell auf deine Ziele und Beduerfnisse angepasst.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Schnellere Ergebnisse</h3>
-        <p>Durch gezieltes Einzelcoaching erreichst du deine Ziele deutlich schneller als im Gruppenkurs.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Zertifizierte Trainerinnen</h3>
-        <p>Unsere erfahrenen Pilates-Trainerinnen begleiten dich Schritt fuer Schritt – ob Anfaenger oder Fortgeschrittener.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Zentral und gut erreichbar</h3>
-        <p>Unser Studio befindet sich in Stockelsdorf, direkt an der Grenze zu Luebeck – schnell und einfach erreichbar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="pt-location-bar">
-  <p>Wir befinden uns in Stockelsdorf – direkt an der Grenze zu Luebeck</p>
-  <div class="location-tags">
-    <span class="location-tag">Stockelsdorf</span>
-    <span class="location-tag">Luebeck (5 min)</span>
-    <span class="location-tag">Bad Schwartau (10 min)</span>
-  </div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="kurse.html">KURSE</a>
+  <a href="preise.html">PREISE</a>
+  <a href="trainer.html">TRAINER</a>
+  <a href="personal-training.html">PERSONAL TRAINING</a>
+  <a href="ausbildung.html">AUSBILDUNG</a>
+  <a href="studio-news.html">STUDIO NEWS</a>
+  <a href="challenge.html" style="color: var(--rose-dark); font-weight: 500;">20×20 CHALLENGE</a>
+  <a href="probetraining.html" class="mm-cta">PROBETRAINING BUCHEN</a>
 </div>
-<section class="pt-form-section" id="anfrage">
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="pt-hero">
+    <div class="pt-hero-text">
+      <span class="tag">1:1 Personal Training</span>
+      <h1>Private Reformer Class</h1>
+      <p class="lede">Deine persönliche Einheit am Reformer – individuell abgestimmt auf dein Level, dein Körpergefühl und deine Ziele. Kein Gruppentraining, keine Kompromisse.</p>
+      <p class="pt-hero-loc">Direkt an der Grenze zu Lübeck · Segeberger Str. 1, Stockelsdorf</p>
+      <div class="pt-hero-actions">
+        <a class="btn btn-primary" href="https://www.eversports.de/sp/pilates-company/product/9e682c7d-a72d-461f-9076-6419fb598e7e" target="_blank" rel="noopener noreferrer">Jetzt direkt buchen →</a>
+        <a class="btn btn-outline" href="#anfrage">Termin anfragen</a>
+      </div>
+    </div>
+    <div class="pt-hero-photo">
+      <img src="private-reformer-class.png" alt="1:1 Personal Training am Pilates Reformer – Trainerin begleitet eine Kundin">
+      <div class="pt-hero-badge">
+        <span class="price">89&nbsp;€</span>
+        <span class="unit">/ 60&nbsp;Min · 1:1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLASS / PRICE ── -->
+  <section class="section">
+    <div class="container">
+      <div class="class-wrap">
+        <div class="class-text">
+          <span class="eyebrow">Die Einheit</span>
+          <h2>60 Minuten ganz für dich</h2>
+          <p>Ob Einstieg, Technikvertiefung oder gezieltes Training nach einer Pause: In der Private Reformer Class arbeitest du allein mit einer unserer zertifizierten Trainerinnen am Pilates-Reformer – in ruhiger, persönlicher Atmosphäre.</p>
+          <p>Jede Einheit wird vollständig auf deine Bedürfnisse, dein Tempo und deine Ziele abgestimmt. So lernst du die Übungen sauber und sicher, spürst schnell Fortschritte und nimmst genau das mit, was dein Körper gerade braucht.</p>
+          <p>Ideal für alle, die lieber ungestört trainieren, eine Verletzung berücksichtigen möchten oder den perfekten, individuell begleiteten Start in Reformer-Pilates suchen.</p>
+        </div>
+        <aside class="class-card">
+          <div class="cc-label">Private Reformer Class</div>
+          <div class="cc-price">89&nbsp;€ <span>/ Einheit</span></div>
+          <ul class="class-facts">
+            <li><span class="fk">Dauer</span><span class="fv">60 Minuten</span></li>
+            <li><span class="fk">Teilnehmer</span><span class="fv">1 Person · 1:1</span></li>
+            <li><span class="fk">Verfügbarkeit</span><span class="fv">Mo – Fr</span></li>
+            <li><span class="fk">Level</span><span class="fv">Jedes Level</span></li>
+          </ul>
+          <a class="btn btn-primary" href="https://www.eversports.de/sp/pilates-company/product/9e682c7d-a72d-461f-9076-6419fb598e7e" target="_blank" rel="noopener noreferrer">Über Eversports buchen</a>
+          <p class="cc-note">Sichere Buchung & Bezahlung über Eversports</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABLAUF EINER EINHEIT ── -->
+  <section class="section ablauf">
+    <div class="container">
+      <div class="ablauf-head">
+        <span class="eyebrow">Schritt für Schritt</span>
+        <h2>Der Ablauf deiner Einheit</h2>
+        <p>Damit du weißt, was dich erwartet – vom ersten Hallo bis zum Ausklang.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Ankommen & Kennenlernen</h3>
+            <p>Du kommst in unser ruhiges Studio in Stockelsdorf. Deine Trainerin nimmt sich Zeit, dich willkommen zu heißen – ganz ohne Hektik.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>Kurzes Check-in zu deinen Zielen</h3>
+            <p>Wir sprechen über dein Level, eventuelle Beschwerden oder Verletzungen und was du erreichen möchtest. So planen wir die Einheit genau um dich herum.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Aufwärmen am Reformer</h3>
+            <p>Mit gezielten Übungen aktivierst du deine Körpermitte und findest in den Atem- und Bewegungsrhythmus – behutsam und auf dein Tempo abgestimmt.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>Individuelles Training</h3>
+            <p>Im Hauptteil arbeitest du an deiner Technik, Kraft und Beweglichkeit. Deine Trainerin korrigiert in Echtzeit, passt den Widerstand an und fordert dich genau richtig.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <h3>Ausklang & Empfehlung</h3>
+            <p>Zum Abschluss dehnst du dich entspannt aus. Du gehst mit einem klaren Gefühl und – wenn du magst – mit einer Empfehlung für deine nächsten Schritte nach Hause.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WARUM ── -->
+  <section class="section">
+    <div class="container">
+      <div class="ablauf-head">
+        <span class="eyebrow">Deine Vorteile</span>
+        <h2>Warum Personal Training bei uns?</h2>
+      </div>
+      <div class="warum-grid">
+        <div class="warum-item">
+          <div class="warum-num">01</div>
+          <h3>100 % auf dich zugeschnitten</h3>
+          <p>Nur du und deine Trainerin. Jede Einheit wird individuell auf deine Ziele und Bedürfnisse angepasst.</p>
+        </div>
+        <div class="warum-item">
+          <div class="warum-num">02</div>
+          <h3>Schnellere Ergebnisse</h3>
+          <p>Durch gezieltes Einzelcoaching erreichst du deine Ziele deutlich schneller als im Gruppenkurs.</p>
+        </div>
+        <div class="warum-item">
+          <div class="warum-num">03</div>
+          <h3>Zertifizierte Trainerinnen</h3>
+          <p>Unsere erfahrenen Pilates-Trainerinnen begleiten dich Schritt für Schritt – ob Anfängerin oder Fortgeschrittene.</p>
+        </div>
+        <div class="warum-item">
+          <div class="warum-num">04</div>
+          <h3>Zentral & gut erreichbar</h3>
+          <p>Unser Studio liegt in Stockelsdorf, direkt an der Grenze zu Lübeck – schnell und einfach erreichbar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STUDIO BANNER ── -->
+  <section class="studio-banner">
+    <img src="studio-reformer.jpg" alt="Reformer Studio der Pilates Company Lübeck in Stockelsdorf">
+    <div class="studio-banner-overlay">
+      <div class="container">
+        <h2>Ein Studio zum Ankommen</h2>
+        <p>Warmes Licht, hochwertige Reformer und eine ruhige Atmosphäre – dein Raum für konzentriertes, persönliches Training.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STANDORT ── -->
+  <section class="section">
+    <div class="container">
+      <div class="standort">
+        <span class="eyebrow">Standort</span>
+        <h2>Mitten in Stockelsdorf</h2>
+        <p>Direkt an der Grenze zu Lübeck – mit dem Auto, Bus oder Rad in wenigen Minuten erreichbar.</p>
+        <div class="loc-tags">
+          <span class="loc-tag">Stockelsdorf</span>
+          <span class="loc-tag">Lübeck · 5 Min</span>
+          <span class="loc-tag">Bad Schwartau · 10 Min</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ANFRAGE FORM ── -->
+  <section class="section form-section" id="anfrage">
+    <div class="container">
+      <div class="form-head">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Termin anfragen</h2>
+        <p>Du möchtest lieber erst Rücksprache halten? Füll das Formular aus – wir melden uns schnell bei dir.</p>
+      </div>
+      <div class="form-wrapper">
+        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            region: "eu1",
+            portalId: "147264621",
+            formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732"
+          });
+        </script>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
   <div class="container">
-    <h2>Termin anfragen</h2>
-    <p class="subtitle">Du moechtest lieber erst Ruecksprache halten? Fuell das Formular aus – wir melden uns schnell bei dir.</p>
-    <div class="pt-form-wrapper">
-      <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-      <script>
-        hbspt.forms.create({
-          region: "eu1",
-          portalId: "147264621",
-          formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732"
-        });
-      </script>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Pilates Company Lübeck">
+        <p>
+          Segeberger Str. 1<br>
+          23617 Stockelsdorf<br>
+          Tel: <a href="tel:+4945116083019">0451 - 160 830 19</a><br>
+          <a href="/cdn-cgi/l/email-protection#99f0f7fff6d9e9f0f5f8edfceafaf6f4e9f8f7e0b7fdfc"><span class="__cf_email__" data-cfemail="f39a9d959cb3839a9f92879680909c9e83929d8add9796">[email&#160;protected]</span></a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kurse.html">Kurse</a></li>
+          <li><a href="preise.html">Preise</a></li>
+          <li><a href="trainer.html">Trainer</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Pilates Company Lübeck. Alle Rechte vorbehalten.</span>
+      <a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
   </div>
-</section>
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h4>Pilates Company Luebeck</h4>
-      <p>Segeberger Str. 1<br>23617 Stockelsdorf</p>
-      <p>Tel: <a href="tel:+4945116083019">0451 - 160 830 19</a></p>
-      <p><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="kurse.html">Kurse</a></li>
-        <li><a href="preise.html">Preise</a></li>
-        <li><a href="trainer.html">Trainer</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Rechtliches</h4>
-      <ul>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-      </ul>
-    </div>
-  </div>
-  <p class="footer-copy">2026 Pilates Company Luebeck. Alle Rechte vorbehalten.</p>
 </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  document.querySelectorAll('#mobileMenu a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.remove('open');
+    });
+  });
+</script>
+
 </body>
 </html>
