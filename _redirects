@@ -1,18 +1,6 @@
-# SEO-Fix: .html-URLs auf Clean-URLs redirecten
-/kurse.html /kurse 301
-/preise.html /preise 301
-/trainer.html /trainer 301
-/probetraining.html /probetraining 301
-/ausbildung.html /ausbildung 301
-/studio-news.html /studio-news 301
-/kontakt.html /kontakt 301
-/gutschein.html /gutschein 301
-/downloads.html /downloads 301
-/impressum.html /impressum 301
+# Spezielle Redirects (nicht durch Pretty URLs abgedeckt)
 /datenschutz.html /datenschutzerklaerung 301
-/datenschutzerklaerung.html /datenschutzerklaerung 301
-/challenge.html /challenge 301
-
+/datenschutz /datenschutzerklaerung 301
 # Redirects von alten Single-Page Anchor-Links
 /index.html#kurse /kurse 301
 /index.html#preise /preise 301
@@ -21,9 +9,5 @@
 /index.html#ausbildung /ausbildung 301
 /index.html#studio-news /studio-news 301
 /index.html#kontakt /kontakt 301
-
-/wellpass.html /wellpass 301
+# Trailing slash
 /wellpass/ /wellpass 301
-/english.html /english 301
-/personal-training.html /personal-training 301
-/reformer-pilates-luebeck.html /reformer-pilates-luebeck 301
