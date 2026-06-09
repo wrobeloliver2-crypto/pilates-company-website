@@ -12,6 +12,32 @@
 })();
 
 // ══════════════════════════════════════════════════════════════════
+// Pilates Conversion Tracking – zentrale Helferfunktion
+// Getrennte Conversions pro Formular. Labels stammen aus Google Ads
+// (Conversion-ID AW-18174020065).
+//   probetraining : bestehendes Label, verifiziert
+//   kontakt       : NEUES Label vom Dienstleister eintragen
+//   personal      : NEUES Label vom Dienstleister eintragen
+// ══════════════════════════════════════════════════════════════════
+window.PC_CONV_LABELS = {
+  probetraining: 'AW-18174020065/2zNACl3CzLkcEOGThtpD',
+  kontakt:       'AW-18174020065/bkKSCNSU_LscEOGThtpD',
+  personal:      'AW-18174020065/kbdfCPGP57scEOGThtpD'
+};
+function pcConversion(key) {
+  try {
+    var sendTo = window.PC_CONV_LABELS[key];
+    if (!sendTo || sendTo.indexOf('__LABEL_') !== -1) return; // Label noch nicht gesetzt
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { 'send_to': sendTo });
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'pilates_lead_' + key });
+  } catch (e) {}
+}
+window.pcConversion = pcConversion;
+
+// ══════════════════════════════════════════════════════════════════
 // PILATES COMPANY LÜBECK - MULTI-PAGE WEBSITE JAVASCRIPT
 // Multi-Page: Jede HTML-Datei ist eigenständig (keine showPage mehr)
 // ══════════════════════════════════════════════════════════════════
@@ -171,6 +197,7 @@ function loadKontaktForm() {
     formId: "daeb21e5-4484-433b-8169-a021b54588d8",
     region: "eu1",
     target: "#kontakt-form-wrapper",
+    onFormSubmit: function() { pcConversion('kontakt'); },
     onFormReady: function() {
       wrapper.querySelectorAll('*').forEach(function(el) {
         el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');

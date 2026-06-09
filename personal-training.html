@@ -594,7 +594,16 @@
           hbspt.forms.create({
             region: "eu1",
             portalId: "147264621",
-            formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732"
+            formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732",
+            onFormSubmit: function() {
+              // Label vom Dienstleister eintragen (Conversion "Pilates Personal Training Website")
+              var L = 'AW-18174020065/kbdfCPGP57scEOGThtpD';
+              if (L.indexOf('__LABEL_') === -1 && typeof gtag === 'function') {
+                gtag('event', 'conversion', { 'send_to': L });
+              }
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({ event: 'pilates_lead_personal' });
+            }
           });
         </script>
       </div>
