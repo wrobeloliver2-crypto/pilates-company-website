@@ -1,15 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pilatescompany.de/sitemap.xml
+Sitemap: https://pilatescompany.de/sitemap.xml
 
-# Disallow internal/utility pages
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /ki-widget-snippet.html
 Disallow: /pc-assistant.html
 Disallow: /preisassistent.html
-
-# Crawl delay
-Crawl-delay: 1
