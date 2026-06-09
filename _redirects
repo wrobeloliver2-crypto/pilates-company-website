@@ -11,3 +11,7 @@
 /index.html#kontakt /kontakt 301
 # Trailing slash
 /wellpass/ /wellpass 301
+
+# ── Ergaenzt 09.06.2026: Plural-Variante aus GSC-404 ──
+/gutscheine   /gutschein   301
+/gutscheine/  /gutschein   301
