@@ -898,7 +898,7 @@
     .hero-text h1 { color: var(--text); }
     .hero-text p { color: var(--text-mid); }
     .hero-actions { flex-direction: column; }
-    .hero-actions .btn { text-align: center; }
+    .hero-actions .btn { text-align: center; width: 100%; }
     .hero-why { padding: 1.5rem; }
     .hero-why-item { gap: 1rem; }
     .hero-why-num { font-size: 1.5rem; min-width: 2.5rem; }
@@ -946,7 +946,7 @@
     #page-ausbildung .container > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
 
     /* Buttons */
-    .btn { padding: .7rem 1.5rem; }
+    .btn { padding: .9rem 1.5rem; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 
     /* Quote card */
     .hqc-inner { padding: 2rem 1.5rem; min-height: 320px; }
