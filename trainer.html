@@ -10,7 +10,8 @@
 <meta name="description" content="Unsere zertifizierten Pilates- und Yoga-Trainerinnen in Lübeck & Stockelsdorf. Reformer Pilates, Aerial Yoga und Classic Pilates – persönliche Betreuung in kleinen Gruppen.">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,7 +21,7 @@
     --rose-light: #f5ede9;
     --rose-dark:  #b0796e;
     --cream:      #faf7f4;
-    --warm-gray:  #8a847d;
+    --warm-gray:  #746e67;
     --text:       #2c2825;
     --text-mid:   #5a5450;
     --border:     rgba(44,40,37,.1);
@@ -402,7 +403,7 @@
     font-family: var(--heading); font-size: 3rem; color: var(--rose);
   }
   .trainer-info { padding: 1.5rem; }
-  .trainer-info h3 { margin-bottom: .25rem; }
+  .trainer-info h3, .trainer-info h2 { margin-bottom: .25rem; font-size: 1.5rem; font-weight: 400; line-height: 1.3; }
   .trainer-specialty {
     font-size: .85rem; color: var(--rose-dark);
     font-weight: 500; letter-spacing: .03em;
@@ -656,7 +657,7 @@
   .footer-brand .logo { color: #fff; }
   .footer-brand .logo span { color: var(--rose); }
   .footer-brand p { margin-top: .75rem; font-size: .875rem; line-height: 1.7; }
-  .footer-col h4 {
+  .footer-col h4, .footer-col h3 {
     font-family: var(--sans); font-size: .75rem;
     letter-spacing: .1em; text-transform: uppercase;
     color: #fff; font-weight: 500; margin-bottom: 1rem;
@@ -1076,30 +1077,30 @@
   <section class="section">
     <div class="container">
       <span class="tag">Unser Team</span>
-      <h2>Deine Trainerinnen</h2>
+      <h1 style="font-size:clamp(1.8rem, 4vw, 3rem); line-height:1.2;">Deine Trainerinnen</h1>
       <p style="color:var(--text-mid); margin-top:.75rem; max-width:560px;">Erfahrene, zertifizierte Expertinnen – jede mit ihrer eigenen Geschichte und Leidenschaft für Pilates und Yoga.</p>
 
       <div class="trainer-grid">
         <!-- Mit Foto -->
         <div class="trainer-card">
-          <div class="trainer-img"><img src="trainer-natascha.jpg" alt="Natascha" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-          <div class="trainer-info"><h3>Natascha</h3><p class="trainer-specialty">Reformer · Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span><span class="lang"><span class="flag">🇷🇺</span>RU</span></div></div>
+          <div class="trainer-img"><img src="trainer-natascha.webp" alt="Natascha" width="685" height="1024" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+          <div class="trainer-info"><h2>Natascha</h2><p class="trainer-specialty">Reformer · Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span><span class="lang"><span class="flag">🇷🇺</span>RU</span></div></div>
         </div>
         <div class="trainer-card">
-          <div class="trainer-img"><img src="trainer-olga.jpg" alt="Olga" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-          <div class="trainer-info"><h3>Olga</h3><p class="trainer-specialty">Reformer · Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span></div></div>
+          <div class="trainer-img"><img src="trainer-olga.webp" alt="Olga" width="768" height="1024" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+          <div class="trainer-info"><h2>Olga</h2><p class="trainer-specialty">Reformer · Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span></div></div>
         </div>
         <div class="trainer-card">
-          <div class="trainer-img"><img src="trainer-ina.jpg" alt="Ina" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-          <div class="trainer-info"><h3>Ina</h3><p class="trainer-specialty">Reformer</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span></div></div>
+          <div class="trainer-img"><img src="trainer-ina.webp" alt="Ina" width="685" height="1024" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+          <div class="trainer-info"><h2>Ina</h2><p class="trainer-specialty">Reformer</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span></div></div>
         </div>
         <div class="trainer-card">
-          <div class="trainer-img"><img src="trainer-maike.jpg" alt="Maike" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-          <div class="trainer-info"><h3>Maike</h3><p class="trainer-specialty">Reformer</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span></div></div>
+          <div class="trainer-img"><img src="trainer-maike.webp" alt="Maike" width="685" height="1024" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+          <div class="trainer-info"><h2>Maike</h2><p class="trainer-specialty">Reformer</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span></div></div>
         </div>
         <div class="trainer-card">
-          <div class="trainer-img"><img src="trainer-tuana.jpg" alt="Tuana" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-          <div class="trainer-info"><h3>Tuana</h3><p class="trainer-specialty">Reformer · Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span></div></div>
+          <div class="trainer-img"><img src="trainer-tuana.webp" alt="Tuana" width="685" height="1024" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+          <div class="trainer-info"><h2>Tuana</h2><p class="trainer-specialty">Reformer · Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span></div></div>
         </div>
         <!-- Ohne Foto -->
         <div class="trainer-card">
@@ -1107,8 +1108,8 @@
           <div class="trainer-info"><h3>Tina</h3><p class="trainer-specialty">Reformer</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span></div><div class="trainer-bilingual">Unterrichtet bilinguale Kurse (DE/EN)</div></div>
         </div>
         <div class="trainer-card">
-          <div class="trainer-img"><img src="trainer-hanna.jpg" alt="Hanna" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-          <div class="trainer-info"><h3>Hanna</h3><p class="trainer-specialty">Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span></div></div>
+          <div class="trainer-img"><img src="trainer-hanna.webp" alt="Hanna" width="1024" height="1024" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+          <div class="trainer-info"><h2>Hanna</h2><p class="trainer-specialty">Classic Pilates</p><div class="trainer-langs"><span class="lang"><span class="flag">🇩🇪</span>DE</span><span class="lang"><span class="flag">🇬🇧</span>EN</span></div></div>
         </div>
         <div class="trainer-card">
           <div class="trainer-img trainer-img--logo"><img src="logo.png" alt="Katy"></div>
@@ -1147,7 +1148,7 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h3>
         <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8;">
           Segeberger Str. 1<br>
           23617 Stockelsdorf<br>
@@ -1158,7 +1159,7 @@
       </div>
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Home</a></li>
           <li><a href="kurse.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Kurse</a></li>
@@ -1169,7 +1170,7 @@
       </div>
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="studio-news.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">News</a></li>
           <li><a href="gutschein.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
@@ -1180,7 +1181,7 @@
       </div>
 
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="impressum.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Impressum</a></li>
           <li><a href="datenschutz.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Datenschutz</a></li>
