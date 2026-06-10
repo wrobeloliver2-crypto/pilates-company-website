@@ -10,7 +10,8 @@
 <meta name="description" content="Pilates Membership in Lübeck ab 59 €/Monat. Reformer Pilates, Matte, Aerial Yoga & mehr. Flexible Modelle für Einsteiger und Fortgeschrittene. Jetzt Angebot sichern!">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,7 +21,7 @@
     --rose-light: #f5ede9;
     --rose-dark:  #b0796e;
     --cream:      #faf7f4;
-    --warm-gray:  #8a847d;
+    --warm-gray:  #746e67;
     --text:       #2c2825;
     --text-mid:   #5a5450;
     --border:     rgba(44,40,37,.1);
@@ -643,7 +644,7 @@
   .footer-brand .logo { color: #fff; }
   .footer-brand .logo span { color: var(--rose); }
   .footer-brand p { margin-top: .75rem; font-size: .875rem; line-height: 1.7; }
-  .footer-col h4 {
+  .footer-col h4, .footer-col h3 {
     font-family: var(--sans); font-size: .75rem;
     letter-spacing: .1em; text-transform: uppercase;
     color: #fff; font-weight: 500; margin-bottom: 1rem;
@@ -1074,7 +1075,7 @@
     <style>#pc-float-btn { display: none !important; }</style>
     <div style="text-align:center; margin-bottom:1.5rem; padding:2rem 1rem; background:linear-gradient(135deg, #b0796e 0%, #d9a49a 100%); border-radius:16px; color:#fff;">
       <p style="font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; opacity:.85; margin-bottom:.5rem;">Dein persoenlicher Berater</p>
-      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#fff; margin-bottom:.5rem; line-height:1.2;">Welches Angebot passt zu dir?</h2>
+      <h1 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#fff; margin-bottom:.5rem; line-height:1.2;">Welches Angebot passt zu dir?</h1>
       <p style="opacity:.95; font-size:1.05rem; margin-top:.25rem;">4 kurze Fragen. Deine perfekte Membership. <span style="opacity:.75; font-size:.85rem; font-style:italic;">(KI-gestuetzt)</span></p>
       <button onclick="document.getElementById('assistantWrap').scrollIntoView({behavior:'smooth',block:'start'}); document.getElementById('paStep1').querySelector('.pa-btn').focus();" style="margin-top:1.25rem; background:#fff; color:#b0796e; border:none; border-radius:100px; padding:.7rem 1.75rem; font-family:inherit; font-size:.95rem; font-weight:600; cursor:pointer; box-shadow:0 2px 12px rgba(0,0,0,.15);">✨ Jetzt passende Membership finden</button>
     </div>
@@ -1087,21 +1088,21 @@
 
       <div class="pa-step active" id="paStep1">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
-          <h3 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Warst du schon mal bei uns im Training?</h3>
+          <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Warst du schon mal bei uns im Training?</h2>
           <div class="pa-answers"><button class="pa-btn" onclick="paSelect(1,'new')">Nein, ich bin neu hier</button><button class="pa-btn" onclick="paSelect(1,'returning')">Ja, ich war schon mal da</button></div>
         </div>
       </div>
 
       <div class="pa-step" id="paStep2">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
-          <h3 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Wie oft im Monat moechtest du trainieren?</h3>
+          <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Wie oft im Monat moechtest du trainieren?</h2>
           <div class="pa-answers"><button class="pa-btn" onclick="paSelect(2,'4')">4x im Monat (1x pro Woche)</button><button class="pa-btn" onclick="paSelect(2,'8')">8x im Monat (2x pro Woche)</button><button class="pa-btn" onclick="paSelect(2,'unsure')">Weiss ich noch nicht</button></div>
         </div>
       </div>
 
       <div class="pa-step" id="paStep3">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
-          <h3 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Welche Kurstypen interessieren dich?</h3>
+          <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Welche Kurstypen interessieren dich?</h2>
           <p style="font-size:.85rem;color:var(--warm-gray);margin-bottom:1rem;">Du kannst mehrere auswaehlen</p>
           <div class="pa-multi"><button class="pa-mbtn" onclick="paToggle(this,'classic')"><span class="pa-chk"></span>Classic Pilates</button><button class="pa-mbtn" onclick="paToggle(this,'reformer')"><span class="pa-chk"></span>Reformer</button><button class="pa-mbtn" onclick="paToggle(this,'aerial')"><span class="pa-chk"></span>Aerial / Flying</button><button class="pa-mbtn" onclick="paToggle(this,'yoga')"><span class="pa-chk"></span>Yoga</button></div>
           <button class="pa-next" id="paNext3" onclick="paSelect(3,paTypes)">Weiter</button>
@@ -1110,7 +1111,7 @@
 
       <div class="pa-step" id="paStep4">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
-          <h3 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Was passt besser zu deinem Lebensstil?</h3>
+          <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Was passt besser zu deinem Lebensstil?</h2>
           <div class="pa-answers"><button class="pa-btn" onclick="paSelect(4,'longterm')">Ich plane langfristig und regelmaessig</button><button class="pa-btn" onclick="paSelect(4,'flexible')">Ich brauche viel Flexibilitaet</button></div>
         </div>
       </div>
@@ -1465,7 +1466,7 @@ paProgress(1);
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h3>
         <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8;">
           Segeberger Str. 1<br>
           23617 Stockelsdorf<br>
@@ -1476,7 +1477,7 @@ paProgress(1);
       </div>
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Home</a></li>
           <li><a href="kurse.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Kurse</a></li>
@@ -1487,7 +1488,7 @@ paProgress(1);
       </div>
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="studio-news.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">News</a></li>
           <li><a href="gutschein.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
@@ -1498,7 +1499,7 @@ paProgress(1);
       </div>
 
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="impressum.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Impressum</a></li>
           <li><a href="datenschutz.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Datenschutz</a></li>
