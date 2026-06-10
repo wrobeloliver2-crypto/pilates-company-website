@@ -21,7 +21,7 @@
     --rose-light: #f5ede9;
     --rose-dark:  #b0796e;
     --cream:      #faf7f4;
-    --warm-gray:  #8a847d;
+    --warm-gray:  #746e67;
     --text:       #2c2825;
     --text-mid:   #5a5450;
     --border:     rgba(44,40,37,.1);
@@ -159,6 +159,7 @@
   h2 { font-family: var(--heading); font-weight: 300; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
   h3 { font-family: var(--heading); font-weight: 400; font-size: 1.5rem; line-height: 1.3; }
   h4 { font-family: var(--heading); font-weight: 500; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-dark); }
+  h2.h-eyebrow, h3.h-eyebrow, p.h-eyebrow { font-family: var(--heading); font-weight: 500; font-size: 1rem; line-height: 1.3; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-dark); }
 
   .tag {
     display: inline-block;
@@ -240,7 +241,7 @@
     border-radius: 20px;
     padding: 2.5rem;
   }
-  .hero-why h4 { margin-bottom: 1.5rem; }
+  .hero-why h4, .hero-why .h-eyebrow { margin-bottom: 1.5rem; }
   .hero-why-items { display: flex; flex-direction: column; gap: 0; }
   .hero-why-item {
     display: flex; gap: 1.25rem; align-items: flex-start;
@@ -313,16 +314,17 @@
   .slide-stat-item p { font-size: .8rem; color: var(--text-mid); line-height: 1.5; margin: 0; }
   .hero-slide-dots {
     position: absolute;
-    bottom: 1rem; left: 50%; transform: translateX(-50%);
-    display: flex; gap: .5rem; z-index: 10;
+    bottom: .4rem; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 0; z-index: 10;
   }
   .hero-dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: rgba(176,121,110,.3);
-    border: none; cursor: pointer; padding: 0;
+    width: 7px; height: 7px; box-sizing: content-box;
+    padding: 10px; border-radius: 50%;
+    background: rgba(176,121,110,.3); background-clip: content-box;
+    border: none; cursor: pointer;
     transition: background .3s, transform .3s;
   }
-  .hero-dot.active { background: var(--rose-dark); transform: scale(1.3); }
+  .hero-dot.active { background: var(--rose-dark); background-clip: content-box; transform: scale(1.3); }
 
 
 
@@ -715,7 +717,7 @@
   .footer-brand .logo { color: #fff; }
   .footer-brand .logo span { color: var(--rose); }
   .footer-brand p { margin-top: .75rem; font-size: .875rem; line-height: 1.7; }
-  .footer-col h4 {
+  .footer-col h4, .footer-col h3 {
     font-family: var(--sans); font-size: .75rem;
     letter-spacing: .1em; text-transform: uppercase;
     color: #fff; font-weight: 500; margin-bottom: 1rem;
@@ -1270,7 +1272,7 @@
 
   <!-- WARUM PILATES COMPANY – statisch unter der Slideshow -->
   <div style="background:var(--rose-light);border-radius:20px;border:1px solid var(--border);padding:2.5rem;margin-top:2rem;max-width:680px;margin-left:auto;margin-right:auto;">
-    <h4 style="margin-bottom:1.5rem;text-align:center;">Warum Pilates Company</h4>
+    <h2 class="h-eyebrow" style="margin-bottom:1.5rem;text-align:center;">Warum Pilates Company</h2>
     <div class="slide-stat-items">
       <div class="slide-stat-item">
         <div class="slide-stat-num">10+</div>
@@ -1326,7 +1328,7 @@
         <a class="btn btn-primary" href="#tarife">Alle Tarife ansehen</a>
       </div>
 
-      <h4 style="margin-top:3rem;">Mitgliedschaften</h4>
+      <p class="h-eyebrow" style="margin-top:3rem;">Mitgliedschaften</p>
       <h2 id="tarife">Wähle deinen Tarif</h2>
 
       <div class="plan-grid">
@@ -1378,7 +1380,7 @@
 
       <!-- Einzeltickets & Pässe -->
       <div class="passes-box">
-        <h4 style="margin-bottom:1rem;">Lieber ohne Abo?</h4>
+        <h3 class="h-eyebrow" style="margin-bottom:1rem;">Lieber ohne Abo?</h3>
         <a class="pass-row" href="https://www.eversports.de/sp/pilates-company/product/87afdead-a2fb-467a-a758-52f9eb7747f4" target="_blank" rel="noopener noreferrer"><span class="pass-name">Probestunde</span><span class="pass-detail">für alle Kurse · gültig 2 Monate</span><span class="pass-price">16 €</span></a>
         <a class="pass-row" href="https://www.eversports.de/sp/pilates-company/product/fa25b179-9cf5-47f7-90bc-b623fa73b0d2" target="_blank" rel="noopener noreferrer"><span class="pass-name">Drop-In</span><span class="pass-detail">1 Einheit · spontan &amp; flexibel</span><span class="pass-price">28 €</span></a>
         <a class="pass-row" href="https://www.eversports.de/sp/pilates-company/product/72cd27ca-7b90-4736-8336-53f073678531" target="_blank" rel="noopener noreferrer"><span class="pass-name">5er-Pass</span><span class="pass-detail">23,80 € / Kurs · 12 Wochen</span><span class="pass-price">119 €</span></a>
@@ -1393,7 +1395,7 @@
   <!-- Angebote -->
   <section class="section" id="angebote-section">
     <div class="container">
-      <h4>Was wir anbieten</h4>
+      <p class="h-eyebrow">Was wir anbieten</p>
       <h2>Finde dein<br>Lieblingskursformat</h2>
       <div class="angebote-grid">
         <div class="angebot-card">
@@ -1450,7 +1452,7 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h3>
         <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8;">
           Segeberger Str. 1<br>
           23617 Stockelsdorf<br>
@@ -1461,7 +1463,7 @@
       </div>
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Home</a></li>
           <li><a href="kurse.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Kurse</a></li>
@@ -1472,7 +1474,7 @@
       </div>
       
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="studio-news.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">News</a></li>
           <li><a href="gutschein.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
@@ -1483,7 +1485,7 @@
       </div>
 
       <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h4>
+        <h3 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="impressum.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Impressum</a></li>
           <li><a href="datenschutz.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Datenschutz</a></li>
