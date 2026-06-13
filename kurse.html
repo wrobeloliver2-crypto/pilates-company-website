@@ -127,15 +127,15 @@
   .mobile-menu {
     display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
     background: var(--cream); z-index: 99;
-    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    flex-direction: column; align-items: center; justify-content: flex-start; gap: 0;
     overflow-y: auto; -webkit-overflow-scrolling: touch;
-    padding: 4rem 1rem 2rem;
+    padding: 1.25rem 1rem 2.5rem;
   }
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
-    font-family: var(--heading); font-size: 2rem; font-weight: 300;
+    font-family: var(--heading); font-size: 1.15rem; font-weight: 300;
     color: var(--text); text-decoration: none;
-    transition: color .2s;
+    transition: color .2s; text-align: center; width: 100%; padding: .7rem 0;
   }
   .mobile-menu a:hover { color: var(--rose-dark); }
 
@@ -1100,11 +1100,11 @@
   <a href="kurse.html">KURSE</a>
   <a href="preise.html">PREISE</a>
   <a href="trainer.html">TRAINER</a>
+  <a href="personal-training.html">PERSONAL TRAINING</a>
   <a href="ausbildung.html">AUSBILDUNG</a>
   <a href="studio-news.html">NEWS</a>
   <a href="challenge.html">VIDEOS</a>
   <a href="gutschein.html">GUTSCHEIN</a>
-  <a href="downloads.html">DOWNLOADS</a>
   <a href="/wellpass">WELLPASS</a>
   <a href="https://www.eversports.de/sp/pilates-company" target="_blank">EVERSPORTS</a>
   <a href="/english" style="color: var(--rose); font-weight: 500;">🇬🇧 ENGLISH</a>
