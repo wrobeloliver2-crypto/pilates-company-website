@@ -1311,8 +1311,8 @@ function buildNewsCard(n) {
   div.className = 'news-card';
   const datum = n.datum ? new Date(n.datum).toLocaleDateString('de-DE', {day:'2-digit', month:'long', year:'numeric'}) : '';
   const imgHtml = n.bild_url
-    ? `<div class="news-card-img"><img src="${n.bild_url}" alt="${n.titel}" onerror="this.parentNode.innerHTML='<div class=news-card-img-placeholder><img src=logo.png></div>'"></div>`
-    : `<div class="news-card-img"><div class="news-card-img-placeholder"><img src="logo.png" alt="logo"></div></div>`;
+    ? `<div class="news-card-img"><img src="${n.bild_url}" alt="${n.titel}" onerror="this.parentNode.innerHTML='<div class=news-card-img-placeholder><img src=logo-platzhalter.png></div>'"></div>`
+    : `<div class="news-card-img"><div class="news-card-img-placeholder"><img src="logo-platzhalter.png" alt="logo"></div></div>`;
   const videoHtml = n.video_url ? `<div class="news-card-video"><a href="${n.video_url}" target="_blank">▶ Video ansehen</a></div>` : '';
   const autorHtml = n.autor ? `<span class="news-card-autor">✍ ${n.autor}</span>` : '';
   div.innerHTML = `${imgHtml}<div class="news-card-body">
