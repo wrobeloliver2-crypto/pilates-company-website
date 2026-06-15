@@ -357,7 +357,28 @@ document.addEventListener('DOMContentLoaded', () => {
     @media(max-width:640px){
       #pc-qa-box{height:85vh;border-radius:20px 20px 0 0;}
       #pc-qa-overlay{align-items:flex-end;padding:0;}
-      #pc-float-btn{font-size:13px;padding:12px 13px;}
+      #pc-float-btn{display:none;}
+    }
+    #pc-mobile-bar{display:none;}
+    @media(max-width:640px){
+      #pc-mobile-bar{
+        display:flex;align-items:center;gap:10px;
+        position:fixed;bottom:0;left:0;right:0;z-index:8500;
+        background:rgba(250,247,244,.94);backdrop-filter:blur(10px);
+        border-top:1px solid rgba(0,0,0,.08);
+        padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+      }
+      #pc-mobile-bar a,#pc-mobile-bar button{
+        flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+        font-family:inherit;font-size:.9rem;font-weight:600;
+        padding:.7rem .9rem;border-radius:100px;cursor:pointer;
+        white-space:nowrap;border:none;text-decoration:none;line-height:1;
+      }
+      #pc-mobile-bar .pc-bar-member{background:#d9a49a;color:#fff;}
+      #pc-mobile-bar .pc-bar-chat{background:#fff;color:#b0796e;border:1px solid #e6d3cd;}
+      #pc-mobile-bar .pc-bar-chat svg{width:16px;height:16px;}
+      body.pc-chat-open #pc-mobile-bar{display:none!important;}
+      footer{padding-bottom:5.5rem!important;}
     }
   `;
   document.head.appendChild(style);
@@ -394,17 +415,27 @@ document.addEventListener('DOMContentLoaded', () => {
   btn.onclick = openPcQA;
   document.body.appendChild(btn);
 
+  // Mobile Sticky-Leiste (global, alle Seiten mit script.js)
+  const mbar = document.createElement('div');
+  mbar.id = 'pc-mobile-bar';
+  mbar.innerHTML = '<a class="pc-bar-member" href="preise.html">Mitglied werden</a>'
+    + '<button class="pc-bar-chat" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>Frag mich was</button>';
+  mbar.querySelector('.pc-bar-chat').onclick = openPcQA;
+  document.body.appendChild(mbar);
+
   // Chat Logic
   const STARTER = ['Kostenloses Probetraining','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
   let pcHistory = [], pcCount = 0, pcInit = false, pcCallbackShown = false;
 
   function openPcQA() {
     overlay.classList.add('open');
+    document.body.classList.add('pc-chat-open');
     document.body.style.overflow = 'hidden';
     if (!pcInit) { pcInit = true; initChat(); }
   }
   function closePcQA() {
     overlay.classList.remove('open');
+    document.body.classList.remove('pc-chat-open');
     document.body.style.overflow = '';
   }
   window.openPcQA = openPcQA;
