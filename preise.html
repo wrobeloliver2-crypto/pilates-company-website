@@ -2271,6 +2271,7 @@ paProgress(1);
   .preis-name {
     font-family: var(--sans); font-size: 1.25rem;
     font-weight: 400; margin-bottom: .35rem; color: var(--text);
+    padding-right: 6.5rem;
   }
   .preis-desc { font-size: .85rem; color: var(--text-mid); line-height: 1.55; }
   .preis-bottom { }
@@ -2416,7 +2417,7 @@ paProgress(1);
   /* ══════════════════════════════════
      RESPONSIVE – MOBILE (≤640px)
   ══════════════════════════════════ */
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
   }
@@ -2611,9 +2612,9 @@ paProgress(1);
   <div class="container" style="max-width:680px;">
     <style>#pc-float-btn { display: none !important; }</style>
     <div style="text-align:center; margin-bottom:1.5rem; padding:2rem 1rem; background:linear-gradient(135deg, #b0796e 0%, #d9a49a 100%); border-radius:16px; color:#fff;">
-      <p style="font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; opacity:.85; margin-bottom:.5rem;">Dein persoenlicher Berater</p>
+      <p style="font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; opacity:.85; margin-bottom:.5rem;">Dein persönlicher Berater</p>
       <h1 style="font-family:var(--heading); font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#fff; margin-bottom:.5rem; line-height:1.2;">Welches Angebot passt zu dir?</h1>
-      <p style="opacity:.95; font-size:1.05rem; margin-top:.25rem;">4 kurze Fragen. Deine perfekte Membership. <span style="opacity:.75; font-size:.85rem; font-style:italic;">(KI-gestuetzt)</span></p>
+      <p style="opacity:.95; font-size:1.05rem; margin-top:.25rem;">4 kurze Fragen. Deine perfekte Membership. <span style="opacity:.75; font-size:.85rem; font-style:italic;">(KI-gestützt)</span></p>
       <button onclick="document.getElementById('assistantWrap').scrollIntoView({behavior:'smooth',block:'start'}); document.getElementById('paStep1').querySelector('.pa-btn').focus();" style="margin-top:1.25rem; background:#fff; color:#b0796e; border:none; border-radius:100px; padding:.7rem 1.75rem; font-family:var(--sans); font-size:.95rem; font-weight:600; cursor:pointer; box-shadow:0 2px 12px rgba(0,0,0,.15);">✨ Jetzt passende Membership finden</button>
     </div>
 
@@ -2632,7 +2633,7 @@ paProgress(1);
 
       <div class="pa-step" id="paStep2">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
-          <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Wie oft im Monat moechtest du trainieren?</h2>
+          <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Wie oft im Monat möchtest du trainieren?</h2>
           <div class="pa-answers"><button class="pa-btn" onclick="paSelect(2,'4')">4x im Monat (1x pro Woche)</button><button class="pa-btn" onclick="paSelect(2,'8')">8x im Monat (2x pro Woche)</button><button class="pa-btn" onclick="paSelect(2,'unsure')">Weiss ich noch nicht</button></div>
         </div>
       </div>
@@ -2640,7 +2641,7 @@ paProgress(1);
       <div class="pa-step" id="paStep3">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
           <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Welche Kurstypen interessieren dich?</h2>
-          <p style="font-size:.85rem;color:var(--warm-gray);margin-bottom:1rem;">Du kannst mehrere auswaehlen</p>
+          <p style="font-size:.85rem;color:var(--warm-gray);margin-bottom:1rem;">Du kannst mehrere auswählen</p>
           <div class="pa-multi"><button class="pa-mbtn" onclick="paToggle(this,'classic')"><span class="pa-chk"></span>Classic Pilates</button><button class="pa-mbtn" onclick="paToggle(this,'reformer')"><span class="pa-chk"></span>Reformer</button><button class="pa-mbtn" onclick="paToggle(this,'aerial')"><span class="pa-chk"></span>Aerial / Flying</button><button class="pa-mbtn" onclick="paToggle(this,'yoga')"><span class="pa-chk"></span>Yoga</button></div>
           <button class="pa-next" id="paNext3" onclick="paSelect(3,paTypes)">Weiter</button>
         </div>
@@ -2649,7 +2650,7 @@ paProgress(1);
       <div class="pa-step" id="paStep4">
         <div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);">
           <h2 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Was passt besser zu deinem Lebensstil?</h2>
-          <div class="pa-answers"><button class="pa-btn" onclick="paSelect(4,'longterm')">Ich plane langfristig und regelmaessig</button><button class="pa-btn" onclick="paSelect(4,'flexible')">Ich brauche viel Flexibilitaet</button></div>
+          <div class="pa-answers"><button class="pa-btn" onclick="paSelect(4,'longterm')">Ich plane langfristig und regelmäßig</button><button class="pa-btn" onclick="paSelect(4,'flexible')">Ich brauche viel Flexibilität</button></div>
         </div>
       </div>
 
@@ -2716,22 +2717,22 @@ function paShowResult(){
   var cmp=[{o:rec.n,pm:rec.p+(rec.m===3?' (3 Mon.)':''),c:rec.c,u:rec.u.toFixed(2).replace('.',','),hi:true},{o:alt.n,pm:alt.p+(alt.m===3?' (3 Mon.)':''),c:alt.c,u:alt.u.toFixed(2).replace('.',','),hi:false},{o:PP.fp.n,pm:'119 einm.',c:5,u:'23,80',hi:false},{o:PP.di.n,pm:'28 einm.',c:1,u:'28,00',hi:false}];
 
   var h='<div style="background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 2px 16px rgba(44,40,37,.05);border:1px solid rgba(44,40,37,.06);animation:paFade .4s ease;">';
-  h+='<h3 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:.75rem;">Deine persoenliche Empfehlung</h3>';
+  h+='<h3 style="font-family:var(--heading);font-size:1.3rem;font-weight:400;margin-bottom:.75rem;">Deine persönliche Empfehlung</h3>';
   h+='<div class="pa-ki" id="paKI"><div style="text-align:center;padding:1rem;color:var(--warm-gray);">Wir analysieren dein Profil<span style="animation:blink 1.4s infinite both"> .</span><span style="animation:blink 1.4s infinite both;animation-delay:.2s"> .</span><span style="animation:blink 1.4s infinite both;animation-delay:.4s"> .</span></div></div>';
 
   h+='<div class="pa-offer rec"><span class="pa-badge">Empfohlen</span><div class="pa-oname">'+rec.n+'</div><div class="pa-oprice">'+rec.p+'\u20ac <small>/ Monat</small></div><div class="pa-odet">'+rec.c+' Credits/Monat';
   if(rec.m===3)h+=' \u00b7 3 Monate Mindestlaufzeit \u00b7 Danach '+rec.pa+'\u20ac/Monat';
   if(rec.m===12)h+=' \u00b7 12 Monate Laufzeit \u00b7 Bester Preis pro Einheit';
-  if(rec.m===1)h+=' \u00b7 Monatlich kuendbar';
+  if(rec.m===1)h+=' \u00b7 Monatlich kündbar';
   h+='</div><a href="https://www.eversports.de/sp/pilates-company" class="pa-octa" target="_blank">Jetzt buchen</a></div>';
 
   h+='<div class="pa-offer"><div class="pa-oname">'+alt.n+'</div><div class="pa-oprice">'+alt.p+'\u20ac <small>/ Monat</small></div><div class="pa-odet">'+alt.c+' Credits/Monat';
   if(alt.m===3)h+=' \u00b7 3 Monate Mindestlaufzeit \u00b7 Danach '+alt.pa+'\u20ac/Monat';
   if(alt.m===12)h+=' \u00b7 12 Monate Laufzeit';
-  if(alt.m===1)h+=' \u00b7 Monatlich kuendbar';
+  if(alt.m===1)h+=' \u00b7 Monatlich kündbar';
   h+='</div><a href="https://www.eversports.de/sp/pilates-company" class="pa-octa" target="_blank">Jetzt buchen</a></div>';
 
-  if(isN){h+='<div class="pa-offer pa-free"><div class="pa-oname">Kostenloses Probetraining</div><div class="pa-oprice">0\u20ac</div><div class="pa-odet">Lerne uns kennen \u2013 voellig unverbindlich. Ideal als erster Schritt.</div><a href="probetraining.html" class="pa-octa">Jetzt kostenlos buchen</a></div>';}
+  if(isN){h+='<div class="pa-offer pa-free"><div class="pa-oname">Kostenloses Probetraining</div><div class="pa-oprice">0\u20ac</div><div class="pa-odet">Lerne uns kennen \u2013 völlig unverbindlich. Ideal als erster Schritt.</div><a href="probetraining.html" class="pa-octa">Jetzt kostenlos buchen</a></div>';}
 
   h+='<h4 style="font-family:var(--heading);font-size:1rem;font-weight:400;margin:1.25rem 0 .5rem;color:var(--text)">Warum sich eine Membership lohnt</h4>';
   h+='<table class="pa-tbl"><thead><tr><th>Option</th><th>Preis</th><th>Einheiten</th><th>Pro Einheit</th></tr></thead><tbody>';
@@ -2747,7 +2748,7 @@ function paShowResult(){
 
 function paLoadKI(rec,alt,isN,wr,fr,pl,ty){
   var ts=ty.join(', '),fs=fr==='4'?'4x im Monat':fr==='8'?'8x im Monat':'noch unsicher',ps=pl==='longterm'?'langfristig':'flexibel',ss=isN?'Neukunde':'Rueckkehrer';
-  var prompt='Du bist der Berater der Pilates Company Luebeck. Ein '+ss+' moechte '+fs+' trainieren, interessiert sich fuer '+ts+' und plant '+ps+'. Empfiehl die "'+rec.n+'" ('+rec.p+' Euro/Monat, '+rec.c+' Credits) als beste Wahl. Erklaere in 3 Saetzen warum diese Membership besser ist als Einzeltickets (28 Euro) oder der 5er-Pass (23,80 Euro/Einheit). Nenne den Preis pro Einheit ('+rec.u.toFixed(2).replace('.',',')+' Euro). ';
+  var prompt='Du bist der Berater der Pilates Company Lübeck. Ein '+ss+' möchte '+fs+' trainieren, interessiert sich für '+ts+' und plant '+ps+'. Empfiehl die "'+rec.n+'" ('+rec.p+' Euro/Monat, '+rec.c+' Credits) als beste Wahl. Erklaere in 3 Saetzen warum diese Membership besser ist als Einzeltickets (28 Euro) oder der 5er-Pass (23,80 Euro/Einheit). Nenne den Preis pro Einheit ('+rec.u.toFixed(2).replace('.',',')+' Euro). ';
   if(isN)prompt+='Erwaehne das kostenlose Probetraining als ersten Schritt. ';
   prompt+='Erwaehne die "'+alt.n+'" als Alternative. Deutsch, Du-Form, warm, sachlich, keine Emojis. Max 80 Woerter.';
   fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:200,messages:[{role:'user',content:prompt}]})})
@@ -2756,7 +2757,7 @@ function paLoadKI(rec,alt,isN,wr,fr,pl,ty){
 function paFB(rec,alt,isN){
   var u=rec.u.toFixed(2).replace('.',','),sv=Math.round((28-rec.u)*rec.c);
   var h='<p>Die <strong>'+rec.n+'</strong> ist deine beste Wahl: Mit '+rec.c+' Einheiten pro Monat zahlst du nur '+u+' Euro pro Training statt 28 Euro beim Einzelticket \u2013 du sparst rund '+sv+' Euro monatlich.</p>';
-  h+='<p>Alternativ: <strong>'+alt.n+'</strong> fuer '+alt.p+' Euro/Monat mit '+alt.c+' Credits.';
+  h+='<p>Alternativ: <strong>'+alt.n+'</strong> für '+alt.p+' Euro/Monat mit '+alt.c+' Credits.';
   if(isN)h+=' Starte am besten mit dem kostenlosen Probetraining.';
   h+='</p>';
   document.getElementById('paKI').innerHTML=h;
