@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://pilatescompany.de/</loc><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://pilatescompany.de/</loc><lastmod>2026-06-16</lastmod></url>
   <url><loc>https://pilatescompany.de/kurse</loc><lastmod>2026-06-09</lastmod></url>
   <url><loc>https://pilatescompany.de/preise</loc><lastmod>2026-06-09</lastmod></url>
   <url><loc>https://pilatescompany.de/probetraining</loc><lastmod>2026-06-09</lastmod></url>
@@ -16,5 +16,7 @@
   <url><loc>https://pilatescompany.de/impressum</loc><lastmod>2026-06-09</lastmod></url>
   <url><loc>https://pilatescompany.de/datenschutzerklaerung</loc><lastmod>2026-06-09</lastmod></url>
   <url><loc>https://pilatescompany.de/wellpass</loc><lastmod>2026-06-09</lastmod></url>
-  <url><loc>https://pilatescompany.de/english</loc><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://pilatescompany.de/english</loc><lastmod>2026-06-16</lastmod></url>
+  <url><loc>https://pilatescompany.de/turkce</loc><lastmod>2026-06-16</lastmod></url>
+  <url><loc>https://pilatescompany.de/russkiy</loc><lastmod>2026-06-16</lastmod></url>
 </urlset>

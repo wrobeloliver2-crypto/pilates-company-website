@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Реформер-пилатес и персональные тренировки в Любеке | Pilates Company</title>
+<meta name="description" content="Реформер-пилатес и персональные тренировки один на один на русском в Любеке / Штокельсдорфе. Обзор наших занятий, абонементов и цен. Бесплатное пробное занятие для новых клиентов!">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="реформер пилатес русский любек, персональные тренировки русский любек, пилатес один на один штокельсдорф, пилатес на русском любек">
+
+<meta property="og:title" content="Реформер-пилатес и персональные тренировки в Любеке">
+<meta property="og:description" content="Обзор наших занятий реформер-пилатесом, абонементов, цен и персональных тренировок один на один на русском. Любек / Штокельсдорф.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pilatescompany.de/russkiy">
+<meta property="og:image" content="https://pilatescompany.de/studio-reformer.jpg">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="canonical" href="https://pilatescompany.de/russkiy">
+<link rel="alternate" hreflang="de" href="https://pilatescompany.de/">
+<link rel="alternate" hreflang="en" href="https://pilatescompany.de/english">
+<link rel="alternate" hreflang="tr" href="https://pilatescompany.de/turkce">
+<link rel="alternate" hreflang="ru" href="https://pilatescompany.de/russkiy">
+
+<link rel="icon" type="image/png" href="https://pilatescompany.de/logo.png">
+
+<style>
+  :root {
+    --rose: #d9a49a; --rose-dark: #c08b80; --rose-light: #f3e3df; --cream: #faf7f3;
+    --ink: #3a3331; --ink-soft: #6b615d; --white: #ffffff;
+    --shadow: 0 8px 30px rgba(58,51,49,0.08); --radius: 18px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Prominent multilingual CTA + form */
+  .lang-cta {
+    background: linear-gradient(155deg, var(--rose) 0%, var(--rose-dark) 100%);
+    color: var(--white);
+  }
+  .lang-cta .inner { max-width: 1120px; margin: 0 auto; padding: 56px 24px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+  .lang-cta .pitch .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.18); padding: 7px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 18px; }
+  .lang-cta h2 { font-size: 2.15rem; line-height: 1.15; margin-bottom: 16px; }
+  .lang-cta p.sub { font-size: 1.12rem; opacity: 0.96; margin-bottom: 16px; max-width: 30em; }
+  .lang-cta .langs-line { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .lang-cta .langs-line span { background: rgba(255,255,255,0.16); padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; }
+
+  .lang-form { background: var(--white); border-radius: var(--radius); box-shadow: 0 18px 50px rgba(58,51,49,0.22); padding: 30px 28px; color: var(--ink); }
+  .lang-form h3 { font-size: 1.25rem; margin-bottom: 6px; color: var(--ink); }
+  .lang-form p.hint { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 18px; }
+  .lang-form label { display: block; font-weight: 600; font-size: 0.85rem; margin: 12px 0 5px; color: var(--rose-dark); }
+  .lang-form input, .lang-form select, .lang-form textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid var(--rose-light); border-radius: 12px;
+    font-size: 0.97rem; font-family: inherit; color: var(--ink); background: var(--cream); transition: border-color 0.15s;
+  }
+  .lang-form input:focus, .lang-form select:focus, .lang-form textarea:focus { outline: none; border-color: var(--rose); }
+  .lang-form textarea { resize: vertical; min-height: 72px; }
+  .lang-form .submit-btn { width: 100%; margin-top: 18px; padding: 14px; border: none; border-radius: 999px; background: var(--rose); color: var(--white); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s; }
+  .lang-form .submit-btn:hover { background: var(--rose-dark); }
+  .lang-form .submit-btn:disabled { opacity: 0.6; cursor: default; }
+  .lang-form .form-msg { margin-top: 14px; font-size: 0.92rem; padding: 12px 14px; border-radius: 12px; display: none; }
+  .lang-form .form-msg.ok { display: block; background: #e8f3ec; color: #2e6b46; }
+  .lang-form .form-msg.err { display: block; background: #f7e8e8; color: #9a3b3b; }
+  .lang-form .alt-contact { margin-top: 16px; text-align: center; font-size: 0.88rem; color: var(--ink-soft); }
+  .lang-form .alt-contact a { color: var(--rose-dark); font-weight: 600; }
+
+  @media (max-width: 880px) {
+    .lang-cta .inner { grid-template-columns: 1fr; gap: 32px; }
+    .lang-cta h2 { font-size: 1.8rem; }
+  }
+
+  .lang-flags { display: flex; align-items: center; gap: 6px; }
+  .lang-flags a { display: inline-flex; align-items: center; gap: 5px; font-size: 0.82rem; font-weight: 600; padding: 5px 10px; border-radius: 999px; border: 1.5px solid transparent; color: var(--ink-soft); transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease; white-space: nowrap; }
+  .lang-flags a:hover { background: var(--rose-light); color: var(--rose-dark); }
+  .lang-flags a.active { background: var(--rose); color: var(--white); border-color: var(--rose); }
+  .lang-flags a .flag { font-size: 1rem; }
+
+  header { background: var(--white); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 12px rgba(58,51,49,0.05); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px; max-width: 1120px; margin: 0 auto; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.15rem; }
+  .brand img { height: 46px; width: auto; }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-cta { background: var(--rose); color: var(--white) !important; padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+  .nav-cta:hover { background: var(--rose-dark); }
+
+  .hero { background: linear-gradient(160deg, var(--rose-light) 0%, var(--cream) 100%); padding: 70px 0 60px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+  .hero .eyebrow { display: inline-block; background: var(--white); color: var(--rose-dark); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px; }
+  .hero h1 { font-size: 2.7rem; line-height: 1.15; margin-bottom: 18px; }
+  .hero p.lede { font-size: 1.15rem; color: var(--ink-soft); margin-bottom: 28px; max-width: 32em; }
+  .hero-img img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; }
+
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 1rem; transition: transform 0.15s ease, background 0.15s ease; }
+  .btn-primary { background: var(--rose); color: var(--white); }
+  .btn-primary:hover { background: var(--rose-dark); transform: translateY(-1px); }
+  .btn-outline { background: var(--white); color: var(--ink); border: 1.5px solid var(--rose); }
+  .btn-outline:hover { background: var(--rose-light); }
+
+  section { padding: 64px 0; }
+  .section-head { text-align: center; max-width: 40em; margin: 0 auto 44px; }
+  .section-head .kicker { color: var(--rose-dark); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem; }
+  .section-head h2 { font-size: 2rem; margin: 10px 0 12px; }
+  .section-head p { color: var(--ink-soft); font-size: 1.05rem; }
+
+  .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .offer { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px; display: flex; flex-direction: column; }
+  .offer .icon { width: 52px; height: 52px; border-radius: 14px; background: var(--rose-light); color: var(--rose-dark); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
+  .offer h3 { font-size: 1.3rem; margin-bottom: 10px; }
+  .offer p { color: var(--ink-soft); }
+
+  .feature-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; }
+  .feature-card .media { background: var(--rose-light); min-height: 100%; }
+  .feature-card .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .feature-card .body { padding: 40px; }
+  .feature-card h3 { font-size: 1.6rem; margin-bottom: 8px; }
+  .flag-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--rose-light); color: var(--rose-dark); font-weight: 600; font-size: 0.85rem; padding: 5px 12px; border-radius: 999px; margin-bottom: 16px; }
+  .detail-list { list-style: none; margin: 20px 0; }
+  .detail-list li { display: flex; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--rose-light); }
+  .detail-list li span:first-child { font-weight: 600; min-width: 150px; color: var(--rose-dark); }
+
+  .price-table { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; max-width: 760px; margin: 0 auto; }
+  .price-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 28px; border-bottom: 1px solid var(--rose-light); gap: 16px; }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .label { color: var(--ink-soft); }
+  .price-row .amount { font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+  .price-note { text-align: center; color: var(--ink-soft); font-size: 0.9rem; margin-top: 16px; }
+
+  .cta-band { background: var(--rose); color: var(--white); text-align: center; border-radius: var(--radius); padding: 54px 32px; }
+  .cta-band h2 { font-size: 2rem; margin-bottom: 12px; }
+  .cta-band p { font-size: 1.1rem; opacity: 0.95; margin-bottom: 26px; max-width: 34em; margin-left: auto; margin-right: auto; }
+  .cta-band .btn-primary { background: var(--white); color: var(--rose-dark); }
+  .cta-band .btn-primary:hover { background: var(--cream); }
+  .cta-band .btn-outline { background: transparent; color: var(--white); border-color: var(--white); }
+  .cta-band .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+  footer { background: var(--ink); color: #d8d0cc; padding: 54px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; margin-bottom: 32px; }
+  footer h4 { color: var(--white); font-size: 1rem; margin-bottom: 14px; }
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer a:hover { color: var(--rose); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; font-size: 0.85rem; text-align: center; color: #a89e99; }
+
+  @media (max-width: 880px) {
+    .nav { justify-content: center; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-img { order: -1; }
+    .hero h1 { font-size: 2.1rem; }
+    .offer-grid { grid-template-columns: 1fr; }
+    .feature-card { grid-template-columns: 1fr; }
+    .feature-card .media { min-height: 220px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 460px) {
+    .lang-flags a { padding: 5px 8px; font-size: 0.78rem; }
+    .lang-flags a span.lbl { display: none; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Персональная тренировка на реформере — один на один на русском",
+  "description": "Персональное занятие реформер-пилатесом один на один на русском, полностью адаптированное под ваши цели, уровень и тело. 60 минут, 89 € за занятие. С понедельника по пятницу в студии Pilates Company Lübeck в Штокельсдорфе.",
+  "inLanguage": "ru",
+  "provider": {
+    "@type": "Organization",
+    "name": "Pilates Company Lübeck",
+    "url": "https://pilatescompany.de",
+    "address": { "@type": "PostalAddress", "streetAddress": "Segeberger Str. 1", "addressLocality": "Stockelsdorf", "postalCode": "23617", "addressCountry": "DE" },
+    "telephone": "+4945116083019",
+    "email": "info@pilatescompany.de"
+  },
+  "offers": { "@type": "Offer", "price": "89.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.eversports.de/sp/pilates-company/product/e60e5224-32f7-4fa7-bc53-81eda4725bd8" },
+  "serviceType": "Personal Training",
+  "areaServed": { "@type": "City", "name": "Lübeck" }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="https://pilatescompany.de/" class="brand">
+      <img src="https://pilatescompany.de/logo.png" alt="Pilates Company Lübeck">
+      <span>Pilates Company</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-flags">
+        <a href="https://pilatescompany.de/"><span class="flag">🇩🇪</span><span class="lbl">DE</span></a>
+        <a href="https://pilatescompany.de/english"><span class="flag">🇬🇧</span><span class="lbl">EN</span></a>
+        <a href="https://pilatescompany.de/turkce"><span class="flag">🇹🇷</span><span class="lbl">TR</span></a>
+        <a href="https://pilatescompany.de/russkiy" class="active"><span class="flag">🇷🇺</span><span class="lbl">RU</span></a>
+      </div>
+      <a href="https://www.eversports.de/sp/pilates-company" class="nav-cta">Записаться</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Любек · Штокельсдорф</span>
+      <h1>Реформер-пилатес и персональные тренировки — на русском</h1>
+      <p class="lede">Добро пожаловать в Pilates Company. Здесь — краткий обзор того, что мы предлагаем, на русском языке. Тёплая бутик-студия в Штокельсдорфе рядом с Любеком: занятия на реформере, групповые курсы и полностью персональные тренировки один на один. Чтобы чувствовать себя у нас как дома, знать немецкий не нужно.</p>
+      <div class="btn-row">
+        <a href="https://www.eversports.de/sp/pilates-company" class="btn btn-primary">Записаться на занятие</a>
+        <a href="#personal-training" class="btn btn-outline">Персональная тренировка</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://pilatescompany.de/studio-reformer.jpg" alt="Студия реформер-пилатеса Pilates Company Lübeck">
+    </div>
+  </div>
+</section>
+
+<!-- PROMINENT: LANGUAGE CTA + FORM -->
+<section class="lang-cta" id="train-in-your-language">
+  <div class="inner">
+    <div class="pitch">
+      <span class="badge">🇬🇧 🇹🇷 🇷🇺 Тренировки на вашем языке</span>
+      <h2>Хотите узнать, кто может провести тренировку на вашем языке?</h2>
+      <p class="sub">Наши групповые занятия проходят на немецком — но индивидуальный коучинг на реформере доступен на английском, турецком и русском. Назовите ваш язык, и мы подберём подходящего тренера.</p>
+      <p class="sub" style="font-size:1rem; opacity:0.9;">Просто напишите нам — мы быстро ответим.</p>
+      <div class="langs-line">
+        <span>🇬🇧 English</span>
+        <span>🇹🇷 Türkçe</span>
+        <span>🇷🇺 Русский</span>
+      </div>
+    </div>
+
+    <div class="lang-form">
+      <h3>Спросите о коучинге на вашем языке</h3>
+      <p class="hint">Оставьте свои данные, и мы свяжемся с вами по поводу индивидуального коучинга на реформере.</p>
+
+      <label for="lf-name">Имя *</label>
+      <input type="text" id="lf-name" placeholder="Ваше имя" autocomplete="name">
+
+      <label for="lf-phone">Телефон *</label>
+      <input type="tel" id="lf-phone" placeholder="Ваш номер телефона" autocomplete="tel">
+
+      <label for="lf-email">E-mail (необязательно)</label>
+      <input type="email" id="lf-email" placeholder="primer@pochta.com" autocomplete="email">
+
+      <label for="lf-lang">Предпочитаемый язык</label>
+      <select id="lf-lang">
+        <option value="Russian">🇷🇺 Русский</option>
+        <option value="English">🇬🇧 English</option>
+        <option value="Turkish">🇹🇷 Türkçe</option>
+        <option value="German">🇩🇪 Deutsch</option>
+      </select>
+
+      <label for="lf-msg">Сообщение (необязательно)</label>
+      <textarea id="lf-msg" placeholder="Ваши цели, вопросы или удобное время…"></textarea>
+
+      <button type="button" class="submit-btn" id="lf-submit" onclick="lfSubmit('russkiy')">Отправить запрос →</button>
+      <div class="form-msg" id="lf-result"></div>
+
+      <p class="alt-contact">Или свяжитесь с нами напрямую:<br>
+        <a href="https://wa.me/491751266117?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%BE%D1%83%D1%87%D0%B8%D0%BD%D0%B3%D0%B5%20%D0%BD%D0%B0%20%D1%80%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D1%80%D0%B5." target="_blank">💬 WhatsApp</a> &nbsp;·&nbsp;
+        <a href="mailto:info@pilatescompany.de">✉️ info@pilatescompany.de</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section id="offer">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Что мы предлагаем</span>
+      <h2>Двигайтесь, дышите, становитесь сильнее</h2>
+      <p>Краткий обзор того, что вас ждёт в нашей студии — от динамичной работы на реформере до спокойного, осознанного движения.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer">
+        <div class="icon">🦋</div>
+        <h3>Реформер-пилатес</h3>
+        <p>Наша визитная карточка. Динамичная тренировка для всего тела на тренажёре-реформере: сильный центр, лучшая осанка, гибкость и стабильность. В небольших группах, с более лёгкими и более сложными вариациями для любого уровня.</p>
+      </div>
+      <div class="offer">
+        <div class="icon">🧘</div>
+        <h3>Пилатес на коврике и с оборудованием</h3>
+        <p>Классический пилатес на коврике с небольшим оборудованием — точно, осознанно и эффективно. Идеально для ощущения тела, сильного центра и улучшения подвижности; подходит и новичкам, и опытным.</p>
+      </div>
+      <div class="offer">
+        <div class="icon">🌿</div>
+        <h3>Йога и аэройога</h3>
+        <p>От заземляющей йоги до аэройоги в гамаке — сила, баланс и лёгкость. Прекрасный противовес повседневности: вы почувствуете себя раскрытыми и обновлёнными.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL TRAINING -->
+<section id="personal-training" style="background: var(--white);">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Персональные тренировки один на один</span>
+      <h2>Индивидуальный коучинг на реформере</h2>
+      <p>Ваше персональное занятие на реформере — больше внимания, больше точности, полностью под вас и на русском языке.</p>
+    </div>
+
+    <div class="feature-card" style="margin-bottom: 28px;">
+      <div class="media">
+        <img src="https://pilatescompany.de/kurs-reformer.jpg" alt="Индивидуальный коучинг на реформере в Pilates Company Lübeck">
+      </div>
+      <div class="body">
+        <span class="flag-tag">🇷🇺 На русском · Один на один</span>
+        <h3>Тренер, полностью сосредоточенный на вас</h3>
+        <p>Занимайтесь один на один с вашим личным тренером по реформеру. Новичок ли вы на реформере, хотите ли отточить технику или предпочитаете занятие, полностью выстроенное под ваше тело и цели — с первой минуты вы получаете спокойное, сосредоточенное и персональное сопровождение.</p>
+        <p style="margin-top: 14px;">Если вы восстанавливаетесь после травмы или тренируетесь с учётом физических ограничений, ваш коучинг может дополнительно сопровождаться физиотерапевтом — чтобы занятия оставались безопасными и были адаптированы под потребности вашего тела.</p>
+        <ul class="detail-list">
+          <li><span>Длительность</span><span>60 минут</span></li>
+          <li><span>Участники</span><span>1 человек (один на один)</span></li>
+          <li><span>Сопровождение</span><span>Ваш личный тренер по реформеру</span></li>
+          <li><span>Опционально</span><span>Коучинг с поддержкой физиотерапевта</span></li>
+          <li><span>Цена</span><span><strong>89 € за занятие</strong></span></li>
+          <li><span>Язык</span><span>Русский по запросу</span></li>
+        </ul>
+        <a href="https://www.eversports.de/sp/pilates-company/product/e60e5224-32f7-4fa7-bc53-81eda4725bd8" class="btn btn-primary" style="margin-top: 8px;">Записаться на занятие один на один →</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 8px; background: var(--rose-light); border-radius: var(--radius); padding: 28px 32px; display: flex; gap: 16px; align-items: flex-start;">
+      <div style="font-size: 1.5rem; flex-shrink: 0;">🌍</div>
+      <div>
+        <strong>Персональные тренировки на вашем языке.</strong>
+        <p style="color: var(--ink-soft); margin-top: 6px;">Наш индивидуальный коучинг на реформере доступен на русском, турецком и английском языках. При записи просто укажите предпочитаемый язык, а также травмы или цели заранее — и мы адаптируем всё под вас с первого занятия.</p>
+        <p style="margin-top: 10px;">
+          <a href="https://wa.me/491751266117?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BA%D0%BE%D1%83%D1%87%D0%B8%D0%BD%D0%B3%20%D0%BD%D0%B0%20%D1%80%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D1%80%D0%B5%20%D0%BD%D0%B0%20%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%BC." style="color: var(--rose-dark); font-weight: 600;">💬 Написать в WhatsApp →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRIAL -->
+<section id="trial">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Впервые у нас?</span>
+      <h2>Начните с бесплатного пробного занятия</h2>
+      <p>Новые клиенты могут попробовать пилатес у нас, прежде чем принять решение. Лучший способ понять, подходит ли это вам.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer">
+        <div class="icon">🎁</div>
+        <h3>Бесплатное пробное занятие</h3>
+        <p>Только для новых клиентов — приходите и попробуйте занятие с нами бесплатно. Спокойный способ начать без всякого давления.</p>
+      </div>
+      <div class="offer">
+        <div class="icon">🎟️</div>
+        <h3>Пробный урок · 16 €</h3>
+        <p>Хотите сначала попробовать конкретное занятие? Запишитесь на разовый пробный урок и начните свой путь в пилатесе шаг за шагом.</p>
+      </div>
+      <div class="offer">
+        <div class="icon">🎫</div>
+        <h3>Разовое посещение · 28 €</h3>
+        <p>Разовый билет, действительный на все занятия — гибко, без абонемента.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices" style="background: var(--white);">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Простые цены</span>
+      <h2>Абонементы и цены</h2>
+      <p>Сначала попробуйте, или войдите в ритм регулярных занятий. Во все цены входит сопровождение опытных тренеров.</p>
+    </div>
+    <div class="price-table">
+      <div class="price-row"><span class="label">Бесплатное пробное занятие (только для новых клиентов)</span><span class="amount">Бесплатно</span></div>
+      <div class="price-row"><span class="label">Пробный урок (Probestunde)</span><span class="amount">16 €</span></div>
+      <div class="price-row"><span class="label">Разовое посещение — действительно на все занятия</span><span class="amount">28 €</span></div>
+      <div class="price-row"><span class="label">Абонемент на 5 занятий — «Свой ритм»</span><span class="amount">119 €</span></div>
+      <div class="price-row"><span class="label">Индивидуальный коучинг на реформере (60 мин)</span><span class="amount">89 €</span></div>
+      <div class="price-row"><span class="label">Абонемент — реформер и не только, 4 кредита / месяц</span><span class="amount">89 € / мес</span></div>
+      <div class="price-row"><span class="label">Summer Glow Start — первые 3 месяца (затем 89 €)</span><span class="amount">69 € / мес</span></div>
+    </div>
+    <p class="price-note">Индивидуальный коучинг на реформере бронируется отдельно и не использует кредиты абонемента. Цены по состоянию на 2026 год и могут меняться — актуальную информацию смотрите на Eversports.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <h2>Готовы к первому занятию?</h2>
+      <p>Запишитесь на занятие онлайн или напишите нам о персональных тренировках один на один на русском. Свободный немецкий не требуется — просто приходите.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="https://www.eversports.de/sp/pilates-company" class="btn btn-primary">Записаться на занятие</a>
+        <a href="https://wa.me/491751266117?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%BC." class="btn btn-outline">Задать вопрос</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<section id="find" style="background: var(--white);">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Как нас найти</span>
+      <h2>Pilates Company Lübeck</h2>
+      <p>В самом центре Штокельсдорфа, сразу за Любеком — легко добраться на машине или автобусе.</p>
+    </div>
+    <div style="text-align:center; font-size:1.05rem; color:var(--ink-soft);">
+      <p><strong>Segeberger Str. 1, 23617 Stockelsdorf</strong></p>
+      <p style="margin-top:10px;">Телефон: <a href="tel:+4945116083019" style="color:var(--rose-dark); font-weight:600;">0451 - 160 830 19</a></p>
+      <p>E-mail: <a href="mailto:info@pilatescompany.de" style="color:var(--rose-dark); font-weight:600;">info@pilatescompany.de</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Pilates Company Lübeck</h4>
+        <p>Segeberger Str. 1<br>23617 Stockelsdorf</p>
+        <p style="margin-top:10px;">Телефон: <a href="tel:+4945116083019">0451 - 160 830 19</a><br>
+        E-mail: <a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></p>
+      </div>
+      <div>
+        <h4>Языки</h4>
+        <ul>
+          <li><a href="https://pilatescompany.de/">🇩🇪 Deutsch (полный сайт)</a></li>
+          <li><a href="https://pilatescompany.de/english">🇬🇧 English</a></li>
+          <li><a href="https://pilatescompany.de/turkce">🇹🇷 Türkçe</a></li>
+          <li><a href="https://pilatescompany.de/russkiy">🇷🇺 Русский</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Запись и правовое</h4>
+        <ul>
+          <li><a href="https://www.eversports.de/sp/pilates-company">Записаться онлайн</a></li>
+          <li><a href="https://pilatescompany.de/impressum">Impressum</a></li>
+          <li><a href="https://pilatescompany.de/datenschutz">Конфиденциальность</a></li>
+          <li><a href="https://www.instagram.com/my.pilatescompany">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Pilates Company Lübeck. Все права защищены.
+    </div>
+  </div>
+</footer>
+
+<script>
+function lfSubmit(sourcePage){
+  var btn = document.getElementById('lf-submit');
+  var res = document.getElementById('lf-result');
+  var name = document.getElementById('lf-name').value.trim();
+  var phone = document.getElementById('lf-phone').value.trim();
+  var email = document.getElementById('lf-email').value.trim();
+  var lang = document.getElementById('lf-lang').value;
+  var msg = document.getElementById('lf-msg').value.trim();
+
+  var T = {
+    need: 'Пожалуйста, укажите имя и номер телефона.',
+    sending: 'Отправка…',
+    btn: 'Отправить запрос →',
+    ok: 'Спасибо! Мы получили ваш запрос и скоро свяжемся с вами.',
+    err: 'Что-то пошло не так. Пожалуйста, попробуйте ещё раз или напишите нам в WhatsApp.'
+  };
+
+  res.className = 'form-msg';
+  if(!name || !phone){
+    res.className = 'form-msg err'; res.textContent = T.need; return;
+  }
+  btn.disabled = true; btn.textContent = T.sending;
+
+  fetch('/.netlify/functions/sendmail', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, phone: phone, email: email, language: lang, message: msg, source: sourcePage })
+  })
+  .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
+  .then(function(d){
+    if(d && d.ok){
+      res.className = 'form-msg ok'; res.textContent = T.ok;
+      document.getElementById('lf-name').value='';
+      document.getElementById('lf-phone').value='';
+      document.getElementById('lf-email').value='';
+      document.getElementById('lf-msg').value='';
+    } else {
+      res.className = 'form-msg err'; res.textContent = T.err;
+    }
+  })
+  .catch(function(){ res.className = 'form-msg err'; res.textContent = T.err; })
+  .finally(function(){ btn.disabled = false; btn.textContent = T.btn; });
+}
+</script>
+
+</body>
+</html>

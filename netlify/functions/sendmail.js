@@ -65,27 +65,43 @@ exports.handler = async (event) => {
     const name = (body.name || '').trim();
     const phone = (body.phone || '').trim();
     const message = (body.message || '').trim();
+    const language = (body.language || '').trim();   // optionale Wunschsprache (von Sprachseiten)
+    const email = (body.email || '').trim();          // optionale E-Mail (von Sprachseiten)
+    const source = (body.source || '').trim();        // z.B. "english", "turkce", "russkiy"
 
     if (!name || !phone) {
       return { statusCode: 400, headers: CORS, body: JSON.stringify({ ok: false, error: 'Name und Telefon sind erforderlich.' }) };
     }
 
     const now = new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
+    const isLangPage = !!language || !!source;
+    const heading = isLangPage ? 'Neue Anfrage: Personal Training (mehrsprachig)' : 'Neuer R&uuml;ckruf-Wunsch (Website-Chat)';
+    const intro = isLangPage
+      ? 'Eine Interessentin/ein Interessent hat &uuml;ber eine fremdsprachige Seite nach Personal Training gefragt:'
+      : 'Eine Interessentin hat im &bdquo;Frag mich was&ldquo;-Chat um einen R&uuml;ckruf gebeten:';
+    const langRow = language ? '<tr><td style="padding:4px 12px 4px 0;"><strong>Wunschsprache:</strong></td><td>' + esc(language) + '</td></tr>' : '';
+    const emailRow = email ? '<tr><td style="padding:4px 12px 4px 0;"><strong>E-Mail:</strong></td><td>' + esc(email) + '</td></tr>' : '';
+    const sourceRow = source ? '<tr><td style="padding:4px 12px 4px 0;"><strong>Quelle:</strong></td><td>' + esc(source) + '-Seite</td></tr>' : '';
+
     const html =
       '<div style="font-family:Arial,sans-serif;color:#2c2825;font-size:15px;line-height:1.6;">' +
-      '<h2 style="color:#b0796e;">Neuer R&uuml;ckruf-Wunsch (Website-Chat)</h2>' +
-      '<p>Eine Interessentin hat im &bdquo;Frag mich was&ldquo;-Chat um einen R&uuml;ckruf gebeten:</p>' +
+      '<h2 style="color:#b0796e;">' + heading + '</h2>' +
+      '<p>' + intro + '</p>' +
       '<table style="border-collapse:collapse;">' +
       '<tr><td style="padding:4px 12px 4px 0;"><strong>Name:</strong></td><td>' + esc(name) + '</td></tr>' +
       '<tr><td style="padding:4px 12px 4px 0;"><strong>Telefon:</strong></td><td>' + esc(phone) + '</td></tr>' +
+      emailRow +
+      langRow +
       '<tr><td style="padding:4px 12px 4px 0;vertical-align:top;"><strong>Nachricht:</strong></td><td>' + (esc(message) || '<em>keine</em>') + '</td></tr>' +
+      sourceRow +
       '<tr><td style="padding:4px 12px 4px 0;"><strong>Zeitpunkt:</strong></td><td>' + esc(now) + ' Uhr</td></tr>' +
       '</table>' +
-      '<p style="margin-top:18px;font-size:13px;color:#8a847d;">Automatisch gesendet vom Website-Assistenten der Pilates Company L&uuml;beck.</p>' +
+      '<p style="margin-top:18px;font-size:13px;color:#8a847d;">Automatisch gesendet von der Website der Pilates Company L&uuml;beck.</p>' +
       '</div>';
 
+    const subjectPrefix = isLangPage ? 'Personal-Training-Anfrage' : 'Rueckruf-Wunsch';
     const token = await getAccessToken();
-    await sendEmail(token, 'Rueckruf-Wunsch: ' + name, html);
+    await sendEmail(token, subjectPrefix + ': ' + name + (language ? ' (' + language + ')' : ''), html);
 
     return { statusCode: 200, headers: CORS, body: JSON.stringify({ ok: true }) };
   } catch (e) {

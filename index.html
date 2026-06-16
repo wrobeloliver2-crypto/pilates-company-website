@@ -9,6 +9,12 @@
 <title>Pilates Company Lübeck – Reformer Pilates & Yoga in Lübeck | Stockelsdorf</title>
 <meta name="description" content="Pilates Studio in Lübeck & Stockelsdorf. Reformer Pilates, Aerial Yoga, Classic Pilates & Yoga. Kleine Gruppen, erfahrene Trainerinnen. Jetzt kostenloses Probetraining buchen!">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pilatescompany.de/">
+<link rel="alternate" hreflang="de" href="https://pilatescompany.de/">
+<link rel="alternate" hreflang="en" href="https://pilatescompany.de/english">
+<link rel="alternate" hreflang="tr" href="https://pilatescompany.de/turkce">
+<link rel="alternate" hreflang="ru" href="https://pilatescompany.de/russkiy">
+<link rel="alternate" hreflang="x-default" href="https://pilatescompany.de/">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
@@ -96,16 +102,22 @@
     transition: background .2s !important;
   }
   .nav-cta:hover { background: var(--rose-dark) !important; color: #fff !important; }
-  .nav-en {
-    border: 1.5px solid var(--rose);
-    color: var(--rose-dark) !important;
-    padding: .3rem .7rem;
-    border-radius: 100px;
-    font-weight: 500 !important;
-    white-space: nowrap;
-    transition: background .2s, color .2s;
+  .nav-langs {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
   }
-  .nav-en:hover { background: var(--rose); color: #fff !important; }
+  .nav-lang {
+    font-size: 1.15rem;
+    line-height: 1;
+    padding: .25rem .35rem;
+    border-radius: 8px;
+    text-decoration: none;
+    filter: grayscale(35%);
+    opacity: .85;
+    transition: filter .2s, opacity .2s, background .2s, transform .2s;
+  }
+  .nav-lang:hover { filter: grayscale(0%); opacity: 1; background: var(--rose-light); transform: translateY(-1px); }
 
   .nav-instagram {
     display: flex; align-items: center;
@@ -1201,7 +1213,11 @@
       <li><a href="gutschein.html">GUTSCHEIN</a></li>
       <li><a href="/wellpass">WELLPASS</a></li>
       <li><a href="downloads.html">DOWNLOADS</a></li>
-      <li><a href="/english" class="nav-en" title="English page">🇬🇧 EN</a></li>
+      <li class="nav-langs">
+        <a href="/english" class="nav-lang" title="English summary" lang="en">🇬🇧</a>
+        <a href="/turkce" class="nav-lang" title="Türkçe özet" lang="tr">🇹🇷</a>
+        <a href="/russkiy" class="nav-lang" title="Обзор на русском" lang="ru">🇷🇺</a>
+      </li>
       <li><a href="probetraining.html" class="nav-cta">PROBETRAINING BUCHEN</a></li>
       <li>
         <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
@@ -1230,6 +1246,8 @@
   <a href="/wellpass">WELLPASS</a>
   <a href="https://www.eversports.de/sp/pilates-company" target="_blank">EVERSPORTS</a>
   <a href="/english" style="color: var(--rose); font-weight: 500;">🇬🇧 ENGLISH</a>
+  <a href="/turkce" style="color: var(--rose); font-weight: 500;">🇹🇷 TÜRKÇE</a>
+  <a href="/russkiy" style="color: var(--rose); font-weight: 500;">🇷🇺 РУССКИЙ</a>
   <a href="probetraining.html" style="color: var(--rose); font-weight: 500;">PROBETRAINING BUCHEN</a>
   <a href="kontakt.html">KONTAKT</a>
   <a href="https://www.instagram.com/my.pilatescompany" target="_blank">INSTAGRAM</a>
