@@ -326,12 +326,25 @@ window.addEventListener('load', function() {
                           message: val('message')
                         };
 
-                        fetch('https://staging--pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake', {
-                          method: 'POST',
-                          headers: {'Content-Type': 'application/json'},
-                          body: JSON.stringify(payload),
-                          keepalive: true  // überlebt Seiten-Redirect nach Submit
-                        }).catch(function(e){ console.warn('Lead-Post fehlgeschlagen:', e); });
+                        var intakeUrl = 'https://staging--pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake';
+                        var bodyStr = JSON.stringify(payload);
+                        // sendBeacon überlebt den HubSpot-Redirect zur Danke-Seite zuverlässig.
+                        // Body als text/plain-Blob; Function liest via JSON.parse (Content-Type egal).
+                        var sent = false;
+                        if (navigator.sendBeacon) {
+                          try {
+                            sent = navigator.sendBeacon(intakeUrl, new Blob([bodyStr], {type: 'text/plain'}));
+                          } catch(e) { sent = false; }
+                        }
+                        if (!sent) {
+                          // Fallback, falls sendBeacon nicht verfügbar/fehlschlägt
+                          fetch(intakeUrl, {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: bodyStr,
+                            keepalive: true
+                          }).catch(function(e){ console.warn('Lead-Post Fallback fehlgeschlagen:', e); });
+                        }
                       } catch(e) {
                         console.warn('Lead-Post Fehler:', e);
                       }
