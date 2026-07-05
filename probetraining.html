@@ -296,7 +296,45 @@ window.addEventListener('load', function() {
         }
       },
             onFormSubmit: function($form) {
+                      // 1) Google-Ads-Conversion (unverändert)
                       gtag('event', 'conversion', {'send_to': 'AW-18174020065/2zNACI3CzLkcEOGThtpD'});
+
+                      // 2) Lead an Dashboard (hubspot-intake) posten
+                      try {
+                        var f = ($form && $form.length) ? $form[0] : $form; // jQuery ODER DOM
+                        var val = function(name) {
+                          var el = f.querySelector('[name="' + name + '"]');
+                          return el ? (el.value || '').trim() : '';
+                        };
+                        // Multi-Checkbox Wunschtage → semikolon-getrennt (HubSpot-Konvention)
+                        var tage = Array.prototype.slice
+                          .call(f.querySelectorAll('[name="welcher_tag_passt_dir_am_besten_fur_ein_kostenloses_probetraining"]:checked'))
+                          .map(function(c){ return c.value; }).join(';');
+                        // Radio Trainingsart
+                        var artEl = f.querySelector('[name="welche_trainingsart_interessiert_dich_am_meisten"]:checked');
+                        // Telefon: hidden phone ODER sichtbares tel-Feld
+                        var telEl = f.querySelector('[name="phone"]') || f.querySelector('input[type="tel"]');
+                        var tel = telEl ? (telEl.value || '').trim() : '';
+
+                        var payload = {
+                          firstname: val('firstname'),
+                          lastname:  val('lastname'),
+                          email:     val('email'),
+                          phone:     tel,
+                          welche_trainingsart_interessiert_dich_am_meisten: artEl ? artEl.value : '',
+                          welcher_tag_passt_dir_am_besten_fur_ein_kostenloses_probetraining: tage,
+                          message: val('message')
+                        };
+
+                        fetch('https://staging--pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake', {
+                          method: 'POST',
+                          headers: {'Content-Type': 'application/json'},
+                          body: JSON.stringify(payload),
+                          keepalive: true  // überlebt Seiten-Redirect nach Submit
+                        }).catch(function(e){ console.warn('Lead-Post fehlgeschlagen:', e); });
+                      } catch(e) {
+                        console.warn('Lead-Post Fehler:', e);
+                      }
             }
     });
   }
