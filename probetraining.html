@@ -326,7 +326,7 @@ window.addEventListener('load', function() {
                           message: val('message')
                         };
 
-                        var intakeUrl = 'https://staging--pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake';
+                        var intakeUrl = 'https://pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake';
                         var bodyStr = JSON.stringify(payload);
                         // sendBeacon überlebt den HubSpot-Redirect zur Danke-Seite zuverlässig.
                         // Body als text/plain-Blob; Function liest via JSON.parse (Content-Type egal).
