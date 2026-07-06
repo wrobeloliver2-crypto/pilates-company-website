@@ -297,10 +297,13 @@ window.addEventListener('load', function() {
         }
       },
             onFormSubmit: function($form) {
-                      // 1) Google-Ads-Conversion (unverändert)
-                      gtag('event', 'conversion', {'send_to': 'AW-18174020065/2zNACI3CzLkcEOGThtpD'});
+                      // 1) Google-Ads-Conversion (Label: kleines l, nicht großes I!)
+                      gtag('event', 'conversion', {'send_to': 'AW-18174020065/2zNACl3CzLkcEOGThtpD'});
 
-                      // 2) Lead an Dashboard (hubspot-intake) posten
+                      // 2) Lead an Dashboard: Versuch über DOM-Auslesen (funktioniert
+                      //    NUR wenn das Formular NICHT im iframe gerendert wird; im
+                      //    Cross-Origin-iframe wirft querySelector — dann übernimmt
+                      //    der message-Listener unten). Dedup über leadGesendet-Flag.
                       try {
                         var f = ($form && $form.length) ? $form[0] : $form; // jQuery ODER DOM
                         var val = function(name) {
@@ -317,7 +320,7 @@ window.addEventListener('load', function() {
                         var telEl = f.querySelector('[name="phone"]') || f.querySelector('input[type="tel"]');
                         var tel = telEl ? (telEl.value || '').trim() : '';
 
-                        var payload = {
+                        sendeLeadAnDashboard({
                           firstname: val('firstname'),
                           lastname:  val('lastname'),
                           email:     val('email'),
@@ -325,34 +328,71 @@ window.addEventListener('load', function() {
                           welche_trainingsart_interessiert_dich_am_meisten: artEl ? artEl.value : '',
                           welcher_tag_passt_dir_am_besten_fur_ein_kostenloses_probetraining: tage,
                           message: val('message')
-                        };
-
-                        var intakeUrl = 'https://pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake';
-                        var bodyStr = JSON.stringify(payload);
-                        // sendBeacon überlebt den HubSpot-Redirect zur Danke-Seite zuverlässig.
-                        // Body als text/plain-Blob; Function liest via JSON.parse (Content-Type egal).
-                        var sent = false;
-                        if (navigator.sendBeacon) {
-                          try {
-                            sent = navigator.sendBeacon(intakeUrl, new Blob([bodyStr], {type: 'text/plain'}));
-                          } catch(e) { sent = false; }
-                        }
-                        if (!sent) {
-                          // Fallback, falls sendBeacon nicht verfügbar/fehlschlägt
-                          fetch(intakeUrl, {
-                            method: 'POST',
-                            headers: {'Content-Type': 'application/json'},
-                            body: bodyStr,
-                            keepalive: true
-                          }).catch(function(e){ console.warn('Lead-Post Fallback fehlgeschlagen:', e); });
-                        }
+                        });
                       } catch(e) {
-                        console.warn('Lead-Post Fehler:', e);
+                        // Erwartbar bei iframe-Embed — message-Listener übernimmt.
+                        console.warn('Lead-Post via DOM nicht möglich (iframe?), warte auf onFormSubmitted:', e);
                       }
             }
     });
   }
   loadHubSpotForm();
+
+  // ---- Lead-Post an das Dashboard (hubspot-intake) ----
+  // Zentral, mit Dedup-Flag: wird entweder aus onFormSubmit (DOM-Pfad, nur bei
+  // Nicht-iframe-Embed) ODER aus dem message-Listener (iframe-sicher) aufgerufen.
+  var leadGesendet = false;
+  function sendeLeadAnDashboard(payload) {
+    if (leadGesendet) return;
+    if (!payload || !(payload.email || payload.phone || payload.lastname)) return; // leere Payload nie senden
+    leadGesendet = true;
+    var intakeUrl = 'https://pilatesleaddashboard.netlify.app/.netlify/functions/hubspot-intake';
+    var bodyStr = JSON.stringify(payload);
+    // sendBeacon überlebt den HubSpot-Redirect zur Danke-Seite zuverlässig.
+    // Body als text/plain-Blob; Function liest via JSON.parse (Content-Type egal).
+    var sent = false;
+    if (navigator.sendBeacon) {
+      try {
+        sent = navigator.sendBeacon(intakeUrl, new Blob([bodyStr], {type: 'text/plain'}));
+      } catch(e) { sent = false; }
+    }
+    if (!sent) {
+      // Fallback, falls sendBeacon nicht verfügbar/fehlschlägt
+      fetch(intakeUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: bodyStr,
+        keepalive: true
+      }).catch(function(e){ console.warn('Lead-Post Fallback fehlgeschlagen:', e); });
+    }
+  }
+
+  // ---- iframe-sicherer Weg: HubSpot postet nach dem Submit ein message-Event
+  // mit ALLEN Formularwerten (submissionValues) — kein DOM-Zugriff nötig.
+  window.addEventListener('message', function(ev) {
+    try {
+      var d = ev.data;
+      if (!d || d.type !== 'hsFormCallback' || d.eventName !== 'onFormSubmitted') return;
+      if (d.id && d.id !== '8c2d002d-6b52-4650-9da7-acc11bc08674') return; // nur unser Formular
+      var vals = (d.data && d.data.submissionValues) || {};
+      var g = function(k) {
+        var v = vals[k];
+        if (Array.isArray(v)) return v.join(';');
+        return (v === undefined || v === null) ? '' : String(v).trim();
+      };
+      sendeLeadAnDashboard({
+        firstname: g('firstname'),
+        lastname:  g('lastname'),
+        email:     g('email'),
+        phone:     g('phone') || g('mobilephone'),
+        welche_trainingsart_interessiert_dich_am_meisten: g('welche_trainingsart_interessiert_dich_am_meisten'),
+        welcher_tag_passt_dir_am_besten_fur_ein_kostenloses_probetraining: g('welcher_tag_passt_dir_am_besten_fur_ein_kostenloses_probetraining'),
+        message: g('message')
+      });
+    } catch(e) {
+      console.warn('Lead-Post (onFormSubmitted) Fehler:', e);
+    }
+  });
 });
 </script>
 
