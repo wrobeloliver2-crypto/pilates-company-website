@@ -103,6 +103,30 @@ exports.handler = async (event) => {
     const token = await getAccessToken();
     await sendEmail(token, subjectPrefix + ': ' + name + (language ? ' (' + language + ')' : ''), html);
 
+    // Zusätzlich als Lead ins Dashboard (Quelle "Website-Chat", analog Placetel).
+    // Bewusst NACH der Mail und in eigenem try/catch: Die Mail ist der
+    // Primärkanal und darf durch einen Dashboard-Ausfall nie blockiert werden.
+    // Dedup übernimmt das Dashboard (Telefon-/E-Mail-Abgleich).
+    try {
+      const produkt = isLangPage
+        ? ('Personal Training' + (language ? ' (' + language + ')' : '') + ' (Anfrage Sprachseite)')
+        : 'Rückruf-Wunsch (Website-Chat)';
+      await fetch('https://pilatesleaddashboard.netlify.app/.netlify/functions/evs-intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          telefon: phone,
+          email: email,
+          produkt: produkt,
+          nachricht: message,
+          quelle: 'website-chat'
+        })
+      });
+    } catch (e) {
+      console.error('Dashboard-Lead-Post fehlgeschlagen (Mail war erfolgreich):', e.message);
+    }
+
     return { statusCode: 200, headers: CORS, body: JSON.stringify({ ok: true }) };
   } catch (e) {
     console.error('sendmail Exception:', e.message);
