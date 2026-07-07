@@ -188,7 +188,13 @@
     color: var(--text);
     font-size: .95rem;
   }
-  .checklist li span.emoji { font-size: 1.15rem; }
+  .checklist li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--rose-dark);
+  }
 
   .contact-cta {
     background: var(--rose);
@@ -255,7 +261,7 @@
 
   <div class="card">
     <div class="card-head">
-      <div class="card-icon">📍</div>
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
       <h2>Adresse</h2>
     </div>
     <div class="addr-box">
@@ -264,7 +270,7 @@
         Segeberger Str. 1<br>
         23617 Stockelsdorf (bei Lübeck)</p>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Segeberger+Str.+1+23617+Stockelsdorf" target="_blank" rel="noopener">
-          🧭 In Google Maps öffnen
+          In Google Maps öffnen
         </a>
       </div>
     </div>
@@ -278,16 +284,16 @@
 
   <div class="card">
     <div class="card-head">
-      <div class="card-icon">🏢</div>
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
       <h2>Eingang & Räume</h2>
     </div>
     <p>Wir haben <strong style="color:var(--text);">zwei Eingänge</strong> an der Vorderseite – je nachdem, was du gebucht hast:</p>
     <ul style="list-style:none; display:flex; flex-direction:column; gap:.5rem; margin-top:.6rem;">
       <li style="display:flex; align-items:center; gap:.6rem; padding:.6rem .8rem; background:var(--rose-light); border-radius:10px; font-size:.93rem; color:var(--text);">
-        <span>👉</span> <strong>Rechts:</strong>&nbsp;Eingang zum <strong>Boutique Studio</strong> (Reformer, EG)
+        <strong>Rechts:</strong>&nbsp;Eingang zum <strong>Boutique Studio</strong> (Reformer, EG)
       </li>
       <li style="display:flex; align-items:center; gap:.6rem; padding:.6rem .8rem; background:var(--rose-light); border-radius:10px; font-size:.93rem; color:var(--text);">
-        <span>👈</span> <strong>Links:</strong>&nbsp;Eingang für alles andere (1. OG: Matte/Yoga-Pilatesraum & Club Studio)
+        <strong>Links:</strong>&nbsp;Eingang für alles andere (1. OG: Matte/Yoga-Pilatesraum & Club Studio)
       </li>
     </ul>
 
@@ -308,7 +314,7 @@
     </ul>
 
     <div style="margin-top:1rem; padding:.9rem 1rem; background:var(--cream); border:1px dashed var(--border); border-radius:10px;">
-      <p style="color:var(--text); font-size:.88rem; font-weight:500; margin-bottom:.4rem;">🔎 Nicht sicher, wo dein Kurs ist? So findest du es in deiner Buchungsbestätigung:</p>
+      <p style="color:var(--text); font-size:.88rem; font-weight:500; margin-bottom:.4rem;">Nicht sicher, wo dein Kurs ist? So findest du es in deiner Buchungsbestätigung:</p>
       <ul style="color:var(--text-mid); font-size:.88rem; padding-left:1.1rem; line-height:1.9;">
         <li>Kein Reformer-Kurs (z. B. Pilates, Yoga, Aerial) → <strong style="color:var(--text);">1. OG, Eingang links</strong></li>
         <li>Reformer-Kurs mit <strong style="color:var(--text);">8 Plätzen</strong> → <strong style="color:var(--text);">Boutique Studio, EG, Eingang rechts</strong></li>
@@ -319,30 +325,33 @@
 
   <div class="card">
     <div class="card-head">
-      <div class="card-icon">🚗</div>
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5 17l1.5-6.5A2 2 0 0 1 8.42 9h7.16a2 2 0 0 1 1.92 1.5L19 17M5 17V13h14v4"/></svg></div>
       <h2>Parken</h2>
     </div>
-    <p>Parkplätze findest du auf der <strong style="color:var(--text);">linken Seite des Hauses</strong>. Zusätzlich kannst du auch die Parkplätze von <strong style="color:var(--text);">Physiopro Lübeck</strong> mitnutzen.</p>
+    <p>Parkplätze findest du auf der <strong style="color:var(--text);">linken Seite des Hauses</strong>. Zusätzlich können alle Parkplätze von <strong style="color:var(--text);">Physiopro Lübeck</strong> mitgenutzt werden.</p>
   </div>
 
   <div class="card">
     <div class="card-head">
-      <div class="card-icon">🎒</div>
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
       <h2>Gut zu wissen</h2>
     </div>
     <ul class="checklist">
-      <li><span class="emoji">🧖</span> Handtuch mitbringen</li>
-      <li><span class="emoji">💧</span> Etwas zu trinken einpacken</li>
-      <li><span class="emoji">😊</span> Und einfach Vorfreude – wir freuen uns auf dich!</li>
+      <li>Handtuch mitbringen</li>
+      <li>Etwas zu trinken einpacken</li>
+      <li>Und einfach Vorfreude – wir freuen uns auf dich!</li>
     </ul>
   </div>
 
   <div class="contact-cta">
     <h3>Noch Fragen?</h3>
     <p>Sollte irgendetwas unklar sein – melde dich jederzeit, wir helfen gerne weiter.</p>
+    <p style="color:#fff; font-size:1.05rem; font-weight:500; margin-bottom:1.1rem;">
+      <a href="tel:+4945116083019" style="color:#fff; text-decoration:none; border-bottom:1.5px solid rgba(255,255,255,.5);">0451 - 160 830 19</a>
+    </p>
     <div class="contact-actions">
-      <a class="btn-white" href="tel:+4945116083019">📞 Anrufen</a>
-      <a class="btn-white" href="mailto:info@pilatescompany.de">✉ E-Mail</a>
+      <a class="btn-white" href="tel:+4945116083019">Anrufen</a>
+      <a class="btn-white" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Probetraining." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
