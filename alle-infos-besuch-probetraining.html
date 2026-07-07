@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So findest du uns – Pilates Company Lübeck</title>
+<meta name="description" content="Alle Infos für dein Probetraining bei Pilates Company Lübeck: Anfahrt, Parken, Räume und was du mitbringen solltest.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #d9a49a;
+    --rose-light: #f5ede9;
+    --rose-dark:  #b0796e;
+    --cream:      #faf7f4;
+    --warm-gray:  #8a847d;
+    --text:       #2c2825;
+    --text-mid:   #5a5450;
+    --border:     rgba(44,40,37,.1);
+    --sans:       'DM Sans', system-ui, sans-serif;
+    --heading:    'Playfair Display', serif;
+    --radius:     12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--heading);
+    font-weight: 400;
+  }
+
+  .topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topbar img { height: 48px; width: auto; display: block; }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .hero {
+    padding: 2.25rem 0 1.5rem;
+    text-align: center;
+  }
+  .tag {
+    display: inline-block;
+    font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--rose-dark); background: var(--rose-light);
+    padding: .3rem .8rem; border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 6vw, 2.3rem);
+    line-height: 1.25;
+    margin-bottom: .6rem;
+  }
+  .hero p {
+    color: var(--text-mid);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin-bottom: .9rem;
+  }
+  .card-icon {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--rose-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .card-head h2 {
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .card p, .card li {
+    color: var(--text-mid);
+    font-size: .95rem;
+  }
+
+  .room-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    margin-top: .3rem;
+  }
+  .room-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    padding: .7rem .8rem;
+    background: var(--rose-light);
+    border-radius: 10px;
+  }
+  .room-floor {
+    flex-shrink: 0;
+    font-family: var(--heading);
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--rose-dark);
+    background: #fff;
+    border-radius: 8px;
+    padding: .3rem .55rem;
+    white-space: nowrap;
+    line-height: 1.3;
+    text-align: center;
+    min-width: 58px;
+  }
+  .room-text { color: var(--text); font-size: .93rem; }
+  .room-text strong { color: var(--text); }
+
+  .addr-box {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+  }
+  .addr-box a.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin-top: .6rem;
+    color: var(--rose-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: .9rem;
+    border-bottom: 1.5px solid var(--rose);
+    padding-bottom: 2px;
+  }
+
+  .map-embed {
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .map-embed iframe {
+    width: 100%; height: 220px; border: 0; display: block;
+  }
+
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+  }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: var(--text);
+    font-size: .95rem;
+  }
+  .checklist li span.emoji { font-size: 1.15rem; }
+
+  .contact-cta {
+    background: var(--rose);
+    color: #fff;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0 2.5rem;
+  }
+  .contact-cta h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+  }
+  .contact-cta p {
+    color: rgba(255,255,255,.9);
+    font-size: .9rem;
+    margin-bottom: 1.1rem;
+  }
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7rem;
+    justify-content: center;
+  }
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: #fff;
+    color: var(--rose-dark);
+    padding: .7rem 1.4rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: .9rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem 1.25rem 2.5rem;
+    font-size: .8rem;
+    color: var(--warm-gray);
+  }
+  footer a { color: var(--rose-dark); text-decoration: none; }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html">
+    <img src="logo.png" alt="Pilates Company Lübeck">
+  </a>
+</div>
+
+<div class="container">
+
+  <div class="hero">
+    <span class="tag">Dein Probetraining</span>
+    <h1>So findest du uns</h1>
+    <p>Alle Infos zu Anfahrt, Parken und unseren Räumen – damit du entspannt und pünktlich bei uns ankommst.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">📍</div>
+      <h2>Adresse</h2>
+    </div>
+    <div class="addr-box">
+      <div>
+        <p style="color:var(--text); font-size:1rem;"><strong>Pilates Company Lübeck</strong><br>
+        Segeberger Str. 1<br>
+        23617 Stockelsdorf (bei Lübeck)</p>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Segeberger+Str.+1+23617+Stockelsdorf" target="_blank" rel="noopener">
+          🧭 In Google Maps öffnen
+        </a>
+      </div>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=10.6180,53.8610,10.6480,53.8810&layer=mapnik&marker=53.8710,10.6330"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🚪</div>
+      <h2>Eingang</h2>
+    </div>
+    <p>Der Eingang befindet sich <strong style="color:var(--text);">links am Gebäude</strong>. Einfach reinkommen – wir freuen uns auf dich!</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🏢</div>
+      <h2>Unsere Räume</h2>
+    </div>
+    <p style="margin-bottom:.3rem;">Wir haben zwei Etagen – damit du direkt weißt, wo dein Kurs stattfindet:</p>
+    <ul class="room-list">
+      <li>
+        <span class="room-floor">EG</span>
+        <span class="room-text"><strong>Reformer-Studio</strong> mit 8 Reformern</span>
+      </li>
+      <li>
+        <span class="room-floor">1. OG</span>
+        <span class="room-text"><strong>Alle Mattenkurse</strong> finden hier oben statt</span>
+      </li>
+      <li>
+        <span class="room-floor">1. OG</span>
+        <span class="room-text">Zweiter <strong>Reformer-Raum</strong></span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🚗</div>
+      <h2>Parken</h2>
+    </div>
+    <p>Parkplätze findest du auf der <strong style="color:var(--text);">linken Seite des Hauses</strong>. Zusätzlich kannst du auch die Parkplätze von <strong style="color:var(--text);">Physiopro Lübeck</strong> mitnutzen.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🎒</div>
+      <h2>Gut zu wissen</h2>
+    </div>
+    <ul class="checklist">
+      <li><span class="emoji">🧖</span> Handtuch mitbringen</li>
+      <li><span class="emoji">💧</span> Etwas zu trinken einpacken</li>
+      <li><span class="emoji">😊</span> Und einfach Vorfreude – wir freuen uns auf dich!</li>
+    </ul>
+  </div>
+
+  <div class="contact-cta">
+    <h3>Noch Fragen?</h3>
+    <p>Sollte irgendetwas unklar sein – melde dich jederzeit, wir helfen gerne weiter.</p>
+    <div class="contact-actions">
+      <a class="btn-white" href="tel:+4945116083019">📞 Anrufen</a>
+      <a class="btn-white" href="mailto:info@pilatescompany.de">✉ E-Mail</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Pilates Company Lübeck · Segeberger Str. 1 · 23617 Stockelsdorf<br>
+  <a href="index.html">Zur Startseite</a>
+</footer>
+
+</body>
+</html>
