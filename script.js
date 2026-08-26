@@ -215,38 +215,14 @@ function loadKontaktForm() {
 document.addEventListener('DOMContentLoaded', loadKontaktForm);
 
 // ── PROBETRAINING FORM (HubSpot) ──
-var probeFormLoaded = false;
-function loadProbeForm() {
-  if (probeFormLoaded) return;
-  var wrapper = document.getElementById('hubspot-form-wrapper');
-  if (!wrapper) return;
-  if (typeof hbspt === 'undefined' || typeof hbspt.forms === 'undefined') {
-    setTimeout(loadProbeForm, 300);
-    return;
-  }
-  probeFormLoaded = true;
-  var loading = document.getElementById('hbspt-form-loading');
-  if (loading) loading.style.display = 'none';
-  hbspt.forms.create({
-    portalId: "147264621",
-    formId: "8c2d002d",
-    region: "eu1",
-    target: "#hubspot-form-wrapper",
-    onFormReady: function() {
-      wrapper.querySelectorAll('*').forEach(function(el) {
-        el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
-      });
-      new MutationObserver(function() {
-        wrapper.querySelectorAll('*').forEach(function(el) {
-          el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
-        });
-      }).observe(wrapper, { childList: true, subtree: true });
-    }
-  });
-}
-
-// Probetraining Form laden
-document.addEventListener('DOMContentLoaded', loadProbeForm);
+// Hier bewusst KEIN Loader mehr. probetraining.html bringt einen eigenen mit
+// (voller Formular-ID, Google-Ads-Conversion und Beacon ans Lead-Dashboard).
+// Die frühere Funktion loadProbeForm() hing an DOMContentLoaded, lief damit vor
+// dem Loader der Seite und rief hbspt.forms.create mit einer ABGESCHNITTENEN
+// Formular-ID ("8c2d002d" statt der vollen UUID) auf: ein fehlschlagender
+// Ladeversuch pro Seitenaufruf, dazu wurde #hbspt-form-loading zu früh
+// ausgeblendet. Entfernt am 26.08.2026. Braucht eine weitere Seite dieses
+// Formular, dort den Loader aus probetraining.html übernehmen — nicht hier.
 
 // ── NEWS LADEN auf studio-news.html ──
 document.addEventListener('DOMContentLoaded', () => {
