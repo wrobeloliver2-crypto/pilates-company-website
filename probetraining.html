@@ -55,6 +55,41 @@ p{margin:0}
 .bar .call{display:inline-flex;align-items:center;gap:7px;height:42px;padding:0 16px;border-radius:999px;
   border:1px solid var(--line);background:var(--sheet);color:var(--ink);font-size:13px;font-weight:500}
 .bar .call svg{width:14px;height:14px;stroke:var(--cta)}
+.bar .right{display:flex;align-items:center;gap:8px}
+.burger{width:42px;height:42px;flex:none;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:5px;border:1px solid var(--line);border-radius:999px;background:var(--sheet);
+  cursor:pointer;padding:0}
+.burger i{display:block;width:16px;height:1.5px;background:var(--ink);border-radius:2px;
+  transition:transform .22s ease,opacity .18s ease}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ---------- menü ---------- */
+.menu{position:fixed;inset:0;z-index:60;max-width:var(--col);margin:0 auto;background:var(--ground);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:14px var(--pad) calc(28px + env(safe-area-inset-bottom));
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .2s ease,transform .24s cubic-bezier(.22,.8,.28,1),visibility 0s linear .24s}
+.menu.open{opacity:1;visibility:visible;transform:none;
+  transition:opacity .2s ease,transform .24s cubic-bezier(.22,.8,.28,1),visibility 0s}
+.menu .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.menu .top a{display:inline-flex;align-items:center;min-height:46px;padding:6px 2px}
+.menu .top img{height:30px;width:auto}
+.menu .shut{width:44px;height:44px;flex:none;border:1px solid var(--line);border-radius:999px;
+  background:var(--sheet);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.menu .shut svg{width:16px;height:16px;stroke:var(--ink);stroke-width:1.8}
+.menu .grp{margin-bottom:20px}
+.menu .grp > p{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 4px}
+.menu .grp a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;
+  padding:6px 0;font-size:16px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line-soft)}
+.menu .grp a:last-child{border-bottom:0}
+.menu .grp a .ext{font-size:11px;font-weight:400;color:var(--faint);letter-spacing:.04em}
+.menu .go-form{width:100%;min-height:54px;margin-top:4px;border:0;border-radius:14px;background:var(--cta);
+  color:#fff;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer}
+.menu .go-form:hover{background:var(--cta-hover)}
+body.menu-open{overflow:hidden}
 
 /* ---------- hero ---------- */
 .hero{position:relative;background:var(--sand)}
@@ -238,7 +273,7 @@ footer .legal a{color:#A99B95;display:inline-block;padding:11px 0}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
-  .dock{transition:none}
+  .dock,.menu,.burger i{transition:none}
   *{scroll-behavior:auto!important}
 }
 </style>
@@ -280,11 +315,54 @@ footer .legal a{color:#A99B95;display:inline-block;padding:11px 0}
     <a href="https://www.pilatescompany.de/" aria-label="Pilates Company Lübeck">
       <img class="mark" src="logo.png" alt="Pilates Company Lübeck" width="130" height="70">
     </a>
-    <a class="call" href="tel:+4945116083019">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-      Anrufen
-    </a>
+    <div class="right">
+      <a class="call" href="tel:+4945116083019">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Anrufen
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
   </header>
+
+  <nav class="menu" id="menu" aria-label="Hauptmenü" aria-hidden="true">
+    <div class="top">
+      <a href="https://www.pilatescompany.de/"><img src="logo.png" alt="Pilates Company Lübeck" width="130" height="70"></a>
+      <button class="shut" id="menuShut" type="button" aria-label="Menü schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="grp">
+      <p>Training</p>
+      <a href="https://www.pilatescompany.de/kurse.html">Kurse</a>
+      <a href="https://www.pilatescompany.de/preise.html">Preise</a>
+      <a href="https://www.pilatescompany.de/personal-training.html">Physiocoaching</a>
+      <a href="https://www.pilatescompany.de/ausbildung.html">Ausbildung</a>
+      <a href="https://www.pilatescompany.de/wellpass">Wellpass</a>
+    </div>
+
+    <div class="grp">
+      <p>Studio</p>
+      <a href="https://www.pilatescompany.de/">Startseite</a>
+      <a href="https://www.pilatescompany.de/trainer.html">Trainer</a>
+      <a href="https://www.pilatescompany.de/studio-news.html">News</a>
+      <a href="https://www.pilatescompany.de/challenge.html">Videos</a>
+      <a href="https://www.pilatescompany.de/downloads.html">Downloads</a>
+    </div>
+
+    <div class="grp">
+      <p>Mehr</p>
+      <a href="https://www.pilatescompany.de/gutschein.html">Gutschein</a>
+      <a href="https://www.pilatescompany.de/kontakt.html">Kontakt</a>
+      <a href="https://www.eversports.de/sp/pilates-company" target="_blank" rel="noopener">Kursplan buchen<span class="ext">Eversports ↗</span></a>
+      <a href="https://www.pilatescompany.de/english" hreflang="en">English<span class="ext">EN ↗</span></a>
+      <a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span class="ext">↗</span></a>
+    </div>
+
+    <button class="go-form" type="button" id="menuCta">Probetraining anfragen</button>
+  </nav>
 
   <section class="hero">
     <img class="shot" src="studio-reformer.webp"
@@ -539,13 +617,55 @@ footer .legal a{color:#A99B95;display:inline-block;padding:11px 0}
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  document.getElementById('dockCta').addEventListener('click', function () {
+  document.getElementById('dockCta').addEventListener('click', function () { jumpToForm(); });
+
+  /* ---- menü ---- */
+  var burger = document.getElementById('burger');
+  var menu   = document.getElementById('menu');
+  var shut   = document.getElementById('menuShut');
+
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    document.body.classList.toggle('menu-open', open);
+    if (open) {
+      menu.scrollTop = 0;
+      void menu.offsetWidth; // Style-Flush, sonst greift focus() auf das noch versteckte Menü
+      shut.focus({ preventScroll: true });
+    } else {
+      burger.focus({ preventScroll: true });
+    }
+  }
+  burger.addEventListener('click', function () {
+    setMenu(burger.getAttribute('aria-expanded') !== 'true');
+  });
+  shut.addEventListener('click', function () { setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') setMenu(false);
+  });
+  // Fokus im offenen Menü halten
+  menu.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var f = menu.querySelectorAll('a[href], button');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  function jumpToForm() {
     var top = anchor.getBoundingClientRect().top + window.scrollY - 64;
     window.scrollTo({ top: top, behavior: 'smooth' });
     setTimeout(function () {
       var first = form.querySelector('input[name="firstname"]');
       if (first) first.focus({ preventScroll: true });
     }, 480);
+  }
+  document.getElementById('menuCta').addEventListener('click', function () {
+    setMenu(false);
+    jumpToForm();
   });
 
   /* ---- reveal ---- */
