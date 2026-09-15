@@ -665,8 +665,8 @@
   .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
   .footer-bottom a:hover { color: var(--rose); }
 
-  /* ── SUMMER GLOW BANNER ── */
-  .summer-glow-banner {
+  /* ── AUTUMN RESET BANNER ── */
+  .autumn-reset-banner {
     background: linear-gradient(135deg, var(--rose-dark), #c4877c);
     border-radius: var(--radius);
     padding: 2.5rem 3rem;
@@ -676,7 +676,7 @@
     align-items: center;
     margin-bottom: 0;
   }
-  .summer-glow-price {
+  .autumn-reset-price {
     text-align: center;
     background: rgba(255,255,255,.1);
     border-radius: var(--radius);
@@ -684,8 +684,8 @@
     min-width: 160px;
   }
   @media (max-width: 640px) {
-    .summer-glow-banner { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-    .summer-glow-price { text-align: left; }
+    .autumn-reset-banner { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    .autumn-reset-price { text-align: left; }
   }
 
   /* ── PREISE ── */
@@ -1168,7 +1168,7 @@ function paProgress(s){var p=Math.min(Math.round((s-1)/4*100),100);document.getE
 function paSelect(s,v){paA[s]=v;var el=document.getElementById('paStep'+s);el.querySelectorAll('.pa-btn').forEach(function(b){b.classList.remove('sel')});if(event&&event.currentTarget&&event.currentTarget.classList.contains('pa-btn'))event.currentTarget.classList.add('sel');setTimeout(function(){document.getElementById('paStep'+s).classList.remove('active');if(s<4){document.getElementById('paStep'+(s+1)).classList.add('active');paProgress(s+1)}else{paShowResult();paProgress(5)}},250);}
 function paToggle(btn,t){btn.classList.toggle('sel');var c=btn.querySelector('.pa-chk');if(btn.classList.contains('sel')){paTypes.push(t);c.textContent='\u2713'}else{paTypes=paTypes.filter(function(x){return x!==t});c.textContent=''}document.getElementById('paNext3').classList.toggle('vis',paTypes.length>0);}
 
-var PP={sg:{n:'Summer Glow Start',p:69,pa:89,c:4,m:3,u:17.25},r1:{n:'1 Monat Reformer & others',p:89,c:4,m:1,u:22.25},r12:{n:'12 Monate Reformer & others',p:89,c:8,m:12,u:11.13},m1:{n:'1 Monat Mattenpilates & Yoga',p:69,c:8,m:1,u:8.63},m12:{n:'12 Monate Mattenpilates & Yoga',p:59,c:8,m:12,u:7.38},fp:{n:'5er-Pass',p:119,c:5,u:23.80},di:{n:'Drop-In Ticket',p:28,c:1,u:28.00}};
+var PP={sg:{n:'Autumn Reset',p:69,pa:89,c:4,m:3,u:17.25},r1:{n:'1 Monat Reformer & others',p:89,c:4,m:1,u:22.25},r12:{n:'12 Monate Reformer & others',p:89,c:8,m:12,u:11.13},m1:{n:'1 Monat Mattenpilates & Yoga',p:69,c:8,m:1,u:8.63},m12:{n:'12 Monate Mattenpilates & Yoga',p:59,c:8,m:12,u:7.38},fp:{n:'5er-Pass',p:119,c:5,u:23.80},di:{n:'Drop-In Ticket',p:28,c:1,u:28.00}};
 
 function paShowResult(){
   var st=paA[1],fr=paA[2],ty=paA[3],pl=paA[4];
@@ -1259,14 +1259,14 @@ paProgress(1);
   <section class="section">
     <div class="container">
 
-      <!-- SUMMER GLOW START - Zeitlich befristetes Angebot -->
-      <div class="summer-glow-banner">
-        <div class="summer-glow-left">
+      <!-- AUTUMN RESET - Zeitlich befristetes Angebot -->
+      <div class="autumn-reset-banner">
+        <div class="autumn-reset-left">
           <div style="display:flex; gap:.75rem; align-items:center; margin-bottom:.75rem;">
             <span class="tag" style="background:#fff; color:var(--rose-dark);">⏳ Zeitlich befristet</span>
             <span style="font-size:.75rem; color:rgba(255,255,255,.7); letter-spacing:.06em; text-transform:uppercase;">Aktionsangebot</span>
           </div>
-          <h3 style="font-family:var(--heading); font-size:1.8rem; font-weight:300; color:#fff; margin-bottom:.5rem;">Summer Glow Start</h3>
+          <h3 style="font-family:var(--heading); font-size:1.8rem; font-weight:300; color:#fff; margin-bottom:.5rem;">Autumn Reset</h3>
           <p style="color:rgba(255,255,255,.85); font-size:.95rem; margin-bottom:1.25rem;">Dein perfekter Einstieg – Reformer & weitere Kurse mit 4 Credits/Monat. Die ersten 3 Monate zum Aktionspreis, danach 89,00 €/Monat.</p>
           <ul style="list-style:none; display:flex; flex-direction:column; gap:.4rem; margin-bottom:1.5rem;">
             <li style="color:rgba(255,255,255,.9); font-size:.9rem;">✓ Mindestlaufzeit 3 Monate</li>
@@ -1275,7 +1275,7 @@ paProgress(1);
           </ul>
           <a class="btn" href="https://www.eversports.de/sp/pilates-company/product/827e3207-dbd8-481d-ae2a-d406a98abafb" target="_blank" style="background:#fff; color:var(--rose-dark); font-weight:500;">Jetzt zum Aktionspreis buchen →</a>
         </div>
-        <div class="summer-glow-price">
+        <div class="autumn-reset-price">
           <p style="font-size:.8rem; color:rgba(255,255,255,.6); text-decoration:line-through; margin-bottom:.25rem;">89,00 € / Monat</p>
           <p style="font-family:var(--heading); font-size:3.5rem; font-weight:300; color:#fff; line-height:1;">69<span style="font-size:1.8rem;">,00</span></p>
           <p style="color:rgba(255,255,255,.8); font-size:.9rem;">€ / Monat</p>
