@@ -95,7 +95,7 @@ function selectAnswer(s,v){answers[s]=v;var el=document.getElementById('step'+s)
 function toggleCourse(btn,type){btn.classList.toggle('selected');var c=btn.querySelector('.check');if(btn.classList.contains('selected')){selectedTypes.push(type);c.textContent='\u2713'}else{selectedTypes=selectedTypes.filter(function(t){return t!==type});c.textContent=''}document.getElementById('step3Next').classList.toggle('visible',selectedTypes.length>0);}
 
 var P={
-  sg:{n:'Summer Glow Start',p:69,pa:89,c:4,m:3,u:17.25},
+  sg:{n:'Autumn Reset',p:69,pa:89,c:4,m:3,u:17.25},
   r1:{n:'1 Monat Reformer & others',p:89,c:4,m:1,u:22.25},
   r12:{n:'12 Monate Reformer & others',p:89,c:8,m:12,u:11.13},
   m1:{n:'1 Monat Mattenpilates & Yoga',p:69,c:8,m:1,u:8.63},
@@ -200,4 +200,3 @@ updateProgress(1);
 </script>
 </body>
 </html>
-
