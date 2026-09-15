@@ -134,7 +134,7 @@ function pcGetAnswer(question) {
     "- Reformer max 1:5-1:8 Teilnehmer, Aerial max 1:7, Matte max 1:10\n" +
     "- 55 Min pro Kurs (Aerial 75-85 Min)\n\n" +
     "AKTUELLE PREISE (Eversports, Mai 2026):\n" +
-    "- SUMMER GLOW START: 69 Euro/Monat (3 Monate), dann 89 Euro/Monat, 4 Credits - BESTES EINSTIEGSANGEBOT!\n" +
+    "- AUTUMN RESET: 69 Euro/Monat (3 Monate), dann 89 Euro/Monat, 4 Credits - BESTES EINSTIEGSANGEBOT!\n" +
     "- 12 Mon. Mattenpilates & Yoga: 59 Euro/Monat, 8 Credits\n" +
     "- 1 Mon. Mattenpilates & Yoga: 69 Euro/Monat, 8 Credits\n" +
     "- 1 Mon. Reformer & others: 89 Euro/Monat, 4 Credits\n" +
@@ -145,7 +145,7 @@ function pcGetAnswer(question) {
     "- KOSTENLOSES PROBETRAINING fuer Neukunden!\n\n" +
     "BUCHUNG: Ueber Eversports (eversports.de/s/pilates-company)\n" +
     "GUTSCHEIN: Reformer-Pilates Gutschein 28 Euro (eversports.de/org/widget/f67272f0-50e6-441a-9f7c-446d315076a3)\n\n" +
-    "EMPFEHLUNG: Empfiehl immer eine Membership als beste Option. Summer Glow Start ist das beste Einstiegsangebot fuer Reformer. Fuer Neukunden immer das kostenlose Probetraining erwaehnen.\n\n" +
+    "EMPFEHLUNG: Empfiehl immer eine Membership als beste Option. Autumn Reset ist das beste Einstiegsangebot fuer Reformer. Fuer Neukunden immer das kostenlose Probetraining erwaehnen.\n\n" +
     "TELEFON: Wenn jemand anrufen moechte: 0451 - 160 830 19. Man kann dort 24h eine Sofortnachricht hinterlassen und bekommt einen Rueckruf.";
 
   pcHistory.push({ role: 'user', content: question });
@@ -180,7 +180,7 @@ function pcFallback(q) {
   var a = '';
 
   if (ql.match(/preis|kost|membership|mitglied|abo/)) {
-    a = 'Unsere Memberships starten ab 59 Euro/Monat. Das beste Einstiegsangebot ist der Summer Glow Start fuer 69 Euro/Monat (3 Monate). Einzeltickets kosten 28 Euro. Fuer Neukunden gibt es ein kostenloses Probetraining! Alle Preise findest du auf unserer <a href="preise.html" style="color:#b0796e;">Preise-Seite</a>.';
+    a = 'Unsere Memberships starten ab 59 Euro/Monat. Das beste Einstiegsangebot ist der Autumn Reset fuer 69 Euro/Monat (3 Monate). Einzeltickets kosten 28 Euro. Fuer Neukunden gibt es ein kostenloses Probetraining! Alle Preise findest du auf unserer <a href="preise.html" style="color:#b0796e;">Preise-Seite</a>.';
   } else if (ql.match(/probe|kostenlos|gratis|test|schnupper/)) {
     a = 'Ja, als Neukunde bekommst du ein kostenloses Probetraining! Einfach auf unserer <a href="probetraining.html" style="color:#b0796e;">Probetraining-Seite</a> anmelden. Wir freuen uns auf dich!';
   } else if (ql.match(/kurs|angebot|reformer|yoga|aerial|pilates|matte/)) {
@@ -193,8 +193,8 @@ function pcFallback(q) {
     a = 'Du erreichst uns unter 0451 - 160 830 19. Hinterlasse einfach eine Sofortnachricht — wir sind 24 Stunden erreichbar und rufen zurueck. Oder schreib uns: info@pilatescompany.de';
   } else if (ql.match(/gutschein|geschenk|verschenk/)) {
     a = 'Wir bieten Gutscheine fuer Reformer-Pilates an (28 Euro). Du kannst sie direkt auf unserer <a href="gutschein.html" style="color:#b0796e;">Gutschein-Seite</a> kaufen.';
-  } else if (ql.match(/summer|glow|aktion|angebot|rabatt|spar/)) {
-    a = 'Unser bestes Angebot: Summer Glow Start fuer nur 69 Euro/Monat (3 Monate), danach 89 Euro/Monat. 4 Reformer-Credits pro Monat — so guenstig bekommst du Reformer-Training nicht mehr! Details auf unserer <a href="preise.html" style="color:#b0796e;">Preise-Seite</a>.';
+  } else if (ql.match(/autumn|reset|aktion|angebot|rabatt|spar/)) {
+    a = 'Unser bestes Angebot: Autumn Reset fuer nur 69 Euro/Monat (3 Monate), danach 89 Euro/Monat. 4 Reformer-Credits pro Monat — so guenstig bekommst du Reformer-Training nicht mehr! Details auf unserer <a href="preise.html" style="color:#b0796e;">Preise-Seite</a>.';
   } else {
     a = 'Danke fuer deine Frage! Am besten erreichst du uns direkt unter 0451 - 160 830 19 (Sofortnachricht hinterlassen, 24h erreichbar) oder per E-Mail an info@pilatescompany.de. Wir helfen dir gerne weiter!';
   }
