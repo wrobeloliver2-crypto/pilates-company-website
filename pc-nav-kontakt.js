@@ -13,8 +13,8 @@
     if (!dl) return;
     var li = document.createElement('li');
     li.innerHTML = '<div class="nav-kontakt-wrap">'+
-      '<a href="kontakt.html" class="nav-kontakt-btn nav-kontakt-btn--grey">Kontakt</a>'+
-      '<a href="probetraining.html" class="nav-kontakt-btn nav-kontakt-btn--rose">Probetraining</a>'+
+      '<a href="/kontakt" class="nav-kontakt-btn nav-kontakt-btn--grey">Kontakt</a>'+
+      '<a href="/probetraining" class="nav-kontakt-btn nav-kontakt-btn--rose">Probetraining</a>'+
       '<a href="https://wa.me/491751266117" target="_blank" class="nav-kontakt-btn nav-kontakt-btn--wa">WhatsApp</a>'+
     '</div>';
     dl.parentNode.insertBefore(li, dl.nextSibling);

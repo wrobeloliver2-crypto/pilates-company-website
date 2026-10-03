@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile Sticky-Leiste (global, alle Seiten mit script.js)
   const mbar = document.createElement('div');
   mbar.id = 'pc-mobile-bar';
-  mbar.innerHTML = '<a class="pc-bar-member" href="preise.html">Mitglied werden</a>'
+  mbar.innerHTML = '<a class="pc-bar-member" href="/preise">Mitglied werden</a>'
     + '<button class="pc-bar-chat" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>Frag mich was</button>';
   mbar.querySelector('.pc-bar-chat').onclick = openPcQA;
   document.body.appendChild(mbar);
@@ -456,8 +456,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const b = document.createElement('button');
       b.className = 'pc-chip'; b.textContent = l;
       b.onclick = () => {
-        if (l === 'Alle Preise ansehen') { window.location.href = 'preise.html'; return; }
-        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining') { window.location.href = 'probetraining.html'; return; }
+        if (l === 'Alle Preise ansehen') { window.location.href = '/preise'; return; }
+        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining') { window.location.href = '/probetraining'; return; }
         if (l === 'Kursplan ansehen') { window.open('https://www.eversports.de/sp/pilates-company', '_blank', 'noopener'); return; }
         document.getElementById('pc-qa-input').value = l; sendMsg();
       };
