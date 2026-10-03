@@ -1,11 +1,10 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://pilatescompany.de/sitemap.xml
-
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /ki-widget-snippet.html
 Disallow: /pc-assistant.html
 Disallow: /preisassistent.html
+
+Sitemap: https://pilatescompany.de/sitemap.xml
