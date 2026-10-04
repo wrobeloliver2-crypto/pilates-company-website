@@ -249,6 +249,8 @@
   .hero-text { max-width: 560px; }
   .hero-text h1 { margin-bottom: 1.5rem; }
   .hero-text p { font-size: 1.1rem; color: var(--text-mid); margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-text p a { color: var(--rose-dark); text-decoration: underline; text-decoration-color: var(--rose); text-underline-offset: 3px; }
+  .hero-text p a:hover { color: var(--text); }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   .hero-why {
     background: var(--rose-light);
@@ -1276,7 +1278,7 @@
     <span style="opacity:.85;">– Reformer & Kurse nur 69 € / Monat in den ersten 3 Monaten</span>
     <span style="background:rgba(255,255,255,.25); border-radius:100px; padding:.2rem .75rem; font-size:.75rem; font-weight:500;">Jetzt sichern →</span>
   </a>
-  <button onclick="document.getElementById('summerBar').style.display='none'" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:none; border:none; color:rgba(255,255,255,.7); cursor:pointer; font-size:1.1rem; line-height:1; padding:0;">×</button>
+  <button onclick="document.getElementById('summerBar').style.display='none'" aria-label="Hinweis schließen" style="position:absolute; right:.5rem; top:50%; transform:translateY(-50%); background:none; border:none; color:rgba(255,255,255,.7); cursor:pointer; font-size:1.1rem; line-height:1; padding:.6rem;">×</button>
 </div>
 
 <nav>
