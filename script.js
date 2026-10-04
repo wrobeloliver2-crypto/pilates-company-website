@@ -200,11 +200,11 @@ function loadKontaktForm() {
     onFormSubmit: function() { pcConversion('kontakt'); },
     onFormReady: function() {
       wrapper.querySelectorAll('*').forEach(function(el) {
-        el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+        el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
       });
       new MutationObserver(function() {
         wrapper.querySelectorAll('*').forEach(function(el) {
-          el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+          el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
         });
       }).observe(wrapper, { childList: true, subtree: true });
     }
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
       background:#fdf9f7;border-radius:20px;max-width:460px;width:100%;
       height:580px;overflow:hidden;position:relative;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
-      display:flex;flex-direction:column;font-family:'DM Sans',sans-serif;
+      display:flex;flex-direction:column;font-family:'Poppins',sans-serif;
     }
     #pc-qa-header {
       background:#d9a49a;color:#fff;padding:14px 18px;

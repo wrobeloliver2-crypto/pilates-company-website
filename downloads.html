@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Pilates Company Lübeck">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +26,7 @@
     --text:       #2c2825;
     --text-mid:   #5a5450;
     --border:     rgba(44,40,37,.1);
-    --sans:       'DM Sans', system-ui, sans-serif;
+    --sans:       'Poppins', system-ui, sans-serif;
     --heading:    'Playfair Display', serif;
     --radius:     12px;
     --nav-h:      136px;
@@ -1258,11 +1258,11 @@ function loadKontaktForm() {
     target: "#kontakt-form-wrapper",
     onFormReady: function() {
       wrapper.querySelectorAll('*').forEach(function(el) {
-        el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+        el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
       });
       new MutationObserver(function() {
         wrapper.querySelectorAll('*').forEach(function(el) {
-          el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+          el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
         });
       }).observe(wrapper, { childList: true, subtree: true });
     }
@@ -1367,11 +1367,11 @@ function loadHubSpotForm() {
     onFormReady: function() {
       var all = wrapper.querySelectorAll('*');
       for (var i = 0; i < all.length; i++) {
-        all[i].style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+        all[i].style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
       }
       new MutationObserver(function() {
         wrapper.querySelectorAll('*').forEach(function(el) {
-          el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+          el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
         });
       }).observe(wrapper, { childList: true, subtree: true });
     }
@@ -1404,7 +1404,7 @@ function loadHubSpotForm() {
 .hs-form span,
 .hs-form div,
 .hs-form li {
-  font-family: 'DM Sans', system-ui, sans-serif !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
 }
 
 #hubspot-form-wrapper .hs-form fieldset { max-width: 100% !important; }
