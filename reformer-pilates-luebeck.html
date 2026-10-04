@@ -294,6 +294,24 @@
   /* ── BREADCRUMB-FIX: die nav-Regel (fixed, 136px, z-index 100) gilt nicht für die Breadcrumb ── */
   nav.breadcrumb { position: static; height: auto; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 0; display: block; z-index: auto; }
 </style>
+<style id="pc-nav-priority">
+  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Videos, Gutschein, Downloads) liegen im Hamburger-Menü */
+  @media (min-width: 769px) {
+    .nav-links li:has(> a[href="/ausbildung"]),
+    .nav-links li:has(> a[href="/studio-news"]),
+    .nav-links li:has(> a[href="/challenge"]),
+    .nav-links li:has(> a[href="/gutschein"]),
+    .nav-links li:has(> a[href="/downloads"]) { display: none; }
+    .hamburger { display: flex; margin-left: 1rem; }
+  }
+  @media (min-width: 769px) and (max-width: 1199px) {
+    .nav-links li:has(> a[href="/wellpass"]),
+    .nav-links li:has(> a[href="/personal-training"]),
+    .nav-links li:has(> a[href="/trainer"]),
+    .nav-links li:has(> a.nav-en),
+    .nav-links li.nav-lang { display: none; }
+  }
+</style>
 </head>
 <body>
 
@@ -335,6 +353,7 @@
   <a href='/ausbildung'>AUSBILDUNG</a>
   <a href='/studio-news'>NEWS</a>
   <a href='/gutschein'>GUTSCHEIN</a>
+  <a href='/downloads'>DOWNLOADS</a>
   <a href="/wellpass">WELLPASS</a>
   <a href="/english" style="color: var(--rose); font-weight: 500;">🇬🇧 ENGLISH</a>
   <a href='/probetraining' style='color: var(--rose); font-weight: 500;'>PROBETRAINING BUCHEN</a>
