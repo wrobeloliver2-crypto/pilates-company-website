@@ -2,7 +2,7 @@
      PILATES COMPANY KI-ASSISTENT WIDGET
      Einbinden: Diesen Code vor </body> einfügen
 ═══════════════════════════════════════════ -->
-<div id="pcBot" style="position:fixed;bottom:7rem;right:1.5rem;z-index:9998;font-family:'DM Sans',system-ui,sans-serif;">
+<div id="pcBot" style="position:fixed;bottom:7rem;right:1.5rem;z-index:9998;font-family:'Poppins',system-ui,sans-serif;">
   <!-- Toggle Button -->
   <button id="pcBotToggle" onclick="pcToggleChat()" style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#b0796e,#d9a49a);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(176,121,110,.4);display:flex;align-items:center;justify-content:center;transition:all .3s;margin-left:auto;">
     <svg id="pcBotIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
@@ -36,7 +36,7 @@
 
     <!-- Input -->
     <div style="padding:.75rem 1rem;border-top:1px solid rgba(44,40,37,.08);display:flex;gap:.5rem;align-items:center;">
-      <input id="pcBotInput" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')pcSend()" style="flex:1;padding:.6rem .85rem;border:1px solid rgba(44,40,37,.12);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#d9a49a'" onblur="this.style.borderColor='rgba(44,40,37,.12)'">
+      <input id="pcBotInput" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')pcSend()" style="flex:1;padding:.6rem .85rem;border:1px solid rgba(44,40,37,.12);border-radius:100px;font-family:'Poppins',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#d9a49a'" onblur="this.style.borderColor='rgba(44,40,37,.12)'">
       <button onclick="pcSend()" style="width:36px;height:36px;border-radius:50%;background:#d9a49a;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;" onmouseover="this.style.background='#b0796e'" onmouseout="this.style.background='#d9a49a'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
       </button>
@@ -50,7 +50,7 @@
 .pcMsg p{margin:0;}
 .pcBot{align-self:flex-start;background:#f5ede9;padding:.75rem 1rem;border-radius:14px 14px 14px 4px;color:#2c2825;}
 .pcUser{align-self:flex-end;background:#b0796e;padding:.75rem 1rem;border-radius:14px 14px 4px 14px;color:#fff;}
-.pcQBtn{padding:.4rem .75rem;background:#faf7f4;border:1px solid rgba(44,40,37,.1);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.78rem;color:#5a5450;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.pcQBtn{padding:.4rem .75rem;background:#faf7f4;border:1px solid rgba(44,40,37,.1);border-radius:100px;font-family:'Poppins',sans-serif;font-size:.78rem;color:#5a5450;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .pcQBtn:hover{border-color:#d9a49a;background:#f5ede9;color:#2c2825;}
 .pcTyping{align-self:flex-start;background:#f5ede9;padding:.75rem 1rem;border-radius:14px 14px 14px 4px;}
 .pcTyping span{display:inline-block;width:6px;height:6px;background:#b0796e;border-radius:50%;margin:0 2px;animation:pcDot 1.4s infinite both;}

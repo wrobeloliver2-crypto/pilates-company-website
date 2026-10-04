@@ -200,11 +200,11 @@ function loadKontaktForm() {
     onFormSubmit: function() { pcConversion('kontakt'); },
     onFormReady: function() {
       wrapper.querySelectorAll('*').forEach(function(el) {
-        el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+        el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
       });
       new MutationObserver(function() {
         wrapper.querySelectorAll('*').forEach(function(el) {
-          el.style.setProperty('font-family', "'DM Sans', system-ui, sans-serif", 'important');
+          el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
         });
       }).observe(wrapper, { childList: true, subtree: true });
     }
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
       background:#fdf9f7;border-radius:20px;max-width:460px;width:100%;
       height:580px;overflow:hidden;position:relative;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
-      display:flex;flex-direction:column;font-family:'DM Sans',sans-serif;
+      display:flex;flex-direction:column;font-family:'Poppins',sans-serif;
     }
     #pc-qa-header {
       background:#d9a49a;color:#fff;padding:14px 18px;
@@ -582,3 +582,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
  
+
+// ── HUBSPOT-FORMULARE: Schrift + Lesbarkeit ──
+// Die HubSpot-Formulare werden in einem iframe gerendert; die Seiten-CSS greift dort nicht.
+// Hier wird ein Stylesheet in das (same-origin) iframe injiziert: Poppins überall,
+// auf dunklem Hintergrund (Sektion .contact, z. B. /personal-training) helle, gut lesbare Farben.
+(function () {
+  var BASE =
+    "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');" +
+    "body,.hs-form,.hs-form *,.hs-form input,.hs-form textarea,.hs-form select,.hs-button{font-family:'Poppins',system-ui,sans-serif!important;letter-spacing:normal!important}";
+  var DARK =
+    ".hs-form .hs-form-field>label,.hs-form legend,.hs-form .hs-field-desc{color:#F3EFE6!important;font-size:15px!important;font-weight:500!important}" +
+    ".hs-form .hs-form-required{color:#F2B8A2!important}" +
+    ".hs-form .hs-form-checkbox label span,.hs-form .hs-form-booleancheckbox label span,.hs-form .hs-form-radio label span,.hs-form .inputs-list label{color:#F3EFE6!important;font-size:15px!important;font-weight:400!important}" +
+    ".hs-form .legal-consent-container,.hs-form .legal-consent-container *,.hs-form .hs-richtext,.hs-form .hs-richtext *{color:#E4E8DC!important;font-size:13.5px!important;line-height:1.55!important}" +
+    ".hs-form .legal-consent-container a,.hs-form .hs-richtext a{color:#fff!important;text-decoration:underline!important}" +
+    ".hs-form input[type=text],.hs-form input[type=email],.hs-form input[type=tel],.hs-form input[type=number],.hs-form textarea,.hs-form select{color:#2c2825!important;font-size:16px!important;border-radius:10px!important}" +
+    ".hs-form input[type=checkbox],.hs-form input[type=radio]{accent-color:#b0796e}" +
+    ".hs-form .hs-error-msg,.hs-form .hs-error-msgs label{color:#FFD2C4!important}" +
+    ".hs-form .hs-button,.hs-form input[type=submit]{background:#b0796e!important;border:0!important;color:#fff!important;font-weight:600!important;font-size:15px!important;border-radius:999px!important;padding:13px 30px!important;opacity:1!important}" +
+    ".submitted-message,.submitted-message *{color:#F3EFE6!important}";
+  function inject(frame) {
+    var d;
+    try { d = frame.contentDocument; } catch (e) { return false; }
+    if (!d || !d.head || !d.querySelector('form, .submitted-message')) return false;
+    if (d.getElementById('pc-hs-style')) return true;
+    var s = d.createElement('style');
+    s.id = 'pc-hs-style';
+    s.textContent = BASE + (frame.closest('.contact') ? DARK : '');
+    d.head.appendChild(s);
+    return true;
+  }
+  function scan() {
+    var frames = document.querySelectorAll('iframe.hs-form-iframe');
+    for (var i = 0; i < frames.length; i++) {
+      var f = frames[i];
+      if (!f.dataset.pcHs) {
+        f.dataset.pcHs = '1';
+        f.addEventListener('load', function () { var self = this; setTimeout(function () { inject(self); }, 50); });
+      }
+      inject(f);
+    }
+  }
+  var tries = 0;
+  (function wait() {
+    if (document.querySelector('iframe.hs-form-iframe')) { scan(); }
+    if (++tries < 60) { setTimeout(wait, 500); }
+  })();
+})();
