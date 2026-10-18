@@ -40,3 +40,12 @@
 /datenschutzerklaerung          /datenschutz                  301!
 /datenschutzerklarung           /datenschutz                  301!
 /datenschutzerklarung/          /datenschutz                  301!
+
+# 18.10.2026: Probetraining wird direkt auf der Buchungsseite von Studio OS gebucht (Seite = Buchung).
+# Die Adresse bleibt pilatescompany.de/probetraining/ – Netlify zeigt dort die Studio-OS-Seite (Proxy).
+/probetraining      https://mitglieder.pilatescompany.de/probetraining/        200!
+/probetraining/*    https://mitglieder.pilatescompany.de/probetraining/:splat  200!
+
+# Alter KI-Preisassistent (Eversports-Tarife) ist durch /preise ersetzt
+/preisassistent     /preise                                                  301!
+/preisassistent.html /preise                                                 301!

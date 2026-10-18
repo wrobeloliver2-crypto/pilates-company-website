@@ -141,11 +141,10 @@ function pcGetAnswer(question) {
     "- 12 Mon. Reformer & others: 89 Euro/Monat, 8 Credits\n" +
     "- Drop-In: 28 Euro (Einzelkurs)\n" +
     "- 5er-Pass: 119 Euro (5 Einheiten, 12 Wochen)\n" +
-    "- Probestunde: 16 Euro\n" +
-    "- KOSTENLOSES PROBETRAINING fuer Neukunden!\n\n" +
+    "- PROBETRAINING fuer Neukunden: 9,90 Euro, Reformer oder Matte, online buchen unter pilatescompany.de/probetraining – wird bei Abschluss einer Mitgliedschaft angerechnet\n\n" +
     "BUCHUNG: Ueber Eversports (eversports.de/s/pilates-company)\n" +
     "GUTSCHEIN: Reformer-Pilates Gutschein 28 Euro (eversports.de/org/widget/f67272f0-50e6-441a-9f7c-446d315076a3)\n\n" +
-    "EMPFEHLUNG: Empfiehl immer eine Membership als beste Option. Autumn Reset ist das beste Einstiegsangebot fuer Reformer. Fuer Neukunden immer das kostenlose Probetraining erwaehnen.\n\n" +
+    "EMPFEHLUNG: Empfiehl immer eine Membership als beste Option. Autumn Reset ist das beste Einstiegsangebot fuer Reformer. Fuer Neukunden immer das Probetraining fuer 9,90 Euro erwaehnen (wird angerechnet).\n\n" +
     "TELEFON: Wenn jemand anrufen moechte: 0451 - 160 830 19. Man kann dort 24h eine Sofortnachricht hinterlassen und bekommt einen Rueckruf.";
 
   pcHistory.push({ role: 'user', content: question });
@@ -180,9 +179,9 @@ function pcFallback(q) {
   var a = '';
 
   if (ql.match(/preis|kost|membership|mitglied|abo/)) {
-    a = 'Unsere Memberships starten ab 59 Euro/Monat. Das beste Einstiegsangebot ist der Autumn Reset fuer 69 Euro/Monat (3 Monate). Einzeltickets kosten 28 Euro. Fuer Neukunden gibt es ein kostenloses Probetraining! Alle Preise findest du auf unserer <a href="/preise" style="color:#b0796e;">Preise-Seite</a>.';
+    a = 'Unsere Memberships starten ab 59 Euro/Monat. Das beste Einstiegsangebot ist der Autumn Reset fuer 69 Euro/Monat (3 Monate). Einzeltickets kosten 28 Euro. Fuer Neukunden gibt es ein Probetraining fuer 9,90 Euro, das bei Abschluss angerechnet wird. Alle Preise findest du auf unserer <a href="/preise" style="color:#b0796e;">Preise-Seite</a>.';
   } else if (ql.match(/probe|kostenlos|gratis|test|schnupper/)) {
-    a = 'Ja, als Neukunde bekommst du ein kostenloses Probetraining! Einfach auf unserer <a href="/probetraining" style="color:#b0796e;">Probetraining-Seite</a> anmelden. Wir freuen uns auf dich!';
+    a = 'Ja! Als Neukunde buchst du dein Probetraining für 9,90 € direkt online – wird bei Abschluss einer Mitgliedschaft angerechnet. Hier geht es zur <a href="/probetraining/" style="color:#b0796e;">Buchung</a>. Wir freuen uns auf dich!';
   } else if (ql.match(/kurs|angebot|reformer|yoga|aerial|pilates|matte/)) {
     a = 'Wir bieten Classic Pilates, Reformer-Pilates, Yoga, Aerial Yoga und Pilates Workout an. Ueber 30 Kurse pro Woche, Montag bis Samstag. Mehr Details auf unserer <a href="/kurse" style="color:#b0796e;">Kurse-Seite</a>.';
   } else if (ql.match(/buch|anmeld|reserv|termin/)) {

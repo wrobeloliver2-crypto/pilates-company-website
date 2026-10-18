@@ -120,7 +120,7 @@ var P={
   m12:{n:'12 Monate Mattenpilates & Yoga',p:59,c:8,m:12,u:7.38},
   fp:{n:'5er-Pass',p:119,c:5,m:0,u:23.80},
   di:{n:'Drop-In Ticket',p:28,c:1,m:0,u:28.00},
-  pt:{n:'Kostenloses Probetraining',p:0,c:1,m:0,u:0}
+  pt:{n:'Probetraining',p:9.9,c:1,m:0,u:0}
 };
 
 function showResult(){
@@ -167,7 +167,7 @@ function showResult(){
   h+='</div><a href="https://www.eversports.de/sp/pilates-company" class="offer-cta" target="_blank">Jetzt buchen</a></div>';
 
   if(isNew){
-    h+='<div class="offer-card free"><div class="offer-name">Kostenloses Probetraining</div>';
+    h+='<div class="offer-card free"><div class="offer-name">Probetraining</div>';
     h+='<div class="offer-price">0\u20ac</div>';
     h+='<div class="offer-details">Lerne uns und unser Studio kennen \u2013 voellig unverbindlich. Ideal als erster Schritt vor der Membership.</div>';
     h+='<a href="/probetraining" class="offer-cta">Jetzt kostenlos buchen</a></div>';
@@ -189,7 +189,7 @@ function showResult(){
 function loadKI(rec,alt,isNew,wr,freq,plan,types){
   var ts=types.join(', '),fs=freq==='4'?'4x im Monat':freq==='8'?'8x im Monat':'noch unsicher',ps=plan==='longterm'?'langfristig':'flexibel',ss=isNew?'Neukunde':'Rueckkehrer';
   var prompt='Du bist der freundliche Berater der Pilates Company Luebeck. Ein '+ss+' moechte '+fs+' trainieren, interessiert sich fuer '+ts+' und plant '+ps+'.\n\nEmpfiehl die "'+rec.n+'" ('+rec.p+' Euro/Monat, '+rec.c+' Credits) als beste Wahl. Erklaere in 3-4 Saetzen WARUM diese Membership besser ist als Einzeltickets (28 Euro) oder der 5er-Pass (119 Euro fuer 5 Einheiten = 23,80 Euro/Einheit). Nenne den konkreten Preis pro Einheit ('+rec.u.toFixed(2).replace('.',',')+' Euro) und die monatliche Ersparnis. ';
-  if(isNew)prompt+='Erwaehne das kostenlose Probetraining als idealen ersten Schritt. ';
+  if(isNew)prompt+='Erwaehne das Probetraining fuer 9,90 Euro (wird bei Mitgliedschaft angerechnet) als idealen ersten Schritt. ';
   prompt+='Erwaehne die "'+alt.n+'" ('+alt.p+' Euro/Monat, '+alt.c+' Credits) als Alternative und erklaere den Unterschied. Schreibe auf Deutsch, duze den Kunden, sei warm und einladend aber sachlich. Keine Emojis. Maximal 120 Woerter.';
 
   fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:300,messages:[{role:'user',content:prompt}]})})
@@ -209,7 +209,7 @@ function fallback(rec,alt,isNew){
   else if(alt.p<rec.p)h+=', wenn du langfristig den besten Preis moechtest.';
   else h+=', wenn du erstmal ohne lange Bindung starten moechtest.';
   h+='</p>';
-  if(isNew)h+='<p>Unser Tipp: Starte mit dem kostenlosen Probetraining und entscheide dann in Ruhe, welche Membership am besten zu dir passt.</p>';
+  if(isNew)h+='<p>Unser Tipp: Starte mit dem Probetraining für 9,90 € (wird bei Abschluss angerechnet) und entscheide dann in Ruhe, welche Membership am besten zu dir passt.</p>';
   document.getElementById('kiExplanation').innerHTML=h;
 }
 
