@@ -498,8 +498,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (!pcCallbackShown) {
         const l = text.toLowerCase();
         if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Probetraining 9,90 €','Was erwartet mich?','Probetraining buchen']);
-        else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Autumn Reset','Matte vs Reformer']);
-        else if (l.match(/preis|kostet|member|abo/)) setChips(['Autumn Reset 69 €/Monat','Alle Preise ansehen','Probetraining buchen']);
+        else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Probetraining 9,90 €','Matte vs Reformer']);
+        else if (l.match(/preis|kostet|member|abo/)) setChips(['Was kostet eine Mitgliedschaft?','Alle Preise ansehen','Probetraining buchen']);
         else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Probetraining 9,90 €']);
         else setChips(['Probetraining 9,90 €','Welcher Kurs passt zu mir?','Membership-Vergleich']);
       }
