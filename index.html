@@ -948,6 +948,8 @@
   ══════════════════════════════════ */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; gap: 2rem; }
+    /* Bilder zuerst, Text darunter (Oliver, 18.10.2026) */
+    .hero-slider { order: -2; }
     .hero-why { order: -1; }
     .probe-layout, .gutschein-layout, .kontakt-layout { grid-template-columns: 1fr; }
     .probe-intro-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -987,6 +989,7 @@
 
     /* Hero */
     .hero { padding: 1.5rem 1.25rem; gap: 1.5rem; grid-template-columns: 1fr; }
+    .hero-slider { order: -1; }
     .hero-why { order: 1; }
     .hero-text { order: 0; }
     .hero-text h1 { color: var(--text); }
