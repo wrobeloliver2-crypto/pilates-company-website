@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
       b.className = 'pc-chip'; b.textContent = l;
       b.onclick = () => {
         if (l === 'Alle Preise ansehen') { window.location.href = '/preise'; return; }
-        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining') { window.location.href = '/probetraining/'; return; }
+        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining' || /^Probetraining/.test(l)) { window.location.href = '/probetraining/'; return; }
         if (l === 'Kursplan ansehen') { window.open('https://www.eversports.de/sp/pilates-company', '_blank', 'noopener'); return; }
         document.getElementById('pc-qa-input').value = l; sendMsg();
       };

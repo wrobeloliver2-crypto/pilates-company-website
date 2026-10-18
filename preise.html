@@ -328,7 +328,7 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
             [3, '3 Monate', 'Mindestlaufzeit 3 Monate'], [1, 'Flexibel', 'monatlich kündbar']];
   var URL_MW = 'https://mitglieder.pilatescompany.de/mitglied-werden/';
   var z = { paket: 'reformer', freq: 1, lz: 12 };
-  try { var g = JSON.parse(sessionStorage.getItem('preise') || 'null'); if (g && PREISE[g.paket]) z = g; } catch (e) {}
+  try { var g = JSON.parse(sessionStorage.getItem('preise') || 'null'); if (g && Object.prototype.hasOwnProperty.call(PREISE, g.paket) && PREISE[g.paket][g.freq] && PREISE[g.paket][g.freq][g.lz]) z = { paket: g.paket, freq: g.freq, lz: g.lz }; } catch (e) {}
 
   var box = document.getElementById('laufzeiten');
   function zeichne() {
