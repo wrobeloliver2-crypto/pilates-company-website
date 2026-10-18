@@ -18,7 +18,7 @@
 /index.html                     /                             301!
 /kurse.html                     /kurse                        301!
 /reformer-pilates-luebeck.html  /reformer-pilates-luebeck     301!
-/probetraining.html             /probetraining                301!
+/probetraining.html             /probetraining/               301!
 /preise.html                    /preise                       301!
 /personal-training.html         /personal-training            301!
 /trainer.html                   /trainer                      301!
@@ -40,3 +40,8 @@
 /datenschutzerklaerung          /datenschutz                  301!
 /datenschutzerklarung           /datenschutz                  301!
 /datenschutzerklarung/          /datenschutz                  301!
+
+# 18.10.2026: Probetraining wird direkt auf der Buchungsseite von Studio OS gebucht (Seite = Buchung).
+# Die Adresse bleibt pilatescompany.de/probetraining/ – Netlify zeigt dort die Studio-OS-Seite (Proxy).
+/probetraining      /probetraining/                                          301!
+/probetraining/*    https://mitglieder.pilatescompany.de/probetraining/:splat  200!
