@@ -10,14 +10,14 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>So findest du uns – Pilates Company Lübeck</title>
-<meta name="description" content="Alle Infos für dein Probetraining bei Pilates Company Lübeck: Anfahrt, Parken, Räume und was du mitbringen solltest.">
+<meta name="description" content="Alle Infos für deinen Besuch bei Pilates Company Lübeck: Wo dein Kurs stattfindet, Anfahrt, Parken und was du mitbringen solltest.">
 <meta name="robots" content="noindex, nofollow">
 
 <!-- Open Graph: steuert die Link-Vorschau in WhatsApp & Co. (Bild MUSS absolute URL sein) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pilates Company Lübeck">
 <meta property="og:title" content="So findest du uns – Pilates Company Lübeck">
-<meta property="og:description" content="Anfahrt, Parken, Räume & alles für deinen Besuch – auf einen Blick.">
+<meta property="og:description" content="Dein Kurs, dein Eingang, Anfahrt & Parken – auf einen Blick.">
 <meta property="og:url" content="https://www.pilatescompany.de/alle-infos-besuch-probetraining.html">
 <meta property="og:image" content="https://pilatescompany.de/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -44,7 +44,7 @@
     --heading:     'Playfair Display', serif;
     --radius:      12px;
     --gutter:      clamp(15px, 4.5vw, 20px);
-    --section-gap: clamp(38px, 9vw, 52px);
+    --section-gap: clamp(34px, 8vw, 46px);
   }
 
   html {
@@ -66,8 +66,8 @@
   }
 
   h1, h2, h3 { font-family: var(--heading); font-weight: 400; }
-
   img { max-width: 100%; }
+  [hidden] { display: none !important; }
 
   a {
     color: var(--rose-mid);
@@ -89,7 +89,7 @@
 
   .container { max-width: 660px; margin: 0 auto; padding: 0 var(--gutter); }
 
-  /* ---------- Buttons & Pillen ---------- */
+  /* ---------- Buttons ---------- */
 
   .btn {
     display: inline-flex;
@@ -118,14 +118,14 @@
   .btn--outline { background: transparent; border: 1.5px solid var(--text); color: var(--text); min-height: 48px; padding: 0 22px; font-size: 15px; }
   .btn--outline:hover { color: var(--text); }
 
-  /* ---------- Hero ---------- */
+  /* ---------- Kopf ---------- */
 
   .hero {
-    padding: clamp(26px, 7vw, 40px) 0 8px;
+    padding: clamp(26px, 7vw, 38px) 0 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     text-align: center;
   }
   .tag {
@@ -139,25 +139,61 @@
     border-radius: 100px;
   }
   .hero h1 {
-    font-size: clamp(30px, 7vw, 42px);
+    font-size: clamp(30px, 7vw, 40px);
     line-height: 1.15;
     letter-spacing: -.01em;
-    max-width: 9em;
-  }
-  .hero p {
-    color: var(--text-mid);
-    font-size: 16.5px;
-    max-width: 26em;
-    text-wrap: pretty;
   }
 
-  .jumplinks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    padding: 24px 0 4px;
+  /* ---------- Karte „Dein Kurs" ---------- */
+
+  .mine {
+    margin-top: 22px;
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    overflow: hidden;
   }
+  .mine-top { padding: 20px 18px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .mine-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--rose-mid);
+  }
+  .mine-course { font-family: var(--heading); font-size: clamp(24px, 6vw, 30px); line-height: 1.2; }
+  .mine-time { color: var(--text-mid); font-size: 15.5px; }
+
+  .mine-where {
+    background: var(--rose-light);
+    border-top: 1px solid var(--border);
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mine-room { font-family: var(--heading); font-size: 21px; line-height: 1.25; color: var(--rose-dark); }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fact {
+    flex: 1 1 130px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .fact-label {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+  .fact-value { font-size: 16px; font-weight: 500; line-height: 1.3; }
+  .fact--key { background: var(--rose-dark); flex-basis: 100%; }
+  .fact--key .fact-label { color: rgba(255,255,255,.78); }
+  .fact--key .fact-value { color: #fff; }
 
   /* ---------- Abschnitte ---------- */
 
@@ -166,87 +202,24 @@
     scroll-margin-top: 12px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
   }
-  .section--first { padding-top: clamp(34px, 8vw, 44px); }
-
-  .section-head { display: flex; flex-direction: column; gap: 8px; }
-  .section-kicker { display: flex; align-items: center; gap: 10px; }
-  .section-num,
+  .section-head { display: flex; flex-direction: column; gap: 6px; }
   .section-label {
     font-size: 11.5px;
     font-weight: 500;
     letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--rose-mid);
   }
-  .section-num { color: var(--rose-mid); }
-  .section-label { text-transform: uppercase; color: var(--text-mid); }
   .section h2 {
-    font-size: clamp(24px, 5.5vw, 32px);
+    font-size: clamp(24px, 5.5vw, 30px);
     line-height: 1.2;
     letter-spacing: -.01em;
   }
   .section-intro { color: var(--text-mid); font-size: 15.5px; text-wrap: pretty; }
   .section-intro strong,
   .card-text strong { color: var(--text); font-weight: 500; }
-
-  /* ---------- Raum-Tabelle ---------- */
-
-  .rooms { display: flex; flex-direction: column; gap: 10px; }
-
-  .room {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .room-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 14px 16px;
-  }
-  .room-name { font-family: var(--heading); font-size: 19px; line-height: 1.25; }
-  .pill {
-    flex: 0 0 auto;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-  .pill--left  { background: var(--rose-dark); }
-  .pill--right { background: var(--text); }
-
-  /* Flex statt Grid: sonst bleiben auf schmalen Displays graue Lücken stehen */
-  .room-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1px;
-    background: var(--border);
-    border-top: 1px solid var(--border);
-  }
-  .room-cell {
-    flex: 1 1 140px;
-    background: #fff;
-    padding: 11px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .cell-label {
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-mid);
-  }
-  .cell-value { font-size: 14.5px; line-height: 1.35; }
-  .cell-value--key { font-weight: 500; }
 
   /* ---------- Info-Karten ---------- */
 
@@ -289,6 +262,54 @@
   .note--rose .note-title,
   .note--rose .note-sub { color: var(--rose-dark); }
 
+  /* ---------- Alle Räume (einheitliche Karten) ---------- */
+
+  .rooms { display: flex; flex-direction: column; gap: 10px; }
+
+  .room {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .room--mine { border-color: var(--rose-mid); box-shadow: 0 0 0 1px var(--rose-mid); }
+  .room-name { font-family: var(--heading); font-size: 19px; line-height: 1.25; }
+  .room-sub { font-size: 14px; color: var(--text-mid); }
+  .room-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .pill--left  { background: var(--rose-dark); color: #fff; }
+  .pill--right { background: var(--text); color: #fff; }
+  .pill--floor { background: var(--rose-light); color: var(--rose-dark); }
+
+  details.more { border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+  details.more > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 15.5px;
+    min-height: 52px;
+  }
+  details.more > summary::-webkit-details-marker { display: none; }
+  details.more > summary::after { content: '+'; font-size: 22px; line-height: 1; color: var(--rose-mid); }
+  details.more[open] > summary::after { content: '–'; }
+  details.more .rooms { padding: 0 12px 12px; }
+
   /* ---------- Kontakt ---------- */
 
   .contact {
@@ -311,8 +332,6 @@
     justify-content: center;
     padding-top: 6px;
   }
-
-  /* ---------- Fußzeile ---------- */
 
   footer {
     padding: 28px 0 32px;
@@ -378,102 +397,79 @@
 <div class="container">
 
   <div class="hero">
-    <span class="tag">Dein Probetraining</span>
+    <span class="tag">Dein Besuch</span>
     <h1>So findest du uns</h1>
-    <p>Alle Infos zu Anfahrt, Parken und unseren Räumen – damit du entspannt und pünktlich bei uns ankommst.</p>
   </div>
 
-  <div class="jumplinks">
-    <a class="btn btn--dark" href="#raum">Wo ist mein Kurs?</a>
-    <a class="btn btn--light" href="#ankommen">Adresse &amp; Parken</a>
-  </div>
-
-  <!-- 01 · Eingang & Räume -->
-  <section id="raum" class="section section--first">
-    <div class="section-head">
-      <div class="section-kicker">
-        <span class="section-num">01</span>
-        <span class="section-label">Eingang &amp; Räume</span>
-      </div>
-      <h2>Wo findet dein Kurs statt?</h2>
-      <p class="section-intro">Wir haben <strong>zwei Eingänge</strong> an der Vorderseite und zwei Etagen. Nicht sicher, wo dein Kurs ist? In deiner Buchungsbestätigung stehen Kursname und Platzzahl – damit findest du deine Zeile.</p>
+  <!-- Dein Kurs: erscheint nur, wenn der Link Kurs und Raum mitbringt (WhatsApp-Knopf) -->
+  <section class="mine" id="mine" hidden aria-live="polite">
+    <div class="mine-top">
+      <span class="mine-label">Dein Kurs</span>
+      <span class="mine-course" id="mineCourse"></span>
+      <span class="mine-time" id="mineTime" hidden></span>
     </div>
-
-    <div class="rooms">
-
-      <div class="room">
-        <div class="room-head">
-          <span class="room-name">Matte/Yoga – Pilatesraum</span>
-          <span class="pill pill--left">Eingang links</span>
+    <div class="mine-where">
+      <span class="mine-room" id="mineRoom"></span>
+      <div class="facts">
+        <div class="fact fact--key">
+          <span class="fact-label">Eingang</span>
+          <span class="fact-value" id="mineDoor"></span>
         </div>
-        <div class="room-body">
-          <div class="room-cell">
-            <span class="cell-label">Kursart</span>
-            <span class="cell-value">Pilates, Yoga, Aerial &amp; alle Mattenkurse</span>
-          </div>
-          <div class="room-cell">
-            <span class="cell-label">Plätze</span>
-            <span class="cell-value">kein Reformer</span>
-          </div>
-          <div class="room-cell">
-            <span class="cell-label">Etage</span>
-            <span class="cell-value">1. OG</span>
-          </div>
+        <div class="fact">
+          <span class="fact-label">Etage</span>
+          <span class="fact-value" id="mineFloor"></span>
         </div>
       </div>
-
-      <div class="room">
-        <div class="room-head">
-          <span class="room-name">Boutique Studio</span>
-          <span class="pill pill--right">Eingang rechts</span>
-        </div>
-        <div class="room-body">
-          <div class="room-cell">
-            <span class="cell-label">Kursart</span>
-            <span class="cell-value">Reformer</span>
-          </div>
-          <div class="room-cell">
-            <span class="cell-label">Plätze</span>
-            <span class="cell-value cell-value--key">8 Plätze</span>
-          </div>
-          <div class="room-cell">
-            <span class="cell-label">Etage</span>
-            <span class="cell-value">EG</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="room">
-        <div class="room-head">
-          <span class="room-name">Club Studio</span>
-          <span class="pill pill--left">Eingang links</span>
-        </div>
-        <div class="room-body">
-          <div class="room-cell">
-            <span class="cell-label">Kursart</span>
-            <span class="cell-value">Reformer</span>
-          </div>
-          <div class="room-cell">
-            <span class="cell-label">Plätze</span>
-            <span class="cell-value cell-value--key">5 Plätze</span>
-          </div>
-          <div class="room-cell">
-            <span class="cell-label">Etage</span>
-            <span class="cell-value">1. OG</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- 02 · Anfahrt & Parken -->
+  <!-- Räume: ohne Kurs-Angabe offen und ganz oben, mit Kurs-Angabe eingeklappt -->
+  <section id="raeume" class="section">
+    <div class="section-head" id="roomsHead">
+      <span class="section-label">Eingang &amp; Räume</span>
+      <h2>Wo findet dein Kurs statt?</h2>
+      <p class="section-intro">Das <strong>Boutique Studio</strong> erreichst du direkt von der Straße an der <strong>Vorderseite</strong> des Gebäudes. Alle anderen Räume liegen im 1. Obergeschoss – dorthin geht es über die <strong>linke Gebäudeseite</strong>, durch dieselbe Tür wie zu Physio Pro Lübeck. Such dir hier deinen Raum heraus – er steht auch in deiner Buchung.</p>
+    </div>
+
+    <details class="more" id="roomsBox" open>
+      <summary id="roomsSummary">Alle Räume im Überblick</summary>
+      <div class="rooms">
+
+        <div class="room" data-room="matte">
+          <span class="room-name">Matte/Yoga – Pilatesraum</span>
+          <span class="room-sub">Pilates, Yoga, Aerial &amp; alle Mattenkurse</span>
+          <div class="room-tags">
+            <span class="pill pill--left">Linke Gebäudeseite</span>
+            <span class="pill pill--floor">1. OG</span>
+          </div>
+        </div>
+
+        <div class="room" data-room="boutique">
+          <span class="room-name">Boutique Studio</span>
+          <span class="room-sub">Reformer · 8 Plätze</span>
+          <div class="room-tags">
+            <span class="pill pill--right">Vorderseite · Straße</span>
+            <span class="pill pill--floor">Erdgeschoss</span>
+          </div>
+        </div>
+
+        <div class="room" data-room="club">
+          <span class="room-name">Club Studio</span>
+          <span class="room-sub">Reformer · 5 Plätze</span>
+          <div class="room-tags">
+            <span class="pill pill--left">Linke Gebäudeseite</span>
+            <span class="pill pill--floor">1. OG</span>
+          </div>
+        </div>
+
+      </div>
+    </details>
+  </section>
+
+  <!-- Ankommen -->
   <section id="ankommen" class="section">
     <div class="section-head">
-      <div class="section-kicker">
-        <span class="section-num">02</span>
-        <span class="section-label">Anfahrt &amp; Parken</span>
-      </div>
+      <span class="section-label">Anfahrt &amp; Parken</span>
       <h2>Ankommen</h2>
     </div>
 
@@ -490,13 +486,10 @@
     </div>
   </section>
 
-  <!-- 03 · Gut zu wissen -->
+  <!-- Gut zu wissen -->
   <section class="section">
     <div class="section-head">
-      <div class="section-kicker">
-        <span class="section-num">03</span>
-        <span class="section-label">Gut zu wissen</span>
-      </div>
+      <span class="section-label">Gut zu wissen</span>
       <h2>Was du mitbringst</h2>
     </div>
     <div class="cards">
@@ -520,7 +513,7 @@
     <p>Sollte irgendetwas unklar sein – melde dich jederzeit, wir helfen gerne weiter.</p>
     <div class="contact-actions">
       <a class="btn btn--white" href="tel:+4945116083019">0451 - 160 830 19</a>
-      <a class="btn btn--outline" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Probetraining." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn--outline" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Besuch." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
@@ -535,9 +528,68 @@
   <div class="helpbar-inner">
     <span class="helpbar-text">Etwas unklar?<br><strong>Wir sind erreichbar.</strong></span>
     <a class="btn btn--dark" href="tel:+4945116083019">Anrufen</a>
-    <a class="btn btn--light" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Probetraining." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn--light" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Besuch." target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </div>
+
+<script>
+/* Dein Kurs
+   Der WhatsApp-Knopf hängt Kurs, Raum und Zeit an den Link:
+     ...html?r=boutique&k=Basic-Reformer&z=2026-10-21T19:00
+   r = matte | boutique | club (oder der Raumname), k = Kursname, z = Beginn in Berliner Ortszeit.
+   Ohne gültigen Raum bleibt die Seite wie sie war: alle Räume offen, nichts versteckt. */
+(function () {
+  var ROOMS = {
+    matte:    { name: 'Matte/Yoga – Pilatesraum', door: 'Linke Gebäudeseite – gleiche Tür wie Physio Pro Lübeck', floor: '1. Obergeschoss' },
+    boutique: { name: 'Boutique Studio',          door: 'Vorderseite des Gebäudes – direkt von der Straße', floor: 'Erdgeschoss' },
+    club:     { name: 'Club Studio',              door: 'Linke Gebäudeseite – gleiche Tür wie Physio Pro Lübeck', floor: '1. Obergeschoss' }
+  };
+  var DAYS = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+
+  function slug(v) {
+    v = String(v || '').toLowerCase();
+    if (ROOMS[v]) return v;
+    if (v.indexOf('boutique') > -1) return 'boutique';
+    if (v.indexOf('club') > -1) return 'club';
+    if (v.indexOf('matte') > -1 || v.indexOf('yoga') > -1 || v.indexOf('pilatesraum') > -1) return 'matte';
+    return null;
+  }
+
+  function zeitText(z) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/.exec(z || '');
+    if (!m) return '';
+    var d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    return DAYS[d.getUTCDay()] + ', ' + m[3] + '.' + m[2] + '.' + ' · ' + m[4] + ':' + m[5] + ' Uhr';
+  }
+
+  var q;
+  try { q = new URLSearchParams(location.search); } catch (e) { return; }
+  var key = slug(q.get('r') || q.get('raum'));
+  if (!key) return;
+
+  var r = ROOMS[key];
+  var kurs = (q.get('k') || q.get('kurs') || '').slice(0, 80);
+  var zeit = zeitText(q.get('z') || q.get('zeit'));
+
+  document.getElementById('mineCourse').textContent = kurs || 'Dein Kurs';
+  var t = document.getElementById('mineTime');
+  if (zeit) { t.textContent = zeit; t.hidden = false; }
+  document.getElementById('mineRoom').textContent = r.name;
+  document.getElementById('mineDoor').textContent = r.door;
+  document.getElementById('mineFloor').textContent = r.floor;
+  document.getElementById('mine').hidden = false;
+
+  // Raumliste: eigener Raum markiert, Rest eingeklappt, Überschrift passend
+  var mark = document.querySelector('.room[data-room="' + key + '"]');
+  if (mark) mark.classList.add('room--mine');
+  document.getElementById('roomsBox').open = false;
+  document.getElementById('roomsHead').hidden = true;
+
+  // Reihenfolge bei bekanntem Kurs: Dein Kurs, Ankommen/Parken, dann die Raumübersicht
+  var rae = document.getElementById('raeume'), ank = document.getElementById('ankommen');
+  ank.parentNode.insertBefore(rae, ank.nextSibling);
+})();
+</script>
 
 </body>
 </html>
