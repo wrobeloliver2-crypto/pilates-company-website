@@ -252,6 +252,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style id="nav-probe-stil">
+  .nav-probe{display:none}
+  @media (max-width:880px){
+    .nav-probe{display:inline-flex;align-items:center;margin-left:auto;margin-right:.75rem;padding:.55rem .95rem;border-radius:999px;background:#d9a49a;color:#fff!important;font-family:'Poppins',system-ui,sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.01em;line-height:1.15;text-decoration:none;white-space:nowrap;box-shadow:0 2px 10px rgba(217,164,154,.35)}
+    .nav-probe:active{background:#c8857a}
+  }
+  @media (max-width:360px){ .nav-probe{font-size:.72rem;padding:.5rem .75rem;margin-right:.5rem} }
+</style>
+
 </head>
 <body>
 
@@ -266,6 +275,7 @@
       <a href="https://pilatescompany.de/kontakt">Kontakt</a>
     </nav>
     <a href="#anfrage" class="nav-cta">Anfrage</a>
+    <a class="nav-probe" href="https://pilatescompany.de/probetraining/">Probetraining buchen</a>
     <button class="burger" aria-label="Menü">☰</button>
   </div>
 </header>
