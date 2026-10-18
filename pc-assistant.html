@@ -127,7 +127,7 @@
 </div>
 
 <script>
-const STARTER = ['Kostenloses Probetraining','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
+const STARTER = ['Probetraining 9,90 €','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
 
 const msgs = document.getElementById('msgs');
 const inp = document.getElementById('inp');
@@ -185,12 +185,12 @@ async function send() {
     if (count >= 8) {
       const el = document.createElement('div');
       el.className = 'msg msg-bot';
-      el.innerHTML = 'Du hast viele tolle Fragen gestellt! Am besten lernen wir uns persönlich kennen – komm einfach zu einem kostenlosen Probetraining oder ruf uns an.<div class="cta-row"><a class="cta-btn" href="/probetraining" target="_parent">Probetraining buchen</a><a class="cta-btn outline" href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>';
+      el.innerHTML = 'Du hast viele tolle Fragen gestellt! Am besten lernen wir uns persönlich kennen – buch dir einfach ein Probetraining für 9,90 € oder ruf uns an.<div class="cta-row"><a class="cta-btn" href="/probetraining" target="_parent">Probetraining buchen</a><a class="cta-btn outline" href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>';
       msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
       count = 0;
     } else {
       const l = text.toLowerCase();
-      if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
+      if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Probetraining 9,90 €','Was erwartet mich?','Probetraining buchen']);
       else if (l.match(/reformer/)) setChips(['Was kostet Reformer Membership?','Autumn Reset','Unterschied Matte vs Reformer']);
       else if (l.match(/preis|kostet|member|abo/)) setChips(['Autumn Reset 69 €','5er-Pass 119 €','Wellpass-Zuzahlung']);
       else if (l.match(/aerial|yoga|fliegen|hänge/)) setChips(['Wer unterrichtet Aerial?','Ist Aerial für Anfänger?','Kursplan ansehen']);

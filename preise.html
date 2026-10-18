@@ -1223,7 +1223,7 @@ function paShowResult(){
   if(alt.m===1)h+=' \u00b7 Monatlich kündbar';
   h+='</div><a href="https://www.eversports.de/sp/pilates-company" class="pa-octa" target="_blank">Jetzt buchen</a></div>';
 
-  if(isN){h+='<div class="pa-offer pa-free"><div class="pa-oname">Kostenloses Probetraining</div><div class="pa-oprice">0\u20ac</div><div class="pa-odet">Lerne uns kennen \u2013 völlig unverbindlich. Ideal als erster Schritt.</div><a href="/probetraining" class="pa-octa">Kostenloses Probetraining anfragen</a></div>';}
+  if(isN){h+='<div class="pa-offer pa-free"><div class="pa-oname">Probetraining</div><div class="pa-oprice">9,90\u20ac</div><div class="pa-odet">Lerne uns kennen \u2013 unverbindlich, wird bei Abschluss einer Mitgliedschaft angerechnet.</div><a href="https://mitglieder.pilatescompany.de/probetraining/" class="pa-octa">Probetraining buchen</a></div>';}
 
   h+='<h4 style="font-family:var(--heading);font-size:1rem;font-weight:400;margin:1.25rem 0 .5rem;color:var(--text)">Warum sich eine Membership lohnt</h4>';
   h+='<table class="pa-tbl"><thead><tr><th>Option</th><th>Preis</th><th>Einheiten</th><th>Pro Einheit</th></tr></thead><tbody>';
@@ -1240,7 +1240,7 @@ function paShowResult(){
 function paLoadKI(rec,alt,isN,wr,fr,pl,ty){
   var ts=ty.join(', '),fs=fr==='4'?'4x im Monat':fr==='8'?'8x im Monat':'noch unsicher',ps=pl==='longterm'?'langfristig':'flexibel',ss=isN?'Neukunde':'Rueckkehrer';
   var prompt='Du bist der Berater der Pilates Company Lübeck. Ein '+ss+' möchte '+fs+' trainieren, interessiert sich für '+ts+' und plant '+ps+'. Empfiehl die "'+rec.n+'" ('+rec.p+' Euro/Monat, '+rec.c+' Credits) als beste Wahl. Erklaere in 3 Saetzen warum diese Membership besser ist als Einzeltickets (28 Euro) oder der 5er-Pass (23,80 Euro/Einheit). Nenne den Preis pro Einheit ('+rec.u.toFixed(2).replace('.',',')+' Euro). ';
-  if(isN)prompt+='Erwaehne das kostenlose Probetraining als ersten Schritt. ';
+  if(isN)prompt+='Erwaehne das Probetraining fuer 9,90 Euro (wird bei Mitgliedschaft angerechnet) als ersten Schritt. ';
   prompt+='Erwaehne die "'+alt.n+'" als Alternative. Deutsch, Du-Form, warm, sachlich, keine Emojis. Max 80 Woerter.';
   fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:200,messages:[{role:'user',content:prompt}]})})
   .then(function(r){return r.json()}).then(function(d){var t='';if(d.content)d.content.forEach(function(b){if(b.type==='text')t+=b.text});if(t){document.getElementById('paKI').innerHTML='<p>'+t.replace(/\n\n/g,'</p><p>')+'</p>'}else paFB(rec,alt,isN)}).catch(function(){paFB(rec,alt,isN)});
@@ -1249,7 +1249,7 @@ function paFB(rec,alt,isN){
   var u=rec.u.toFixed(2).replace('.',','),sv=Math.round((28-rec.u)*rec.c);
   var h='<p>Die <strong>'+rec.n+'</strong> ist deine beste Wahl: Mit '+rec.c+' Einheiten pro Monat zahlst du nur '+u+' Euro pro Training statt 28 Euro beim Einzelticket \u2013 du sparst rund '+sv+' Euro monatlich.</p>';
   h+='<p>Alternativ: <strong>'+alt.n+'</strong> für '+alt.p+' Euro/Monat mit '+alt.c+' Credits.';
-  if(isN)h+=' Starte am besten mit dem kostenlosen Probetraining.';
+  if(isN)h+=' Starte am besten mit dem Probetraining für 9,90 € – wird bei Abschluss angerechnet.';
   h+='</p>';
   document.getElementById('paKI').innerHTML=h;
 }
@@ -1383,15 +1383,15 @@ paProgress(1);
         </div>
         <div class="preise-grid preise-grid--3">
 
-          <a class="preis-card" href="https://www.eversports.de/sp/pilates-company/product/87afdead-a2fb-467a-a758-52f9eb7747f4" target="_blank" rel="noopener noreferrer">
+          <a class="preis-card" href="https://mitglieder.pilatescompany.de/probetraining/">
             <div class="preis-top">
-              <p class="preis-name">Probestunde</p>
-              <p class="preis-desc">Starte in die Welt von Pilates – für alle Kurse anwendbar</p>
+              <p class="preis-name">Probetraining</p>
+              <p class="preis-desc">Reformer oder Matte – online buchen, wird bei Abschluss einer Mitgliedschaft angerechnet</p>
             </div>
             <div class="preis-bottom">
-              <div class="preis-amount">16<span class="preis-unit"> €</span></div>
-              <p class="preis-note">1 Einheit · gültig 2 Monate ab Kaufdatum</p>
-              <p class="preis-book">Bei Eversports buchen →</p>
+              <div class="preis-amount">9,90<span class="preis-unit"> €</span></div>
+              <p class="preis-note">1 Einheit · nur für Neukundinnen und Neukunden</p>
+              <p class="preis-book">Online buchen →</p>
             </div>
           </a>
 
@@ -1441,7 +1441,7 @@ paProgress(1);
         <div class="preise-einstieg-text">
           <h4>Einfach starten</h4>
           <h3>Noch unsicher? Komm einfach zur Probestunde</h3>
-          <p>Lerne das Studio, deine Trainerin und das Kursformat kennen – für nur 16 €, ganz ohne Druck und Vertrag.</p>
+          <p>Lerne das Studio, deine Trainerin und das Kursformat kennen – für nur 9,90 €, ganz ohne Druck und Vertrag.</p>
           <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
             <a class="btn btn-primary" href="/probetraining">Probetraining buchen</a>
             <a class="btn btn-outline" href="https://www.eversports.de/sp/pilates-company" target="_blank">Alle Preise bei Eversports →</a>

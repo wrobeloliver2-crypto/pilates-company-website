@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(mbar);
 
   // Chat Logic
-  const STARTER = ['Kostenloses Probetraining','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
+  const STARTER = ['Probetraining 9,90 €','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
   let pcHistory = [], pcCount = 0, pcInit = false, pcCallbackShown = false;
 
   function openPcQA() {
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
       b.className = 'pc-chip'; b.textContent = l;
       b.onclick = () => {
         if (l === 'Alle Preise ansehen') { window.location.href = '/preise'; return; }
-        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining') { window.location.href = '/probetraining'; return; }
+        if (l === 'Probetraining buchen' || l === 'Kostenloses Probetraining') { window.location.href = 'https://mitglieder.pilatescompany.de/probetraining/'; return; }
         if (l === 'Kursplan ansehen') { window.open('https://www.eversports.de/sp/pilates-company', '_blank', 'noopener'); return; }
         document.getElementById('pc-qa-input').value = l; sendMsg();
       };
@@ -497,11 +497,11 @@ document.addEventListener('DOMContentLoaded', () => {
         showCallbackForm();
       } else if (!pcCallbackShown) {
         const l = text.toLowerCase();
-        if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Kostenloses Probetraining','Was erwartet mich?','Probestunde 16 €']);
+        if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Probetraining 9,90 €','Was erwartet mich?','Probetraining buchen']);
         else if (l.match(/reformer/)) setChips(['Was kostet Reformer?','Autumn Reset','Matte vs Reformer']);
         else if (l.match(/preis|kostet|member|abo/)) setChips(['Autumn Reset 69 €/Monat','Alle Preise ansehen','Probetraining buchen']);
-        else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Kostenloses Probetraining']);
-        else setChips(['Kostenloses Probetraining','Welcher Kurs passt zu mir?','Membership-Vergleich']);
+        else if (l.match(/aerial|yoga/)) setChips(['Wer unterrichtet Aerial?','Für Anfänger?','Probetraining 9,90 €']);
+        else setChips(['Probetraining 9,90 €','Welcher Kurs passt zu mir?','Membership-Vergleich']);
       }
     } catch(e) {
       hideTyping();
