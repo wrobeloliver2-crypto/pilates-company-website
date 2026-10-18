@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     #pc-qa-close {
       margin-left:auto;background:rgba(255,255,255,.2);border:none;color:#fff;
-      border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:16px;
+      border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:18px;flex-shrink:0;
       display:flex;align-items:center;justify-content:center;
     }
     #pc-qa-msgs {
@@ -303,8 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
       background:#fdf9f7;border-top:1px solid #ede8e4;
     }
     #pc-qa-input {
-      flex:1;border:1px solid #e0d8d4;border-radius:22px;
-      padding:9px 15px;font-size:13.5px;font-family:inherit;
+      flex:1;min-width:0;border:1px solid #e0d8d4;border-radius:22px;
+      padding:9px 15px;font-size:16px;font-family:inherit;
       background:#fff;outline:none;color:#2a2a2a;height:40px;
     }
     #pc-qa-input:focus{border-color:#d9a49a;}
@@ -403,17 +403,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const STARTER = ['Probetraining 9,90 €','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
   let pcHistory = [], pcCount = 0, pcInit = false, pcCallbackShown = false;
 
+  // Zurück-Taste/-Geste des Handys schließt den Chat (statt die Seite zu verlassen)
   function openPcQA() {
+    if (!overlay.classList.contains('open')) { try { history.pushState({ pcChat: 1 }, ''); } catch (e) {} }
     overlay.classList.add('open');
     document.body.classList.add('pc-chat-open');
     document.body.style.overflow = 'hidden';
     if (!pcInit) { pcInit = true; initChat(); }
   }
-  function closePcQA() {
+  function schliessen() {
     overlay.classList.remove('open');
     document.body.classList.remove('pc-chat-open');
     document.body.style.overflow = '';
+    const inp = document.getElementById('pc-qa-input'); if (inp) inp.blur();
   }
+  function closePcQA() {
+    if (!overlay.classList.contains('open')) return;
+    schliessen();
+    if (history.state && history.state.pcChat) { try { history.back(); } catch (e) {} }
+  }
+  window.addEventListener('popstate', () => { if (overlay.classList.contains('open')) schliessen(); });
   window.openPcQA = openPcQA;
   window.closePcQA = closePcQA;
   document.addEventListener('keydown', e => { if(e.key==='Escape') closePcQA(); });
@@ -491,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       pcHistory.push({ role: 'assistant', content: reply });
       pcCount++;
-      const replyHtml = reply.replace(/\n/g, '<br>'); addBotMsg(replyHtml);
+      const replyHtml = reply.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>'); addBotMsg(replyHtml);
 
       if ((wantsCallback || pcCount >= 10) && !pcCallbackShown) {
         showCallbackForm();
