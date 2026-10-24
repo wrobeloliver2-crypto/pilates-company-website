@@ -10,11 +10,11 @@ const FROM_EMAIL = 'info@pilatescompany.de';        // Absender (Postfach)
 const TO_EMAIL = 'oliver.wrobel@pilatescompany.de';  // Empfaenger des Rueckrufwunsches
 const ANFRAGE_TO = 'info@pilatescompany.de';         // Empfaenger von Kontaktformular und Personal-Training-Anfrage
 
-// Formulare der Website (ersetzen seit 24.10.2026 die HubSpot-Formulare). Gespeichert wird nichts,
-// die Anfrage geht nur als Mail an ANFRAGE_TO, Antworten gehen per Reply-To direkt an die Absenderin.
+// Formulare der Website (ersetzen seit 24.10.2026 die HubSpot-Formulare). Die Website speichert nichts,
+// die Anfrage geht als Mail an ANFRAGE_TO (Antworten per Reply-To direkt an die Absenderin) und als Lead ins Dashboard.
 const FORMULARE = {
-  kontakt: { titel: 'Neue Nachricht &uuml;ber das Kontaktformular', betreff: 'Kontaktformular' },
-  'personal-training': { titel: 'Neue Anfrage: Personal Training', betreff: 'Personal-Training-Anfrage' },
+  kontakt: { titel: 'Neue Nachricht &uuml;ber das Kontaktformular', betreff: 'Kontaktformular', produkt: 'Kontaktformular (Website)' },
+  'personal-training': { titel: 'Neue Anfrage: Personal Training', betreff: 'Personal-Training-Anfrage', produkt: 'Personal Training (Anfrage Website)' },
 };
 
 async function getAccessToken() {
@@ -62,6 +62,25 @@ function esc(s) {
   return String(s || '').replace(/[<>&"]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c]));
 }
 
+// Lead ins Dashboard (Quelle "website-chat" = Direktkanal der Website, analog Placetel).
+// Bewusst NACH der Mail und ohne Fehler nach außen: Die Mail ist der Primärkanal und darf
+// durch einen Dashboard-Ausfall nie blockiert werden. LEAD_DASHBOARD_SCHLUESSEL (optional)
+// geht als X-API-Key mit, damit es auch klappt, wenn das Dashboard Anfragen ohne Schlüssel abweist.
+async function leadInsDashboard(lead) {
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (process.env.LEAD_DASHBOARD_SCHLUESSEL) headers['X-API-Key'] = process.env.LEAD_DASHBOARD_SCHLUESSEL;
+    const res = await fetch('https://pilatesleaddashboard.netlify.app/.netlify/functions/evs-intake', {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({ ...lead, quelle: 'website-chat' })
+    });
+    if (!res.ok) console.error('Dashboard-Lead-Post abgelehnt (Mail war erfolgreich):', res.status);
+  } catch (e) {
+    console.error('Dashboard-Lead-Post fehlgeschlagen (Mail war erfolgreich):', e.message);
+  }
+}
+
 const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 
 // Kontaktformular und Personal-Training-Anfrage: Name, E-Mail oder Telefon, Nachricht
@@ -100,6 +119,7 @@ async function formularAnfrage(body, CORS) {
 
   const token = await getAccessToken();
   await sendEmail(token, f.betreff + ': ' + name.replace(/[\r\n]/g, ' '), html, ANFRAGE_TO, email || null);
+  await leadInsDashboard({ name, telefon: phone, email, produkt: f.produkt, nachricht: message });
   return antwort(200, { ok: true });
 }
 
@@ -154,29 +174,11 @@ exports.handler = async (event) => {
     const token = await getAccessToken();
     await sendEmail(token, subjectPrefix + ': ' + name + (language ? ' (' + language + ')' : ''), html);
 
-    // Zusätzlich als Lead ins Dashboard (Quelle "Website-Chat", analog Placetel).
-    // Bewusst NACH der Mail und in eigenem try/catch: Die Mail ist der
-    // Primärkanal und darf durch einen Dashboard-Ausfall nie blockiert werden.
-    // Dedup übernimmt das Dashboard (Telefon-/E-Mail-Abgleich).
-    try {
-      const produkt = isLangPage
-        ? ('Personal Training' + (language ? ' (' + language + ')' : '') + ' (Anfrage Sprachseite)')
-        : 'Rückruf-Wunsch (Website-Chat)';
-      await fetch('https://pilatesleaddashboard.netlify.app/.netlify/functions/evs-intake', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          telefon: phone,
-          email: email,
-          produkt: produkt,
-          nachricht: message,
-          quelle: 'website-chat'
-        })
-      });
-    } catch (e) {
-      console.error('Dashboard-Lead-Post fehlgeschlagen (Mail war erfolgreich):', e.message);
-    }
+    // Zusätzlich als Lead ins Dashboard. Dedup übernimmt das Dashboard (Telefon-/E-Mail-Abgleich).
+    const produkt = isLangPage
+      ? ('Personal Training' + (language ? ' (' + language + ')' : '') + ' (Anfrage Sprachseite)')
+      : 'Rückruf-Wunsch (Website-Chat)';
+    await leadInsDashboard({ name, telefon: phone, email, produkt, nachricht: message });
 
     return { statusCode: 200, headers: CORS, body: JSON.stringify({ ok: true }) };
   } catch (e) {

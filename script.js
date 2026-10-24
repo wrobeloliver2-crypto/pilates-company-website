@@ -181,8 +181,8 @@ function parseCSV(text) {
 
 // ── ANFRAGE-FORMULARE (Kontakt, Personal Training) ──
 // Eigene Formulare statt HubSpot (seit 24.10.2026): <form data-pc-anfrage="kontakt|personal-training">.
-// Absenden per fetch an /.netlify/functions/sendmail, das die Anfrage als Mail an info@ schickt.
-// Gespeichert wird nichts. Das versteckte Feld "website" fängt Bots ab.
+// Absenden per fetch an /.netlify/functions/sendmail: Mail an info@ und Lead ins Dashboard.
+// Das versteckte Feld "website" fängt Bots ab.
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('form[data-pc-anfrage]').forEach(function (form) {
     form.addEventListener('submit', async function (e) {
