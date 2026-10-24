@@ -72,6 +72,7 @@
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf">
   <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+  <nav class="hauptnav" aria-label="Hauptnavigation"><ul><li><a href="/kurse">Kurse</a></li><li><a href="/preise">Preise</a></li><li><a href="/trainer">Trainer</a></li><li class="ebene"><button type="button" aria-expanded="false" aria-haspopup="true">Angebote<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></button><div class="panel zwei-sp"><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div></li><li><a href="/studio-news">News</a></li><li><a href="/kontakt">Kontakt</a></li><li class="ebene"><button type="button" aria-expanded="false" aria-haspopup="true">Mehr<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></button><div class="panel rechts"><a href="/gutschein">Gutschein</a><a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" aria-current="page" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div></li></ul></nav>
   <a class="kopf-probe" href="/probetraining/">Probetraining<span class="lang"> buchen</span></a>
   <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
   <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
@@ -106,9 +107,9 @@
   <div class="band-innen">
     <p class="ueber">Training in your language</p>
     <h2 id="c-sprache" class="c-h">Want to know who can train in your language?</h2>
-    <p class="lead">Our group classes are held in German — but private 1:1 Reformer coaching is available in English, Turkish and Russian. Tell us your language and we&#x27;ll match you with the right coach.</p>
+    <p class="lead">Our group classes are held in German — but private 1:1 Reformer coaching is available in English. Tell us your language and we&#x27;ll match you with the right coach.</p>
     <p class="lead">Just write to us — we&#x27;ll get back to you quickly.</p>
-    <div class="tags c-tags"><span class="tag">English</span><span class="tag">Türkçe</span><span class="tag">Русский</span></div>
+    <div class="tags c-tags"><span class="tag">English</span></div>
     <div class="karte c-formkarte">
       <h3>Ask about coaching in your language</h3>
       <p class="t">Leave your details and we&#x27;ll contact you about 1:1 Reformer coaching.</p>
@@ -116,7 +117,7 @@
         <div><label for="lf-name">Name *</label><input type="text" id="lf-name" placeholder="Your name" autocomplete="name"></div>
         <div><label for="lf-phone">Phone *</label><input type="tel" id="lf-phone" placeholder="Your phone number" autocomplete="tel"></div>
         <div><label for="lf-email">Email (optional)</label><input type="email" id="lf-email" placeholder="you@example.com" autocomplete="email"></div>
-        <div><label for="lf-lang">Preferred language</label><select id="lf-lang"><option value="English">English</option><option value="Turkish">Türkçe</option><option value="Russian">Русский</option><option value="German">Deutsch</option></select></div>
+        <div><label for="lf-lang">Preferred language</label><select id="lf-lang"><option value="English">English</option><option value="German">Deutsch</option></select></div>
         <div><label for="lf-msg">Message (optional)</label><textarea id="lf-msg" placeholder="Your goals, questions or preferred times…"></textarea></div>
         <button type="submit" class="knopf" id="lf-submit">Send request <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <div id="lf-result" role="status" aria-live="polite" hidden></div>
@@ -148,7 +149,7 @@
   </div>
   <div class="karte tint c-box">
     <h3>Personal training in your language.</h3>
-    <p class="t">Our 1:1 Reformer coaching is available in English, Turkish and Russian. When booking, simply tell us your preferred language and any injuries or goals beforehand — and we&#x27;ll make sure everything is tailored to you from the first session.</p>
+    <p class="t">Our 1:1 Reformer coaching is available in English. When booking, simply tell us your preferred language and any injuries or goals beforehand — and we&#x27;ll make sure everything is tailored to you from the first session.</p>
     <p class="t"><a class="textlink" href="https://wa.me/491751266117?text=Hi!%20I&#x27;d%20like%20to%20book%201:1%20Reformer%20coaching%20in%20English." target="_blank" rel="noopener">WhatsApp us</a></p>
   </div>
 </section>
