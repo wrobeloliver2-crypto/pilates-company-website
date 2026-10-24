@@ -7,11 +7,10 @@ const CLIENT_ID = process.env.AZURE_CLIENT_ID;
 const CLIENT_SECRET = process.env.AZURE_CLIENT_SECRET;
 
 const FROM_EMAIL = 'info@pilatescompany.de';        // Absender (Postfach)
-const TO_EMAIL = 'oliver.wrobel@pilatescompany.de';  // Empfaenger des Rueckrufwunsches
-const ANFRAGE_TO = 'info@pilatescompany.de';         // Empfaenger von Kontaktformular und Personal-Training-Anfrage
+const TO_EMAIL = 'oliver.wrobel@pilatescompany.de';  // Empfaenger von Rueckrufwunsch, Kontaktformular und Personal-Training-Anfrage
 
 // Formulare der Website (ersetzen seit 24.10.2026 die HubSpot-Formulare). Die Website speichert nichts,
-// die Anfrage geht als Mail an ANFRAGE_TO (Antworten per Reply-To direkt an die Absenderin) und als Lead ins Dashboard.
+// die Anfrage geht als Mail an TO_EMAIL (Antworten per Reply-To direkt an die Absenderin) und als Lead ins Dashboard.
 const FORMULARE = {
   kontakt: { titel: 'Neue Nachricht &uuml;ber das Kontaktformular', betreff: 'Kontaktformular', produkt: 'Kontaktformular (Website)' },
   'personal-training': { titel: 'Neue Anfrage: Personal Training', betreff: 'Personal-Training-Anfrage', produkt: 'Personal Training (Anfrage Website)' },
@@ -118,7 +117,7 @@ async function formularAnfrage(body, CORS) {
     '</div>';
 
   const token = await getAccessToken();
-  await sendEmail(token, f.betreff + ': ' + name.replace(/[\r\n]/g, ' '), html, ANFRAGE_TO, email || null);
+  await sendEmail(token, f.betreff + ': ' + name.replace(/[\r\n]/g, ' '), html, TO_EMAIL, email || null);
   await leadInsDashboard({ name, telefon: phone, email, produkt: f.produkt, nachricht: message });
   return antwort(200, { ok: true });
 }
