@@ -358,7 +358,7 @@ body.menu-offen{overflow:hidden}
   .hero:has(.hero-bild) > *{grid-column:1}
   .hero:has(.hero-bild) > .hero-bild{grid-column:2;grid-row:1/span 8;margin-top:0;aspect-ratio:4/5;max-height:620px}
   .hero:has(.hero-bild) > .hero-bild.quer{aspect-ratio:5/4}
-  .hero-bild:not(.quer) img{object-position:center 30%}
+  .hero-bild:not(.quer) img{object-position:center 12%}
   .hero h1{font-size:clamp(44px,4.4vw,58px);line-height:1.07}
   .hero .lead{font-size:17px}
   .hero .knoepfe{max-width:none;margin-top:26px}
