@@ -1,534 +1,264 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Private Reformer Class in Stockelsdorf | Pilates Company</title>
 <meta name="description" content="Private Reformer Class in Stockelsdorf bei Lübeck: 60 Minuten Einzeltraining am Reformer, abgestimmt auf dein Level und dein Ziel. 89 Euro pro Einheit.">
-<link rel="canonical" href="https://pilatescompany.de/personal-training">
 <meta property="og:site_name" content="Pilates Company Lübeck">
-<style>
-  :root{
-    --sand:#F3EEE6;
-    --sand-deep:#E7DECF;
-    --ink:#2C2A26;
-    --ink-soft:#5A554C;
-    --clay:#A8624A;       /* warmer terracotta — Pilates-Welt */
-    --sage:#6E7A5E;       /* grounded green — steht für Physio/Körper */
-    --sage-deep:#525C45;
-    --cream:#FBF9F5;
-    --line:#D8CFC0;
-    --shadow:rgba(44,42,38,.10);
-    --maxw:1140px;
-    --r:18px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Poppins',system-ui,sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.display{font-family:'Playfair Display',Georgia,serif;font-weight:400;letter-spacing:-.01em}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{
-    font-family:'Poppins',system-ui,sans-serif;
-    text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;
-    color:var(--clay);font-weight:600;
-  }
-  a{color:inherit}
-  img{max-width:100%;display:block}
-
-  /* NAV */
-  header.nav{
-    position:sticky;top:0;z-index:40;
-    background:rgba(251,249,245,.92);backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
-  .logo{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
-  .logo b{color:var(--clay);font-weight:400}
-  nav.menu{display:flex;gap:26px}
-  nav.menu a{text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
-  nav.menu a:hover{color:var(--clay)}
-  .nav-cta{
-    background:var(--clay);color:#fff;text-decoration:none;
-    padding:10px 18px;border-radius:999px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
-  }
-  .burger{display:none;background:none;border:0;font-size:1.5rem;color:var(--ink);cursor:pointer}
-  @media(max-width:880px){
-    nav.menu,.nav-cta{display:none}
-    .burger{display:block}
-  }
-
-  /* HERO */
-  .hero{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%);padding:72px 0 56px}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-  .hero h1{font-size:3.3rem;line-height:1.04;margin:18px 0 22px}
-  .hero h1 .accent{color:var(--clay);font-style:italic}
-  .hero p.lead{font-size:1.18rem;color:var(--ink-soft);max-width:34ch;margin-bottom:18px}
-  .physio-badge{
-    display:inline-flex;align-items:center;gap:10px;
-    background:var(--sage);color:#fff;border-radius:999px;
-    padding:8px 16px 8px 12px;font-size:.84rem;letter-spacing:.03em;margin-bottom:6px;
-  }
-  .physio-badge svg{flex:none}
-  .hero-meta{font-size:.92rem;color:var(--ink-soft);margin-top:8px}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
-  .btn{
-    display:inline-block;text-decoration:none;border-radius:999px;
-    padding:14px 26px;font-size:.95rem;letter-spacing:.02em;transition:transform .15s,box-shadow .2s;
-  }
-  .btn-primary{background:var(--clay);color:#fff;box-shadow:0 8px 22px rgba(168,98,74,.28)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
-  .btn-ghost:hover{background:var(--ink);color:var(--cream)}
-  .hero-img{position:relative}
-  .hero-img img{border-radius:var(--r);box-shadow:0 24px 60px var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
-  .price-tag{
-    position:absolute;left:-14px;bottom:24px;background:var(--cream);
-    border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:0 12px 30px var(--shadow);
-  }
-  .price-tag b{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;display:block;color:var(--ink)}
-  .price-tag span{font-size:.78rem;color:var(--ink-soft);letter-spacing:.04em}
-  @media(max-width:880px){
-    .hero-grid{grid-template-columns:1fr;gap:36px}
-    .hero h1{font-size:2.4rem}
-    .hero p.lead{max-width:none}
-  }
-
-  /* SECTION SHELL */
-  section{padding:72px 0}
-  .sec-head{max-width:640px;margin-bottom:42px}
-  .sec-head h2{font-size:2.1rem;line-height:1.12;margin-top:10px}
-  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.05rem}
-
-  /* USP — der neue Kern */
-  .usp{background:var(--sage-deep);color:var(--cream)}
-  .usp .eyebrow{color:#D9C9A8}
-  .usp h2{color:var(--cream);font-size:2.3rem;line-height:1.1;max-width:18ch}
-  .usp .intro{color:#DCD8CE;max-width:60ch;margin-top:16px;font-size:1.08rem}
-  .usp .intro-points{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px;max-width:60ch}
-  .usp .intro-points li{color:#DCD8CE;font-size:1.02rem;line-height:1.55;padding-left:20px;position:relative}
-  .usp .intro-points li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--clay)}
-  .usp .intro-points strong{color:var(--cream);display:block;margin-bottom:2px}
-  .usp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:46px}
-  .usp-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:24px}
-  .usp-card .n{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:#D9C9A8;display:block;margin-bottom:10px}
-  .usp-card h3{color:var(--cream);font-size:1.18rem;margin-bottom:8px}
-  .usp-card p{color:#D2CEC4;font-size:.95rem}
-  @media(max-width:880px){.usp-grid{grid-template-columns:1fr 1fr;gap:16px}.usp h2{font-size:1.8rem}}
-  @media(max-width:680px){.usp-grid{grid-template-columns:1fr}}
-
-  /* TRAINER */
-  .trainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px}
-  .trainer-card{
-    background:var(--cream);border:1px solid var(--line);border-radius:var(--r);
-    overflow:hidden;display:flex;flex-direction:column;
-  }
-  .trainer-photo{aspect-ratio:3/2;background:var(--sand-deep);position:relative;overflow:hidden}
-  .trainer-photo img{width:100%;height:100%;object-fit:cover}
-  .trainer-photo .ph{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:'Playfair Display',Georgia,serif;font-size:3rem;color:var(--sage);opacity:.4;
-  }
-  .trainer-body{padding:26px}
-  .trainer-body .role{display:inline-block;background:var(--sage);color:#fff;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px}
-  .trainer-body h3{font-size:1.5rem;margin-bottom:4px}
-  .trainer-body .spec{color:var(--clay);font-size:.92rem;letter-spacing:.04em;margin-bottom:14px}
-  .trainer-body p{color:var(--ink-soft);font-size:.98rem}
-  @media(max-width:760px){.trainer-grid{grid-template-columns:1fr}}
-
-  /* FINDER */
-  .finder{background:var(--sage-deep)}
-  .finder .eyebrow{color:#D9C9A8}
-  .finder h2{color:var(--cream);font-size:2.1rem;line-height:1.12;margin-top:10px}
-  .finder .intro{color:#DCD8CE;margin-top:14px;font-size:1.05rem;max-width:54ch}
-  .chat-shell{max-width:560px;margin:36px auto 0;border:1px solid rgba(255,255,255,.16);border-radius:18px;overflow:hidden;background:var(--cream)}
-  .chat-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--sand)}
-  .chat-avatar{width:34px;height:34px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex:none;color:#fff;font-family:'Playfair Display',Georgia,serif}
-  .chat-head .nm{font-size:.92rem;font-weight:600;color:var(--ink)}
-  .chat-head .st{font-size:.78rem;color:var(--sage);display:flex;align-items:center;gap:5px}
-  .chat-head .st i{width:7px;height:7px;border-radius:50%;background:var(--sage);display:inline-block}
-  .chat-body{padding:18px;display:flex;flex-direction:column;gap:12px;min-height:120px}
-  .bub-bot{align-self:flex-start;max-width:85%;background:var(--sand);color:var(--ink);padding:11px 14px;border-radius:14px 14px 14px 4px;font-size:.92rem;line-height:1.5}
-  .bub-user{align-self:flex-end;max-width:85%;background:var(--sage);color:#fff;padding:11px 14px;border-radius:14px 14px 4px 14px;font-size:.92rem;line-height:1.5}
-  .chat-opts{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:8px}
-  .chat-opt{border:1px solid var(--line);background:var(--cream);color:var(--ink);padding:9px 14px;border-radius:999px;font-size:.85rem;cursor:pointer;transition:all .15s;font-family:inherit}
-  .chat-opt:hover{background:var(--sand);border-color:var(--sage)}
-  .result-card{align-self:stretch;border:2px solid var(--sage);border-radius:16px;padding:18px;margin-top:2px;background:var(--cream)}
-  .result-card .rc-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
-  .result-card .rc-ic{width:48px;height:48px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;flex:none;font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;color:var(--sage-deep)}
-  .result-card h3{font-size:1.15rem;margin:0}
-  .result-card .rc-sub{font-size:.78rem;color:var(--ink-soft);margin-top:2px}
-  .result-card .rc-body{font-size:.92rem;line-height:1.6;color:var(--ink)}
-  .chat-cta{border:0;background:var(--clay);color:#fff;padding:12px 20px;border-radius:999px;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;font-family:inherit}
-  .chat-restart{border:1px solid var(--line);background:var(--cream);color:var(--ink-soft);padding:12px 18px;border-radius:999px;font-size:.85rem;cursor:pointer;font-family:inherit}
-
-  /* FÜR WEN */
-  .forwho{background:var(--sand)}
-  .forwho-list{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin-top:8px}
-  .forwho-item{display:flex;gap:14px;align-items:flex-start;padding:6px 0}
-  .forwho-item .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;margin-top:2px}
-  .forwho-item .tick svg{width:14px;height:14px}
-  .forwho-item p{color:var(--ink);font-size:1.02rem}
-  .forwho-item p b{font-weight:600}
-  @media(max-width:760px){.forwho-list{grid-template-columns:1fr;gap:14px}}
-
-  /* ABLAUF */
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;counter-reset:s}
-  .step{position:relative}
-  .step .num{font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:var(--clay);opacity:.55;line-height:1}
-  .step h3{font-size:1.05rem;margin:10px 0 8px}
-  .step p{font-size:.9rem;color:var(--ink-soft)}
-  @media(max-width:920px){.steps{grid-template-columns:1fr 1fr;gap:28px}}
-  @media(max-width:520px){.steps{grid-template-columns:1fr}}
-
-  /* ANGEBOT CARD */
-  .offer{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-  .offer-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:0 14px 40px var(--shadow)}
-  .offer-card h3{font-size:1.6rem;margin-bottom:4px}
-  .offer-card .big{font-family:'Playfair Display',Georgia,serif;font-size:2.2rem;color:var(--clay);margin:6px 0 18px}
-  .offer-card ul{list-style:none;display:grid;gap:10px;margin-bottom:22px}
-  .offer-card li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:10px;font-size:.95rem}
-  .offer-card li span:first-child{color:var(--ink-soft)}
-  .offer-note{font-size:.82rem;color:var(--ink-soft);margin-top:12px;text-align:center}
-  @media(max-width:760px){.offer{grid-template-columns:1fr}}
-
-  /* FORM */
-  .contact{background:var(--sage-deep);color:var(--cream)}
-  .contact .eyebrow{color:#D9C9A8}
-  .contact h2{color:var(--cream);font-size:2.1rem}
-  .contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
-  .contact p.sub{color:#DCD8CE;margin-top:12px;max-width:42ch}
-  .info-block{margin-top:26px;font-size:1rem;color:#EDEAE2;line-height:1.9}
-  .info-block a{color:#fff;text-decoration:underline}
-  form{display:grid;gap:14px}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  label{font-size:.82rem;color:#D9C9A8;letter-spacing:.04em;display:block;margin-bottom:4px}
-  input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:inherit}
-  input::placeholder,textarea::placeholder{color:#B9C2AD}
-  input:focus,textarea:focus{outline:2px solid var(--clay);border-color:transparent}
-  .form-submit{background:var(--clay);color:#fff;border:0;border-radius:999px;padding:14px;font-size:.98rem;cursor:pointer;letter-spacing:.03em;transition:transform .15s}
-  .form-submit:hover{transform:translateY(-2px)}
-  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:#CFD4C4}
-  .consent input{width:auto;margin-top:3px}
-  .pc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-  .pc-anfrage-hinweis{font-size:.82rem;color:#CFD4C4;line-height:1.5}
-  .pc-anfrage-hinweis a{color:#fff;text-decoration:underline}
-  .pc-anfrage-status{font-size:.88rem;min-height:1.2em;margin:0}
-  .pc-anfrage-status.fehler{color:#FFC9B8}
-  .pc-anfrage-danke{padding:20px 22px;border-radius:12px;background:rgba(255,255,255,.1);color:#fff;font-size:1rem}
-  @media(max-width:760px){.contact .grid{grid-template-columns:1fr;gap:28px}.row{grid-template-columns:1fr}}
-
-  /* FOOTER */
-  footer.ft{background:var(--ink);color:#CFC9BD;padding:46px 0 28px}
-  .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
-  .ft a{color:#CFC9BD;text-decoration:none;font-size:.9rem;display:block;margin:6px 0}
-  .ft a:hover{color:#fff}
-  .ft h4{color:#fff;font-family:'Poppins',system-ui,sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
-  .ft .brand{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;color:#fff;margin-bottom:8px}
-  .ft-base{border-top:1px solid #3c3a35;margin-top:32px;padding-top:18px;font-size:.8rem;color:#8d877c;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  @media(max-width:760px){.ft-grid{grid-template-columns:1fr}}
-
-  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-
-@media(max-width:480px){.wrap{padding:0 18px}.hero h1{font-size:2rem;line-height:1.15}.hero p.lead{font-size:1rem}.hero-actions{flex-direction:column;align-items:stretch;gap:12px}.hero-actions .btn{width:100%;text-align:center;justify-content:center}.usp h2,.section-head h2{font-size:1.55rem;line-height:1.2}.result-card{padding:14px;border-radius:14px}.trainer-card,.step,.usp{padding:18px}section{padding-top:48px;padding-bottom:48px}}
-  @media (max-width: 640px){ .logo img, a.logo img, .nav-inner .logo img { height: 52px !important; } }
-</style>
+<link rel="canonical" href="https://pilatescompany.de/personal-training">
+<meta property="og:title" content="Private Reformer Class in Stockelsdorf | Pilates Company">
+<meta property="og:description" content="Private Reformer Class in Stockelsdorf bei Lübeck: 60 Minuten Einzeltraining am Reformer, abgestimmt auf dein Level und dein Ziel. 89 Euro pro Einheit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pilatescompany.de/personal-training">
+<meta property="og:image" content="https://pilatescompany.de/og-image.png">
+<meta name="theme-color" content="#FAF6F3">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style id="nav-probe-stil">
-  .nav-probe{display:none}
-  @media (max-width:880px){
-    .nav-probe{display:inline-flex;align-items:center;margin-left:auto;margin-right:.75rem;padding:.55rem .95rem;border-radius:999px;background:#d9a49a;color:#fff!important;font-family:'Poppins',system-ui,sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.01em;line-height:1.15;text-decoration:none;white-space:nowrap;box-shadow:0 2px 10px rgba(217,164,154,.35)}
-    .nav-probe:active{background:#c8857a}
-  }
-  @media (max-width:360px){ .nav-probe{font-size:.72rem;padding:.5rem .75rem;margin-right:.5rem} }
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.pt-meta{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.5}
+.pt-punkte{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.pt-punkte li{padding:14px 14px;border-radius:14px;background:var(--sand);font-size:14px;line-height:1.55;color:var(--body);font-weight:300}
+.pt-punkte strong{display:block;font-weight:600;color:var(--ink);margin-bottom:2px}
+.pt-nr{display:block;font:500 13px var(--f-body);letter-spacing:.14em;color:var(--cta-hover);margin-bottom:6px}
+.pt-zitat{margin:12px 0 0;padding-left:12px;border-left:3px solid var(--rose);font-style:italic;color:var(--body);font-size:14px;line-height:1.55}
+.pt-trainer .foto{aspect-ratio:3/4;font-size:0}
+.pt-trainer .foto img{object-position:50% 12%}
+.pt-trainer.pt-nico .foto{aspect-ratio:16/10}
+.pt-trainer.pt-nico .foto img{object-position:50% 20%}
+.pt-wen{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pt-wen li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.55;color:var(--body);font-weight:300}
+.pt-wen li svg{flex:none;color:var(--cta);margin-top:2px}
+.pt-wen b{font-weight:600;color:var(--ink)}
+.pt-ablauf{list-style:none;margin:0;padding:0;counter-reset:ab;display:grid;gap:10px}
+.pt-ablauf li{position:relative;padding:16px 16px 16px 62px;border-radius:14px;background:var(--sheet);border:1px solid var(--line-soft)}
+.pt-ablauf li::before{counter-increment:ab;content:"0" counter(ab);position:absolute;left:16px;top:14px;font:500 24px/1 var(--f-display);color:var(--cta-hover)}
+.pt-ablauf h3{font-size:17px;line-height:1.3;margin-bottom:4px}
+.pt-ablauf p{font-size:14px;line-height:1.55;color:var(--body);font-weight:300}
+.pt-zeilen{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--line)}
+.pt-zeilen li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.pt-zeilen li span:first-child{color:var(--muted)}
+.pt-zeilen li span:last-child{font-weight:500;text-align:right}
+.pt-preis small{font:400 14px var(--f-body);color:var(--muted)}
+.pt-zeile2{display:grid;gap:14px}
+@media (min-width:700px){ .pt-zeile2{grid-template-columns:1fr 1fr} }
+/* Finder (Chat) */
+.pt-chat{border-radius:var(--r-card);background:var(--sheet);border:1px solid var(--line-soft);box-shadow:var(--shadow-card);overflow:hidden}
+.pt-chat-kopf{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line-soft);background:var(--tint)}
+.pt-chat-av{width:40px;height:40px;border-radius:999px;background:var(--cta);color:#fff;display:flex;align-items:center;justify-content:center;font:500 18px var(--f-display);flex:none}
+.pt-chat-kopf b{display:block;font-size:14.5px;font-weight:600}
+.pt-chat-kopf span{font-size:12.5px;color:var(--muted)}
+.pt-chat-body{padding:16px;display:flex;flex-direction:column;gap:10px;max-height:340px;overflow-y:auto}
+.pt-bot,.pt-usr{max-width:88%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
+.pt-bot{background:var(--sand);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+.pt-usr{background:var(--cta-hover);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.pt-opts{padding:4px 16px 16px;display:flex;flex-direction:column;gap:8px}
+.pt-opt{min-height:48px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--field);background:#fff;font:500 14px/1.35 var(--f-body);color:var(--ink);text-align:left}
+.pt-opt:hover{background:var(--tint);border-color:var(--cta-hover)}
+.pt-ergebnis{align-self:stretch;padding:14px;border-radius:14px;background:var(--tint);border:1px solid var(--line)}
+.pt-ergebnis h3{font-size:18px;line-height:1.25}
+.pt-ergebnis .sub{font-size:12.5px;color:var(--cta-hover);font-weight:500;margin:2px 0 8px}
+.pt-ergebnis p{font-size:14px;line-height:1.55;color:var(--body);font-weight:300}
+.pt-chat-aktion{display:flex;flex-direction:column;gap:8px}
+.pt-form-hinweis{margin:-4px 0 0}
+.pt-formgrid{display:grid;gap:14px}
+@media (min-width:700px){ .pt-formgrid{grid-template-columns:1fr 1fr} }
 </style>
-
 </head>
 <body>
-
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a href="https://pilatescompany.de/" class="logo"><img src="https://pilatescompany.de/logo.png" alt="Pilates Company Lübeck" style="height:70px;width:auto;display:block;"></a>
-    <nav class="menu">
-      <a href="https://pilatescompany.de/kurse">Kurse</a>
-      <a href="https://pilatescompany.de/preise">Preise</a>
-      <a href="https://pilatescompany.de/trainer">Trainer</a>
-      <a href="https://pilatescompany.de/personal-training">Physiocoaching</a>
-      <a href="https://pilatescompany.de/kontakt">Kontakt</a>
-    </nav>
-    <a href="#anfrage" class="nav-cta">Anfrage</a>
-    <a class="nav-probe" href="https://pilatescompany.de/probetraining/">Probetraining buchen</a>
-    <button class="burger" aria-label="Menü">☰</button>
-  </div>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+  <a class="kopf-probe" href="/probetraining/">Probetraining<span class="lang"> buchen</span></a>
+  <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
+  <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
 
-<!-- HERO -->
+<nav class="menu" id="menu" aria-label="Hauptmenü">
+  <div class="oben">
+    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+    <button class="rund" id="menuZu" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="grp"><p>Training</p>
+    <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training" aria-current="page">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div>
+  <div class="grp"><p>Studio</p>
+    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a></div>
+  <div class="grp"><p>Mehr</p>
+    <a href="/gutschein">Gutschein</a><a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="/kontakt">Kontakt</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
+</nav>
+<main id="inhalt" class="seite">
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="physio-badge">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.8 2.3 6.5 5.5 6.5c1.9 0 3.3 1.1 4 2.2.7-1.1 2.1-2.2 4-2.2 3.2 0 4.6 3.3 3 6C19 16.65 12 21 12 21z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        Dein Physiocoach
-      </span>
-      <h1>Private Reformer Class in Stockelsdorf</h1>
-      <p class="lead">Dein 1:1-Coaching am Reformer – nicht von irgendwem, sondern von hochqualifizierten Physiotherapeuten. Sicher, gezielt, mit echten Ergebnissen. Und mit Freude an der Bewegung.</p>
-      <div class="hero-meta">Private Reformer Class · 60 Min · Segeberger Str. 1, Stockelsdorf – direkt an der Grenze zu Lübeck</div>
-      <div class="hero-actions">
-        <a href="#finder" class="btn btn-primary">Finde deinen Physiocoach</a>
-        <a href="#anfrage" class="btn btn-ghost">Direkt anfragen →</a>
+  <p class="ueber">Dein Physiocoach</p>
+  <h1>Private Reformer Class in <em>Stockelsdorf</em></h1>
+  <p class="lead">Dein 1:1-Coaching am Reformer – nicht von irgendwem, sondern von hochqualifizierten Physiotherapeuten. Sicher, gezielt, mit echten Ergebnissen. Und mit Freude an der Bewegung.</p>
+  <div class="tags" style="margin-top:14px"><span class="etikett voll">89 €</span><span class="tag">60 Min</span><span class="tag">1:1</span></div>
+  <p class="pt-meta">Private Reformer Class · 60 Min · Segeberger Str. 1, Stockelsdorf – direkt an der Grenze zu Lübeck</p>
+  <div class="knoepfe">
+    <a class="knopf" href="#finder">Finde deinen Physiocoach</a>
+    <a class="knopf hell" href="#anfrage">Direkt anfragen</a>
+  </div>
+  <div class="hero-bild"><img src="/private-reformer-class.webp" alt="Trainerin korrigiert eine Frau in seitlicher Dehnung auf dem Reformer" width="1120" height="1400" fetchpriority="high" decoding="async" style="object-position:center 35%"></div>
+</section>
+
+<section class="abschnitt" aria-labelledby="usp-h">
+  <p class="ueber">Was uns unterscheidet</p>
+  <h2 id="usp-h">Wir bringen deinen Körper dahin, wo du ihn <em>haben willst.</em></h2>
+  <p class="lead">Bei uns beginnt Training nicht mit dem ersten Satz Wiederholungen, sondern mit dem Blick auf dich. Als Physiotherapeuten verstehen wir, wie dein Körper funktioniert – und richten jede Einheit genau danach aus. So weißt du von Anfang an, wo du stehst, wohin es geht und wie lange der Weg dahin realistisch ist.</p>
+  <ul class="pt-punkte">
+    <li><strong>Wo stehe ich jetzt?</strong>Zum Start machen wir einen Medizincheck mit physiotherapeutischer Anamnese und Untersuchung.</li>
+    <li><strong>Wo will ich hin?</strong>Gemeinsam legen wir klare, erreichbare Ziele fest.</li>
+    <li><strong>In welchem Zeitfenster?</strong>Du bekommst einen realistischen Zeitrahmen, in dem du dein Ziel mit professioneller Begleitung erreichst.</li>
+  </ul>
+  <div class="raster" style="margin-top:16px">
+      <article class="karte"><span class="pt-nr">01</span><h3>Sicher statt riskant</h3><p class="t">Wir erkennen Ausweichbewegungen und Überlastung, bevor daraus ein Problem wird. Dein Training passt sich deinem Körper an – nicht umgekehrt.</p></article>
+      <article class="karte"><span class="pt-nr">02</span><h3>Training trotz Vorgeschichte</h3><p class="t">Rücken, Knie, Schulter, nach einer OP? Kein Grund, nicht zu trainieren – sondern ein Grund, es richtig zu tun. Wir dosieren die Belastung genau passend.</p></article>
+      <article class="karte"><span class="pt-nr">03</span><h3>Ursache statt Symptom</h3><p class="t">Wir schauen nicht nur auf die einzelne Übung, sondern auf deine Bewegung als Ganzes. Im Zentrum steht deine Rumpfstabilität – Kraft und Kontrolle aus der Mitte. Darauf baut jede Einheit auf.</p></article>
+      <article class="karte"><span class="pt-nr">04</span><h3>Mehr Lebensfreude</h3><p class="t">Wenn dein Körper sich gut anfühlt, verändert das mehr als nur dein Training. Du bewegst dich freier, hast mehr Energie im Alltag und gewinnst ein Stück Lebensqualität zurück – genau darauf arbeiten wir mit dir hin.</p></article>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="coaches-h">
+  <p class="ueber">Deine Physiocoaches</p>
+  <h2 id="coaches-h">Zwei Physiotherapeuten, ein Ziel: <em>dein Erfolg.</em></h2>
+  <p class="lead">Während unsere Reformer-Gruppenkurse von einem großen Team hochqualifizierte Trainerinnen geleitet werden, liegt dein 1:1-Physiocoaching in den Händen von Hanna und Nico – beide Physiotherapeuten und Trainer.</p>
+  <div class="raster" style="margin-top:16px">
+    <article class="karte trainer pt-trainer ">
+      <div class="foto"><img src="/coach-hanna.webp" alt="Porträt von Hanna, Physiotherapeutin und Physiocoach" width="768" height="1127" loading="lazy" decoding="async"></div>
+      <p class="ueber" style="margin-bottom:2px">Physiocoach</p>
+      <h3>Hanna</h3>
+      <p class="klein" style="margin-top:2px">Physiotherapeutin · Pilatestrainerin · Personal Coachin</p>
+      <p class="t">Hanna ist Physiotherapeutin mit über 20 Jahren Erfahrung – und der Mensch, mit dem bei Pilates Company alles begann. Als Gründerin und Inhaberin verbindet sie klassische Physiotherapie, Pilates und Personal Coaching, mit einem besonderen Schwerpunkt: Frauen in und durch die Wechseljahre zu begleiten. Für sie geht Physiocoaching noch ganzheitlicher – begleitend über mehrere Wochen, auf körperliche und mentale Gesundheit zugleich. Neben den therapeutischen Ansätzen gibt sie im Gespräch ganz bewusst Soft Skills für den Alltag mit, damit aus Behandlung aktive, selbstgestaltete Lebensqualität wird.</p>
+      <div class="tags"><span class="tag">Physiotherapeutin</span><span class="tag">Pilatestrainerin</span><span class="tag">Manuelle Therapie</span><span class="tag">Schmerzmanagement</span><span class="tag">Schwerpunkt Wechseljahre</span></div>
+      <p class="pt-zitat">„Unser Leben ist es wert, dass wir es aktiv in die Hand nehmen und gestalten.“</p>
+    </article>
+    <article class="karte trainer pt-trainer pt-nico">
+      <div class="foto"><img src="/coach-nico.webp" alt="Porträt von Nico, Physiotherapeut und Physiocoach" width="811" height="480" loading="lazy" decoding="async"></div>
+      <p class="ueber" style="margin-bottom:2px">Physiocoach</p>
+      <h3>Nico</h3>
+      <p class="klein" style="margin-top:2px">Physiotherapeut · Fitnesscoach</p>
+      <p class="t">Nico ist staatlich anerkannter Physiotherapeut und Fitnesscoach – mit über 15 Jahren sportspezifischer Erfahrung. Wo klassisches Personal Training aufhört, bezieht er den medizinischen Kontext mit ein und holt über die kleinen Stellschrauben das letzte Stück Potenzial heraus. Unrunde Bewegungsabläufe erkennt er in Sekunden und optimiert sie gezielt – ob beim Einstieg, bei der Technikvertiefung oder beim Wiedereinstieg in den Sport.</p>
+      <div class="tags"><span class="tag">Staatl. anerk. Physiotherapeut</span><span class="tag">KGG</span><span class="tag">Manuelle Lymphdrainage</span><span class="tag">Fitnesstrainer B-Lizenz</span></div>
+      <p class="pt-zitat">„Lachen ist gesund und gehört mit in meine Therapie.“</p>
+    </article>
+  </div>
+</section>
+
+<section class="band tint" id="finder" aria-labelledby="finder-h">
+  <div class="band-innen">
+    <p class="ueber">Dein Wegweiser</p>
+    <h2 id="finder-h" style="font-size:23px;line-height:1.2;margin-bottom:8px">Ist Physiocoaching das Richtige <em>für dich?</em></h2>
+    <p class="lead" style="margin:0 0 14px">Beantworte ein paar kurze Fragen – unser Physiocoach-Assistent findet heraus, wer am besten zu dir passt: Hanna, Nico oder beide.</p>
+    <div class="pt-chat">
+      <div class="pt-chat-kopf">
+        <div class="pt-chat-av" aria-hidden="true">P</div>
+        <div><b>Physiocoach-Assistent</b><span>Online · antwortet sofort</span></div>
       </div>
-    </div>
-    <div class="hero-img">
-      <img src="https://pilatescompany.de/logo-platzhalter.png" alt="" style="object-fit:contain;background:#f5ede9;padding:32px;">
-      <div class="price-tag"><b>89 €</b><span>60 Min · 1:1</span></div>
+      <div class="pt-chat-body" id="chatBody" aria-live="polite"></div>
+      <div class="pt-opts" id="chatOpts"></div>
     </div>
   </div>
 </section>
 
-<!-- USP -->
-<section class="usp">
-  <div class="wrap">
-    <span class="eyebrow">Was uns unterscheidet</span>
-    <h2>Wir bringen deinen Körper dahin, wo du ihn haben willst.</h2>
-    <p class="intro">Bei uns beginnt Training nicht mit dem ersten Satz Wiederholungen, sondern mit dem Blick auf dich. Als Physiotherapeuten verstehen wir, wie dein Körper funktioniert – und richten jede Einheit genau danach aus. So weißt du von Anfang an, wo du stehst, wohin es geht und wie lange der Weg dahin realistisch ist.</p>
-    <ul class="intro-points">
-      <li><strong>Wo stehe ich jetzt?</strong> Zum Start machen wir einen Medizincheck mit physiotherapeutischer Anamnese und Untersuchung.</li>
-      <li><strong>Wo will ich hin?</strong> Gemeinsam legen wir klare, erreichbare Ziele fest.</li>
-      <li><strong>In welchem Zeitfenster?</strong> Du bekommst einen realistischen Zeitrahmen, in dem du dein Ziel mit professioneller Begleitung erreichst.</li>
-    </ul>
-    <div class="usp-grid">
-      <div class="usp-card">
-        <span class="n">01</span>
-        <h3>Sicher statt riskant</h3>
-        <p>Wir erkennen Ausweichbewegungen und Überlastung, bevor daraus ein Problem wird. Dein Training passt sich deinem Körper an – nicht umgekehrt.</p>
-      </div>
-      <div class="usp-card">
-        <span class="n">02</span>
-        <h3>Training trotz Vorgeschichte</h3>
-        <p>Rücken, Knie, Schulter, nach einer OP? Kein Grund, nicht zu trainieren – sondern ein Grund, es richtig zu tun. Wir dosieren die Belastung genau passend.</p>
-      </div>
-      <div class="usp-card">
-        <span class="n">03</span>
-        <h3>Ursache statt Symptom</h3>
-        <p>Wir schauen nicht nur auf die einzelne Übung, sondern auf deine Bewegung als Ganzes. Im Zentrum steht deine Rumpfstabilität – Kraft und Kontrolle aus der Mitte. Darauf baut jede Einheit auf.</p>
-      </div>
-      <div class="usp-card">
-        <span class="n">04</span>
-        <h3>Mehr Lebensfreude</h3>
-        <p>Wenn dein Körper sich gut anfühlt, verändert das mehr als nur dein Training. Du bewegst dich freier, hast mehr Energie im Alltag und gewinnst ein Stück Lebensqualität zurück – genau darauf arbeiten wir mit dir hin.</p>
-      </div>
-    </div>
-  </div>
+<section class="abschnitt" aria-labelledby="wen-h">
+  <p class="ueber">Für wen genau richtig</p>
+  <h2 id="wen-h">Besonders gut aufgehoben bist du, <em>wenn …</em></h2>
+  <ul class="pt-wen">
+    <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>… du <b>Beschwerden oder eine Vorgeschichte</b> hast (Rücken, Knie, Schulter, nach einer OP) und dich im normalen Studio nicht sicher fühlst.</span></li>
+    <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>… deine <b>Physio-Behandlung ausläuft</b> und du den nächsten Schritt suchst – fit werden, ohne ins kalte Wasser zu springen.</span></li>
+    <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>… du <b>über 40</b> bist und es diesmal richtig machen willst, ohne dich zu verletzen.</span></li>
+    <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>… du nach <b>langer Pause, Krankheit oder Schwangerschaft</b> sicher wieder einsteigen möchtest.</span></li>
+    <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>… du <b>Muskeln aufbauen</b> willst, aber Wert darauf legst, dass es deinem Körper dabei gut geht.</span></li>
+    <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>… dir wichtig ist, dass dich jemand betreut, der <b>wirklich weiß, was er tut</b> – und Training trotzdem Spaß macht.</span></li>
+  </ul>
 </section>
 
-<!-- TRAINER -->
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Deine Physiocoaches</span>
-      <h2>Zwei Physiotherapeuten, ein Ziel: dein Erfolg.</h2>
-      <p>Während unsere Reformer-Gruppenkurse von einem großen Team hochqualifizierte Trainerinnen geleitet werden, liegt dein 1:1-Physiocoaching in den Händen von Hanna und Nico – beide Physiotherapeuten und Trainer.</p>
-    </div>
-    <div class="trainer-grid">
-      <div class="trainer-card">
-        <div class="trainer-photo"><img src="/coach-hanna.webp" alt="Porträt von Hanna, Physiotherapeutin und Physiocoach" width="768" height="1127" loading="lazy" style="object-position:50% 10%"></div>
-        <div class="trainer-body">
-          <span class="role">Physiocoach</span>
-          <h3>Hanna</h3>
-          <div class="spec">Physiotherapeutin · Pilatestrainerin · Personal Coachin</div>
-          <p>Hanna ist Physiotherapeutin mit über 20 Jahren Erfahrung – und der Mensch, mit dem bei Pilates Company alles begann. Als Gründerin und Inhaberin verbindet sie klassische Physiotherapie, Pilates und Personal Coaching, mit einem besonderen Schwerpunkt: Frauen in und durch die Wechseljahre zu begleiten. Für sie geht Physiocoaching noch ganzheitlicher – begleitend über mehrere Wochen, auf körperliche und mentale Gesundheit zugleich. Neben den therapeutischen Ansätzen gibt sie im Gespräch ganz bewusst Soft Skills für den Alltag mit, damit aus Behandlung aktive, selbstgestaltete Lebensqualität wird.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin:14px 0;">
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Physiotherapeutin</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Pilatestrainerin</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Manuelle Therapie</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Schmerzmanagement</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Schwerpunkt Wechseljahre</span>
-          </div>
-          <p style="font-style:italic;color:var(--clay);border-left:3px solid var(--clay);padding-left:12px;margin-top:10px;">„Unser Leben ist es wert, dass wir es aktiv in die Hand nehmen und gestalten.“</p>
-        </div>
-      </div>
-      <div class="trainer-card">
-        <div class="trainer-photo"><img src="/coach-nico.webp" alt="Porträt von Nico, Physiotherapeut und Physiocoach" width="811" height="480" loading="lazy" style="object-position:50% 0%"></div>
-        <div class="trainer-body">
-          <span class="role">Physiocoach</span>
-          <h3>Nico</h3>
-          <div class="spec">Physiotherapeut · Fitnesscoach</div>
-          <p>Nico ist staatlich anerkannter Physiotherapeut und Fitnesscoach – mit über 15 Jahren sportspezifischer Erfahrung. Wo klassisches Personal Training aufhört, bezieht er den medizinischen Kontext mit ein und holt über die kleinen Stellschrauben das letzte Stück Potenzial heraus. Unrunde Bewegungsabläufe erkennt er in Sekunden und optimiert sie gezielt – ob beim Einstieg, bei der Technikvertiefung oder beim Wiedereinstieg in den Sport.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin:14px 0;">
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Staatl. anerk. Physiotherapeut</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">KGG</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Manuelle Lymphdrainage</span>
-            <span style="font-size:.72rem;background:var(--sage);color:#fff;padding:5px 12px;border-radius:999px;">Fitnesstrainer B-Lizenz</span>
-          </div>
-          <p style="font-style:italic;color:var(--clay);border-left:3px solid var(--clay);padding-left:12px;margin-top:10px;">„Lachen ist gesund und gehört mit in meine Therapie.“</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="abschnitt" aria-labelledby="ablauf-h">
+  <p class="ueber">Schritt für Schritt</p>
+  <h2 id="ablauf-h">Der Ablauf deiner <em>Einheit</em></h2>
+  <p class="lead">Vom ersten Hallo bis zum Ausklang – damit du weißt, was dich erwartet.</p>
+  <ol class="pt-ablauf">
+    <li><h3>Ankommen &amp; Kennenlernen</h3><p>Du kommst in unser ruhiges Studio in Stockelsdorf. Ganz ohne Hektik.</p></li>
+    <li><h3>Physiotherapeutisches Check-in</h3><p>Wir sprechen über dein Level, Beschwerden oder Verletzungen und deine Ziele – mit physiotherapeutischem Blick.</p></li>
+    <li><h3>Aufwärmen am Reformer</h3><p>Du aktivierst deine Körpermitte und bereitest Muskulatur und Gelenke gezielt auf das Krafttraining vor – auf dein Tempo abgestimmt.</p></li>
+    <li><h3>Individuelles Training</h3><p>Im Zentrum steht gezieltes Krafttraining – sauber in der Technik, abgestimmt auf deine Beweglichkeit. Wir korrigieren in Echtzeit und fordern dich genau richtig.</p></li>
+    <li><h3>Ausklang &amp; Empfehlung</h3><p>Entspanntes Ausdehnen und – wenn du magst – eine Empfehlung, wie du deine Kraft Schritt für Schritt weiter aufbaust.</p></li>
+  </ol>
 </section>
 
-<!-- FINDER (KI-Chat) -->
-<section class="finder" id="finder">
-  <div class="wrap">
-    <span class="eyebrow">Dein Wegweiser</span>
-    <h2>Ist Physiocoaching das Richtige für dich?</h2>
-    <p class="intro">Beantworte ein paar kurze Fragen – unser Physiocoach-Assistent findet heraus, wer am besten zu dir passt: Hanna, Nico oder beide.</p>
-    <div class="chat-shell">
-      <div class="chat-head">
-        <div class="chat-avatar">✦</div>
-        <div>
-          <div class="nm">Physiocoach-Assistent</div>
-          <div class="st"><i></i>Online · antwortet sofort</div>
-        </div>
-      </div>
-      <div class="chat-body" id="chatBody"></div>
-      <div class="chat-opts" id="chatOpts"></div>
+<section class="band" aria-labelledby="einheit-h">
+  <div class="band-innen">
+    <p class="ueber">Die Einheit</p>
+    <h2 id="einheit-h" style="font-size:23px;line-height:1.2;margin-bottom:12px">60 Minuten ganz <em>für dich</em></h2>
+    <div class="text" style="margin-bottom:16px">
+      <p>Ob Einstieg, Technikvertiefung oder gezieltes Training nach einer Pause: In der Private Reformer Class arbeitest du allein mit Hanna oder Nico am Reformer – in ruhiger, persönlicher Atmosphäre.</p>
+      <p>Jede Einheit wird vollständig auf deine Bedürfnisse, dein Tempo und deine Ziele abgestimmt. So lernst du die Übungen sauber und sicher, spürst schnell Fortschritte und nimmst genau das mit, was dein Körper gerade braucht.</p>
     </div>
-  </div>
-</section>
-
-<!-- FÜR WEN -->
-<section class="forwho">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Für wen genau richtig</span>
-      <h2>Besonders gut aufgehoben bist du, wenn …</h2>
-    </div>
-    <div class="forwho-list">
-      <div class="forwho-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>… du <b>Beschwerden oder eine Vorgeschichte</b> hast (Rücken, Knie, Schulter, nach einer OP) und dich im normalen Studio nicht sicher fühlst.</p></div>
-      <div class="forwho-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>… deine <b>Physio-Behandlung ausläuft</b> und du den nächsten Schritt suchst – fit werden, ohne ins kalte Wasser zu springen.</p></div>
-      <div class="forwho-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>… du <b>über 40</b> bist und es diesmal richtig machen willst, ohne dich zu verletzen.</p></div>
-      <div class="forwho-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>… du nach <b>langer Pause, Krankheit oder Schwangerschaft</b> sicher wieder einsteigen möchtest.</p></div>
-      <div class="forwho-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>… du <b>Muskeln aufbauen</b> willst, aber Wert darauf legst, dass es deinem Körper dabei gut geht.</p></div>
-      <div class="forwho-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>… dir wichtig ist, dass dich jemand betreut, der <b>wirklich weiß, was er tut</b> – und Training trotzdem Spaß macht.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABLAUF -->
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Schritt für Schritt</span>
-      <h2>Der Ablauf deiner Einheit</h2>
-      <p>Vom ersten Hallo bis zum Ausklang – damit du weißt, was dich erwartet.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="num">01</div><h3>Ankommen & Kennenlernen</h3><p>Du kommst in unser ruhiges Studio in Stockelsdorf. Ganz ohne Hektik.</p></div>
-      <div class="step"><div class="num">02</div><h3>Physiotherapeutisches Check-in</h3><p>Wir sprechen über dein Level, Beschwerden oder Verletzungen und deine Ziele – mit physiotherapeutischem Blick.</p></div>
-      <div class="step"><div class="num">03</div><h3>Aufwärmen am Reformer</h3><p>Du aktivierst deine Körpermitte und bereitest Muskulatur und Gelenke gezielt auf das Krafttraining vor – auf dein Tempo abgestimmt.</p></div>
-      <div class="step"><div class="num">04</div><h3>Individuelles Training</h3><p>Im Zentrum steht gezieltes Krafttraining – sauber in der Technik, abgestimmt auf deine Beweglichkeit. Wir korrigieren in Echtzeit und fordern dich genau richtig.</p></div>
-      <div class="step"><div class="num">05</div><h3>Ausklang & Empfehlung</h3><p>Entspanntes Ausdehnen und – wenn du magst – eine Empfehlung, wie du deine Kraft Schritt für Schritt weiter aufbaust.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ANGEBOT -->
-<section class="forwho">
-  <div class="wrap offer">
-    <div>
-      <span class="eyebrow">Die Einheit</span>
-      <h2 style="font-size:2.1rem;margin:10px 0 14px">60 Minuten ganz für dich</h2>
-      <p style="color:var(--ink-soft);font-size:1.05rem;margin-bottom:14px">Ob Einstieg, Technikvertiefung oder gezieltes Training nach einer Pause: In der Private Reformer Class arbeitest du allein mit Hanna oder Nico am Reformer – in ruhiger, persönlicher Atmosphäre.</p>
-      <p style="color:var(--ink-soft);font-size:1.05rem">Jede Einheit wird vollständig auf deine Bedürfnisse, dein Tempo und deine Ziele abgestimmt. So lernst du die Übungen sauber und sicher, spürst schnell Fortschritte und nimmst genau das mit, was dein Körper gerade braucht.</p>
-    </div>
-    <div class="offer-card">
+    <article class="karte tint">
       <h3>Physiocoaching – Private Reformer Class</h3>
-      <div class="big">89 € <span style="font-size:1rem;color:var(--ink-soft)">/ Einheit</span></div>
-      <ul>
+      <div class="preis pt-preis">89 € <small>/ Einheit</small></div>
+      <ul class="pt-zeilen">
         <li><span>Dauer</span><span>60 Minuten</span></li>
         <li><span>Teilnehmer</span><span>1 Person · 1:1</span></li>
         <li><span>Verfügbarkeit</span><span>Mo – Sa</span></li>
         <li><span>Level</span><span>Jedes Level</span></li>
       </ul>
-      <a href="#anfrage" class="btn btn-primary" style="width:100%;text-align:center">Anfrage senden</a>
-      <div class="offer-note">Wir melden uns persönlich und finden gemeinsam einen Termin</div>
-    </div>
+      <a class="knopf" href="#anfrage">Anfrage senden</a>
+      <p class="klein" style="margin-top:10px">Wir melden uns persönlich und finden gemeinsam einen Termin</p>
+    </article>
   </div>
 </section>
 
-<!-- KONTAKT / FORMULAR -->
-<section class="contact" id="anfrage">
-  <div class="wrap">
-    <span class="eyebrow">Kontakt</span>
-    <h2>Stell deine Anfrage</h2>
-    <div class="grid">
-      <div>
-        <p class="sub">Du möchtest lieber erst Rücksprache halten? Füll das Formular aus – Hanna oder Nico melden sich schnell bei dir.</p>
-        <div class="info-block">
-          <strong>Pilates Company Lübeck</strong><br>
-          Segeberger Str. 1<br>
-          23617 Stockelsdorf<br>
-          Tel: <a href="tel:+4945116083019">0451 - 160 830 19</a><br>
-          E-Mail: <a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a>
-        </div>
+<section class="abschnitt" id="anfrage" aria-labelledby="anfrage-h">
+  <p class="ueber">Kontakt</p>
+  <h2 id="anfrage-h">Stell deine <em>Anfrage</em></h2>
+  <p class="lead">Du möchtest lieber erst Rücksprache halten? Füll das Formular aus – Hanna oder Nico melden sich schnell bei dir.</p>
+  <div class="karte" style="margin-top:14px">
+    <form class="form" data-pc-anfrage="personal-training">
+      <div><label for="pt-name">Name *</label><input id="pt-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+      <div class="pt-formgrid">
+        <div><label for="pt-email">E-Mail</label><input id="pt-email" name="email" type="email" autocomplete="email" maxlength="200"></div>
+        <div><label for="pt-tel">Telefon</label><input id="pt-tel" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
       </div>
-      <div>
-        <form data-pc-anfrage="personal-training">
-          <div><label for="pt-name">Name *</label><input id="pt-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
-          <div class="row">
-            <div><label for="pt-email">E-Mail</label><input id="pt-email" name="email" type="email" autocomplete="email" maxlength="200"></div>
-            <div><label for="pt-tel">Telefon</label><input id="pt-tel" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
-          </div>
-          <div><label for="pt-nachricht">Was möchtest du erreichen? (optional)</label><textarea id="pt-nachricht" name="message" rows="4" maxlength="4000" placeholder="z. B. Rücken stärken, nach einer Verletzung wieder einsteigen, Termine am Vormittag"></textarea></div>
-          <div class="pc-hp" aria-hidden="true"><label for="pt-website">Website</label><input id="pt-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-          <p class="pc-anfrage-hinweis">E-Mail oder Telefon genügt. Wir nutzen deine Angaben nur, um deine Anfrage zu beantworten. Mehr in der <a href="/datenschutz#kontaktformular">Datenschutzerklärung</a>.</p>
-          <button type="submit" class="form-submit">Anfrage senden</button>
-          <p class="pc-anfrage-status" role="alert"></p>
-        </form>
-      </div>
-    </div>
+      <div><label for="pt-nachricht">Was möchtest du erreichen? (optional)</label><textarea id="pt-nachricht" name="message" rows="4" maxlength="4000" placeholder="z. B. Rücken stärken, nach einer Verletzung wieder einsteigen, Termine am Vormittag"></textarea></div>
+      <div class="pc-hp" aria-hidden="true"><label for="pt-website">Website</label><input id="pt-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="klein pc-anfrage-hinweis">E-Mail oder Telefon genügt. Wir nutzen deine Angaben nur, um deine Anfrage zu beantworten. Mehr in der <a class="textlink" href="/datenschutz#kontaktformular">Datenschutzerklärung</a>.</p>
+      <button type="submit" class="knopf">Anfrage senden</button>
+      <p class="pc-anfrage-status" role="alert"></p>
+    </form>
+  </div>
+  <div class="kontakt-zeilen" style="margin-top:18px">
+    <div><span><b>Pilates Company Lübeck</b>Segeberger Str. 1, 23617 Stockelsdorf</span></div>
+    <a href="tel:+4945116083019"><span><b>Telefon</b>0451 - 160 830 19</span></a>
+    <a href="mailto:info@pilatescompany.de"><span><b>E-Mail</b>info@pilatescompany.de</span></a>
   </div>
 </section>
-
-<footer class="ft">
-  <div class="wrap">
-    <div class="ft-grid">
-      <div>
-        <div class="brand">Pilates Company Lübeck</div>
-        <p style="font-size:.9rem">Segeberger Str. 1 · 23617 Stockelsdorf<br>Direkt an der Grenze zu Lübeck</p>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <a href="https://pilatescompany.de/">Home</a>
-        <a href="https://pilatescompany.de/kurse">Kurse</a>
-        <a href="https://pilatescompany.de/reformer-pilates-luebeck">Reformer-Pilates</a>
-        <a href="https://pilatescompany.de/preise">Preise</a>
-        <a href="https://pilatescompany.de/trainer">Trainer</a>
-        <a href="https://pilatescompany.de/personal-training">Physiocoaching</a>
-      </div>
-      <div>
-        <h4>Rechtliches</h4>
-        <a href="https://pilatescompany.de/impressum">Impressum</a>
-        <a href="https://pilatescompany.de/datenschutz">Datenschutz</a>
-        <a href="https://www.instagram.com/my.pilatescompany">Instagram</a>
-      </div>
-    </div>
-    <div class="ft-base">
-      <span>© 2026 Pilates Company Lübeck. Alle Rechte vorbehalten.</span>
-      <span>Physiocoaching mit Physiocoaches</span>
-    </div>
+</main>
+<footer class="fuss">
+  <div class="inner">
+    <img src="/assets/logo-gross.png" alt="Pilates Company Lübeck" width="127" height="80" loading="lazy">
+    <address>Segeberger Str. 1<br>23617 Stockelsdorf bei Lübeck</address>
+    <div class="kontakt"><a href="tel:+4945116083019">0451 - 160 830 19</a><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></div>
+    <nav class="navi" aria-label="Fußzeile">
+      <a href="/kurse">Kurse</a><a href="/preise">Preise</a><a href="/trainer">Trainer</a><a href="/probetraining/">Probetraining</a>
+      <a href="/kontakt">Kontakt</a><a href="/kontakt#fragen">Häufige Fragen</a><a href="/gutschein">Gutschein</a><a href="/wellpass">Wellpass</a>
+      <a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="legal"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="https://mitglieder.pilatescompany.de/agb/">AGB</a></div>
+    <p class="copy">© 2026 Pilates Company Lübeck</p>
   </div>
 </footer>
-
-<script>
-  document.querySelector('.burger')?.addEventListener('click',function(){
-    var m=document.querySelector('nav.menu');
-    if(m) m.style.display = (m.style.display==='flex')?'none':'flex';
-  });
-</script>
-
+<script src="/script.js"></script>
+<script src="/last-minute.js" defer></script>
 <script>
 (function(){
   var Q=[
-    {bot:"Hi! Schön, dass du da bist. 👋 Ich helfe dir herauszufinden, welcher Physiocoach am besten zu dir passt – Hanna, Nico oder beide. Lass uns starten: Was ist gerade dein wichtigstes Ziel?",
+    {bot:"Hi! Schön, dass du da bist. Ich helfe dir herauszufinden, welcher Physiocoach am besten zu dir passt – Hanna, Nico oder beide. Lass uns starten: Was ist gerade dein wichtigstes Ziel?",
      a:[{t:"Kraft & Muskeln aufbauen",n:2,h:0},{t:"Beschwerden in den Griff bekommen",n:0,h:2},{t:"Fit & beweglich bleiben",n:1,h:1},{t:"Sicher wieder einsteigen",n:0,h:2}]},
     {bot:"Verstanden. Und wie würdest du deine aktuelle Situation beschreiben?",
      a:[{t:"Ich bin grundsätzlich fit",n:2,h:0},{t:"Ich habe ein paar Baustellen",n:0,h:2},{t:"Frau 40+, mit besonderen Themen",n:0,h:3},{t:"Gemischt – beides trifft zu",n:1,h:1}]},
@@ -543,14 +273,13 @@
   var body=document.getElementById('chatBody');
   var opts=document.getElementById('chatOpts');
   if(!body) return;
-
-  function bot(t){var d=document.createElement('div');d.className='bub-bot';d.textContent=t;body.appendChild(d);}
-  function usr(t){var d=document.createElement('div');d.className='bub-user';d.textContent=t;body.appendChild(d);}
-
+  function bubble(cls,t){var d=document.createElement('div');d.className=cls;d.textContent=t;body.appendChild(d);body.scrollTop=body.scrollHeight;}
+  function bot(t){bubble('pt-bot',t);}
+  function usr(t){bubble('pt-usr',t);}
   function render(){
     var item=Q[step];opts.innerHTML='';
     item.a.forEach(function(o){
-      var b=document.createElement('button');b.className='chat-opt';b.textContent=o.t;
+      var b=document.createElement('button');b.type='button';b.className='pt-opt';b.textContent=o.t;
       b.onclick=function(){
         usr(o.t);nico+=o.n;hannah+=o.h;step++;opts.innerHTML='';
         setTimeout(function(){if(step<Q.length){bot(Q[step].bot);render();}else{result();}},420);
@@ -558,36 +287,35 @@
       opts.appendChild(b);
     });
   }
-
   function result(){
     var total=nico+hannah,diff=Math.abs(nico-hannah);
-    var pct=total?Math.round(nico/total*100):50;
     var mode=diff<=2?'both':(nico>hannah?'nico':'hannah');
-    var title,sub,bd,ic;
-    if(mode==='nico'){ic='N';title='Dein Physiocoach ist Nico';sub='Physiotherapeut · Schwerpunkt Muskelaufbau';
+    var title,sub,bd;
+    if(mode==='nico'){title='Dein Physiocoach ist Nico';sub='Physiotherapeut · Schwerpunkt Muskelaufbau';
       bd='Dein Fokus ist klar: stärker werden und Muskeln aufbauen. Nico verbindet physiotherapeutisches Wissen mit gezieltem Aufbau-Know-how – fordernd, aber nie über die Grenze deines Körpers hinaus.';}
-    else if(mode==='hannah'){ic='H';title='Deine Physiocoachin ist Hanna';sub='Physiotherapeutin · 22+ Jahre Erfahrung';
+    else if(mode==='hannah'){title='Deine Physiocoachin ist Hanna';sub='Physiotherapeutin · 22+ Jahre Erfahrung';
       bd='Du bringst Themen mit, bei denen Erfahrung und Feingefühl zählen – besonders als Frau 40+. Hanna versteht genau, worauf es ankommt. Und ja: Auch für dich ist Muskelaufbau ein Schlüssel – sie baut ihn behutsam mit ein.';}
-    else{ic='✦';title='Du brauchst beide';sub='Hanna & Nico im Zusammenspiel';
+    else{title='Du brauchst beide';sub='Hanna & Nico im Zusammenspiel';
       bd='Deine Themen sind vielschichtig – genau dann spielt unser Studio seine Stärke aus. Du profitierst von Hannas Erfahrung UND Nicos Aufbau-Kompetenz. Denn gerade wenn der Körper Aufmerksamkeit braucht, ist Muskelaufbau der Schlüssel: für stabile Gelenke, starke Knochen und Kraft für die nächsten Jahre.';}
-
-    bot('Ich hab da was für dich. ✨');
-    var c=document.createElement('div');c.className='result-card';
-    c.innerHTML='<div class="rc-head"><div class="rc-ic">'+ic+'</div><div><h3>'+title+'</h3><div class="rc-sub">'+sub+'</div></div></div>'+
-      '<div class="rc-body">'+bd+'</div>';
+    bot('Ich hab da was für dich.');
+    var c=document.createElement('div');c.className='pt-ergebnis';
+    var h=document.createElement('h3');h.textContent=title;
+    var s=document.createElement('div');s.className='sub';s.textContent=sub;
+    var p=document.createElement('p');p.textContent=bd;
+    c.appendChild(h);c.appendChild(s);c.appendChild(p);
     body.appendChild(c);
     bot('Wenn das für dich passt, hinterlass uns einfach deine Daten – wir melden uns persönlich bei dir und finden gemeinsam einen Termin.');
-
-    var cta=document.createElement('a');cta.className='chat-cta';cta.href='#anfrage';cta.textContent='Anfrage senden →';
-    opts.appendChild(cta);
-    var r=document.createElement('button');r.className='chat-restart';r.textContent='Nochmal';
+    var box=document.createElement('div');box.className='pt-chat-aktion';
+    var cta=document.createElement('a');cta.className='knopf mittel';cta.href='#anfrage';cta.textContent='Anfrage senden';
+    box.appendChild(cta);
+    var r=document.createElement('button');r.type='button';r.className='knopf hell mittel';r.textContent='Nochmal';
     r.onclick=function(){step=0;nico=0;hannah=0;body.innerHTML='';opts.innerHTML='';bot(Q[0].bot);render();};
-    opts.appendChild(r);
+    box.appendChild(r);
+    opts.appendChild(box);
+    body.scrollTop=body.scrollHeight;
   }
-
   bot(Q[0].bot);render();
 })();
 </script>
-<script src="script.js"></script>
 </body>
 </html>

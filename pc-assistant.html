@@ -1,130 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frag uns – Pilates Company Lübeck</title>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Frag uns – Pilates Company Lübeck">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://pilatescompany.de/og-image.png">
+<meta name="theme-color" content="#FAF6F3">
+<meta name="format-detection" content="telephone=no">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/favicon.png">
-    <meta name="robots" content="noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frag uns – Pilates Company Lübeck</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Poppins', -apple-system, sans-serif;
-    background: #fdf9f7;
-    height: 100vh; display: flex; flex-direction: column; overflow: hidden;
-  }
-  .header {
-    background: #d9a49a;
-    color: #fff;
-    padding: 14px 18px;
-    display: flex; align-items: center; gap: 11px; flex-shrink: 0;
-  }
-  .header-icon {
-    width: 36px; height: 36px;
-    background: rgba(255,255,255,0.2); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; font-size: 17px;
-  }
-  .header-text h3 { font-size: 14px; font-weight: 600; }
-  .header-text p { font-size: 11px; opacity: 0.8; margin-top: 1px; }
-  .header-status { margin-left: auto; display: flex; align-items: center; gap: 5px; font-size: 11px; opacity: 0.85; }
-  .dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-
-  .messages {
-    flex: 1; overflow-y: auto; padding: 14px 13px;
-    display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
-  }
-  .msg {
-    max-width: 88%; padding: 11px 13px; border-radius: 14px;
-    font-size: 13.5px; line-height: 1.6; animation: fadeIn 0.2s ease;
-  }
-  @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1} }
-  .msg-bot {
-    background: #fff; border: 1px solid #ede8e4;
-    border-bottom-left-radius: 4px; align-self: flex-start; color: #2a2a2a;
-  }
-  .msg-user {
-    background: #d9a49a; color: #fff;
-    border-bottom-right-radius: 4px; align-self: flex-end;
-  }
-
-  .typing {
-    display: flex; gap: 4px; padding: 13px 15px;
-    background: #fff; border: 1px solid #ede8e4;
-    border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start;
-  }
-  .typing span {
-    width: 7px; height: 7px; border-radius: 50%; background: #d9a49a;
-    animation: bounce 1.2s infinite;
-  }
-  .typing span:nth-child(2){animation-delay:.2s} .typing span:nth-child(3){animation-delay:.4s}
-  @keyframes bounce { 0%,80%,100%{transform:translateY(0);opacity:.4} 40%{transform:translateY(-6px);opacity:1} }
-
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 13px 8px; }
-  .chip {
-    background: #fff; border: 1px solid #e0d8d4; border-radius: 20px;
-    padding: 6px 12px; font-size: 12.5px; color: #b07d76;
-    cursor: pointer; font-family: inherit; transition: all 0.15s; white-space: nowrap;
-  }
-  .chip:hover { background: #d9a49a; color: #fff; border-color: #d9a49a; }
-
-  .input-row {
-    padding: 9px 13px 13px; display: flex; gap: 8px; flex-shrink: 0;
-    background: #fdf9f7; border-top: 1px solid #ede8e4;
-  }
-  .input {
-    flex: 1; border: 1px solid #e0d8d4; border-radius: 22px;
-    padding: 9px 15px; font-size: 13.5px; font-family: inherit;
-    background: #fff; outline: none; color: #2a2a2a; height: 40px;
-    transition: border-color .15s;
-  }
-  .input:focus { border-color: #d9a49a; }
-  .send-btn {
-    width: 40px; height: 40px; background: #d9a49a; border: none;
-    border-radius: 50%; cursor: pointer; display: flex;
-    align-items: center; justify-content: center; flex-shrink: 0;
-    transition: background .15s;
-  }
-  .send-btn:hover { background: #c8857a; }
-  .send-btn svg { width: 17px; height: 17px; fill: #fff; }
-  .send-btn:disabled { opacity: 0.4; cursor: default; }
-
-  .hint { margin-top: 8px; padding-top: 8px; border-top: 1px solid #f5f0ed; font-size: 11.5px; color: #aaa; }
-  .hint a { color: #b07d76; text-decoration: none; font-weight: 500; }
-  .hint a:hover { text-decoration: underline; }
-  .cta-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-  .cta-btn {
-    background: #d9a49a; color: #fff; border: none; border-radius: 8px;
-    padding: 8px 13px; font-size: 12.5px; cursor: pointer; font-family: inherit;
-    text-decoration: none; display: inline-block; transition: background .15s;
-  }
-  .cta-btn:hover { background: #c8857a; }
-  .cta-btn.outline { background: transparent; color: #b07d76; border: 1px solid #d9a49a; }
-  .cta-btn.outline:hover { background: #d9a49a; color: #fff; }
+/* pc-assistant.html – Chat-Widget (Präfix ch-) */
+html,body{height:100%}
+body{display:flex;flex-direction:column;overflow:hidden;height:100vh;height:100dvh;background:var(--ground)}
+.ch-kopf{background:var(--cta-hover);color:#fff;padding:12px var(--pad);display:flex;align-items:center;gap:12px;flex-shrink:0}
+.ch-icon{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex:none}
+.ch-icon svg{width:20px;height:20px}
+.ch-kopf h1{font:600 14px/1.3 var(--f-body);color:#fff;letter-spacing:0}
+.ch-kopf p{font-size:12px;opacity:.9;margin-top:1px}
+.ch-status{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12px}
+.ch-punkt{width:8px;height:8px;border-radius:50%;background:#fff;animation:ch-puls 2s infinite}
+@keyframes ch-puls{0%,100%{opacity:1}50%{opacity:.4}}
+.ch-liste{flex:1;overflow-y:auto;padding:14px var(--pad);display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.ch-msg{max-width:88%;padding:11px 14px;border-radius:16px;font-size:14px;line-height:1.55}
+.ch-bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start;color:var(--ink)}
+.ch-user{background:var(--cta);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.ch-typing{display:flex;gap:4px;padding:13px 15px;background:#fff;border:1px solid var(--line);border-radius:16px;border-bottom-left-radius:4px;align-self:flex-start}
+.ch-typing span{width:7px;height:7px;border-radius:50%;background:var(--rose);animation:ch-hupf 1.2s infinite}
+.ch-typing span:nth-child(2){animation-delay:.2s}.ch-typing span:nth-child(3){animation-delay:.4s}
+@keyframes ch-hupf{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
+.ch-chips{display:flex;flex-wrap:wrap;gap:8px;padding:2px var(--pad) 8px}
+.ch-hint{margin-top:8px;padding-top:8px;border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--muted)}
+.ch-hint a{font-weight:500}
+.ch-cta{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.ch-eingabe{padding:10px var(--pad) calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;flex-shrink:0;background:var(--ground);border-top:1px solid var(--line-soft)}
+.ch-feld{flex:1;min-width:0;border:1.5px solid var(--field);border-radius:999px;padding:0 16px;font:inherit;font-size:16px;background:#fff;color:var(--ink);height:48px}
+.ch-feld:focus{outline:3px solid rgba(135,79,69,.35);border-color:var(--cta-hover)}
+.ch-senden{width:48px;height:48px;background:var(--cta);border:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ch-senden:hover{background:var(--cta-hover)}
+.ch-senden svg{width:18px;height:18px;fill:#fff}
+.ch-senden:disabled{opacity:.5;cursor:default}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-icon">🌸</div>
-  <div class="header-text">
-    <h3>Pilates Company Lübeck</h3>
+<header class="ch-kopf">
+  <div class="ch-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+  <div>
+    <h1>Pilates Company Lübeck</h1>
     <p>Deine persönliche Beraterin</p>
   </div>
-  <div class="header-status"><div class="dot"></div>Online</div>
-</div>
+  <div class="ch-status"><span class="ch-punkt" aria-hidden="true"></span>Online</div>
+</header>
 
-<div class="messages" id="msgs"></div>
-<div class="chips" id="chips"></div>
+<main id="inhalt" style="display:contents">
+<div class="ch-liste" id="msgs" role="log" aria-live="polite"></div>
+<div class="ch-chips" id="chips"></div>
 
-<div class="input-row">
-  <input class="input" id="inp" type="text" placeholder="Deine Frage …" autocomplete="off">
-  <button class="send-btn" id="sendBtn" onclick="send()">
-    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+<div class="ch-eingabe">
+  <input class="ch-feld" id="inp" type="text" placeholder="Deine Frage …" autocomplete="off" aria-label="Deine Frage">
+  <button class="ch-senden" id="sendBtn" type="button" onclick="send()" aria-label="Senden">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
   </button>
 </div>
+</main>
 
 <script>
 const STARTER = ['Probetraining 9,90 €','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
@@ -138,13 +85,13 @@ let count = 0;
 
 function addMsg(html, isUser) {
   const el = document.createElement('div');
-  el.className = 'msg ' + (isUser ? 'msg-user' : 'msg-bot');
+  el.className = 'ch-msg ' + (isUser ? 'ch-user' : 'ch-bot');
   el.innerHTML = html;
   msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
 }
 function showTyping() {
   const el = document.createElement('div');
-  el.className = 'typing'; el.id = 'typing';
+  el.className = 'ch-typing'; el.id = 'typing';
   el.innerHTML = '<span></span><span></span><span></span>';
   msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
 }
@@ -180,12 +127,12 @@ async function send() {
     history.push({ role: 'assistant', content: reply });
     count++;
 
-    addMsg(reply + '<div class="hint"><a href="/probetraining" target="_parent">Probetraining anfragen</a> · <a href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>', false);
+    addMsg(reply + '<div class="ch-hint"><a href="/probetraining" target="_parent">Probetraining anfragen</a> · <a href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>', false);
 
     if (count >= 8) {
       const el = document.createElement('div');
-      el.className = 'msg msg-bot';
-      el.innerHTML = 'Du hast viele tolle Fragen gestellt! Am besten lernen wir uns persönlich kennen – buch dir einfach ein Probetraining für 9,90 € oder ruf uns an.<div class="cta-row"><a class="cta-btn" href="/probetraining" target="_parent">Probetraining buchen</a><a class="cta-btn outline" href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>';
+      el.className = 'ch-msg ch-bot';
+      el.innerHTML = 'Du hast viele tolle Fragen gestellt! Am besten lernen wir uns persönlich kennen – buch dir einfach ein Probetraining für 9,90 € oder ruf uns an.<div class="ch-cta"><a class="knopf mittel" href="/probetraining" target="_parent">Probetraining buchen</a><a class="knopf hell mittel" href="tel:045116083019" target="_parent">0451 - 160 830 19</a></div>';
       msgs.appendChild(el); msgs.scrollTop = msgs.scrollHeight;
       count = 0;
     } else {
@@ -193,7 +140,6 @@ async function send() {
       if (l.match(/probe|einstieg|anfänger|neu/)) setChips(['Probetraining 9,90 €','Was erwartet mich?','Probetraining buchen']);
       else if (l.match(/reformer/)) setChips(['Was kostet Reformer Membership?','Probetraining 9,90 €','Unterschied Matte vs Reformer']);
       else if (l.match(/preis|kostet|member|abo/)) setChips(['Was kostet eine Mitgliedschaft?','Alle Preise ansehen','Wellpass-Zuzahlung']);
-      else if (l.match(/aerial|yoga|fliegen|hänge/)) setChips(['Wer unterrichtet Aerial?','Ist Aerial für Anfänger?','Kursplan ansehen']);
       else if (l.match(/trainer|team|wer/)) setChips(['Welche Trainerin passt zu mir?','Probetraining buchen','Alle Kurse anzeigen']);
       else setChips(['Probetraining anfragen','Kursplan ansehen','Membership-Vergleich']);
     }

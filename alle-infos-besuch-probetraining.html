@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/favicon.png">
-
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#faf7f4">
-<meta name="format-detection" content="telephone=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
 <title>So findest du uns – Pilates Company Lübeck</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="description" content="Alle Infos für deinen Besuch bei Pilates Company Lübeck: Wo dein Kurs stattfindet, Anfahrt, Parken und was du mitbringen solltest.">
 <meta name="robots" content="noindex, nofollow">
-
-<!-- Open Graph: steuert die Link-Vorschau in WhatsApp & Co. (Bild MUSS absolute URL sein) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pilates Company Lübeck">
 <meta property="og:title" content="So findest du uns – Pilates Company Lübeck">
@@ -22,516 +15,174 @@
 <meta property="og:image" content="https://pilatescompany.de/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="theme-color" content="#FAF6F3">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --rose:        #d9a49a;
-    --rose-light:  #f5ede9;
-    --rose-mid:    #b0796e;
-    --rose-dark:   #8f5d53;
-    --cream:       #faf7f4;
-    --text:        #2c2825;
-    --text-mid:    #5a5450;
-    --text-soft:   #8a847d;
-    --text-onrose: #3d3128;
-    --border:      rgba(44,40,37,.1);
-    --border-soft: rgba(44,40,37,.14);
-    --sans:        'Poppins', system-ui, sans-serif;
-    --heading:     'Playfair Display', serif;
-    --radius:      12px;
-    --gutter:      clamp(15px, 4.5vw, 20px);
-    --section-gap: clamp(34px, 8vw, 46px);
-  }
-
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%; /* iOS vergrößert sonst im Querformat eigenmächtig */
-  }
-
-  body {
-    font-family: var(--sans);
-    background: var(--cream);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    overscroll-behavior-y: none;
-    /* Reserve für die feste Hilfe-Leiste inkl. Home-Indikator */
-    padding-bottom: calc(104px + env(safe-area-inset-bottom));
-  }
-
-  h1, h2, h3 { font-family: var(--heading); font-weight: 400; }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
-
-  a {
-    color: var(--rose-mid);
-    -webkit-tap-highlight-color: rgba(176,121,110,.18);
-  }
-  a:hover { color: var(--rose-dark); }
-
-  /* ---------- Kopfzeile ---------- */
-
-  .topbar {
-    background: #fff;
-    border-bottom: 1px solid var(--border);
-    padding: calc(12px + env(safe-area-inset-top)) 20px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .topbar img { height: clamp(44px, 12vw, 54px); width: auto; display: block; }
-
-  .container { max-width: 660px; margin: 0 auto; padding: 0 var(--gutter); }
-
-  /* ---------- Buttons ---------- */
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 46px;
-    padding: 0 18px;
-    border-radius: 100px;
-    text-decoration: none;
-    font-size: 14.5px;
-    font-weight: 500;
-    line-height: 1.2;
-    transition: filter .15s ease;
-  }
-  .btn:hover { filter: brightness(.95); }
-
-  .btn--dark    { background: var(--text); color: var(--cream); }
-  .btn--dark:hover { color: var(--cream); }
-  .btn--light   { background: #fff; border: 1px solid var(--border-soft); color: var(--text); }
-  .btn--light:hover { color: var(--text); }
-  .btn--rose    { background: var(--rose-light); color: var(--rose-dark); min-height: 48px; font-size: 15px; }
-  .btn--rose:hover { color: var(--rose-dark); }
-  .btn--white   { background: #fff; color: var(--rose-dark); min-height: 48px; padding: 0 22px; font-size: 15px; }
-  .btn--white:hover { color: var(--rose-dark); }
-  .btn--outline { background: transparent; border: 1.5px solid var(--text); color: var(--text); min-height: 48px; padding: 0 22px; font-size: 15px; }
-  .btn--outline:hover { color: var(--text); }
-
-  /* ---------- Kopf ---------- */
-
-  .hero {
-    padding: clamp(26px, 7vw, 38px) 0 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
-  }
-  .tag {
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--rose-mid);
-    background: var(--rose-light);
-    padding: 6px 14px;
-    border-radius: 100px;
-  }
-  .hero h1 {
-    font-size: clamp(30px, 7vw, 40px);
-    line-height: 1.15;
-    letter-spacing: -.01em;
-  }
-
-  /* ---------- Karte „Dein Kurs" ---------- */
-
-  .mine {
-    margin-top: 22px;
-    background: #fff;
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .mine-top { padding: 20px 18px 16px; display: flex; flex-direction: column; gap: 4px; }
-  .mine-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--rose-mid);
-  }
-  .mine-course { font-family: var(--heading); font-size: clamp(24px, 6vw, 30px); line-height: 1.2; }
-  .mine-time { color: var(--text-mid); font-size: 15.5px; }
-
-  .mine-where {
-    background: var(--rose-light);
-    border-top: 1px solid var(--border);
-    padding: 16px 18px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .mine-room { font-family: var(--heading); font-size: 21px; line-height: 1.25; color: var(--rose-dark); }
-  .facts { display: flex; flex-wrap: wrap; gap: 8px; }
-  .fact {
-    flex: 1 1 130px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
-  .fact-label {
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-mid);
-  }
-  .fact-value { font-size: 16px; font-weight: 500; line-height: 1.3; }
-  .fact--key { background: var(--rose-dark); flex-basis: 100%; }
-  .fact--key .fact-label { color: rgba(255,255,255,.78); }
-  .fact--key .fact-value { color: #fff; }
-
-  /* ---------- Abschnitte ---------- */
-
-  .section {
-    padding: var(--section-gap) 0 0;
-    scroll-margin-top: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .section-head { display: flex; flex-direction: column; gap: 6px; }
-  .section-label {
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--rose-mid);
-  }
-  .section h2 {
-    font-size: clamp(24px, 5.5vw, 30px);
-    line-height: 1.2;
-    letter-spacing: -.01em;
-  }
-  .section-intro { color: var(--text-mid); font-size: 15.5px; text-wrap: pretty; }
-  .section-intro strong,
-  .card-text strong { color: var(--text); font-weight: 500; }
-
-  /* ---------- Info-Karten ---------- */
-
-  .cards { display: flex; flex-wrap: wrap; gap: 10px; }
-
-  .card {
-    flex: 1 1 260px;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .card-label {
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-mid);
-  }
-  .card-addr { font-size: 16.5px; line-height: 1.5; }
-  .card-addr strong { font-weight: 500; }
-  .card-text { color: var(--text-mid); font-size: 15.5px; text-wrap: pretty; }
-
-  .note {
-    flex: 1 1 145px;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .note-title { font-family: var(--heading); font-size: 17px; }
-  .note-sub   { font-size: 13.5px; color: var(--text-mid); }
-  .note--rose { background: var(--rose-light); border-color: rgba(44,40,37,.06); }
-  .note--rose .note-title,
-  .note--rose .note-sub { color: var(--rose-dark); }
-
-  /* ---------- Alle Räume (einheitliche Karten) ---------- */
-
-  .rooms { display: flex; flex-direction: column; gap: 10px; }
-
-  .room {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .room--mine { border-color: var(--rose-mid); box-shadow: 0 0 0 1px var(--rose-mid); }
-  .room-name { font-family: var(--heading); font-size: 19px; line-height: 1.25; }
-  .room-sub { font-size: 14px; color: var(--text-mid); }
-  .room-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .pill {
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    padding: 5px 11px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-  .pill--left  { background: var(--rose-dark); color: #fff; }
-  .pill--right { background: var(--text); color: #fff; }
-  .pill--floor { background: var(--rose-light); color: var(--rose-dark); }
-
-  details.more { border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
-  details.more > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 16px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    font-weight: 500;
-    font-size: 15.5px;
-    min-height: 52px;
-  }
-  details.more > summary::-webkit-details-marker { display: none; }
-  details.more > summary::after { content: '+'; font-size: 22px; line-height: 1; color: var(--rose-mid); }
-  details.more[open] > summary::after { content: '–'; }
-  details.more .rooms { padding: 0 12px 12px; }
-
-  /* ---------- Kontakt ---------- */
-
-  .contact {
-    margin: var(--section-gap) 0 0;
-    background: var(--rose);
-    border-radius: var(--radius);
-    padding: clamp(26px, 7vw, 32px) clamp(18px, 5vw, 24px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
-  }
-  .contact h3 { font-size: 24px; color: var(--text); }
-  .contact p  { color: var(--text-onrose); font-size: 15px; max-width: 28em; text-wrap: pretty; }
-  .contact-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    padding-top: 6px;
-  }
-
-  footer {
-    padding: 28px 0 32px;
-    text-align: center;
-    font-size: 13px;
-    color: var(--text-soft);
-    line-height: 1.7;
-  }
-  footer a {
-    color: var(--rose-mid);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rose);
-  }
-
-  /* ---------- Feste Hilfe-Leiste ---------- */
-
-  .helpbar {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 50;
-    background: rgba(250,247,244,.94);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border);
-    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-  }
-  .helpbar-inner {
-    max-width: 660px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .helpbar-text {
-    flex: 1 1 0;
-    min-width: 0;
-    overflow: hidden;
-    font-size: 12.5px;
-    color: var(--text-mid);
-    line-height: 1.3;
-  }
-  .helpbar-text strong { color: var(--text); font-weight: 500; }
-  /* Buttons geben nie nach: die Textspalte schrumpft zuerst */
-  .helpbar .btn {
-    flex: 0 1 auto;
-    min-height: 48px;
-    font-size: 15px;
-    white-space: nowrap;
-  }
-  .helpbar .btn--dark  { padding: 0 clamp(14px, 4vw, 20px); }
-  .helpbar .btn--light { padding: 0 clamp(14px, 4vw, 18px); }
-
+/* alle-infos-besuch-probetraining.html (Präfix ai-) */
+[hidden]{display:none!important}
+.ai-kurs{display:block;font-family:var(--f-display);font-size:clamp(24px,6vw,28px);line-height:1.2;margin-top:2px}
+.ai-zeit{display:block;color:var(--body);font-size:14.5px;margin-top:4px}
+.ai-wo{margin:16px -18px -18px;padding:16px 18px 18px;background:var(--tint);border-top:1px solid var(--line-soft);border-radius:0 0 4px 22px}
+.ai-raum{display:block;font-family:var(--f-display);font-size:21px;line-height:1.25;color:var(--cta-hover);margin-bottom:12px}
+.ai-fakten{display:flex;flex-wrap:wrap;gap:8px}
+.ai-fakt{flex:1 1 130px;background:#fff;border-radius:12px;padding:10px 14px}
+.ai-fakt.schluessel{flex-basis:100%;background:var(--cta-hover);color:#fff}
+.ai-fakt .l{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ai-fakt.schluessel .l{color:rgba(255,255,255,.85)}
+.ai-fakt .w{display:block;font-size:15.5px;font-weight:500;line-height:1.35}
+.ai-raeume{display:flex;flex-direction:column;gap:10px}
+.ai-room{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.ai-room--mine{border-color:var(--cta);box-shadow:0 0 0 1.5px var(--cta)}
+.ai-room b{font-family:var(--f-display);font-weight:400;font-size:19px;line-height:1.25}
+.ai-room > span{font-size:13.5px;color:var(--body);font-weight:300}
+.ai-pillen{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.ai-pille{display:inline-flex;align-items:center;min-height:26px;padding:0 11px;border-radius:999px;font-size:12px;font-weight:600;background:var(--sand);color:var(--ink)}
+.ai-pille.links{background:var(--cta-hover);color:#fff}
+.ai-pille.vorn{background:var(--ink);color:#fff}
+.ai-more{border:1px solid var(--line);border-radius:14px;background:#fff}
+.ai-more > summary{list-style:none;cursor:pointer;padding:12px 18px;min-height:52px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:500;font-size:15px}
+.ai-more > summary::-webkit-details-marker{display:none}
+.ai-more > summary::after{content:"+";font-size:22px;line-height:1;color:var(--cta)}
+.ai-more[open] > summary::after{content:"\2013"}
+.ai-more .ai-raeume{padding:0 12px 12px}
+.ai-mit li:last-child{grid-column:1 / -1;background:var(--tint)}
+.probe .knopf.ai-wa{background:transparent;color:#fff;border:1.5px solid #fff}
+.probe .knopf.ai-wa:hover{background:rgba(255,255,255,.12)}
+.ai-aktionen{display:flex;flex-direction:column;gap:10px}
 </style>
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+  <a class="kopf-probe" href="/probetraining/">Probetraining<span class="lang"> buchen</span></a>
+  <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
+  <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+</header>
 
-<div class="topbar">
-  <a href="/">
-    <img src="logo.png" alt="Pilates Company Lübeck">
-  </a>
-</div>
-
-<div class="container">
-
-  <div class="hero">
-    <span class="tag">Dein Besuch</span>
-    <h1>So findest du uns</h1>
+<nav class="menu" id="menu" aria-label="Hauptmenü">
+  <div class="oben">
+    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+    <button class="rund" id="menuZu" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
+  <div class="grp"><p>Training</p>
+    <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div>
+  <div class="grp"><p>Studio</p>
+    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a></div>
+  <div class="grp"><p>Mehr</p>
+    <a href="/gutschein">Gutschein</a><a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="/kontakt">Kontakt</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
+</nav>
+<main id="inhalt" class="seite">
+<section class="einstieg">
+  <p class="ueber">Dein Besuch</p>
+  <h1>So findest du uns</h1>
+</section>
 
-  <!-- Dein Kurs: erscheint nur, wenn der Link Kurs und Raum mitbringt (WhatsApp-Knopf) -->
-  <section class="mine" id="mine" hidden aria-live="polite">
-    <div class="mine-top">
-      <span class="mine-label">Dein Kurs</span>
-      <span class="mine-course" id="mineCourse"></span>
-      <span class="mine-time" id="mineTime" hidden></span>
-    </div>
-    <div class="mine-where">
-      <span class="mine-room" id="mineRoom"></span>
-      <div class="facts">
-        <div class="fact fact--key">
-          <span class="fact-label">Eingang</span>
-          <span class="fact-value" id="mineDoor"></span>
-        </div>
-        <div class="fact">
-          <span class="fact-label">Etage</span>
-          <span class="fact-value" id="mineFloor"></span>
-        </div>
+<!-- Dein Kurs: erscheint nur, wenn der Link Kurs und Raum mitbringt (WhatsApp-Knopf) -->
+<section class="abschnitt" id="mine" hidden aria-live="polite">
+  <div class="karte">
+    <p class="ueber">Dein Kurs</p>
+    <span class="ai-kurs" id="mineCourse"></span>
+    <span class="ai-zeit" id="mineTime" hidden></span>
+    <div class="ai-wo">
+      <span class="ai-raum" id="mineRoom"></span>
+      <div class="ai-fakten">
+        <div class="ai-fakt schluessel"><span class="l">Eingang</span><span class="w" id="mineDoor"></span></div>
+        <div class="ai-fakt"><span class="l">Etage</span><span class="w" id="mineFloor"></span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- Räume: ohne Kurs-Angabe offen und ganz oben, mit Kurs-Angabe eingeklappt -->
-  <section id="raeume" class="section">
-    <div class="section-head" id="roomsHead">
-      <span class="section-label">Eingang &amp; Räume</span>
-      <h2>Wo findet dein Kurs statt?</h2>
-      <p class="section-intro">Das <strong>Boutique Studio</strong> erreichst du direkt von der Straße an der <strong>Vorderseite</strong> des Gebäudes. Alle anderen Räume liegen im 1. Obergeschoss – dorthin geht es über die <strong>linke Gebäudeseite</strong>, durch dieselbe Tür wie zu Physio Pro Lübeck. Such dir hier deinen Raum heraus – er steht auch in deiner Buchung.</p>
-    </div>
-
-    <details class="more" id="roomsBox" open>
-      <summary id="roomsSummary">Alle Räume im Überblick</summary>
-      <div class="rooms">
-
-        <div class="room" data-room="matte">
-          <span class="room-name">Matte/Yoga – Pilatesraum</span>
-          <span class="room-sub">Pilates, Yoga, Aerial &amp; alle Mattenkurse</span>
-          <div class="room-tags">
-            <span class="pill pill--left">Linke Gebäudeseite</span>
-            <span class="pill pill--floor">1. OG</span>
-          </div>
-        </div>
-
-        <div class="room" data-room="boutique">
-          <span class="room-name">Boutique Studio</span>
-          <span class="room-sub">Reformer · 8 Plätze</span>
-          <div class="room-tags">
-            <span class="pill pill--right">Vorderseite · Straße</span>
-            <span class="pill pill--floor">Erdgeschoss</span>
-          </div>
-        </div>
-
-        <div class="room" data-room="club">
-          <span class="room-name">Club Studio</span>
-          <span class="room-sub">Reformer · 5 Plätze</span>
-          <div class="room-tags">
-            <span class="pill pill--left">Linke Gebäudeseite</span>
-            <span class="pill pill--floor">1. OG</span>
-          </div>
-        </div>
-
-      </div>
-    </details>
-  </section>
-
-  <!-- Ankommen -->
-  <section id="ankommen" class="section">
-    <div class="section-head">
-      <span class="section-label">Anfahrt &amp; Parken</span>
-      <h2>Ankommen</h2>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <span class="card-label">Adresse</span>
-        <p class="card-addr"><strong>Pilates Company Lübeck</strong><br>Segeberger Str. 1<br>23617 Stockelsdorf (bei Lübeck)</p>
-        <a class="btn btn--rose" href="https://www.google.com/maps/search/?api=1&amp;query=Segeberger+Str.+1+23617+Stockelsdorf" target="_blank" rel="noopener">In Google Maps öffnen →</a>
-      </div>
-      <div class="card">
-        <span class="card-label">Parken</span>
-        <p class="card-text">Parkplätze findest du auf der <strong>linken Seite des Hauses</strong>. Zusätzlich können alle Parkplätze von <strong>Physiopro Lübeck</strong> mitgenutzt werden.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gut zu wissen -->
-  <section class="section">
-    <div class="section-head">
-      <span class="section-label">Gut zu wissen</span>
-      <h2>Was du mitbringst</h2>
-    </div>
-    <div class="cards">
-      <div class="note">
-        <span class="note-title">Handtuch</span>
-        <span class="note-sub">mitbringen</span>
-      </div>
-      <div class="note">
-        <span class="note-title">Etwas zu trinken</span>
-        <span class="note-sub">einpacken</span>
-      </div>
-      <div class="note note--rose">
-        <span class="note-title">Vorfreude</span>
-        <span class="note-sub">wir freuen uns auf dich!</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="contact">
-    <h3>Noch Fragen?</h3>
-    <p>Sollte irgendetwas unklar sein – melde dich jederzeit, wir helfen gerne weiter.</p>
-    <div class="contact-actions">
-      <a class="btn btn--white" href="tel:+4945116083019">0451 - 160 830 19</a>
-      <a class="btn btn--outline" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Besuch." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
+</section>
 
-  <footer>
-    Pilates Company Lübeck · Segeberger Str. 1 · 23617 Stockelsdorf<br>
-    <a href="/">Zur Startseite</a>
-  </footer>
-
-</div>
-
-<div class="helpbar">
-  <div class="helpbar-inner">
-    <span class="helpbar-text">Etwas unklar?<br><strong>Wir sind erreichbar.</strong></span>
-    <a class="btn btn--dark" href="tel:+4945116083019">Anrufen</a>
-    <a class="btn btn--light" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Besuch." target="_blank" rel="noopener">WhatsApp</a>
+<!-- Räume: ohne Kurs-Angabe offen und ganz oben, mit Kurs-Angabe eingeklappt -->
+<section class="abschnitt" id="raeume" aria-labelledby="raeume-h">
+  <div id="roomsHead">
+    <p class="ueber">Eingang &amp; Räume</p>
+    <h2 class="h" id="raeume-h">Wo findet dein Kurs statt?</h2>
+    <p class="lead" style="margin-top:-6px">Das <strong>Boutique Studio</strong> erreichst du direkt von der Straße an der <strong>Vorderseite</strong> des Gebäudes. Alle anderen Räume liegen im 1. Obergeschoss – dorthin geht es über die <strong>linke Gebäudeseite</strong>, durch dieselbe Tür wie zu Physio Pro Lübeck. Such dir hier deinen Raum heraus – er steht auch in deiner Buchung.</p>
   </div>
-</div>
+  <details class="ai-more" id="roomsBox" open>
+    <summary id="roomsSummary">Alle Räume im Überblick</summary>
+    <div class="ai-raeume">
+      <div class="ai-room" data-room="matte">
+        <b>Matte/Yoga – Pilatesraum</b>
+        <span>Pilates, Yoga &amp; alle Mattenkurse</span>
+        <div class="ai-pillen"><span class="ai-pille links">Linke Gebäudeseite</span><span class="ai-pille">1. OG</span></div>
+      </div>
+      <div class="ai-room" data-room="boutique">
+        <b>Boutique Studio</b>
+        <span>Reformer · 8 Plätze</span>
+        <div class="ai-pillen"><span class="ai-pille vorn">Vorderseite · Straße</span><span class="ai-pille">Erdgeschoss</span></div>
+      </div>
+      <div class="ai-room" data-room="club">
+        <b>Club Studio</b>
+        <span>Reformer · 5 Plätze</span>
+        <div class="ai-pillen"><span class="ai-pille links">Linke Gebäudeseite</span><span class="ai-pille">1. OG</span></div>
+      </div>
+    </div>
+  </details>
+</section>
 
+<!-- Ankommen -->
+<section class="abschnitt" id="ankommen" aria-labelledby="ankommen-h">
+  <p class="ueber">Anfahrt &amp; Parken</p>
+  <h2 class="h" id="ankommen-h">Ankommen</h2>
+  <div class="raster">
+    <div class="karte">
+      <p class="ueber">Adresse</p>
+      <p class="t" style="margin-top:0;font-size:15.5px;color:var(--ink)"><strong>Pilates Company Lübeck</strong><br>Segeberger Str. 1<br>23617 Stockelsdorf (bei Lübeck)</p>
+      <a class="knopf hell mittel" href="https://www.google.com/maps/search/?api=1&amp;query=Segeberger+Str.+1+23617+Stockelsdorf" target="_blank" rel="noopener">In Google Maps öffnen</a>
+    </div>
+    <div class="karte">
+      <p class="ueber">Parken</p>
+      <p class="t" style="margin-top:0">Parkplätze findest du auf der <strong>linken Seite des Hauses</strong>. Zusätzlich können alle Parkplätze von <strong>Physiopro Lübeck</strong> mitgenutzt werden.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gut zu wissen -->
+<section class="abschnitt vorteile" aria-labelledby="mit-h">
+  <p class="ueber">Gut zu wissen</p>
+  <h2 class="h" id="mit-h">Was du mitbringst</h2>
+  <ul class="ai-mit">
+    <li><b>Handtuch</b><span>mitbringen</span></li>
+    <li><b>Etwas zu trinken</b><span>einpacken</span></li>
+    <li><b>Vorfreude</b><span>wir freuen uns auf dich!</span></li>
+  </ul>
+</section>
+
+<section class="probe" aria-labelledby="fragen-h">
+  <h2 id="fragen-h">Noch Fragen?</h2>
+  <p class="t">Sollte irgendetwas unklar sein – melde dich jederzeit, wir helfen gerne weiter.</p>
+  <div class="ai-aktionen">
+    <a class="knopf" href="tel:+4945116083019">0451 - 160 830 19</a>
+    <a class="knopf ai-wa" href="https://wa.me/491751266117?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Besuch." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</section>
+</main>
+<footer class="fuss">
+  <div class="inner">
+    <img src="/assets/logo-gross.png" alt="Pilates Company Lübeck" width="127" height="80" loading="lazy">
+    <address>Segeberger Str. 1<br>23617 Stockelsdorf bei Lübeck</address>
+    <div class="kontakt"><a href="tel:+4945116083019">0451 - 160 830 19</a><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></div>
+    <nav class="navi" aria-label="Fußzeile">
+      <a href="/kurse">Kurse</a><a href="/preise">Preise</a><a href="/trainer">Trainer</a><a href="/probetraining/">Probetraining</a>
+      <a href="/kontakt">Kontakt</a><a href="/kontakt#fragen">Häufige Fragen</a><a href="/gutschein">Gutschein</a><a href="/wellpass">Wellpass</a>
+      <a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="legal"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="https://mitglieder.pilatescompany.de/agb/">AGB</a></div>
+    <p class="copy">© 2026 Pilates Company Lübeck</p>
+  </div>
+</footer>
+<script src="/script.js"></script>
+<script src="/last-minute.js" defer></script>
 <script>
 /* Dein Kurs
    Der WhatsApp-Knopf hängt Kurs, Raum und Zeit an den Link:
@@ -580,8 +231,8 @@
   document.getElementById('mine').hidden = false;
 
   // Raumliste: eigener Raum markiert, Rest eingeklappt, Überschrift passend
-  var mark = document.querySelector('.room[data-room="' + key + '"]');
-  if (mark) mark.classList.add('room--mine');
+  var mark = document.querySelector('.ai-room[data-room="' + key + '"]');
+  if (mark) mark.classList.add('ai-room--mine');
   document.getElementById('roomsBox').open = false;
   document.getElementById('roomsHead').hidden = true;
 
@@ -590,6 +241,5 @@
   ank.parentNode.insertBefore(rae, ank.nextSibling);
 })();
 </script>
-
 </body>
 </html>

@@ -3,184 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/favicon.png">
-<meta name="theme-color" content="#FAF6F3">
-<meta name="format-detection" content="telephone=no">
 <title>Last-Minute-Plätze · Pilates Company Lübeck</title>
 <meta name="description" content="Kurzfristig frei gewordene Reformer-Plätze in Stockelsdorf bei Lübeck, 19,90 €.">
-<!-- Bis Oliver last_minute_aktiv einschaltet: noindex, nicht in sitemap.xml, nirgends fest verlinkt
-     (alle Verweise erscheinen nur bei aktiv=true). Nach dem Einschalten: "index, follow" und in die Sitemap. -->
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://pilatescompany.de/last-minute">
 <meta property="og:site_name" content="Pilates Company Lübeck">
 <meta property="og:title" content="Last-Minute-Plätze · Pilates Company Lübeck">
 <meta property="og:description" content="Kurzfristig frei gewordene Reformer-Plätze in Stockelsdorf bei Lübeck, 19,90 €.">
 <meta property="og:image" content="https://pilatescompany.de/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pilatescompany.de/last-minute">
+<link rel="canonical" href="https://pilatescompany.de/last-minute">
+<meta name="theme-color" content="#FAF6F3">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://mitglieder.pilatescompany.de" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap">
-<!--
-  Last-Minute-Seite (Oliver, 23.10.2026). Stil wie /preise. Die Liste kommt live aus Studio OS
-  (mitglieder.pilatescompany.de/api/last-minute, last-minute.js). Gekauft wird im Portal
-  (mitglieder.pilatescompany.de/last-minute/<termin>?q=<quelle>).
--->
-<style>
-:root{
-  --ground:#FAF6F3; --sheet:#FFFFFF; --sand:#F1E5E0; --tint:#FBF1EE;
-  --ink:#241D1A; --body:#4E4541; --muted:#6F625D;
-  --cta:#9C6055; --cta-hover:#874F45; --rose:#C79086;
-  --line:#E9DAD4; --line-soft:#F0E3DE;
-  --pad:16px; --col:560px;
-  --f-display:"Playfair Display", Georgia, serif; --f-body:Poppins, system-ui, -apple-system, sans-serif;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--ground);color:var(--ink);font:15px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:var(--cta)}
-h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;letter-spacing:-.015em;text-wrap:balance}
-h1 em,h2 em{color:var(--cta)}
-p{margin:0}
-button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--cta);outline-offset:2px;border-radius:6px}
-.seite{max-width:var(--col);margin:0 auto;padding-bottom:calc(100px + env(safe-area-inset-bottom))}
-.ueber{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#7D6660;margin:0 0 8px}
-section{scroll-margin-top:70px}
+<link rel="stylesheet" href="/assets/site.css">
 
-/* Kopf + Menü */
-.kopf{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:8px;padding:10px var(--pad);background:rgba(250,246,243,.94);
-      -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line-soft)}
-.kopf .marke{margin-right:auto;line-height:0;display:inline-flex;align-items:center}
-  .marke .heim{display:inline-flex;align-items:center;gap:2px;margin-left:10px;padding:5px 10px 5px 7px;border:1px solid #E8DCD6;border-radius:999px;font-size:13px;font-weight:500;line-height:1;color:#5B4A44;background:#fff;vertical-align:middle;white-space:nowrap;text-decoration:none}
-  .marke{text-decoration:none}
-.kopf .marke img{height:30px;width:auto}
-.rund{width:44px;height:44px;flex:none;border-radius:999px;border:1px solid var(--line);background:var(--sheet);display:flex;align-items:center;justify-content:center;padding:0;color:var(--ink)}
-.rund svg{width:19px;height:19px}
-.burger{flex-direction:column;gap:5px}
-.burger i{display:block;width:16px;height:1.5px;background:var(--ink);border-radius:2px}
-.menu{position:fixed;inset:0;z-index:60;max-width:var(--col);margin:0 auto;background:var(--ground);overflow-y:auto;padding:14px var(--pad) calc(28px + env(safe-area-inset-bottom));display:none}
-.menu.offen{display:block}
-.menu .oben{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-.menu .oben img{height:30px;width:auto}
-.menu .grp{margin-bottom:18px}
-.menu .grp p{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.menu .grp a{display:flex;justify-content:space-between;align-items:center;min-height:48px;font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-soft)}
-.menu .grp a:last-child{border-bottom:0}
-.menu .grp a span{font-size:11px;color:var(--muted);font-weight:400}
-body.menu-offen{overflow:hidden}
-
-/* Einstieg */
-.einstieg{padding:22px var(--pad) 0}
-.einstieg h1{font-size:clamp(28px,7.8vw,36px);line-height:1.12}
-.lead{margin-top:10px;font-size:14.5px;line-height:1.6;color:var(--body);font-weight:300}
-
-.knopf{min-height:54px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;background:var(--cta);color:#fff;font-size:15.5px;font-weight:600;text-decoration:none;border:0;width:100%}
-.knopf:hover{background:var(--cta-hover)}
-.knopf.hell{background:var(--sheet);color:var(--ink);border:1px solid var(--line)}
-.knopf.hell:hover{background:var(--tint)}
-
-
-/* Termine */
-.termine{padding:26px var(--pad) 0}
-.termine h2,.fragen h2{font-size:23px;line-height:1.2;margin-bottom:14px}
-.lm-liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.lm-termin{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px 12px;padding:14px;border-radius:4px 22px 4px 22px;background:var(--sheet);border:1px solid var(--line-soft);box-shadow:0 18px 40px -30px rgba(60,38,32,.45)}
-.lm-txt{min-width:0}
-.lm-txt b{display:block;font-size:15px;font-weight:600;line-height:1.3}
-.lm-txt span{font-size:13px;color:var(--muted)}
-.lm-preis{font-family:var(--f-display);font-size:22px;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
-.lm-kauf{grid-column:1 / -1;min-height:48px;font-size:15px}
-.lm-leer{padding:18px 16px;border-radius:14px;background:var(--sand)}
-.lm-leer p{font-size:14.5px;line-height:1.55;color:var(--body)}
-.lm-leer .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.lm-leer .links a{min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);font-size:14px;font-weight:500;color:var(--ink);text-decoration:none}
-.neu{margin:18px var(--pad) 0;padding:14px 16px;border-radius:14px;background:var(--tint);font-size:14px;line-height:1.55;color:var(--body)}
-.neu a{font-weight:600}
-
-/* Fragen */
-.fragen{padding:30px var(--pad) 0}
-.fragen details{border-top:1px solid var(--line)}
-.fragen details:last-of-type{border-bottom:1px solid var(--line)}
-.fragen summary{list-style:none;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.5px;font-weight:500;cursor:pointer;padding:6px 0}
-.fragen summary::-webkit-details-marker{display:none}
-.fragen summary i{font-style:normal;color:var(--cta);font-size:20px;transition:transform .2s ease;flex:none}
-.fragen details[open] summary i{transform:rotate(45deg)}
-.fragen details p{padding-bottom:14px;font-size:13.5px;line-height:1.6;color:var(--body);font-weight:300}
-.hinweis{margin:18px var(--pad) 0;font-size:12px;color:var(--muted);font-weight:300;line-height:1.55}
-
-/* Restplatz-Mail */
-.liste{margin:18px var(--pad) 0;padding:18px 16px;border-radius:4px 22px 4px 22px;background:var(--sheet);border:1px solid var(--line-soft)}
-.liste h2{font-size:21px;line-height:1.2;margin-bottom:6px}
-.liste .lead{margin-top:0;margin-bottom:12px}
-.liste label.feld{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin:10px 0 4px}
-.liste input[type=text],.liste input[type=email]{width:100%;min-height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
-.liste fieldset{border:0;margin:12px 0 0;padding:0}
-.liste legend{font-size:12.5px;font-weight:500;color:var(--muted);margin-bottom:4px;padding:0}
-.liste .wahl{display:flex;gap:10px;align-items:flex-start;min-height:44px;padding:8px 0;font-size:14px;line-height:1.45;color:var(--body);cursor:pointer}
-.liste .wahl input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:var(--cta)}
-.liste .einw{font-size:13px}
-.liste .knopf{margin-top:12px}
-.liste .status{font-size:13.5px;margin-top:10px;min-height:1.2em;color:var(--body)}
-.liste .status.fehler{color:#9C3B30}
-.liste .danke{font-size:14.5px;line-height:1.6;color:var(--body)}
-.pc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-
-footer{margin-top:30px;background:var(--ink);color:#CFC3BE;padding:26px var(--pad) calc(110px + env(safe-area-inset-bottom))}
-footer .inner{max-width:var(--col);margin:0 auto}
-footer address{font-style:normal;font-size:13.5px;line-height:1.7;font-weight:300}
-footer .tel{display:inline-flex;margin-top:10px;font-size:16px;font-weight:500;color:#fff;text-decoration:none}
-footer .legal{display:flex;gap:18px;margin-top:16px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px}
-footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
-
-@media (min-width:700px){ .lm-termin{grid-template-columns:1fr auto 180px} .lm-kauf{grid-column:auto} }
-@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important} }
-</style>
-<style id="kopf-probe-stil">
-.kopf-probe{display:inline-flex;align-items:center;padding:0 14px;height:40px;border-radius:999px;background:var(--cta,#9C6055);color:#fff;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
-@media (max-width:440px){ .kopf .marke .heim{display:none} }
-@media (max-width:350px){ .kopf-probe{font-size:12px;padding:0 10px} }
-</style>
 </head>
 <body>
-<div class="seite">
-
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf">
-  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="logo.png" alt="Pilates Company Lübeck" width="56" height="30"><span class="heim" aria-hidden="true">‹ Startseite</span></a>
-  <a class="kopf-probe" href="/probetraining/">Probetraining buchen</a>
-  <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.06s.89 2.39 1.01 2.56c.12.16 1.75 2.67 4.23 3.74 2.07.82 2.49.66 2.94.62.45-.04 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
-  </a>
+  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+  <a class="kopf-probe" href="/probetraining/">Probetraining<span class="lang"> buchen</span></a>
+  <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
   <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
 
 <nav class="menu" id="menu" aria-label="Hauptmenü">
   <div class="oben">
-    <a href="/"><img src="logo.png" alt="Pilates Company Lübeck" width="56" height="30"></a>
+    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
     <button class="rund" id="menuZu" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="grp"><p>Training</p>
-    <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a>
-    <a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div>
+    <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div>
   <div class="grp"><p>Studio</p>
-    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a><a href="/downloads">Downloads</a></div>
+    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a></div>
   <div class="grp"><p>Mehr</p>
-    <a href="/gutschein">Gutschein</a><a href="/last-minute" aria-current="page">Last-Minute</a><a href="/kontakt">Kontakt</a>
-    <a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a>
-    <a href="/english" hreflang="en">English<span>EN</span></a>
-    <a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
+    <a href="/gutschein">Gutschein</a><a href="/last-minute" aria-current="page" data-lm-zeige style="display:none">Last-Minute</a><a href="/kontakt">Kontakt</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
 </nav>
-
+<main id="inhalt" class="seite">
 <section class="einstieg">
   <p class="ueber">Last-Minute · Stockelsdorf bei Lübeck</p>
   <h1>Kurzfristig <em>frei geworden.</em></h1>
   <p class="lead">Wird in einem Reformer-Kurs kurzfristig ein Platz frei, kannst du ihn bis 60 Minuten vor Beginn für 19,90 € buchen. Bezahlt wird direkt per Karte.</p>
 </section>
 
-<section class="termine" aria-labelledby="termine-h">
+<section class="abschnitt" aria-labelledby="termine-h">
   <h2 id="termine-h">Gerade frei</h2>
   <ul class="lm-liste" id="lm-liste" style="display:none"></ul>
   <div class="lm-leer" id="lm-leer">
@@ -211,7 +83,6 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
 
 <p class="neu">Neu bei uns? <a href="/probetraining/">Starte mit dem Probetraining für 9,90 €</a></p>
 
-<!-- Wortlaut zu Storno und Widerruf passend zu AGB § 7a (24.10.2026). -->
 <section class="fragen" id="fragen" aria-labelledby="fragen-h">
   <h2 id="fragen-h">Häufige Fragen</h2>
   <details><summary>Wer kann buchen?<i aria-hidden="true">+</i></summary>
@@ -229,16 +100,23 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
 </section>
 
 <p class="hinweis">Alle Preise inkl. MwSt. Es gelten unsere <a href="https://mitglieder.pilatescompany.de/agb/">AGB</a>. Fragen? Ruf uns an unter 0451 - 160 830 19 oder schreib uns per WhatsApp.</p>
-</div>
-
-<footer>
+</main>
+<footer class="fuss">
   <div class="inner">
-    <address>Pilates Company Lübeck<br>Segeberger Str. 1 · 23617 Stockelsdorf</address>
-    <a class="tel" href="tel:+4945116083019">0451 - 160 830 19</a>
-    <div class="legal"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/kontakt">Kontakt</a></div>
+    <img src="/assets/logo-gross.png" alt="Pilates Company Lübeck" width="127" height="80" loading="lazy">
+    <address>Segeberger Str. 1<br>23617 Stockelsdorf bei Lübeck</address>
+    <div class="kontakt"><a href="tel:+4945116083019">0451 - 160 830 19</a><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></div>
+    <nav class="navi" aria-label="Fußzeile">
+      <a href="/kurse">Kurse</a><a href="/preise">Preise</a><a href="/trainer">Trainer</a><a href="/probetraining/">Probetraining</a>
+      <a href="/kontakt">Kontakt</a><a href="/kontakt#fragen">Häufige Fragen</a><a href="/gutschein">Gutschein</a><a href="/wellpass">Wellpass</a>
+      <a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="legal"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="https://mitglieder.pilatescompany.de/agb/">AGB</a></div>
+    <p class="copy">© 2026 Pilates Company Lübeck</p>
   </div>
 </footer>
-
+<script src="/script.js"></script>
+<script src="/last-minute.js" defer></script>
 <script>
 // Restplatz-Mail ohne Konto: Anfrage an Studio OS, Bestätigung per Mail (Double-Opt-in)
 (function () {
@@ -272,23 +150,6 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
         status.className = 'status fehler'; knopf.disabled = false; knopf.textContent = 'Eintragen';
       });
   });
-})();
-</script>
-<script src="/last-minute.js" defer></script>
-<script>
-(function () {
-  'use strict';
-  // Menü
-  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
-  function setMenu(auf) {
-    menu.classList.toggle('offen', auf); document.body.classList.toggle('menu-offen', auf);
-    burger.setAttribute('aria-expanded', String(auf));
-    (auf ? document.getElementById('menuZu') : burger).focus({ preventScroll: true });
-  }
-  burger.addEventListener('click', function () { setMenu(true); });
-  document.getElementById('menuZu').addEventListener('click', function () { setMenu(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('offen')) setMenu(false); });
-
 })();
 </script>
 </body>
