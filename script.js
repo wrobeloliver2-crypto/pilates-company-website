@@ -115,6 +115,34 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('offen')) setMenu(false); });
 });
 
+// ── DESKTOP-MENÜ (Aufklapp-Bereiche in der Kopfzeile) ──
+document.addEventListener('DOMContentLoaded', function () {
+  var nav = document.querySelector('.hauptnav');
+  if (!nav) return;
+  var punkte = nav.querySelectorAll('.ebene');
+  function zu() { punkte.forEach(function (li) { li.querySelector('button').setAttribute('aria-expanded', 'false'); }); }
+  punkte.forEach(function (li) {
+    var b = li.querySelector('button');
+    function auf(an) { b.setAttribute('aria-expanded', String(an)); }
+    li.addEventListener('mouseenter', function () { nav.removeAttribute('data-zu'); auf(true); });
+    li.addEventListener('mouseleave', function () { auf(false); });
+    li.addEventListener('focusin', function () { nav.removeAttribute('data-zu'); auf(true); });
+    li.addEventListener('focusout', function (e) { if (!li.contains(e.relatedTarget)) auf(false); });
+    b.addEventListener('click', function (e) {
+      // Maus/Touch: Hover hat schon geöffnet, der Klick lässt offen. Tastatur (Enter/Leertaste): umschalten.
+      var tastatur = e.detail === 0;
+      var offen = b.getAttribute('aria-expanded') === 'true' && !nav.hasAttribute('data-zu');
+      if (tastatur && offen) { nav.setAttribute('data-zu', ''); auf(false); } else { nav.removeAttribute('data-zu'); auf(true); }
+    });
+  });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) { nav.setAttribute('data-zu', ''); zu(); } });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    nav.setAttribute('data-zu', ''); zu();
+    if (nav.contains(document.activeElement)) document.activeElement.blur();
+  });
+});
+
 // ── STUDIO NEWS (Google Sheets) ──
 const NEWS_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7jQ1nTLKVXPoI-ndhl35ds5YbmpI5DOWbMX1ivGTgmxeZNGLEU-Eex4BfMEg3-KJJZbTHLdbcNNRF/pub?output=csv';
 let newsLoaded = false;
