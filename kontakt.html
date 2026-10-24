@@ -603,6 +603,14 @@
   .kontakt-item a:hover { color: var(--rose-dark); }
 
   .kontakt-form { }
+  .pc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .pc-anfrage-hinweis { font-size: .82rem; color: var(--text-mid); margin-bottom: 1.25rem; line-height: 1.5; }
+  .pc-anfrage-hinweis a { color: var(--rose-dark); }
+  .pc-anfrage-status { font-size: .88rem; margin-top: .75rem; min-height: 1.2em; }
+  .pc-anfrage-status.fehler { color: #b0796e; }
+  .pc-anfrage-danke { margin-top: 1.5rem; padding: 1.25rem 1.5rem; border-radius: var(--radius); background: var(--rose-light); color: var(--text); }
+  /* Die Regel unter „RESPONSIVE – TABLET“ greift auf dieser Seite nicht (CSS davor fehlerhaft), daher hier */
+  @media (max-width: 900px) { .kontakt-layout { grid-template-columns: 1fr; gap: 2rem; } }
   .form-row { margin-bottom: 1.25rem; }
   .form-row label {
     display: block; font-size: .8rem; letter-spacing: .06em;
@@ -1003,7 +1011,6 @@
   }
 
 </style>
- <script src="https://js-eu1.hsforms.net/forms/embed/v2.js" charset="utf-8"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1182,11 +1189,10 @@
 }
 </script>
 <style id="pc-nav-priority">
-  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Videos, Gutschein, Downloads) liegen im Hamburger-Menü */
+  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Gutschein, Downloads) liegen im Hamburger-Menü */
   @media (min-width: 769px) {
     .nav-links li:has(> a[href="/ausbildung"]),
     .nav-links li:has(> a[href="/studio-news"]),
-    .nav-links li:has(> a[href="/challenge"]),
     .nav-links li:has(> a[href="/gutschein"]),
     .nav-links li:has(> a[href="/downloads"]) { display: none; }
     .hamburger { display: flex; margin-left: 1rem; }
@@ -1251,7 +1257,6 @@
   <a href="/personal-training">PHYSIOCOACHING</a>
   <a href="/ausbildung">AUSBILDUNG</a>
   <a href="/studio-news">NEWS</a>
-  <a href="/challenge">VIDEOS</a>
   <a href="/gutschein">GUTSCHEIN</a>
   <a href='/downloads'>DOWNLOADS</a>
   <a href="/wellpass">WELLPASS</a>
@@ -1276,11 +1281,16 @@
       <div class="kontakt-layout">
         <div>
           <h3>Schreib uns</h3>
-          <div id="kontakt-form-wrapper" style="margin-top:1.5rem;">
-            <div id="kontakt-form-loading" style="text-align:center; padding:2rem 0; color:var(--warm-gray); font-size:.9rem;">
-              Formular wird geladen…
-            </div>
-          </div>
+          <form class="kontakt-form" data-pc-anfrage="kontakt" style="margin-top:1.5rem;">
+            <div class="form-row"><label for="k-name">Name *</label><input id="k-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+            <div class="form-row"><label for="k-email">E-Mail *</label><input id="k-email" name="email" type="email" autocomplete="email" maxlength="200" required></div>
+            <div class="form-row"><label for="k-tel">Telefon (optional)</label><input id="k-tel" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+            <div class="form-row"><label for="k-nachricht">Deine Nachricht *</label><textarea id="k-nachricht" name="message" maxlength="4000" required></textarea></div>
+            <div class="pc-hp" aria-hidden="true"><label for="k-website">Website</label><input id="k-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <p class="pc-anfrage-hinweis">Wir nutzen deine Angaben nur, um deine Anfrage zu beantworten. Mehr in der <a href="/datenschutz#kontaktformular">Datenschutzerklärung</a>.</p>
+            <button type="submit" class="btn btn-primary">Nachricht senden</button>
+            <p class="pc-anfrage-status" role="alert"></p>
+          </form>
         </div>
 
         <div>
