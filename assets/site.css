@@ -82,6 +82,7 @@ body.menu-offen{overflow:hidden}
 .hero .knoepfe{display:flex;flex-direction:column;gap:10px;margin-top:18px}
 .hero-bild{margin-top:22px;border-radius:var(--r-card);overflow:hidden;background:var(--sand);aspect-ratio:4/3}
 .hero-bild img{width:100%;height:100%;object-fit:cover}
+.hero-bild.quer img{object-position:82% center}
 .sprung{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .sprung a,.chip{min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none}
 .sprung a:hover,.chip:hover{background:var(--tint)}
@@ -273,6 +274,7 @@ body.menu-offen{overflow:hidden}
 /* ---------- Bilder in Karten, Team-Vorschau, Fakten ---------- */
 .karte .bild{margin:-18px -18px 14px;aspect-ratio:3/2;overflow:hidden;border-radius:4px 22px 0 0;background:var(--sand)}
 .karte .bild img{width:100%;height:100%;object-fit:cover}
+.bild img[src$="kurs-pilates.webp"]{object-position:82% 30%!important}
 .team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
 .team li{text-align:left}
 .team .foto{aspect-ratio:3/4;border-radius:4px 16px 4px 16px;overflow:hidden;background:var(--sand);margin-bottom:8px}
@@ -355,6 +357,8 @@ body.menu-offen{overflow:hidden}
   .hero:has(.hero-bild){display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-auto-rows:min-content;column-gap:64px;align-items:center;align-content:center}
   .hero:has(.hero-bild) > *{grid-column:1}
   .hero:has(.hero-bild) > .hero-bild{grid-column:2;grid-row:1/span 8;margin-top:0;aspect-ratio:4/5;max-height:620px}
+  .hero:has(.hero-bild) > .hero-bild.quer{aspect-ratio:5/4}
+  .hero-bild:not(.quer) img{object-position:center 30%}
   .hero h1{font-size:clamp(44px,4.4vw,58px);line-height:1.07}
   .hero .lead{font-size:17px}
   .hero .knoepfe{max-width:none;margin-top:26px}
