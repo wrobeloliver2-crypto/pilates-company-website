@@ -8,7 +8,13 @@
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
   gtag('js', new Date());
-  gtag('config', 'AW-18174020065');
+  gtag('config', 'AW-18174020065', { linker: { domains: ['mitglieder.pilatescompany.de'] } });
+  // Klicks auf Abschluss und Probetraining (vorher nur auf /preise)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null; if (!a || !a.href) return;
+    if (a.href.indexOf('mitglied-werden') !== -1) window.dataLayer.push({ event: 'mitglied_werden_klick' });
+    if (a.href.indexOf('/probetraining') !== -1) window.dataLayer.push({ event: 'probetraining_buchen_klick' });
+  });
 })();
 
 // ══════════════════════════════════════════════════════════════════
@@ -92,6 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+// ── MENÜ (Vollbild-Overlay, neue Kopfzeile) ──
+document.addEventListener('DOMContentLoaded', function () {
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu'), zu = document.getElementById('menuZu');
+  if (!burger || !menu) return;
+  function setMenu(auf) {
+    menu.classList.toggle('offen', auf);
+    document.body.classList.toggle('menu-offen', auf);
+    burger.setAttribute('aria-expanded', String(auf));
+    (auf && zu ? zu : burger).focus({ preventScroll: true });
+  }
+  burger.addEventListener('click', function () { setMenu(true); });
+  if (zu) zu.addEventListener('click', function () { setMenu(false); });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('offen'); document.body.classList.remove('menu-offen'); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('offen')) setMenu(false); });
+});
+
 // ── STUDIO NEWS (Google Sheets) ──
 const NEWS_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7jQ1nTLKVXPoI-ndhl35ds5YbmpI5DOWbMX1ivGTgmxeZNGLEU-Eex4BfMEg3-KJJZbTHLdbcNNRF/pub?output=csv';
 let newsLoaded = false;
@@ -150,8 +173,8 @@ function buildNewsCard(n) {
   div.className = 'news-card';
   const datum = n.datum ? new Date(n.datum).toLocaleDateString('de-DE', {day:'2-digit', month:'long', year:'numeric'}) : '';
   const imgHtml = n.bild_url
-    ? `<div class="news-card-img"><img src="${n.bild_url}" alt="${n.titel}" onerror="this.parentNode.innerHTML='<div class=news-card-img-placeholder><img src=logo-platzhalter.png></div>'"></div>`
-    : `<div class="news-card-img"><div class="news-card-img-placeholder"><img src="logo-platzhalter.png" alt="logo"></div></div>`;
+    ? `<div class="news-card-img"><img src="${n.bild_url}" alt="${n.titel}" onerror="this.parentNode.innerHTML='<div class=news-card-img-placeholder><img src=/assets/logo-klein.png></div>'"></div>`
+    : `<div class="news-card-img"><div class="news-card-img-placeholder"><img src="/assets/logo-klein.png" alt="logo"></div></div>`;
   const videoHtml = n.video_url ? `<div class="news-card-video"><a href="${n.video_url}" target="_blank">▶ Video ansehen</a></div>` : '';
   const autorHtml = n.autor ? `<span class="news-card-autor">✍ ${n.autor}</span>` : '';
   div.innerHTML = `${imgHtml}<div class="news-card-body">
@@ -241,13 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     #pc-qa-overlay.open { display:flex; }
     #pc-qa-box {
-      background:#fdf9f7;border-radius:20px;max-width:460px;width:100%;
+      background:#FAF6F3;border-radius:20px;max-width:460px;width:100%;
       height:580px;overflow:hidden;position:relative;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
       display:flex;flex-direction:column;font-family:'Poppins',sans-serif;
     }
     #pc-qa-header {
-      background:#d9a49a;color:#fff;padding:14px 18px;
+      background:#9C6055;color:#fff;padding:14px 18px;
       display:flex;align-items:center;gap:11px;flex-shrink:0;
     }
     #pc-qa-header-icon {
@@ -269,19 +292,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     @keyframes pcFade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
     .pc-msg-bot {
-      background:#fff;border:1px solid #ede8e4;
-      border-bottom-left-radius:4px;align-self:flex-start;color:#2a2a2a;
+      background:#fff;border:1px solid #F0E3DE;
+      border-bottom-left-radius:4px;align-self:flex-start;color:#241D1A;
     }
     .pc-msg-user {
-      background:#d9a49a;color:#fff;
+      background:#9C6055;color:#fff;
       border-bottom-right-radius:4px;align-self:flex-end;
     }
     .pc-typing {
       display:flex;gap:4px;padding:13px 15px;background:#fff;
-      border:1px solid #ede8e4;border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;
+      border:1px solid #F0E3DE;border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;
     }
     .pc-typing span {
-      width:7px;height:7px;border-radius:50%;background:#d9a49a;
+      width:7px;height:7px;border-radius:50%;background:#9C6055;
       animation:pcBounce 1.2s infinite;
     }
     .pc-typing span:nth-child(2){animation-delay:.2s}
@@ -289,43 +312,43 @@ document.addEventListener('DOMContentLoaded', () => {
     @keyframes pcBounce{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
     #pc-qa-chips {display:flex;flex-wrap:wrap;gap:6px;padding:2px 13px 8px;}
     .pc-chip {
-      background:#fff;border:1px solid #e0d8d4;border-radius:20px;
-      padding:6px 12px;font-size:12.5px;color:#b07d76;
+      background:#fff;border:1px solid #E9DAD4;border-radius:20px;
+      padding:6px 12px;font-size:12.5px;color:#874F45;
       cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;
     }
-    .pc-chip:hover{background:#d9a49a;color:#fff;border-color:#d9a49a;}
+    .pc-chip:hover{background:#9C6055;color:#fff;border-color:#9C6055;}
     #pc-qa-input-row {
       padding:9px 13px 13px;display:flex;gap:8px;flex-shrink:0;
-      background:#fdf9f7;border-top:1px solid #ede8e4;
+      background:#FAF6F3;border-top:1px solid #F0E3DE;
     }
     #pc-qa-input {
-      flex:1;min-width:0;border:1px solid #e0d8d4;border-radius:22px;
+      flex:1;min-width:0;border:1.5px solid #948780;border-radius:22px;
       padding:9px 15px;font-size:16px;font-family:inherit;
-      background:#fff;outline:none;color:#2a2a2a;height:40px;
+      background:#fff;outline:none;color:#241D1A;height:40px;
     }
-    #pc-qa-input:focus{border-color:#d9a49a;}
+    #pc-qa-input:focus{border-color:#9C6055;}
     #pc-qa-send {
-      width:40px;height:40px;background:#d9a49a;border:none;
+      width:40px;height:40px;background:#9C6055;border:none;
       border-radius:50%;cursor:pointer;display:flex;align-items:center;
       justify-content:center;flex-shrink:0;transition:background .15s;
     }
-    #pc-qa-send:hover{background:#c8857a;}
+    #pc-qa-send:hover{background:#874F45;}
     #pc-qa-send:disabled{opacity:.4;cursor:default;}
-    .pc-hint{margin-top:8px;padding-top:8px;border-top:1px solid #f5f0ed;font-size:11.5px;color:#aaa;}
-    .pc-hint a{color:#b07d76;text-decoration:none;font-weight:500;}
+    .pc-hint{margin-top:8px;padding-top:8px;border-top:1px solid #F0E3DE;font-size:11.5px;color:#6F625D;}
+    .pc-hint a{color:#874F45;text-decoration:none;font-weight:500;}
     .pc-cta-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
-    .pc-cta-btn{background:#d9a49a;color:#fff;border:none;border-radius:8px;padding:8px 13px;font-size:12.5px;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;}
-    .pc-cta-btn.outline{background:transparent;color:#b07d76;border:1px solid #d9a49a;}
+    .pc-cta-btn{background:#9C6055;color:#fff;border:none;border-radius:8px;padding:8px 13px;font-size:12.5px;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;}
+    .pc-cta-btn.outline{background:transparent;color:#874F45;border:1px solid #9C6055;}
     #pc-float-btn {
       position:fixed;top:50%;right:0;transform:translateY(-50%);
-      z-index:8000;background:#d9a49a;color:#fff;border:none;
+      z-index:8000;background:#9C6055;color:#fff;border:none;
       border-radius:10px 0 0 10px;padding:14px 16px;
       font-size:14px;font-weight:600;font-family:inherit;
       cursor:pointer;display:flex;align-items:center;gap:8px;
-      box-shadow:-3px 0 16px rgba(217,164,154,.45);
+      box-shadow:-3px 0 16px rgba(156,96,85,.4);
       transition:padding .2s,box-shadow .2s;white-space:nowrap;
     }
-    #pc-float-btn:hover{padding-right:22px;box-shadow:-5px 0 22px rgba(217,164,154,.6);}
+    #pc-float-btn:hover{padding-right:22px;box-shadow:-5px 0 22px rgba(156,96,85,.55);}
     @media(max-width:640px){
       #pc-qa-box{height:85vh;border-radius:20px 20px 0 0;}
       #pc-qa-overlay{align-items:flex-end;padding:0;}
@@ -336,21 +359,21 @@ document.addEventListener('DOMContentLoaded', () => {
       #pc-mobile-bar{
         display:flex;align-items:center;gap:10px;
         position:fixed;bottom:0;left:0;right:0;z-index:8500;
-        background:rgba(250,247,244,.94);backdrop-filter:blur(10px);
-        border-top:1px solid rgba(0,0,0,.08);
-        padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+        background:rgba(250,246,243,.97);backdrop-filter:blur(12px);
+        border-top:1px solid #F0E3DE;
+        padding:10px 16px calc(12px + env(safe-area-inset-bottom));
       }
       #pc-mobile-bar a,#pc-mobile-bar button{
         flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
-        font-family:inherit;font-size:.9rem;font-weight:600;
-        padding:.7rem .9rem;border-radius:100px;cursor:pointer;
+        font-family:inherit;font-size:14.5px;font-weight:600;
+        min-height:52px;padding:0 14px;border-radius:14px;cursor:pointer;
         white-space:nowrap;border:none;text-decoration:none;line-height:1;
       }
-      #pc-mobile-bar .pc-bar-member{background:#d9a49a;color:#fff;}
-      #pc-mobile-bar .pc-bar-chat{background:#fff;color:#b0796e;border:1px solid #e6d3cd;}
+      #pc-mobile-bar .pc-bar-member{background:#9C6055;color:#fff;}
+      #pc-mobile-bar .pc-bar-chat{background:#fff;color:#241D1A;border:1px solid #E9DAD4;}
       #pc-mobile-bar .pc-bar-chat svg{width:16px;height:16px;}
       body.pc-chat-open #pc-mobile-bar{display:none!important;}
-      footer{padding-bottom:5.5rem!important;}
+      footer,.fuss{padding-bottom:6.5rem!important;}
     }
   `;
   document.head.appendChild(style);

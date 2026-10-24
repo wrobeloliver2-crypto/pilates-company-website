@@ -51,3 +51,7 @@
 # Alter KI-Preisassistent (Eversports-Tarife) ist durch /preise ersetzt
 /preisassistent     /preise                                                  301!
 /preisassistent.html /preise                                                 301!
+
+# Altes Logo (ersetzt am 24.10.2026)
+/logo.png /assets/logo.png 301
+/logo-platzhalter.png /assets/logo-klein.png 301

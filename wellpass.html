@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pilates mit Wellpass bei Lübeck | Pilates Company</title>
 <meta name="description" content="Mit Wellpass bei der Pilates Company in Stockelsdorf bei Lübeck trainieren: Pilates auf der Matte ohne Zuzahlung, gebucht wird direkt in der Wellpass-App.">
 <meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://pilatescompany.de/wellpass">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pilatescompany.de/wellpass">
 <meta property="og:title" content="Wellpass Lübeck – Pilates & Yoga mit Wellpass">
@@ -20,8 +13,7 @@
 <meta property="og:image" content="https://pilatescompany.de/probetraining.jpg">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Pilates Company Lübeck">
-
-<!-- Schema.org FAQ + LocalBusiness -->
+<link rel="canonical" href="https://pilatescompany.de/wellpass">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,580 +62,125 @@
   ]
 }
 </script>
-
+<meta name="theme-color" content="#FAF6F3">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --rose:       #d9a49a;
-    --rose-light: #f5ede9;
-    --rose-dark:  #b0796e;
-    --cream:      #faf7f4;
-    --text:       #2c2825;
-    --text-mid:   #5a5450;
-    --border:     rgba(44,40,37,.1);
-    --sans:       'Poppins', system-ui, sans-serif;
-    --heading:    'Playfair Display', serif;
-    --nav-h:      136px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    padding-top: var(--nav-h);
-    font-family: var(--sans);
-    background: var(--cream);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  h1, h2, h3, h4 { font-family: var(--heading); font-weight: 400; }
-  h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.15; }
-  h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; }
-  h3 { font-size: 1.4rem; line-height: 1.3; }
-
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-  .section { padding: 5rem 0; }
-  .tag {
-    display: inline-block;
-    background: var(--rose-light);
-    color: var(--rose-dark);
-    font-size: .75rem;
-    font-weight: 500;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: .35rem .9rem;
-    border-radius: 100px;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: #fff;
-    height: var(--nav-h);
-    border-bottom: 1px solid var(--rose-light);
-  }
-  .nav-inner {
-    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-    height: 100%; display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-links { list-style: none; display: flex; align-items: center; gap: 1.75rem; }
-  .nav-links a {
-    font-size: .78rem; font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase; color: var(--text); text-decoration: none; transition: color .2s;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--rose-dark); }
-  .nav-cta {
-    background: var(--rose) !important; color: #fff !important;
-    padding: .5rem 1.1rem; border-radius: 100px;
-  }
-  .nav-cta:hover { background: var(--rose-dark) !important; }
-  .nav-en {
-    border: 1.5px solid var(--rose);
-    color: var(--rose-dark) !important;
-    padding: .3rem .7rem;
-    border-radius: 100px;
-    font-weight: 500 !important;
-    white-space: nowrap;
-    transition: background .2s, color .2s;
-  }
-  .nav-en:hover { background: var(--rose); color: #fff !important; }
-  .nav-instagram { color: var(--text-mid) !important; display: flex; align-items: center; }
-  .nav-instagram:hover { color: var(--rose-dark) !important; }
-  .hamburger {
-    display: none; background: none; border: none; cursor: pointer;
-    flex-direction: column; gap: 5px; padding: 4px;
-  }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
-  .mobile-menu {
-    display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: #fff; z-index: 99; flex-direction: column;
-    flex-direction: column; align-items: center; justify-content: flex-start; gap: 0; padding: 1.25rem 1rem 2.5rem; overflow-y: auto;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .05em; text-transform: uppercase; text-align: center; width: 100%; padding: .7rem 0; }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--text);
-    color: #fff;
-    padding: 6rem 0 5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 40%, rgba(217,164,154,.15) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-inner {
-    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-  }
-  .hero-left .tag { background: rgba(217,164,154,.2); color: var(--rose); margin-bottom: 1.5rem; }
-  .hero-left h1 { color: #fff; margin-bottom: 1.25rem; }
-  .hero-left h1 em { font-style: italic; color: var(--rose); }
-  .hero-left p { color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
-  .hero-cta {
-    display: inline-flex; align-items: center; gap: .5rem;
-    background: var(--rose); color: #fff;
-    padding: .85rem 2rem; border-radius: 100px;
-    text-decoration: none; font-weight: 500; font-size: .95rem;
-    transition: background .2s, transform .15s;
-  }
-  .hero-cta:hover { background: var(--rose-dark); transform: translateY(-2px); }
-  .hero-right {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  }
-  .hero-stat {
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 14px;
-    padding: 1.5rem 1.25rem;
-    text-align: center;
-  }
-  .hero-stat-num {
-    font-family: var(--heading);
-    font-size: 2rem; color: var(--rose); line-height: 1; margin-bottom: .4rem;
-  }
-  .hero-stat-label { font-size: .78rem; color: rgba(255,255,255,.55); letter-spacing: .07em; text-transform: uppercase; }
-
-  /* ── HOW IT WORKS ── */
-  .steps-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;
-  }
-  .step {
-    background: #fff; border-radius: 16px; padding: 2rem 1.75rem;
-    border: 1px solid var(--border); position: relative;
-  }
-  .step-num {
-    font-family: var(--heading); font-size: 3rem; color: var(--rose-light);
-    line-height: 1; margin-bottom: .75rem;
-  }
-  .step h3 { font-size: 1.1rem; margin-bottom: .5rem; color: var(--text); }
-  .step p { font-size: .9rem; color: var(--text-mid); line-height: 1.65; }
-
-  /* ── KURSE ── */
-  .kurse-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem;
-  }
-  .kurs-card {
-    background: #fff; border-radius: 16px; padding: 1.75rem 2rem;
-    border: 1px solid var(--border); display: flex; gap: 1.25rem; align-items: flex-start;
-  }
-  .kurs-card.reformer { background: var(--rose-light); border-color: var(--rose); }
-  .kurs-icon {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: var(--rose-light); display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .kurs-card.reformer .kurs-icon { background: rgba(255,255,255,.6); }
-  .kurs-icon svg { width: 20px; height: 20px; stroke: var(--rose-dark); }
-  .kurs-card h3 { font-size: 1.05rem; margin-bottom: .35rem; color: var(--text); }
-  .kurs-card p { font-size: .88rem; color: var(--text-mid); line-height: 1.6; margin-bottom: .6rem; }
-  .kurs-badge {
-    display: inline-block; font-size: .72rem; font-weight: 500;
-    padding: .25rem .7rem; border-radius: 100px;
-    background: var(--rose); color: #fff; letter-spacing: .05em;
-  }
-  .kurs-card.reformer .kurs-badge { background: var(--rose-dark); }
-
-  /* ── FAQ ── */
-  .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1px; }
-  .faq-item {
-    background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
-    margin-bottom: .75rem;
-  }
-  .faq-q {
-    width: 100%; background: none; border: none; cursor: pointer;
-    padding: 1.25rem 1.5rem; text-align: left;
-    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-    font-family: var(--sans); font-size: .95rem; font-weight: 500; color: var(--text);
-    transition: color .2s;
-  }
-  .faq-q:hover { color: var(--rose-dark); }
-  .faq-q svg { flex-shrink: 0; transition: transform .25s; stroke: var(--rose-dark); }
-  .faq-item.open .faq-q svg { transform: rotate(180deg); }
-  .faq-a {
-    max-height: 0; overflow: hidden; transition: max-height .3s ease;
-    padding: 0 1.5rem;
-    font-size: .92rem; color: var(--text-mid); line-height: 1.75;
-  }
-  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.25rem; }
-
-  /* ── CTA SECTION ── */
-  .cta-section {
-    background: var(--rose-light); border-radius: 24px;
-    padding: 4rem 3rem; text-align: center; margin: 0 0 5rem;
-  }
-  .cta-section h2 { margin-bottom: 1rem; }
-  .cta-section p { color: var(--text-mid); max-width: 500px; margin: 0 auto 2rem; font-size: 1rem; }
-  .cta-btn {
-    display: inline-flex; align-items: center; gap: .5rem;
-    background: var(--text); color: #fff;
-    padding: .9rem 2.25rem; border-radius: 100px;
-    text-decoration: none; font-weight: 500; font-size: .95rem;
-    transition: background .2s, transform .15s;
-  }
-  .cta-btn:hover { background: var(--rose-dark); transform: translateY(-2px); }
-
-  /* ── FOOTER ── */
-  footer { background: var(--text); color: #fff; padding: 4rem 0 2rem; }
-  footer a { color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
-  footer a:hover { color: var(--rose); }
-  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
-  .footer-col h4 { color: var(--rose); margin-bottom: 1rem; font-size: 1rem; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; }
-  .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.15); font-size: .85rem; color: rgba(255,255,255,.5); }
-  .footer-bottom a { color: var(--rose); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-right { grid-template-columns: repeat(2, 1fr); }
-    .steps-grid { grid-template-columns: 1fr 1fr; }
-    .kurse-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 640px) {
-    :root { --nav-h: 80px; }
-    nav { height: 80px; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .hero { padding: 4rem 0 3.5rem; }
-    .hero-right { grid-template-columns: 1fr 1fr; }
-    .steps-grid { grid-template-columns: 1fr; }
-    .section { padding: 3.5rem 0; }
-    .cta-section { padding: 2.5rem 1.5rem; }
-  }
-  @media (max-width: 640px){ .logo img, a.logo img, .nav-inner .logo img { height: 52px !important; } }
-</style>
-<style id="pc-nav-priority">
-  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Gutschein, Downloads) liegen im Hamburger-Menü */
-  @media (min-width: 769px) {
-    .nav-links li:has(> a[href="/ausbildung"]),
-    .nav-links li:has(> a[href="/studio-news"]),
-    .nav-links li:has(> a[href="/gutschein"]),
-    .nav-links li:has(> a[href="/downloads"]) { display: none; }
-    .hamburger { display: flex; margin-left: 1rem; }
-  }
-  @media (min-width: 769px) and (max-width: 1199px) {
-    .nav-links li:has(> a[href="/wellpass"]),
-    .nav-links li:has(> a[href="/personal-training"]),
-    .nav-links li:has(> a[href="/trainer"]),
-    .nav-links li:has(> a.nav-en),
-    .nav-links li.nav-lang { display: none; }
-  }
-</style>
-<style id="nav-probe-stil">
-  .nav-probe{display:none}
-  @media (max-width:900px){
-    .nav-probe{display:inline-flex;align-items:center;margin-left:auto;margin-right:.75rem;padding:.55rem .95rem;border-radius:999px;background:#d9a49a;color:#fff!important;font-family:'Poppins',system-ui,sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.01em;line-height:1.15;text-decoration:none;white-space:nowrap;box-shadow:0 2px 10px rgba(217,164,154,.35)}
-    .nav-probe:active{background:#c8857a}
-  }
-  @media (max-width:360px){ .nav-probe{font-size:.72rem;padding:.5rem .75rem;margin-right:.5rem} }
+.wp-fakten b{font-size:26px}
+.wp-hinweis{margin-top:14px}
+.wp-karte .etikett{margin-top:10px}
+.wp-karte .etikett.wp-zu{background:var(--sand);color:var(--ink)}
+.wp-nr{display:block;font:500 13px var(--f-body);letter-spacing:.14em;color:var(--cta-hover);margin-bottom:6px}
+.wp-extern{display:inline-flex;align-items:center;gap:8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="64" height="40"></a>
+  <a class="kopf-probe" href="/probetraining/">Probetraining buchen</a>
+  <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
+  <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+</header>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="/" style="display:flex; align-items:center;">
-      <img src="logo.png" alt="Pilates Company Lübeck" style="height:70px; width:auto; display:block;">
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">HOME</a></li>
-      <li><a href="/kurse">KURSE</a></li>
-      <li><a href="/preise">PREISE</a></li>
-      <li><a href="/trainer">TRAINER</a></li>
-      <li><a href="/ausbildung">AUSBILDUNG</a></li>
-      <li><a href="/studio-news">NEWS</a></li>
-      <li><a href="/gutschein">GUTSCHEIN</a></li>
-      <li><a href="/downloads">DOWNLOADS</a></li>
-      <li><a href="/english" class="nav-en" title="English page">🇬🇧 EN</a></li>
-      <li><a href="/probetraining" class="nav-cta">PROBETRAINING BUCHEN</a></li>
-      <li>
-        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </li>
-    </ul>
-    <a class="nav-probe" href="/probetraining/">Probetraining buchen</a>
-    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menü">
-      <span></span><span></span><span></span>
-    </button>
+<nav class="menu" id="menu" aria-label="Hauptmenü">
+  <div class="oben">
+    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="64" height="40"></a>
+    <button class="rund" id="menuZu" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
+  <div class="grp"><p>Training</p>
+    <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass" aria-current="page">Wellpass</a></div>
+  <div class="grp"><p>Studio</p>
+    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a><a href="/downloads">Downloads</a></div>
+  <div class="grp"><p>Mehr</p>
+    <a href="/gutschein">Gutschein</a><a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="/kontakt">Kontakt</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
 </nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/">HOME</a>
-  <a href="/kurse">KURSE</a>
-  <a href="/preise">PREISE</a>
-  <a href="/trainer">TRAINER</a>
-  <a href="/personal-training">PHYSIOCOACHING</a>
-  <a href="/ausbildung">AUSBILDUNG</a>
-  <a href="/studio-news">NEWS</a>
-  <a href="/gutschein">GUTSCHEIN</a>
-  <a href='/downloads'>DOWNLOADS</a>
-  <a href="/wellpass">WELLPASS</a>
-  <a href="/english" style="color: var(--rose); font-weight: 500;">🇬🇧 ENGLISH</a>
-  <a href="/probetraining" style="color: var(--rose); font-weight: 500;">PROBETRAINING BUCHEN</a>
-  <a href="/kontakt">KONTAKT</a>
-  <a href="https://www.instagram.com/my.pilatescompany" target="_blank">INSTAGRAM</a>
-</div>
-
-<!-- HERO -->
+<main id="inhalt" class="seite">
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <span class="tag">Wellpass Partner Lübeck</span>
-      <h1>Pilates mit Wellpass in Stockelsdorf</h1>
-      <p>Du bist bei Wellpass angemeldet? Trainiere bei uns in Stockelsdorf – buche direkt über die Wellpass App, ganz ohne extra Anmeldung.</p>
-      <a class="hero-cta" href="https://wellpass.de" target="_blank" rel="noopener">
-        Zur Wellpass App
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-    <div class="hero-right">
-      <div class="hero-stat">
-        <div class="hero-stat-num">4</div>
-        <div class="hero-stat-label">Kursformate</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">30+</div>
-        <div class="hero-stat-label">Kurse / Woche</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">0€</div>
-        <div class="hero-stat-label">Zuzahlung Matte & Yoga</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">10€</div>
-        <div class="hero-stat-label">Zuzahlung Reformer</div>
-      </div>
-    </div>
+  <p class="ueber">Wellpass Partner Lübeck</p>
+  <h1>Pilates mit Wellpass in <em>Stockelsdorf</em></h1>
+  <p class="lead">Du bist bei Wellpass angemeldet? Trainiere bei uns in Stockelsdorf – buche direkt über die Wellpass App, ganz ohne extra Anmeldung.</p>
+  <div class="knoepfe">
+    <a class="knopf" href="https://wellpass.de" target="_blank" rel="noopener">Zur Wellpass App <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
   </div>
 </section>
 
-<!-- SO FUNKTIONIERT ES -->
-<section class="section" style="background:#fff;">
-  <div class="container">
-    <span class="tag">Ganz einfach</span>
-    <h2 style="margin-top:.75rem;">So buchst du mit Wellpass bei uns</h2>
-    <p style="color:var(--text-mid); margin-top:.75rem; max-width:560px;">Keine Formulare, keine Wartelisten, kein Papierkram. Drei Schritte – und du bist dabei.</p>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Wellpass App öffnen</h3>
-        <p>Öffne die Wellpass App auf deinem Smartphone und suche nach „Pilates Company Lübeck" oder „Stockelsdorf".</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Kurs auswählen & buchen</h3>
-        <p>Wähle deinen Wunschkurs aus unserem Kursplan, buche deinen reservierten Wellpass-Platz direkt in der App.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Einfach kommen</h3>
-        <p>Erscheine zur gebuchten Stunde – fertig. Keine separate Anmeldung bei uns nötig. Wir freuen uns auf dich.</p>
-      </div>
-    </div>
+<section class="abschnitt" aria-label="Wellpass bei uns in Zahlen">
+  <ul class="fakten wp-fakten">
+    <li><b>4</b><span>Kursformate</span></li>
+    <li><b>30+</b><span>Kurse / Woche</span></li>
+    <li><b>0 €</b><span>Zuzahlung Matte &amp; Yoga</span></li>
+    <li><b>10 €</b><span>Zuzahlung Reformer</span></li>
+  </ul>
+</section>
+
+<section class="abschnitt" aria-labelledby="so-h">
+  <p class="ueber">Ganz einfach</p>
+  <h2 id="so-h">So buchst du mit Wellpass <em>bei uns</em></h2>
+  <p class="lead">Keine Formulare, keine Wartelisten, kein Papierkram. Drei Schritte – und du bist dabei.</p>
+  <div class="raster" style="margin-top:14px">
+    <article class="karte"><span class="wp-nr">01</span><h3>Wellpass App öffnen</h3><p class="t">Öffne die Wellpass App auf deinem Smartphone und suche nach „Pilates Company Lübeck“ oder „Stockelsdorf“.</p></article>
+    <article class="karte"><span class="wp-nr">02</span><h3>Kurs auswählen &amp; buchen</h3><p class="t">Wähle deinen Wunschkurs aus unserem Kursplan, buche deinen reservierten Wellpass-Platz direkt in der App.</p></article>
+    <article class="karte"><span class="wp-nr">03</span><h3>Einfach kommen</h3><p class="t">Erscheine zur gebuchten Stunde – fertig. Keine separate Anmeldung bei uns nötig. Wir freuen uns auf dich.</p></article>
   </div>
 </section>
 
-<!-- KURSANGEBOT -->
-<section class="section">
-  <div class="container">
-    <span class="tag">Kursangebot</span>
-    <h2 style="margin-top:.75rem;">Diese Kurse sind mit Wellpass buchbar</h2>
-    <p style="color:var(--text-mid); margin-top:.75rem; max-width:560px;">In jedem Kurs sind feste Plätze für Wellpass-Mitglieder reserviert. Frühzeitig buchen lohnt sich.</p>
-    <div class="kurse-grid">
-
-      <div class="kurs-card">
-        <div class="kurs-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l3 3M9 13l3 3"/><path d="M7 21c0-3 5-8 5-8s5 5 5 8"/></svg>
-        </div>
-        <div>
-          <h3>Classic Pilates</h3>
-          <p>Klassische Pilates-Übungen auf der Matte – für eine starke Körpermitte, mehr Beweglichkeit und bewusstes Körpergefühl. Alle Level willkommen.</p>
-          <span class="kurs-badge">Ohne Zuzahlung</span>
-        </div>
-      </div>
-
-      <div class="kurs-card">
-        <div class="kurs-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
-        </div>
-        <div>
-          <h3>Yoga</h3>
-          <p>Innere Ruhe, Balance und Kraft – klassisches Yoga für alle Level. Kombiniert Atemübungen, Asanas und Entspannung.</p>
-          <span class="kurs-badge">Ohne Zuzahlung</span>
-        </div>
-      </div>
-
-      <div class="kurs-card">
-        <div class="kurs-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 6 6 10c0 3 2 5 6 8 4-3 6-5 6-8 0-4-2-8-6-8z"/></svg>
-        </div>
-        <div>
-          <h3>Aerial Yoga</h3>
-          <p>In der Hängematte schwebend trainieren – Kraft, Gleichgewicht und Leichtigkeit in einer völlig neuen Dimension.</p>
-          <span class="kurs-badge">Ohne Zuzahlung</span>
-        </div>
-      </div>
-
-      <div class="kurs-card reformer">
-        <div class="kurs-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="6" rx="2"/><path d="M6 10V7M18 10V7M4 16v2M20 16v2"/></svg>
-        </div>
-        <div>
-          <h3>Reformer Pilates</h3>
-          <p>Gezieltes Ganzkörpertraining am Reformer – effektiv, gelenkschonend und für alle Level geeignet. Maximale Betreuung durch kleine Gruppen (max. 1:5).</p>
-          <span class="kurs-badge" style="background:var(--rose-light);color:var(--rose-dark);">10 € Zuzahlung / Einheit</span>
-          <p style="margin-top:.6rem;font-size:.85rem;"><a href="/reformer-pilates-luebeck" style="color:var(--rose-dark);">Reformer-Pilates im Studio</a></p>
-        </div>
-      </div>
-
+<section class="band tint" aria-labelledby="kurse-h">
+  <div class="band-innen">
+    <p class="ueber">Kursangebot</p>
+    <h2 id="kurse-h" style="font-size:23px;line-height:1.2;margin-bottom:8px">Diese Kurse sind mit Wellpass <em>buchbar</em></h2>
+    <p class="lead" style="margin:0 0 14px">In jedem Kurs sind feste Plätze für Wellpass-Mitglieder reserviert. Frühzeitig buchen lohnt sich.</p>
+    <div class="raster">
+      <article class="karte wp-karte"><h3>Classic Pilates</h3><p class="t">Klassische Pilates-Übungen auf der Matte – für eine starke Körpermitte, mehr Beweglichkeit und bewusstes Körpergefühl. Alle Level willkommen.</p><span class="etikett voll">Ohne Zuzahlung</span></article>
+      <article class="karte wp-karte"><h3>Yoga</h3><p class="t">Innere Ruhe, Balance und Kraft – klassisches Yoga für alle Level. Kombiniert Atemübungen, Asanas und Entspannung.</p><span class="etikett voll">Ohne Zuzahlung</span></article>
+      <article class="karte wp-karte"><h3>Aerial Yoga</h3><p class="t">In der Hängematte schwebend trainieren – Kraft, Gleichgewicht und Leichtigkeit in einer völlig neuen Dimension.</p><span class="etikett voll">Ohne Zuzahlung</span></article>
+      <article class="karte wp-karte"><h3>Reformer Pilates</h3><p class="t">Gezieltes Ganzkörpertraining am Reformer – effektiv, gelenkschonend und für alle Level geeignet. Maximale Betreuung durch kleine Gruppen (max. 1:5).</p><span class="etikett wp-zu">10 € Zuzahlung / Einheit</span><p style="margin-top:10px"><a class="textlink" href="/reformer-pilates-luebeck">Reformer-Pilates im Studio</a></p></article>
     </div>
-
-    <!-- Reformer Hinweis -->
-    <div style="margin-top:1.5rem; background:var(--rose-light); border-radius:12px; padding:1.25rem 1.5rem; display:flex; gap:.75rem; align-items:flex-start;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <p style="font-size:.88rem; color:var(--text-mid); line-height:1.65;">
-        <strong style="color:var(--text);">Reformer-Zuzahlung:</strong> Für Reformer-Kurse fallen 10 € pro Einheit an – Zahlung direkt vor Ort im Studio mit SumUp, mit allen gängigen Zahlungsmitteln außer Bar.
-      </p>
-    </div>
+    <div class="hinweisbox wp-hinweis"><b>Reformer-Zuzahlung:</b> Für Reformer-Kurse fallen 10 € pro Einheit an – Zahlung direkt vor Ort im Studio mit SumUp, mit allen gängigen Zahlungsmitteln außer Bar.</div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section" style="background:#fff;">
-  <div class="container">
-    <span class="tag">Häufige Fragen</span>
-    <h2 style="margin-top:.75rem;">Alles zur Wellpass-Nutzung bei uns</h2>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Kann ich mit Wellpass bei Pilates Company Lübeck trainieren?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">Ja! Pilates Company Lübeck ist Wellpass-Partner. Du kannst Classic Pilates, Yoga und Aerial Yoga vollständig mit Wellpass buchen – ohne Zuzahlung. Für Reformer-Pilates fällt eine Zuzahlung von 10 € pro Einheit an, die du direkt vor Ort im Studio bezahlst.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Muss ich mich extra bei Pilates Company anmelden?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">Nein. Die gesamte Buchung läuft über die Wellpass App. Du brauchst keine separate Mitgliedschaft oder Anmeldung bei uns. Einfach buchen, kommen, trainieren.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Wie viele Wellpass-Plätze gibt es pro Kurs?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">In jedem Kurs sind feste Plätze für Wellpass-Mitglieder reserviert. Da unsere Kurse klein und beliebt sind (Reformer max. 1:5), empfehlen wir frühzeitig über die App zu buchen.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Wie wird die Reformer-Zuzahlung abgerechnet?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">Für Reformer-Kurse werden 10 € pro Einheit direkt vor Ort im Studio kassiert – mit SumUp, mit allen gängigen Zahlungsmitteln außer Bar.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Ich bin noch kein Wellpass-Mitglied – wie werde ich es?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">Wellpass wird über Arbeitgeber angeboten. Frag bei deiner Personalabteilung oder deinem HR-Team nach, ob euer Unternehmen Wellpass als Benefit anbietet. Weitere Infos findest du auf <a href="https://wellpass.de" target="_blank" rel="noopener" style="color:var(--rose-dark);">wellpass.de</a>.</div>
-      </div>
-
-    </div>
-  </div>
+<section class="fragen" id="fragen" aria-labelledby="fragen-h">
+  <p class="ueber">Häufige Fragen</p>
+  <h2 id="fragen-h">Alles zur Wellpass-Nutzung <em>bei uns</em></h2>
+  <details><summary>Kann ich mit Wellpass bei Pilates Company Lübeck trainieren?<i aria-hidden="true">+</i></summary><p>Ja! Pilates Company Lübeck ist Wellpass-Partner. Du kannst Classic Pilates, Yoga und Aerial Yoga vollständig mit Wellpass buchen – ohne Zuzahlung. Für Reformer-Pilates fällt eine Zuzahlung von 10 € pro Einheit an, die du direkt vor Ort im Studio bezahlst.</p></details>
+  <details><summary>Wie buche ich Kurse mit Wellpass bei Pilates Company?<i aria-hidden="true">+</i></summary><p>Die Buchung läuft vollständig über die Wellpass App. Einfach Kurs auswählen, buchen – fertig. Keine separate Anmeldung oder Registrierung bei uns im Studio notwendig. In jedem Kurs sind feste Plätze für Wellpass-Mitglieder reserviert.</p></details>
+  <details><summary>Welche Kurse sind mit Wellpass buchbar?<i aria-hidden="true">+</i></summary><p>Mit Wellpass buchbar sind: Classic Pilates, Yoga und Aerial Yoga (ohne Zuzahlung) sowie Reformer-Pilates (10 € Zuzahlung pro Einheit, Zahlung direkt vor Ort im Studio mit allen gängigen Zahlungsmitteln außer Bar).</p></details>
+  <details><summary>Muss ich mich extra bei Pilates Company anmelden wenn ich Wellpass nutze?<i aria-hidden="true">+</i></summary><p>Nein. Die Buchung und Verwaltung läuft vollständig über die Wellpass App. Du brauchst keine separate Mitgliedschaft oder Anmeldung bei uns. Einfach buchen und zum Kurs kommen.</p></details>
+  <details><summary>Wie viele Wellpass-Plätze gibt es pro Kurs?<i aria-hidden="true">+</i></summary><p>In jedem Kurs sind feste Plätze für Wellpass-Mitglieder reserviert. Wir empfehlen frühzeitig zu buchen, da unsere Kurse beliebt sind und schnell ausgebucht sein können.</p></details>
+  <details><summary>Wie wird die Reformer-Zuzahlung abgerechnet?<i aria-hidden="true">+</i></summary><p>Für Reformer-Kurse werden 10 € pro Einheit direkt vor Ort im Studio kassiert – mit SumUp, mit allen gängigen Zahlungsmitteln außer Bar.</p></details>
+  <details><summary>Ich bin noch kein Wellpass-Mitglied – wie werde ich es?<i aria-hidden="true">+</i></summary><p>Wellpass wird über Arbeitgeber angeboten. Frag bei deiner Personalabteilung oder deinem HR-Team nach, ob euer Unternehmen Wellpass als Benefit anbietet. Weitere Infos findest du auf <a class="textlink" href="https://wellpass.de" target="_blank" rel="noopener">wellpass.de</a>.</p></details>
 </section>
 
-<!-- CTA -->
-<section class="section">
-  <div class="container">
-    <div class="cta-section">
-      <span class="tag" style="margin-bottom:1rem; display:inline-block;">Los geht's</span>
-      <h2>Jetzt Kurs buchen über die Wellpass App</h2>
-      <p>Pilates Company Lübeck in der App suchen, Kurs auswählen, buchen – und wir sehen uns im Studio.</p>
-      <a class="cta-btn" href="https://wellpass.de" target="_blank" rel="noopener">
-        Zur Wellpass App
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
+<section class="probe" aria-labelledby="los-h">
+  <p class="ueber">Los geht’s</p>
+  <h2 id="los-h">Jetzt Kurs buchen über die <em>Wellpass App</em></h2>
+  <p class="t">Pilates Company Lübeck in der App suchen, Kurs auswählen, buchen – und wir sehen uns im Studio.</p>
+  <a class="knopf" href="https://wellpass.de" target="_blank" rel="noopener"><span class="wp-extern">Zur Wellpass App <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
 </section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Pilates Company Lübeck</h4>
-        <p style="color:rgba(255,255,255,.75); font-size:.9rem; line-height:1.8;">
-          Segeberger Str. 1<br>23617 Stockelsdorf<br><br>
-          <strong>Tel:</strong> <a href="tel:+4945116083019">0451 - 160 830 19</a><br>
-          <strong>Mail:</strong> <a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a>
-        </p>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/kurse">Kurse</a></li>
-          <li><a href="/reformer-pilates-luebeck">Reformer-Pilates</a></li>
-          <li><a href="/preise">Preise</a></li>
-          <li><a href="/trainer">Trainer</a></li>
-          <li><a href="/ausbildung">Ausbildung</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Mehr</h4>
-        <ul>
-          <li><a href="/studio-news">News</a></li>
-          <li><a href="/gutschein">Gutschein</a></li>
-          <li><a href="/downloads">Downloads</a></li>
-          <li><a href="/probetraining">Probetraining</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
-          <li><a href="/kontakt#fragen">Häufige Fragen</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Rechtliches</h4>
-        <ul>
-          <li><a href="/impressum">Impressum</a></li>
-          <li><a href="/datenschutz">Datenschutz</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2026 Pilates Company Lübeck. Alle Rechte vorbehalten. |
-      <a href="https://www.instagram.com/my.pilatescompany" target="_blank">Instagram</a>
-    </div>
+</main>
+<footer class="fuss">
+  <div class="inner">
+    <img src="/assets/logo-gross.png" alt="Pilates Company Lübeck" width="127" height="80" loading="lazy">
+    <address>Segeberger Str. 1<br>23617 Stockelsdorf bei Lübeck</address>
+    <div class="kontakt"><a href="tel:+4945116083019">0451 - 160 830 19</a><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></div>
+    <nav class="navi" aria-label="Fußzeile">
+      <a href="/kurse">Kurse</a><a href="/preise">Preise</a><a href="/trainer">Trainer</a><a href="/probetraining/">Probetraining</a>
+      <a href="/kontakt">Kontakt</a><a href="/kontakt#fragen">Häufige Fragen</a><a href="/gutschein">Gutschein</a><a href="/wellpass">Wellpass</a>
+      <a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="legal"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="https://mitglieder.pilatescompany.de/agb/">AGB</a></div>
+    <p class="copy">© 2026 Pilates Company Lübeck</p>
   </div>
 </footer>
-
-<script>
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-</script>
+<script src="/script.js"></script>
+<script src="/last-minute.js" defer></script>
 
 </body>
 </html>

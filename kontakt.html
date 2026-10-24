@@ -1,1016 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/favicon.png">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kontakt &amp; Anfahrt | Pilates Company Lübeck</title>
 <meta name="description" content="Kontakt zur Pilates Company in Stockelsdorf, direkt an der Grenze zu Lübeck: So findest du zu uns, dazu Antworten auf häufige Fragen. Wir melden uns schnell.">
-<link rel="canonical" href="https://pilatescompany.de/kontakt">
 <meta property="og:site_name" content="Pilates Company Lübeck">
 <meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --rose:       #d9a49a;
-    --rose-light: #f5ede9;
-    --rose-dark:  #b0796e;
-    --cream:      #faf7f4;
-    --warm-gray:  #8a847d;
-    --text:       #2c2825;
-    --text-mid:   #5a5450;
-    --border:     rgba(44,40,37,.1);
-    --sans:       'Poppins', system-ui, sans-serif;
-    --heading:    'Playfair Display', serif;
-    --radius:     12px;
-    --nav-h:      136px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    padding-top: var(--nav-h);
-    font-family: var(--sans);
-    background: var(--cream);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading);
-    font-weight: 400;
-    letter-spacing: normal;
-  }
-
-  h1 { font-size: 4.5rem; line-height: 1.1; }
-  h2 { font-size: 2.5rem; line-height: 1.2; }
-  h3 { font-size: 1.75rem; line-height: 1.3; }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    height: var(--nav-h);
-    background: rgba(250,247,244,.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center;
-  }
-  .nav-inner {
-    max-width: 1200px; margin: 0 auto; width: 100%;
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .logo {
-    font-family: var(--sans);
-    font-size: 1.5rem; font-weight: 400;
-    color: var(--text); text-decoration: none;
-    letter-spacing: .02em;
-    cursor: pointer;
-  }
-  .logo span { color: var(--rose-dark); }
-  .nav-links {
-    display: flex; align-items: center; gap: 1.25rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: .78rem; font-weight: 400; letter-spacing: .03em;
-    text-decoration: none; color: var(--text-mid);
-    text-transform: uppercase;
-    transition: color .2s;
-    white-space: nowrap;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--rose-dark); }
-  .nav-cta {
-    background: var(--rose);
-    color: #fff !important;
-    padding: .45rem 1rem;
-    border-radius: 100px;
-    font-weight: 500 !important;
-    white-space: nowrap;
-    transition: background .2s !important;
-  }
-  .nav-cta:hover { background: var(--rose-dark) !important; color: #fff !important; }
-  .nav-en {
-    border: 1.5px solid var(--rose);
-    color: var(--rose-dark) !important;
-    padding: .3rem .7rem;
-    border-radius: 100px;
-    font-weight: 500 !important;
-    white-space: nowrap;
-    transition: background .2s, color .2s;
-  }
-  .nav-en:hover { background: var(--rose); color: #fff !important; }
-
-  .nav-instagram {
-    display: flex; align-items: center;
-    color: var(--text-mid) !important;
-    transition: color .2s !important;
-    padding: 0 !important;
-  }
-  .nav-instagram:hover { color: var(--rose-dark) !important; }
-
-  .hamburger {
-    display: none; flex-direction: column; gap: 5px;
-    background: none; border: none; cursor: pointer; padding: 4px;
-  }
-  .hamburger span {
-    display: block; width: 24px; height: 2px;
-    background: var(--text); border-radius: 2px;
-    transition: .3s;
-  }
-  .mobile-menu {
-    display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: var(--cream); z-index: 99;
-    flex-direction: column; align-items: center; justify-content: flex-start; gap: 0;
-    overflow-y: auto; -webkit-overflow-scrolling: touch;
-    padding: 1.25rem 1rem 2.5rem;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    font-family: var(--heading); font-size: 1.15rem; font-weight: 300;
-    color: var(--text); text-decoration: none;
-    transition: color .2s; text-align: center; width: 100%; padding: .7rem 0;
-  }
-  .mobile-menu a:hover { color: var(--rose-dark); }
-
-  /* ── PAGES ── */
-  .page { display: none; min-height: 100vh; padding-top: var(--nav-h); }
-  .page.active { display: block; }
-
-  /* ── SHARED ── */
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  .section { padding: 5rem 0; }
-  .section-sm { padding: 3rem 0; }
-
-  h1 { font-family: var(--heading); font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
-  h2 { font-family: var(--heading); font-weight: 300; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
-  h3 { font-family: var(--heading); font-weight: 400; font-size: 1.5rem; line-height: 1.3; }
-  h4 { font-family: var(--heading); font-weight: 500; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-dark); }
-
-  .tag {
-    display: inline-block;
-    font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--rose-dark); background: var(--rose-light);
-    padding: .3rem .75rem; border-radius: 100px;
-    margin-bottom: 1rem;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: .75rem 2rem; border-radius: 100px;
-    font-family: var(--sans); font-size: .875rem; font-weight: 500;
-    letter-spacing: .04em; text-decoration: none; cursor: pointer;
-    transition: .2s; border: none;
-  }
-  .btn-primary { background: var(--rose); color: #fff; }
-  .btn-primary:hover { background: var(--rose-dark); }
-  .btn-outline {
-    background: transparent; color: var(--text);
-    border: 1.5px solid var(--border);
-  }
-  .btn-outline:hover { border-color: var(--rose); color: var(--rose-dark); }
-
-  .divider { height: 1px; background: var(--border); margin: 0; }
-
-  /* ── STATS BAR ── */
-  .stats-bar {
-    background: var(--rose);
-    padding: 1.5rem 0 1.25rem;
-  }
-  .stats-grid {
-    display: flex; align-items: center; justify-content: center;
-    gap: 0; flex-wrap: wrap;
-  }
-  .stat-item {
-    flex: 1; min-width: 160px;
-    text-align: center; padding: 1rem 2rem;
-  }
-  .stat-num {
-    font-family: var(--sans);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 300; color: #fff;
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
-    color: rgba(255,255,255,.75); margin-top: .4rem; font-weight: 400;
-  }
-  .stat-divider {
-    width: 1px; height: 40px;
-    background: rgba(255,255,255,.3);
-    flex-shrink: 0;
-  }
-  .stats-note {
-    text-align: center; margin-top: 1rem;
-    font-size: .75rem; color: rgba(255,255,255,.6);
-    letter-spacing: .05em;
-  }
-  @media (max-width: 640px) {
-    .stat-divider { display: none; }
-    .stat-item { min-width: 50%; }
-  }
-
-
-  .hero {
-    min-height: unset;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; gap: 4rem;
-    padding: 2.5rem 2rem 2.5rem 0;
-    max-width: 1200px; margin: 0 auto;
-  }
-  .hero-text { max-width: 560px; }
-  .hero-text h1 { margin-bottom: 1.5rem; }
-  .hero-text p { font-size: 1.1rem; color: var(--text-mid); margin-bottom: 2.5rem; line-height: 1.8; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .hero-why {
-    background: var(--rose-light);
-    border-radius: 20px;
-    padding: 2.5rem;
-  }
-  .hero-why h4 { margin-bottom: 1.5rem; }
-  .hero-why-items { display: flex; flex-direction: column; gap: 0; }
-  .hero-why-item {
-    display: flex; gap: 1.25rem; align-items: flex-start;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(217,164,154,.25);
-  }
-  .hero-why-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .hero-why-item:first-child { padding-top: 0; }
-  .hero-why-num {
-    font-family: var(--heading); font-size: 2rem;
-    color: var(--rose-dark); font-weight: 300;
-    line-height: 1; min-width: 3rem; text-align: right;
-    flex-shrink: 0;
-  }
-  .hero-why-item strong {
-    display: block; font-size: .95rem; font-weight: 500;
-    color: var(--text); margin-bottom: .2rem;
-  }
-  .hero-why-item p { font-size: .85rem; color: var(--text-mid); line-height: 1.55; margin: 0; }
-
-
-  .hqc-inner {
-    background: var(--rose);
-    border-radius: 20px;
-    padding: 3rem 2.5rem;
-    display: flex; flex-direction: column;
-    justify-content: center;
-    width: 100%; min-height: 420px;
-    position: relative; overflow: hidden;
-  }
-  .hqc-inner::before {
-    content: '';
-    position: absolute; top: -60px; right: -60px;
-    width: 220px; height: 220px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.08);
-    pointer-events: none;
-  }
-  .hqc-inner::after {
-    content: '';
-    position: absolute; bottom: -40px; left: -40px;
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.06);
-    pointer-events: none;
-  }
-  .hqc-deco {
-    font-family: var(--heading); font-size: 5rem;
-    color: rgba(255,255,255,.25); line-height: .8;
-    margin-bottom: 1rem;
-  }
-  .hqc-text {
-    font-family: var(--sans); font-style: italic;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    color: #fff; font-weight: 300; line-height: 1.45;
-    margin-bottom: 1.25rem;
-  }
-  .hqc-cite {
-    font-family: var(--sans); font-style: normal;
-    font-size: .85rem; color: rgba(255,255,255,.75);
-    letter-spacing: .06em;
-  }
-  .hqc-divider {
-    width: 40px; height: 1.5px;
-    background: rgba(255,255,255,.35);
-    margin: 1.5rem 0;
-  }
-  .hqc-meta { display: flex; flex-direction: column; gap: .2rem; }
-  .hqc-label {
-    font-family: var(--sans); font-weight: 500;
-    font-size: .9rem; color: #fff; letter-spacing: .04em;
-  }
-  .hqc-sub {
-    font-size: .8rem; color: rgba(255,255,255,.65);
-    letter-spacing: .06em;
-  }
-
-  .angebote-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem; margin-top: 3rem;
-  }
-  .angebot-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 2rem 1.5rem;
-    transition: .25s;
-  }
-  .angebot-card:hover { border-color: var(--rose); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(217,164,154,.15); }
-  .angebot-icon {
-    width: 48px; height: 48px; border-radius: 50%;
-    background: var(--rose-light);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1rem;
-    font-family: var(--heading); font-size: 1.4rem; color: var(--rose-dark);
-  }
-  .angebot-card h3 { font-size: 1.2rem; margin-bottom: .5rem; }
-  .angebot-card p { font-size: .9rem; color: var(--text-mid); line-height: 1.6; }
-
-  .warum-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 3rem; margin-top: 4rem;
-  }
-  .warum-item { }
-  .warum-num {
-    font-family: var(--heading); font-size: 3rem; color: var(--rose);
-    font-weight: 300; line-height: 1;
-    margin-bottom: .5rem;
-  }
-  .warum-item h3 { font-size: 1.1rem; margin-bottom: .4rem; }
-  .warum-item p { font-size: .9rem; color: var(--text-mid); }
-
-  .ausbildung-banner {
-    background: var(--rose-light);
-    border-radius: var(--radius);
-    padding: 4rem;
-    display: grid; grid-template-columns: 1fr auto;
-    gap: 2rem; align-items: center;
-  }
-  .ausbildung-banner h2 { margin-bottom: 1rem; }
-  .ausbildung-banner p { color: var(--text-mid); max-width: 560px; }
-
-  /* ── TRAINER PAGE ── */
-  .page-hero {
-    background: var(--rose-light);
-    padding: 5rem 0 4rem;
-    text-align: center;
-  }
-  .page-hero .tag { margin-bottom: 1rem; }
-  .page-hero p { color: var(--text-mid); margin-top: 1rem; font-size: 1.05rem; }
-
-  .quote-banner {
-    background: var(--rose-dark);
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-  .quote-banner blockquote {
-    font-family: var(--sans); font-style: italic;
-    font-size: clamp(1.3rem, 3vw, 2rem);
-    color: #fff; font-weight: 300; line-height: 1.4;
-  }
-  .quote-banner cite {
-    display: block; font-family: var(--sans);
-    font-style: normal; font-size: .85rem;
-    color: rgba(255,255,255,.7); margin-top: .75rem; letter-spacing: .08em;
-  }
-
-  .trainer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 2rem; margin-top: 3rem;
-  }
-  .trainer-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    transition: .25s;
-  }
-  .trainer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
-  .trainer-img {
-    width: 100%; height: 280px;
-    background: var(--rose-light);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .trainer-img img { width: 100%; height: 100%; object-fit: cover; }
-  .trainer-img--logo { background: var(--rose-light); display: flex; align-items: center; justify-content: center; }
-  .trainer-img--logo img { width: 70%; height: 70%; object-fit: contain; }
-  .trainer-img-placeholder {
-    font-family: var(--heading); font-size: 3rem; color: var(--rose);
-  }
-  .trainer-info { padding: 1.5rem; }
-  .trainer-info h3 { margin-bottom: .25rem; }
-  .trainer-specialty {
-    font-size: .85rem; color: var(--rose-dark);
-    font-weight: 500; letter-spacing: .03em;
-  }
-
-  /* ── KURSE PAGE ── */
-  .kurs-intro {
-    max-width: 700px; margin: 0 auto; text-align: center;
-  }
-  .kurs-intro p { color: var(--text-mid); margin-top: 1rem; font-size: 1.05rem; }
-
-  .kurs-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem; margin-top: 3rem;
-  }
-  .kurs-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    transition: .25s;
-  }
-  .kurs-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.07); }
-  .kurs-img {
-    height: 200px; background: var(--rose-light);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--heading); font-size: 4rem; color: var(--rose);
-    overflow: hidden;
-  }
-  .kurs-body { padding: 1.5rem; }
-  .kurs-body h3 { margin-bottom: .5rem; }
-  .kurs-body p { font-size: .9rem; color: var(--text-mid); margin-bottom: 1rem; }
-
-  .eversports-box {
-    background: var(--rose-light); border-radius: var(--radius);
-    padding: 3rem; text-align: center; margin-top: 4rem;
-  }
-  .eversports-box h3 { margin-bottom: .75rem; }
-  .eversports-box p { color: var(--text-mid); margin-bottom: 1.5rem; }
-
-  /* ── HANNA VIDEO ── */
-  .hanna-video-wrap {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(44,40,37,.12);
-  }
-  .hanna-video-caption {
-    display: flex; align-items: center; gap: .5rem;
-    padding: .75rem 1rem;
-    background: #fff;
-    font-size: .85rem; color: var(--text-mid);
-    border-top: 1px solid var(--border);
-  }
-  .hanna-video-caption strong { color: var(--text); }
-
-  /* ── PROBETRAINING INTRO ── */
-  .probe-intro-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .probe-intro-text { max-width: 480px; }
-  .probe-intro-video { width: 100%; }
-
-  /* ── PROBETRAINING ── */
-  .probe-banner {
-    width: 100%; height: 260px; overflow: hidden;
-  }
-  .probe-banner img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 45%;
-    display: block;
-  }
-  @media (max-width: 640px) {
-    .probe-banner { height: 280px; }
-  }
-
-  .probe-img-wrap {
-    border-radius: var(--radius);
-    overflow: hidden;
-    height: 500px;
-  }
-  .probe-img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
-  }
-  .probe-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: start;
-  }
-  .probe-steps { margin-top: 2rem; }
-  .probe-step {
-    display: flex; gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .probe-step:last-child { border-bottom: none; }
-  .step-num {
-    font-family: var(--heading); font-size: 2rem; color: var(--rose);
-    font-weight: 300; line-height: 1; min-width: 2.5rem;
-  }
-  .step-content h3 { font-size: 1.05rem; margin-bottom: .25rem; }
-  .step-content p { font-size: .9rem; color: var(--text-mid); }
-
-  .probe-cta-box {
-    background: var(--rose-light); border-radius: var(--radius);
-    padding: 2.5rem; position: sticky; top: 100px;
-  }
-  .probe-cta-box h3 { margin-bottom: .75rem; }
-  .probe-cta-box p { color: var(--text-mid); margin-bottom: 1.5rem; font-size: .95rem; }
-  .contact-info { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .5rem; }
-  .contact-info a {
-    color: var(--text-mid); text-decoration: none; font-size: .9rem;
-    transition: color .2s;
-  }
-  .contact-info a:hover { color: var(--rose-dark); }
-
-  /* ── GUTSCHEINE ── */
-  .gutschein-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: start;
-  }
-  .gutschein-options { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-  .gutschein-option {
-    background: #fff; border: 1.5px solid var(--border);
-    border-radius: var(--radius); padding: 1.25rem 1.5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    cursor: pointer; transition: .2s;
-  }
-  .gutschein-option:hover, .gutschein-option.selected {
-    border-color: var(--rose); background: var(--rose-light);
-  }
-  .gutschein-option .label { font-weight: 500; }
-  .gutschein-option .price {
-    font-family: var(--sans); font-size: 1.4rem;
-    color: var(--rose-dark);
-  }
-  .gutschein-steps { margin-top: 2.5rem; }
-  .gutschein-step {
-    display: flex; gap: 1rem; margin-bottom: 1rem;
-  }
-  .gutschein-step-num {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--rose); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: .8rem; font-weight: 500; flex-shrink: 0; margin-top: 2px;
-  }
-  .gutschein-step-text { font-size: .9rem; color: var(--text-mid); }
-  .gutschein-step-text strong { color: var(--text); }
-
-  .gutschein-card-preview {
-    background: linear-gradient(135deg, var(--rose-dark), #c4877c);
-    border-radius: var(--radius);
-    padding: 3rem 2rem;
-    text-align: center; color: #fff;
-    position: sticky; top: 100px;
-  }
-  .gutschein-card-preview .g-label {
-    font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
-    opacity: .8; margin-bottom: 1rem;
-  }
-  .gutschein-card-preview .g-title {
-    font-family: var(--heading); font-size: 1.8rem; font-weight: 300;
-    margin-bottom: .5rem;
-  }
-  .gutschein-card-preview .g-studio {
-    font-size: .9rem; opacity: .7; margin-bottom: 2rem;
-  }
-  .gutschein-card-preview .g-value {
-    font-family: var(--heading); font-size: 4rem; font-weight: 300;
-    line-height: 1;
-  }
-  .gutschein-card-preview .g-info {
-    font-size: .8rem; opacity: .6; margin-top: 1rem; line-height: 1.6;
-  }
-
-  /* ── KONTAKT ── */
-  .kontakt-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: start;
-  }
-  .kontakt-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
-  .kontakt-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-  }
-  .kontakt-icon {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--rose-light);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; flex-shrink: 0;
-  }
-  .kontakt-item h4 { font-size: .8rem; letter-spacing: .08em; color: var(--warm-gray); margin-bottom: .2rem; text-transform: uppercase; }
-  .kontakt-item a, .kontakt-item p { color: var(--text); text-decoration: none; font-size: .95rem; }
-  .kontakt-item a:hover { color: var(--rose-dark); }
-
-  .kontakt-form { }
-  .pc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .pc-anfrage-hinweis { font-size: .82rem; color: var(--text-mid); margin-bottom: 1.25rem; line-height: 1.5; }
-  .pc-anfrage-hinweis a { color: var(--rose-dark); }
-  .pc-anfrage-status { font-size: .88rem; margin-top: .75rem; min-height: 1.2em; }
-  .pc-anfrage-status.fehler { color: #b0796e; }
-  .pc-anfrage-danke { margin-top: 1.5rem; padding: 1.25rem 1.5rem; border-radius: var(--radius); background: var(--rose-light); color: var(--text); }
-  /* Die Regel unter „RESPONSIVE – TABLET“ greift auf dieser Seite nicht (CSS davor fehlerhaft), daher hier */
-  @media (max-width: 900px) { .kontakt-layout { grid-template-columns: 1fr; gap: 2rem; } }
-  .form-row { margin-bottom: 1.25rem; }
-  .form-row label {
-    display: block; font-size: .8rem; letter-spacing: .06em;
-    text-transform: uppercase; color: var(--warm-gray);
-    margin-bottom: .4rem;
-  }
-  .form-row input, .form-row textarea {
-    width: 100%; padding: .8rem 1rem;
-    border: 1.5px solid var(--border);
-    border-radius: 8px; background: #fff;
-    font-family: var(--sans); font-size: .95rem; color: var(--text);
-    transition: border-color .2s;
-    outline: none;
-  }
-  .form-row input:focus, .form-row textarea:focus { border-color: var(--rose); }
-  .form-row textarea { resize: vertical; min-height: 130px; }
-  .form-checkbox {
-    display: flex; gap: .75rem; align-items: flex-start;
-    margin-bottom: 1.5rem;
-  }
-  .form-checkbox input { margin-top: 4px; accent-color: var(--rose); }
-  .form-checkbox label { font-size: .85rem; color: var(--text-mid); line-height: 1.5; }
-
-  .map-embed {
-    border-radius: var(--radius); overflow: hidden;
-    height: 280px; margin-top: 2rem;
-    border: 1px solid var(--border);
-  }
-  .map-embed iframe { width: 100%; height: 100%; border: none; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--text); color: rgba(255,255,255,.7);
-    padding: 4rem 0 2rem;
-  }
-  .footer-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem; margin-bottom: 3rem;
-  }
-  .footer-brand .logo { color: #fff; }
-  .footer-brand .logo span { color: var(--rose); }
-  .footer-brand p { margin-top: .75rem; font-size: .875rem; line-height: 1.7; }
-  .footer-col h4 {
-    font-family: var(--sans); font-size: .75rem;
-    letter-spacing: .1em; text-transform: uppercase;
-    color: #fff; font-weight: 500; margin-bottom: 1rem;
-  }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
-  .footer-col ul li a {
-    color: rgba(255,255,255,.6); text-decoration: none;
-    font-size: .875rem; transition: color .2s;
-    cursor: pointer;
-  }
-  .footer-col ul li a:hover { color: var(--rose); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,.1);
-    padding-top: 1.5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: .8rem;
-  }
-  .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
-  .footer-bottom a:hover { color: var(--rose); }
-
-  /* ── SUMMER GLOW BANNER ── */
-  .summer-glow-banner {
-    background: linear-gradient(135deg, var(--rose-dark), #c4877c);
-    border-radius: var(--radius);
-    padding: 2.5rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 0;
-  }
-  .summer-glow-price {
-    text-align: center;
-    background: rgba(255,255,255,.1);
-    border-radius: var(--radius);
-    padding: 1.5rem 2rem;
-    min-width: 160px;
-  }
-  @media (max-width: 640px) {
-    .summer-glow-banner { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-    .summer-glow-price { text-align: left; }
-  }
-
-  /* ── PREISE ── */
-  .preise-kategorie { margin-bottom: 1rem; }
-  .preise-kat-header { margin-bottom: 2rem; }
-  .preise-kat-header h4 { margin-bottom: .3rem; }
-  .preise-kat-header p { font-size: .9rem; color: var(--text-mid); }
-
-  .preise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.25rem;
-  }
-  .preise-grid--3 {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-
-  .preis-card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-    display: flex; flex-direction: column; justify-content: space-between;
-    position: relative; overflow: hidden;
-    transition: .2s;
-  }
-  .preis-card:hover { border-color: var(--rose); box-shadow: 0 6px 20px rgba(217,164,154,.15); }
-  .preis-card--featured {
-    border-color: var(--rose);
-    background: var(--rose-light);
-  }
-  .preis-badge {
-    position: absolute; top: 1rem; right: 1rem;
-    background: var(--rose); color: #fff;
-    font-size: .7rem; font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase; padding: .25rem .65rem;
-    border-radius: 100px;
-  }
-  .preis-top { margin-bottom: 1.5rem; }
-  .preis-name {
-    font-family: var(--sans); font-size: 1.25rem;
-    font-weight: 400; margin-bottom: .35rem; color: var(--text);
-  }
-  .preis-desc { font-size: .85rem; color: var(--text-mid); line-height: 1.55; }
-  .preis-bottom { }
-  .preis-amount {
-    font-family: var(--heading); font-size: 2.5rem;
-    font-weight: 300; color: var(--rose-dark); line-height: 1;
-  }
-  .preis-cent { font-size: 1.4rem; }
-  .preis-unit { font-family: var(--sans); font-size: .85rem; color: var(--text-mid); font-weight: 400; }
-  .preis-note { font-size: .78rem; color: var(--warm-gray); margin-top: .4rem; }
-
-  .preise-divider {
-    height: 1px; background: var(--border);
-    margin: 3.5rem 0;
-  }
-
-  .preise-einstieg {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-  }
-  .preise-einstieg-text h3 { margin: .5rem 0 .75rem; }
-  .preise-einstieg-text p { color: var(--text-mid); font-size: .95rem; }
-  .preise-einstieg-note {
-    background: var(--cream); border-radius: var(--radius);
-    padding: 2rem; border: 1px solid var(--border);
-  }
-
-  /* ── STUDIO NEWS ── */
-  .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 2rem;
-  }
-  .news-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    transition: .25s;
-  }
-  .news-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.07); transform: translateY(-2px); }
-  .news-card-img {
-    width: 100%; height: 200px;
-    background: var(--rose-light);
-    overflow: hidden;
-  }
-  .news-card-img img { width: 100%; height: 100%; object-fit: cover; }
-  .news-card-img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .news-card-img-placeholder img { width: 60%; height: 60%; object-fit: contain; }
-  .news-card-body { padding: 1.5rem; }
-  .news-card-meta {
-    display: flex; gap: .75rem; align-items: center;
-    margin-bottom: .75rem;
-  }
-  .news-card-kat {
-    font-size: .72rem; font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase; color: var(--rose-dark);
-    background: var(--rose-light); padding: .2rem .65rem;
-    border-radius: 100px;
-  }
-  .news-card-datum {
-    font-size: .8rem; color: var(--warm-gray);
-  }
-  .news-card-titel {
-    font-family: var(--sans); font-size: 1.25rem;
-    font-weight: 400; margin-bottom: .6rem; color: var(--text);
-    line-height: 1.3;
-  }
-  .news-card-text {
-    font-size: .88rem; color: var(--text-mid);
-    line-height: 1.65;
-    display: -webkit-box; -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical; overflow: hidden;
-  }
-  .news-card-video {
-    margin-top: 1rem;
-  }
-  .news-card-autor {
-    font-size: .75rem; color: var(--warm-gray); letter-spacing: .03em;
-  }
-    font-size: .85rem; color: var(--rose-dark);
-    text-decoration: none; font-weight: 500;
-  }
-  .news-card-video a:hover { text-decoration: underline; }
-  @media (max-width: 640px) {
-    .news-grid { grid-template-columns: 1fr; }
-  }
-
-
-  .studio-banner {
-    width: 100%; height: 320px; overflow: hidden;
-  }
-  .studio-banner img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 40%;
-    display: block;
-  }
-  @media (max-width: 640px) {
-    .studio-banner { height: 220px; }
-  }
-
-  /* ── PODCASTS ── */
-  .podcast-grid { display: flex; flex-direction: column; gap: 1.25rem; }
-  .podcast-card {
-    background: #fff; border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.75rem 2rem;
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    grid-template-rows: auto auto;
-    gap: .5rem 1.25rem;
-    transition: .2s;
-  }
-  .podcast-card:hover { border-color: var(--rose); box-shadow: 0 6px 20px rgba(217,164,154,.12); }
-  .podcast-icon { grid-row: 1; grid-column: 1; font-size: 1.75rem; line-height: 1; padding-top: .25rem; }
-  .podcast-info { grid-row: 1; grid-column: 2; }
-  .podcast-num { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; margin-bottom: .3rem; }
-  .podcast-title { font-family: var(--sans); font-size: 1.2rem; font-weight: 400; margin-bottom: .4rem; color: var(--text); }
-  .podcast-desc { font-size: .875rem; color: var(--text-mid); line-height: 1.6; }
-  .podcast-player { grid-row: 2; grid-column: 2; width: 100%; height: 40px; margin-top: .75rem; accent-color: var(--rose); }
-
-
-    .preise-einstieg { grid-template-columns: 1fr; gap: 2rem; }
-  }
-
-  /* ══════════════════════════════════
-     RESPONSIVE – TABLET (≤900px)
-  ══════════════════════════════════ */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-why { order: -1; }
-    .probe-layout, .gutschein-layout, .kontakt-layout { grid-template-columns: 1fr; }
-    .probe-intro-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .probe-cta-box, .gutschein-card-preview { position: static; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .preise-einstieg { grid-template-columns: 1fr; gap: 2rem; }
-    .stats-grid { flex-wrap: wrap; }
-    .stat-item { min-width: 45%; }
-    .stat-divider { display: none; }
-  }
-
-  /* ══════════════════════════════════
-     RESPONSIVE – MOBILE (≤640px)
-  ══════════════════════════════════ */
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-  }
-
-  @media (max-width: 640px) {
-    /* Nav */
-    :root { --nav-h: 80px; }
-    nav { height: 80px; }
-    .page { padding-top: 80px; }
-    .mobile-menu { top: 80px; }
-    .logo img { height: 52px !important; }
-
-    /* Typography */
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.7rem; }
-    h3 { font-size: 1.2rem; }
-
-    /* Spacing */
-    .container { padding: 0 1.25rem; }
-    .section { padding: 3rem 0; }
-    .section-sm { padding: 2rem 0; }
-
-    /* Hero */
-    .hero { padding: 1.5rem 1.25rem; gap: 1.5rem; grid-template-columns: 1fr; }
-    .hero-why { order: 1; }
-    .hero-text { order: 0; }
-    .hero-text h1 { color: var(--text); }
-    .hero-text p { color: var(--text-mid); }
-    .hero-actions { flex-direction: column; }
-    .hero-actions .btn { text-align: center; }
-    .hero-why { padding: 1.5rem; }
-    .hero-why-item { gap: 1rem; }
-    .hero-why-num { font-size: 1.5rem; min-width: 2.5rem; }
-
-    /* Stats */
-    .stats-bar { padding: 2rem 0; }
-    .stats-grid { gap: 0; }
-    .stat-item { min-width: 50%; padding: 1rem; }
-    .stat-num { font-size: 2.2rem; }
-    .stat-label { font-size: .7rem; }
-
-    /* Cards */
-    .angebote-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .trainer-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .kurs-grid { grid-template-columns: 1fr; }
-    .preise-grid { grid-template-columns: 1fr; }
-    .preise-grid--3 { grid-template-columns: 1fr; }
-
-    /* Trainer card image */
-    .trainer-img { height: 200px; }
-
-    /* Probe */
-    .probe-layout { gap: 2rem; }
-    .probe-cta-box { padding: 1.5rem; }
-    .probe-img-wrap { height: 260px; }
-
-    /* Gutschein */
-    .gutschein-layout { gap: 2rem; }
-    .gutschein-card-preview { padding: 2rem 1.5rem; }
-    .gutschein-card-preview .g-value { font-size: 3rem; }
-
-    /* Kontakt */
-    .kontakt-layout { gap: 2rem; }
-    .map-embed { height: 220px; }
-
-    /* Footer */
-    .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .footer-bottom { flex-direction: column; gap: .75rem; text-align: center; }
-    footer { padding: 3rem 0 1.5rem; }
-
-    /* Page hero sections */
-    .page-hero { padding: 3rem 0 2.5rem; }
-
-    /* Ausbildung page */
-    #page-ausbildung .container > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
-
-    /* Buttons */
-    .btn { padding: .7rem 1.5rem; }
-
-    /* Quote card */
-    .hqc-inner { padding: 2rem 1.5rem; min-height: 320px; }
-    .hqc-text { font-size: 1.2rem; }
-
-    /* Kurs img */
-    .kurs-img { height: 160px; }
-
-    /* Podcasts */
-    .podcast-card { grid-template-columns: 1fr; }
-    .podcast-icon { grid-row: 1; grid-column: 1; }
-    .podcast-info { grid-row: 2; grid-column: 1; }
-    .podcast-player { grid-row: 3; grid-column: 1; }
-
-    /* Preise einstieg */
-    .preise-einstieg-text div { flex-direction: column; }
-  }
-
-  /* ══════════════════════════════════
-     RESPONSIVE – SMALL MOBILE (≤380px)
-  ══════════════════════════════════ */
-  @media (max-width: 380px) {
-    .trainer-grid { grid-template-columns: 1fr; }
-    .stat-item { min-width: 100%; }
-    h1 { font-size: 1.9rem; }
-  }
-
-
-  /* ── IMPRESSUM / DATENSCHUTZ ── */
-  .legal-content {
-    max-width: 780px; margin: 0 auto;
-    padding: 5rem 2rem;
-  }
-  .legal-content h1 { margin-bottom: 2rem; }
-  .legal-content h2 { font-size: 1.4rem; margin: 2rem 0 .75rem; }
-  .legal-content p, .legal-content li { color: var(--text-mid); margin-bottom: .75rem; font-size: .95rem; }
-  .legal-content ul { padding-left: 1.25rem; }
-  .legal-content a { color: var(--rose-dark); }
-
-  /* animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .page.active .hero-text,
-  .page.active .page-hero {
-    animation: fadeUp .6s ease both;
-  }
-
-</style>
+<link rel="canonical" href="https://pilatescompany.de/kontakt">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1025,8 +22,8 @@
     "jobTitle": "Inhaberin"
   },
   "url": "https://pilatescompany.de/",
-  "logo": "https://pilatescompany.de/logo.png",
-  "image": "https://pilatescompany.de/logo.png",
+  "logo": "https://pilatescompany.de/assets/logo.png",
+  "image": "https://pilatescompany.de/assets/logo.png",
   "telephone": "+4945116083019",
   "email": "info@pilatescompany.de",
   "address": {
@@ -1078,12 +75,6 @@
   ]
 }
 </script>
-<style>
-  #fragen details { border:1px solid var(--border, rgba(44,40,37,.1)); border-radius:12px; background:#fff; margin-top:.75rem; padding:1rem 1.25rem; }
-  #fragen summary { cursor:pointer; font-weight:500; }
-  #fragen details p { margin-top:.6rem; color:var(--text-mid); }
-  #fragen a { color:var(--rose-dark); }
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1188,287 +179,122 @@
   ]
 }
 </script>
-<style id="pc-nav-priority">
-  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Gutschein, Downloads) liegen im Hamburger-Menü */
-  @media (min-width: 769px) {
-    .nav-links li:has(> a[href="/ausbildung"]),
-    .nav-links li:has(> a[href="/studio-news"]),
-    .nav-links li:has(> a[href="/gutschein"]),
-    .nav-links li:has(> a[href="/downloads"]) { display: none; }
-    .hamburger { display: flex; margin-left: 1rem; }
-  }
-  @media (min-width: 769px) and (max-width: 1199px) {
-    .nav-links li:has(> a[href="/wellpass"]),
-    .nav-links li:has(> a[href="/personal-training"]),
-    .nav-links li:has(> a[href="/trainer"]),
-    .nav-links li:has(> a.nav-en),
-    .nav-links li.nav-lang { display: none; }
-  }
-</style>
-<style id="nav-probe-stil">
-  .nav-probe{display:none}
-  @media (max-width:900px){
-    .nav-probe{display:inline-flex;align-items:center;margin-left:auto;margin-right:.75rem;padding:.55rem .95rem;border-radius:999px;background:#d9a49a;color:#fff!important;font-family:'Poppins',system-ui,sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.01em;line-height:1.15;text-decoration:none;white-space:nowrap;box-shadow:0 2px 10px rgba(217,164,154,.35)}
-    .nav-probe:active{background:#c8857a}
-  }
-  @media (max-width:360px){ .nav-probe{font-size:.72rem;padding:.5rem .75rem;margin-right:.5rem} }
+<meta property="og:title" content="Kontakt &amp; Anfahrt | Pilates Company Lübeck">
+<meta property="og:description" content="Kontakt zur Pilates Company in Stockelsdorf, direkt an der Grenze zu Lübeck: So findest du zu uns, dazu Antworten auf häufige Fragen. Wir melden uns schnell.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pilatescompany.de/kontakt">
+<meta property="og:image" content="https://pilatescompany.de/og-image.png">
+<meta name="theme-color" content="#FAF6F3">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.k-feld{display:block}
+.k-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+@media (min-width:700px){.k-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}}
+.k-grid .abschnitt{padding-left:0;padding-right:0}
+.k-form-box{padding:18px;border-radius:var(--r-card);background:var(--sheet);border:1px solid var(--line-soft);box-shadow:var(--shadow-card)}
+.k-form-box .klein a{color:var(--cta-hover)}
+.k-sofort{margin-top:10px}
 </style>
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="64" height="40"></a>
+  <a class="kopf-probe" href="/probetraining/">Probetraining buchen</a>
+  <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
+  <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+</header>
 
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="/" style="display:flex; align-items:center;">
-      <img src="logo.png" alt="Pilates Company Lübeck" style="height:70px; width:auto; display:block;">
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">HOME</a></li>
-      <li><a href="/kurse">KURSE</a></li>
-      <li><a href="/preise">PREISE</a></li>
-      <li><a href="/trainer">TRAINER</a></li>
-      <li><a href="/personal-training">PHYSIOCOACHING</a></li>
-      <li><a href="/ausbildung">AUSBILDUNG</a></li>
-      <li><a href="/studio-news">NEWS</a></li>
-      <li><a href="/gutschein">GUTSCHEIN</a></li>
-      <li><a href="/wellpass">WELLPASS</a></li>
-      <li><a href="/downloads">DOWNLOADS</a></li>
-      <li><a href="/english" class="nav-en" title="English page">🇬🇧 EN</a></li>
-      <li><a href="/probetraining" class="nav-cta">PROBETRAINING BUCHEN</a></li>
-      <li>
-        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" class="nav-instagram" title="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </li>
-    </ul>
-    <a class="nav-probe" href="/probetraining/">Probetraining buchen</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menü">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<nav class="menu" id="menu" aria-label="Hauptmenü">
+  <div class="oben">
+    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="64" height="40"></a>
+    <button class="rund" id="menuZu" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
+  <div class="grp"><p>Training</p>
+    <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div>
+  <div class="grp"><p>Studio</p>
+    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a><a href="/downloads">Downloads</a></div>
+  <div class="grp"><p>Mehr</p>
+    <a href="/gutschein">Gutschein</a><a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="/kontakt" aria-current="page">Kontakt</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
 </nav>
+<main id="inhalt" class="seite weit">
+<section class="einstieg">
+  <p class="ueber">Wir freuen uns von dir zu hören</p>
+  <h1>Kontakt zur Pilates Company in <em>Stockelsdorf</em></h1>
+  <p class="lead"><strong style="font-weight:500;color:var(--ink)">Pilates-Studio in Stockelsdorf bei Lübeck.</strong> Fragen zu unseren Pilates-Kursen, Probetraining, Mitgliedschaft oder Gutscheinen? Schreib uns oder ruf an – wir melden uns schnell.</p>
+  <div class="sprung"><a href="#nachricht">Nachricht schreiben</a><a href="#anfahrt">So findest du uns</a><a href="#fragen">Häufige Fragen</a></div>
+</section>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/">HOME</a>
-  <a href="/kurse">KURSE</a>
-  <a href="/preise">PREISE</a>
-  <a href="/trainer">TRAINER</a>
-  <a href="/personal-training">PHYSIOCOACHING</a>
-  <a href="/ausbildung">AUSBILDUNG</a>
-  <a href="/studio-news">NEWS</a>
-  <a href="/gutschein">GUTSCHEIN</a>
-  <a href='/downloads'>DOWNLOADS</a>
-  <a href="/wellpass">WELLPASS</a>
-  <a href="/english" style="color: var(--rose); font-weight: 500;">🇬🇧 ENGLISH</a>
-  <a href="/probetraining" style="color: var(--rose); font-weight: 500;">PROBETRAINING BUCHEN</a>
-  <a href="/kontakt">KONTAKT</a>
-  <a href="https://www.instagram.com/my.pilatescompany" target="_blank">INSTAGRAM</a>
-</div>
-
-<main>
-<section class="section" style="background:var(--rose-light);">
-    <div class="container">
-      <span class="tag">Wir freuen uns von dir zu hören</span>
-      <h1>Kontakt zur Pilates Company in Stockelsdorf</h1>
-      <h2 style="font-size:1.25rem; font-weight:400; margin-top:.5rem;">Pilates-Studio in Stockelsdorf bei Lübeck</h2>
-      <p style="color:var(--text-mid); margin-top:.75rem; max-width:520px;">Fragen zu unseren Pilates-Kursen, Probetraining, Mitgliedschaft oder Gutscheinen? Schreib uns oder ruf an – wir melden uns schnell.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="kontakt-layout">
-        <div>
-          <h3>Schreib uns</h3>
-          <form class="kontakt-form" data-pc-anfrage="kontakt" style="margin-top:1.5rem;">
-            <div class="form-row"><label for="k-name">Name *</label><input id="k-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
-            <div class="form-row"><label for="k-email">E-Mail *</label><input id="k-email" name="email" type="email" autocomplete="email" maxlength="200" required></div>
-            <div class="form-row"><label for="k-tel">Telefon (optional)</label><input id="k-tel" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
-            <div class="form-row"><label for="k-nachricht">Deine Nachricht *</label><textarea id="k-nachricht" name="message" maxlength="4000" required></textarea></div>
-            <div class="pc-hp" aria-hidden="true"><label for="k-website">Website</label><input id="k-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-            <p class="pc-anfrage-hinweis">Wir nutzen deine Angaben nur, um deine Anfrage zu beantworten. Mehr in der <a href="/datenschutz#kontaktformular">Datenschutzerklärung</a>.</p>
-            <button type="submit" class="btn btn-primary">Nachricht senden</button>
-            <p class="pc-anfrage-status" role="alert"></p>
-          </form>
-        </div>
-
-        <div>
-          <h3>So findest du uns</h3>
-          <div class="kontakt-info">
-            <div class="kontakt-item">
-              <div class="kontakt-icon">📍</div>
-              <div>
-                <h4>Adresse</h4>
-                <p>Segeberger Str. 1<br>23617 Stockelsdorf<br>(bei Lübeck)</p>
-              </div>
-            </div>
-            <div class="kontakt-item">
-              <div class="kontakt-icon">📞</div>
-              <div>
-                <h4>Telefon</h4>
-                <a href="tel:+4945116083019">0451 - 160 830 19</a>
-              </div>
-            </div>
-            <div class="kontakt-item">
-              <div class="kontakt-icon">✉</div>
-              <div>
-                <h4>E-Mail</h4>
-                <a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a>
-              </div>
-            </div>
-            <div class="kontakt-item">
-              <div class="kontakt-icon">🕐</div>
-              <div>
-                <h4>Öffnungszeiten</h4>
-                <p>Mo bis Fr 08:00 bis 20:00 Uhr<br>Sa 09:00 bis 12:00 Uhr<br>So geschlossen</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-embed">
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=10.6376,53.8755,10.6676,53.8955&layer=mapnik&marker=53.8854825,10.6526358"
-              allowfullscreen loading="lazy">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-<section class="section" id="fragen">
-  <div class="container" style="max-width:800px;">
-    <h2>Häufige Fragen</h2>
-    <details>
-      <summary>Brauche ich Vorkenntnisse?</summary>
-      <p>Nein. Grundfitness brauchst du bei uns nicht, die meisten starten genau dort, wo du gerade stehst. Deine Trainerin zeigt dir zu jeder Übung eine Variante, die sich für deinen Körper sicher anfühlt.</p>
-    </details>
-    <details>
-      <summary>Wie groß sind die Gruppen?</summary>
-      <p>Klein. Im Reformer-Kurs trainieren höchstens acht Personen. Auf der Matte kommen höchstens zehn Teilnehmende auf eine Trainerin.</p>
-    </details>
-    <p><a href="/reformer-pilates-luebeck">Mehr über Reformer-Pilates</a></p>
-    <details>
-      <summary>Wie buche ich einen Kurs?</summary>
-      <p>Online auf unserer Website: Kurs auswählen und Platz direkt buchen. Mitglieder buchen wie gewohnt in ihrer App, mit Wellpass buchst du über die Wellpass-App.</p>
-    </details>
-    <details>
-      <summary>Wie läuft das Probetraining ab?</summary>
-      <p>Auf unserer Probetraining-Seite nennst du im Formular deine Kursrichtung und deine Wunschtage. Wir melden uns per WhatsApp oder Anruf mit freien Terminen, meistens noch am selben Tag. <a href="/probetraining">Zum Probetraining</a></p>
-    </details>
-    <details>
-      <summary>Was kostet ein erstes Training?</summary>
-      <p>Das Probetraining kostet 9,90 € und du buchst es direkt online: Reformer- oder Mattenkurs aussuchen, bezahlen, fertig. Schließt du danach eine Mitgliedschaft ab, rechnen wir dir die 9,90 € an. <a href="/probetraining/">Zur Buchung</a></p>
-    </details>
-    <details>
-      <summary>Gibt es Einzeltraining?</summary>
-      <p>Ja, die Private Reformer Class: 60 Minuten allein am Reformer mit persönlicher Begleitung, 89 Euro pro Einheit. Du buchst sie unabhängig von den Credits deiner Mitgliedschaft. <a href="/personal-training">Mehr zur Private Reformer Class</a></p>
-    </details>
-    <details>
-      <summary>Wann habt ihr geöffnet?</summary>
-      <p>Montag bis Freitag haben wir von 8 bis 20 Uhr geöffnet, samstags von 9 bis 12 Uhr. Sonntags ist das Studio geschlossen.</p>
-    </details>
-    <details>
-      <summary>Kann ich vor Ort parken?</summary>
-      <p>Ja, du parkst direkt vor der Tür, ohne Parkgebühr. Aus der Lübecker Innenstadt bist du in weniger als zehn Minuten bei uns.</p>
-    </details>
-    <details>
-      <summary>Kann ich mit Wellpass trainieren?</summary>
-      <p>Ja. Die Pilates-Kurse auf der Matte buchst du ohne Zuzahlung direkt in der Wellpass-App. Für Reformer-Pilates fällt eine Zuzahlung von 10 Euro pro Einheit an, die du direkt im Studio bezahlst. <a href="/wellpass">Alles zu Wellpass</a></p>
-    </details>
-    <details>
-      <summary>Kann ich einen Gutschein verschenken?</summary>
-      <p>Ja. Ein Gutschein für eine Einheit kostet 28 Euro und gilt für alle Kurse im Studio. Den Gutscheincode bekommst du per E-Mail, eine persönliche Nachricht kannst du dazuschreiben. <a href="/gutschein">Zum Gutschein</a></p>
-    </details>
-    <details>
-      <summary>In welcher Sprache sind die Kurse?</summary>
-      <p>Die Gruppenkurse laufen auf Deutsch, einzelne Kurse auch zweisprachig auf Deutsch und Englisch. Die Private Reformer Class gibt es auch auf Englisch. Türkisch und Russisch sind ebenfalls möglich. <a href="/english">English overview</a></p>
-    </details>
-    <details>
-      <summary>Was ist der Unterschied zu PhysioPro im selben Haus?</summary>
-      <p>Die Pilates Company ist ein Studio für Pilates-Kurse am Reformer und auf der Matte. Physiotherapie mit Rezept findest du bei <a href="https://physioproluebeck.de/">PhysioPro Lübeck</a>, Tür an Tür mit uns.</p>
-    </details>
+<div class="k-grid">
+<section class="abschnitt" id="nachricht" aria-labelledby="schreib-h" style="padding-left:var(--pad);padding-right:var(--pad)">
+  <h2 id="schreib-h">Schreib uns</h2>
+  <div class="k-form-box">
+  <form class="form" data-pc-anfrage="kontakt">
+    <div><label for="k-name">Name *</label><input id="k-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+    <div><label for="k-email">E-Mail *</label><input id="k-email" name="email" type="email" autocomplete="email" maxlength="200" required></div>
+    <div><label for="k-tel">Telefon (optional)</label><input id="k-tel" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+    <div><label for="k-nachricht">Deine Nachricht *</label><textarea id="k-nachricht" name="message" maxlength="4000" required></textarea></div>
+    <div class="pc-hp" aria-hidden="true"><label for="k-website">Website</label><input id="k-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+    <p class="klein pc-anfrage-hinweis">Wir nutzen deine Angaben nur, um deine Anfrage zu beantworten. Mehr in der <a href="/datenschutz#kontaktformular">Datenschutzerklärung</a>.</p>
+    <button type="submit" class="knopf">Nachricht senden</button>
+    <p class="pc-anfrage-status" role="alert"></p>
+  </form>
   </div>
 </section>
 
-</div><!-- /kontakt -->
+<section class="abschnitt" id="anfahrt" aria-labelledby="finden-h" style="padding-left:var(--pad);padding-right:var(--pad)">
+  <h2 id="finden-h">So findest du uns</h2>
+  <div class="kontakt-zeilen">
+    <div><span><b>Adresse</b>Segeberger Str. 1, 23617 Stockelsdorf (bei Lübeck)</span></div>
+    <a href="tel:+4945116083019"><span><b>Telefon</b>0451 - 160 830 19</span></a>
+    <a href="mailto:info@pilatescompany.de"><span><b>E-Mail</b>info@pilatescompany.de</span></a>
+    <div><span><b>Öffnungszeiten</b>Mo bis Fr 08:00 bis 20:00 Uhr<br>Sa 09:00 bis 12:00 Uhr<br>So geschlossen</span></div>
+  </div>
+  <p class="klein k-sofort">Telefon: Sofortnachricht hinterlassen – 24h erreichbar. Wir rufen zurück.</p>
+  <div class="karte-einbettung"><iframe title="Karte: Pilates Company Lübeck, Segeberger Str. 1, Stockelsdorf" src="https://www.openstreetmap.org/export/embed.html?bbox=10.6376,53.8755,10.6676,53.8955&amp;layer=mapnik&amp;marker=53.8854825,10.6526358" allowfullscreen loading="lazy"></iframe></div>
+</section>
+</div>
 
+<section class="fragen" id="fragen" aria-labelledby="fragen-h">
+  <h2 id="fragen-h">Häufige Fragen</h2>
+  <details><summary>Brauche ich Vorkenntnisse?<i aria-hidden="true">+</i></summary><p>Nein. Grundfitness brauchst du bei uns nicht, die meisten starten genau dort, wo du gerade stehst. Deine Trainerin zeigt dir zu jeder Übung eine Variante, die sich für deinen Körper sicher anfühlt. <a href="/reformer-pilates-luebeck">Mehr über Reformer-Pilates</a></p></details>
+  <details><summary>Wie groß sind die Gruppen?<i aria-hidden="true">+</i></summary><p>Klein. Im Reformer-Kurs trainieren höchstens acht Personen. Auf der Matte kommen höchstens zehn Teilnehmende auf eine Trainerin.</p></details>
+  <details><summary>Wie buche ich einen Kurs?<i aria-hidden="true">+</i></summary><p>Online auf unserer Website: Kurs auswählen und Platz direkt buchen. Mitglieder buchen wie gewohnt in ihrer App, mit Wellpass buchst du über die Wellpass-App.</p></details>
+  <details><summary>Wie läuft das Probetraining ab?<i aria-hidden="true">+</i></summary><p>Auf unserer Probetraining-Seite nennst du im Formular deine Kursrichtung und deine Wunschtage. Wir melden uns per WhatsApp oder Anruf mit freien Terminen, meistens noch am selben Tag. <a href="/probetraining">Zum Probetraining</a></p></details>
+  <details><summary>Was kostet ein erstes Training?<i aria-hidden="true">+</i></summary><p>Das Probetraining kostet 9,90 € und du buchst es direkt online: Reformer- oder Mattenkurs aussuchen, bezahlen, fertig. Schließt du danach eine Mitgliedschaft ab, rechnen wir dir die 9,90 € an. <a href="/probetraining/">Zur Buchung</a></p></details>
+  <details><summary>Gibt es Einzeltraining?<i aria-hidden="true">+</i></summary><p>Ja, die Private Reformer Class: 60 Minuten allein am Reformer mit persönlicher Begleitung, 89 Euro pro Einheit. Du buchst sie unabhängig von den Credits deiner Mitgliedschaft. <a href="/personal-training">Mehr zur Private Reformer Class</a></p></details>
+  <details><summary>Wann habt ihr geöffnet?<i aria-hidden="true">+</i></summary><p>Montag bis Freitag haben wir von 8 bis 20 Uhr geöffnet, samstags von 9 bis 12 Uhr. Sonntags ist das Studio geschlossen.</p></details>
+  <details><summary>Kann ich vor Ort parken?<i aria-hidden="true">+</i></summary><p>Ja, du parkst direkt vor der Tür, ohne Parkgebühr. Aus der Lübecker Innenstadt bist du in weniger als zehn Minuten bei uns.</p></details>
+  <details><summary>Kann ich mit Wellpass trainieren?<i aria-hidden="true">+</i></summary><p>Ja. Die Pilates-Kurse auf der Matte buchst du ohne Zuzahlung direkt in der Wellpass-App. Für Reformer-Pilates fällt eine Zuzahlung von 10 Euro pro Einheit an, die du direkt im Studio bezahlst. <a href="/wellpass">Alles zu Wellpass</a></p></details>
+  <details><summary>Kann ich einen Gutschein verschenken?<i aria-hidden="true">+</i></summary><p>Ja. Ein Gutschein für eine Einheit kostet 28 Euro und gilt für alle Kurse im Studio. Den Gutscheincode bekommst du per E-Mail, eine persönliche Nachricht kannst du dazuschreiben. <a href="/gutschein">Zum Gutschein</a></p></details>
+  <details><summary>In welcher Sprache sind die Kurse?<i aria-hidden="true">+</i></summary><p>Die Gruppenkurse laufen auf Deutsch, einzelne Kurse auch zweisprachig auf Deutsch und Englisch. Die Private Reformer Class gibt es auch auf Englisch. Türkisch und Russisch sind ebenfalls möglich. <a href="/english">English overview</a></p></details>
+  <details><summary>Was ist der Unterschied zu PhysioPro im selben Haus?<i aria-hidden="true">+</i></summary><p>Die Pilates Company ist ein Studio für Pilates-Kurse am Reformer und auf der Matte. Physiotherapie mit Rezept findest du bei <a href="https://physioproluebeck.de/">PhysioPro Lübeck</a>, Tür an Tür mit uns.</p></details>
+</section>
 
-<!-- ════════════════════════════════════════
-     IMPRESSUM
-════════════════════════════════════════ -->
 </main>
-
-<footer style="background: var(--text); color: white; padding: 4rem 0 2rem;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
-      
-      <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Pilates Company Lübeck</h4>
-        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8;">
-          Segeberger Str. 1<br>
-          23617 Stockelsdorf<br>
-          <br>
-          <strong>Telefon:</strong> <a href="tel:+4945116083019" style="color: var(--rose); text-decoration: none;">0451 - 160 830 19</a><br><span style="font-size:.8rem;color:var(--text-mid);">Sofortnachricht hinterlassen — 24h erreichbar. Wir rufen zurück.</span><br>
-          <strong>Email:</strong> <a href="mailto:info@pilatescompany.de" style="color: var(--rose); text-decoration: none;">info@pilatescompany.de</a>
-        </p>
-      </div>
-      
-      <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Navigation</h4>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
-          <li><a href="/" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Home</a></li>
-          <li><a href="/kurse" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Kurse</a></li>
-          <li><a href="/reformer-pilates-luebeck" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Reformer-Pilates</a></li>
-          <li><a href="/preise" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Preise</a></li>
-          <li><a href="/trainer" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Trainer</a></li>
-          <li><a href="/ausbildung" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s;">Ausbildung</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Mehr</h4>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
-          <li><a href="/studio-news" style="color: rgba(255,255,255,0.8); text-decoration: none;">News</a></li>
-          <li><a href="/gutschein" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
-          <li><a href="/downloads" style="color: rgba(255,255,255,0.8); text-decoration: none;">Downloads</a></li>
-          <li><a href="/probetraining" style="color: rgba(255,255,255,0.8); text-decoration: none;">Probetraining</a></li>
-          <li><a href="/kontakt" style="color: rgba(255,255,255,0.8); text-decoration: none;">Kontakt</a></li>
-          <li><a href="/kontakt#fragen" style="color: rgba(255,255,255,0.8); text-decoration: none;">Häufige Fragen</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 style="color: var(--rose); margin-bottom: 1rem;">Rechtliches</h4>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
-          <li><a href="/impressum" style="color: rgba(255,255,255,0.8); text-decoration: none;">Impressum</a></li>
-          <li><a href="/datenschutz" style="color: rgba(255,255,255,0.8); text-decoration: none;">Datenschutz</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
-      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">
-        © 2026 Pilates Company Lübeck. Alle Rechte vorbehalten. | 
-        <a href="https://www.instagram.com/my.pilatescompany" target="_blank" style="color: var(--rose); text-decoration: none;">Instagram</a>
-      </p>
-    </div>
+<footer class="fuss">
+  <div class="inner">
+    <img src="/assets/logo-gross.png" alt="Pilates Company Lübeck" width="127" height="80" loading="lazy">
+    <address>Segeberger Str. 1<br>23617 Stockelsdorf bei Lübeck</address>
+    <div class="kontakt"><a href="tel:+4945116083019">0451 - 160 830 19</a><a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a></div>
+    <nav class="navi" aria-label="Fußzeile">
+      <a href="/kurse">Kurse</a><a href="/preise">Preise</a><a href="/trainer">Trainer</a><a href="/probetraining/">Probetraining</a>
+      <a href="/kontakt">Kontakt</a><a href="/kontakt#fragen">Häufige Fragen</a><a href="/gutschein">Gutschein</a><a href="/wellpass">Wellpass</a>
+      <a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="legal"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="https://mitglieder.pilatescompany.de/agb/">AGB</a></div>
+    <p class="copy">© 2026 Pilates Company Lübeck</p>
   </div>
 </footer>
-
-
-
-
-
-<script src="script.js"></script>
-
-
-
-
-
-
+<script src="/script.js"></script>
+<script src="/last-minute.js" defer></script>
 
 </body>
 </html>
