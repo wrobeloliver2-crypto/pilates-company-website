@@ -27,13 +27,15 @@
 /gutschein.html                 /gutschein                    301!
 /kontakt.html                   /kontakt                      301!
 /studio-news.html               /studio-news                  301!
-/challenge.html                 /challenge                    301!
+/challenge.html                 /                             301!
+/challenge                      /                             301!
 /downloads.html                 /downloads                    301!
 /impressum.html                 /impressum                    301!
 /datenschutz.html               /datenschutz                  301!
 /english.html                   /english                      301!
 /turkce.html                    /turkce                       301!
 /russkiy.html                   /russkiy                      301!
+/last-minute.html               /last-minute                  301!
 
 # Datenschutz: Dublette und Adresse der alten Website
 /datenschutzerklaerung.html     /datenschutz                  301!

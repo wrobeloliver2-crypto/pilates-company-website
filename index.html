@@ -1270,11 +1270,10 @@
 }
 </script>
 <style id="pc-nav-priority">
-  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Videos, Gutschein, Downloads) liegen im Hamburger-Menü */
+  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Gutschein, Downloads) liegen im Hamburger-Menü */
   @media (min-width: 769px) {
     .nav-links li:has(> a[href="/ausbildung"]),
     .nav-links li:has(> a[href="/studio-news"]),
-    .nav-links li:has(> a[href="/challenge"]),
     .nav-links li:has(> a[href="/gutschein"]),
     .nav-links li:has(> a[href="/downloads"]) { display: none; }
     .hamburger { display: flex; margin-left: 1rem; }
@@ -1313,7 +1312,6 @@
       <li><a href="/personal-training">PHYSIOCOACHING</a></li>
       <li><a href="/ausbildung">AUSBILDUNG</a></li>
       <li><a href="/studio-news">NEWS</a></li>
-      <li><a href="/challenge">VIDEOS</a></li>
       <li><a href="/gutschein">GUTSCHEIN</a></li>
       <li><a href="/wellpass">WELLPASS</a></li>
       <li><a href="/downloads">DOWNLOADS</a></li>
@@ -1346,7 +1344,6 @@
   <a href="/personal-training">PHYSIOCOACHING</a>
   <a href="/ausbildung">AUSBILDUNG</a>
   <a href="/studio-news">NEWS</a>
-  <a href="/challenge">VIDEOS</a>
   <a href="/gutschein">GUTSCHEIN</a>
   <a href='/downloads'>DOWNLOADS</a>
   <a href="/wellpass">WELLPASS</a>
@@ -1393,6 +1390,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Last-Minute-Plätze (last-minute.js): nur sichtbar, wenn Studio OS aktiv=true und Termine meldet -->
+  <aside id="lm-streifen" class="lm-streifen" aria-label="Last-Minute-Plätze" aria-live="polite" style="display:none"></aside>
 
   <!-- WARUM PILATES COMPANY – statisch unter der Slideshow -->
   <div style="background:var(--rose-light);border-radius:20px;border:1px solid var(--border);padding:2.5rem;margin-top:2rem;max-width:680px;margin-left:auto;margin-right:auto;">
@@ -1598,6 +1598,7 @@
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
           <li><a href="/studio-news" style="color: rgba(255,255,255,0.8); text-decoration: none;">News</a></li>
           <li><a href="/gutschein" style="color: rgba(255,255,255,0.8); text-decoration: none;">Gutschein</a></li>
+          <li data-lm-zeige style="display:none"><a href="/last-minute" style="color: rgba(255,255,255,0.8); text-decoration: none;">Last-Minute</a></li>
           <li><a href="/downloads" style="color: rgba(255,255,255,0.8); text-decoration: none;">Downloads</a></li>
           <li><a href="/probetraining" style="color: rgba(255,255,255,0.8); text-decoration: none;">Probetraining</a></li>
           <li><a href="/kontakt" style="color: rgba(255,255,255,0.8); text-decoration: none;">Kontakt</a></li>
@@ -1626,6 +1627,7 @@
 
 
 <script src="script.js"></script>
+<script src="/last-minute.js" defer></script>
  <script src="pc-nav-kontakt.js"></script>
 
 
