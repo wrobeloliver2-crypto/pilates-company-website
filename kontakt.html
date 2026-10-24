@@ -109,7 +109,7 @@
       "name": "Wie läuft das Probetraining ab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Auf unserer Probetraining-Seite nennst du im Formular deine Kursrichtung und deine Wunschtage. Wir melden uns per WhatsApp oder Anruf mit freien Terminen, meistens noch am selben Tag."
+        "text": "Du buchst dein Probetraining direkt online: Auf der Probetraining-Seite suchst du dir einen freien Reformer- oder Mattenkurs aus, bezahlst 9,90 € und bekommst deine Bestätigung. Schließt du danach eine Mitgliedschaft ab, rechnen wir dir die 9,90 € an."
       }
     },
     {
@@ -157,7 +157,7 @@
       "name": "Kann ich einen Gutschein verschenken?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Ein Gutschein für eine Einheit kostet 28 Euro und gilt für alle Kurse im Studio. Den Gutscheincode bekommst du per E-Mail, eine persönliche Nachricht kannst du dazuschreiben."
+        "text": "Ja. Den Betrag wählst du frei, ab 20 Euro (eine Einheit kostet 28 Euro). Der Gutschein gilt für alle Kurse im Studio. Den Gutscheincode bekommst du per E-Mail, eine persönliche Nachricht kannst du dazuschreiben."
       }
     },
     {
@@ -206,21 +206,21 @@
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf">
-  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="64" height="40"></a>
-  <a class="kopf-probe" href="/probetraining/">Probetraining buchen</a>
+  <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
+  <a class="kopf-probe" href="/probetraining/">Probetraining<span class="lang"> buchen</span></a>
   <a class="rund" href="https://wa.me/491753484680" aria-label="Per WhatsApp schreiben" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#1F8A4C"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm4.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg></a>
   <button class="rund burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
 
 <nav class="menu" id="menu" aria-label="Hauptmenü">
   <div class="oben">
-    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="64" height="40"></a>
+    <a href="/"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
     <button class="rund" id="menuZu" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="grp"><p>Training</p>
     <a href="/kurse">Kurse</a><a href="/reformer-pilates-luebeck">Reformer-Pilates</a><a href="/preise">Preise</a><a href="/probetraining/">Probetraining</a><a href="/probetraining/?art=dropin">Kurs buchen (Drop-In)</a><a href="https://mitglieder.pilatescompany.de/5er-karte/">5er-Karte<span>↗</span></a><a href="/personal-training">Physiocoaching</a><a href="/ausbildung">Ausbildung</a><a href="/wellpass">Wellpass</a></div>
   <div class="grp"><p>Studio</p>
-    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a><a href="/downloads">Downloads</a></div>
+    <a href="/">Startseite</a><a href="/trainer">Trainer</a><a href="/studio-news">News</a></div>
   <div class="grp"><p>Mehr</p>
     <a href="/gutschein">Gutschein</a><a href="/last-minute" data-lm-zeige style="display:none">Last-Minute</a><a href="/kontakt" aria-current="page">Kontakt</a><a href="https://mitglieder.pilatescompany.de/">Mitgliederbereich<span>↗</span></a><a href="/english" hreflang="en">English<span>EN</span></a><a href="https://www.instagram.com/my.pilatescompany" target="_blank" rel="noopener">Instagram<span>↗</span></a></div>
 </nav>
@@ -267,13 +267,13 @@
   <details><summary>Brauche ich Vorkenntnisse?<i aria-hidden="true">+</i></summary><p>Nein. Grundfitness brauchst du bei uns nicht, die meisten starten genau dort, wo du gerade stehst. Deine Trainerin zeigt dir zu jeder Übung eine Variante, die sich für deinen Körper sicher anfühlt. <a href="/reformer-pilates-luebeck">Mehr über Reformer-Pilates</a></p></details>
   <details><summary>Wie groß sind die Gruppen?<i aria-hidden="true">+</i></summary><p>Klein. Im Reformer-Kurs trainieren höchstens acht Personen. Auf der Matte kommen höchstens zehn Teilnehmende auf eine Trainerin.</p></details>
   <details><summary>Wie buche ich einen Kurs?<i aria-hidden="true">+</i></summary><p>Online auf unserer Website: Kurs auswählen und Platz direkt buchen. Mitglieder buchen wie gewohnt in ihrer App, mit Wellpass buchst du über die Wellpass-App.</p></details>
-  <details><summary>Wie läuft das Probetraining ab?<i aria-hidden="true">+</i></summary><p>Auf unserer Probetraining-Seite nennst du im Formular deine Kursrichtung und deine Wunschtage. Wir melden uns per WhatsApp oder Anruf mit freien Terminen, meistens noch am selben Tag. <a href="/probetraining">Zum Probetraining</a></p></details>
+  <details><summary>Wie läuft das Probetraining ab?<i aria-hidden="true">+</i></summary><p>Du buchst dein Probetraining direkt online: Auf der Probetraining-Seite suchst du dir einen freien Reformer- oder Mattenkurs aus, bezahlst 9,90 € und bekommst deine Bestätigung. Schließt du danach eine Mitgliedschaft ab, rechnen wir dir die 9,90 € an. <a href="/probetraining">Zum Probetraining</a></p></details>
   <details><summary>Was kostet ein erstes Training?<i aria-hidden="true">+</i></summary><p>Das Probetraining kostet 9,90 € und du buchst es direkt online: Reformer- oder Mattenkurs aussuchen, bezahlen, fertig. Schließt du danach eine Mitgliedschaft ab, rechnen wir dir die 9,90 € an. <a href="/probetraining/">Zur Buchung</a></p></details>
   <details><summary>Gibt es Einzeltraining?<i aria-hidden="true">+</i></summary><p>Ja, die Private Reformer Class: 60 Minuten allein am Reformer mit persönlicher Begleitung, 89 Euro pro Einheit. Du buchst sie unabhängig von den Credits deiner Mitgliedschaft. <a href="/personal-training">Mehr zur Private Reformer Class</a></p></details>
   <details><summary>Wann habt ihr geöffnet?<i aria-hidden="true">+</i></summary><p>Montag bis Freitag haben wir von 8 bis 20 Uhr geöffnet, samstags von 9 bis 12 Uhr. Sonntags ist das Studio geschlossen.</p></details>
   <details><summary>Kann ich vor Ort parken?<i aria-hidden="true">+</i></summary><p>Ja, du parkst direkt vor der Tür, ohne Parkgebühr. Aus der Lübecker Innenstadt bist du in weniger als zehn Minuten bei uns.</p></details>
   <details><summary>Kann ich mit Wellpass trainieren?<i aria-hidden="true">+</i></summary><p>Ja. Die Pilates-Kurse auf der Matte buchst du ohne Zuzahlung direkt in der Wellpass-App. Für Reformer-Pilates fällt eine Zuzahlung von 10 Euro pro Einheit an, die du direkt im Studio bezahlst. <a href="/wellpass">Alles zu Wellpass</a></p></details>
-  <details><summary>Kann ich einen Gutschein verschenken?<i aria-hidden="true">+</i></summary><p>Ja. Ein Gutschein für eine Einheit kostet 28 Euro und gilt für alle Kurse im Studio. Den Gutscheincode bekommst du per E-Mail, eine persönliche Nachricht kannst du dazuschreiben. <a href="/gutschein">Zum Gutschein</a></p></details>
+  <details><summary>Kann ich einen Gutschein verschenken?<i aria-hidden="true">+</i></summary><p>Ja. Den Betrag wählst du frei, ab 20 Euro (eine Einheit kostet 28 Euro). Der Gutschein gilt für alle Kurse im Studio. Den Gutscheincode bekommst du per E-Mail, eine persönliche Nachricht kannst du dazuschreiben. <a href="/gutschein">Zum Gutschein</a></p></details>
   <details><summary>In welcher Sprache sind die Kurse?<i aria-hidden="true">+</i></summary><p>Die Gruppenkurse laufen auf Deutsch, einzelne Kurse auch zweisprachig auf Deutsch und Englisch. Die Private Reformer Class gibt es auch auf Englisch. Türkisch und Russisch sind ebenfalls möglich. <a href="/english">English overview</a></p></details>
   <details><summary>Was ist der Unterschied zu PhysioPro im selben Haus?<i aria-hidden="true">+</i></summary><p>Die Pilates Company ist ein Studio für Pilates-Kurse am Reformer und auf der Matte. Physiotherapie mit Rezept findest du bei <a href="https://physioproluebeck.de/">PhysioPro Lübeck</a>, Tür an Tür mit uns.</p></details>
 </section>
