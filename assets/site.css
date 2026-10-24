@@ -83,6 +83,7 @@ body.menu-offen{overflow:hidden}
 .hero-bild{margin-top:22px;border-radius:var(--r-card);overflow:hidden;background:var(--sand);aspect-ratio:4/3}
 .hero-bild img{width:100%;height:100%;object-fit:cover}
 .hero-bild.quer img{object-position:82% center}
+.hero-bild.quer.mitte img{object-position:center}
 .sprung{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .sprung a,.chip{min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none}
 .sprung a:hover,.chip:hover{background:var(--tint)}
