@@ -112,6 +112,23 @@ body.menu-offen{overflow:hidden}
 .fragen details p{padding-bottom:14px;font-size:13.5px;line-height:1.6;color:var(--body);font-weight:300}
 .hinweis{margin:18px var(--pad) 0;font-size:12px;color:var(--muted);font-weight:300;line-height:1.55}
 
+/* Restplatz-Mail */
+.liste{margin:18px var(--pad) 0;padding:18px 16px;border-radius:4px 22px 4px 22px;background:var(--sheet);border:1px solid var(--line-soft)}
+.liste h2{font-size:21px;line-height:1.2;margin-bottom:6px}
+.liste .lead{margin-top:0;margin-bottom:12px}
+.liste label.feld{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin:10px 0 4px}
+.liste input[type=text],.liste input[type=email]{width:100%;min-height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+.liste fieldset{border:0;margin:12px 0 0;padding:0}
+.liste legend{font-size:12.5px;font-weight:500;color:var(--muted);margin-bottom:4px;padding:0}
+.liste .wahl{display:flex;gap:10px;align-items:flex-start;min-height:44px;padding:8px 0;font-size:14px;line-height:1.45;color:var(--body);cursor:pointer}
+.liste .wahl input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:var(--cta)}
+.liste .einw{font-size:13px}
+.liste .knopf{margin-top:12px}
+.liste .status{font-size:13.5px;margin-top:10px;min-height:1.2em;color:var(--body)}
+.liste .status.fehler{color:#9C3B30}
+.liste .danke{font-size:14.5px;line-height:1.6;color:var(--body)}
+.pc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
 footer{margin-top:30px;background:var(--ink);color:#CFC3BE;padding:26px var(--pad) calc(110px + env(safe-area-inset-bottom))}
 footer .inner{max-width:var(--col);margin:0 auto}
 footer address{font-style:normal;font-size:13.5px;line-height:1.7;font-weight:300}
@@ -172,6 +189,26 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
   </div>
 </section>
 
+<section class="liste" id="liste" aria-labelledby="liste-h" data-lm-zeige style="display:none">
+  <h2 id="liste-h">Freie Plätze per E-Mail</h2>
+  <p class="lead">Trag dich ein, und wir schicken dir freie Reformer-Plätze, sobald es welche gibt. Nur per E-Mail, nur wenn etwas frei ist.</p>
+  <form id="liste-form" novalidate>
+    <label class="feld" for="l-vorname">Vorname</label>
+    <input id="l-vorname" name="vorname" type="text" autocomplete="given-name" maxlength="60" required>
+    <label class="feld" for="l-email">E-Mail</label>
+    <input id="l-email" name="email" type="email" autocomplete="email" maxlength="120" required>
+    <fieldset>
+      <legend>Wann?</legend>
+      <label class="wahl"><input type="checkbox" name="abend" checked> <span>abends um 20 Uhr, freie Plätze für morgen</span></label>
+      <label class="wahl"><input type="checkbox" name="morgen"> <span>morgens um 7 Uhr, freie Plätze für heute</span></label>
+    </fieldset>
+    <div class="pc-hp" aria-hidden="true"><label for="l-website">Website</label><input id="l-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+    <label class="wahl einw"><input type="checkbox" name="einwilligung" required> <span>Ja, schickt mir freie Plätze in Reformer-Kursen per E-Mail zu den gewählten Zeiten. Die Einwilligung kann ich jederzeit widerrufen, zum Beispiel über den Link in jeder E-Mail. Mehr in der <a href="/datenschutz#last-minute-mail">Datenschutzerklärung</a>.</span></label>
+    <button type="submit" class="knopf">Eintragen</button>
+    <p class="status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
 <p class="neu">Neu bei uns? <a href="/probetraining/">Starte mit dem Probetraining für 9,90 €</a></p>
 
 <!-- Wortlaut zu Storno und Widerruf passend zu AGB § 7a (24.10.2026). -->
@@ -186,7 +223,7 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
   <details><summary>Und wenn meine Zahlung zu spät ankommt?<i aria-hidden="true">+</i></summary>
     <p>Während du zahlst, halten wir den Platz 5 Minuten für dich frei. Kommt die Zahlung später an und ist der Platz inzwischen weg, bekommst du einen Gutschein über den Ticketpreis. Lieber Geld zurück? Kurze Nachricht genügt.</p></details>
   <details><summary>Bekomme ich Bescheid, wenn etwas frei wird?<i aria-hidden="true">+</i></summary>
-    <p>Ja, wenn du möchtest: Auf der Buchungsseite kannst du dir freie Plätze per E-Mail schicken lassen, abends um 20 Uhr für morgen oder morgens um 7 Uhr für heute. Abmelden geht mit einem Klick in jeder Mail.</p></details>
+    <p>Ja, wenn du möchtest: <a href="#liste">Trag dich oben ein</a>, dann schicken wir dir freie Plätze per E-Mail, abends um 20 Uhr für morgen oder morgens um 7 Uhr für heute. Du bekommst zuerst eine Mail zum Bestätigen. Abmelden geht mit einem Klick in jeder Mail.</p></details>
   <details><summary>Warum nur Reformer?<i aria-hidden="true">+</i></summary>
     <p>Wir starten mit Reformer-Kursen.</p></details>
 </section>
@@ -202,6 +239,41 @@ footer .legal a{color:#A99B95;padding:10px 0;display:inline-block}
   </div>
 </footer>
 
+<script>
+// Restplatz-Mail ohne Konto: Anfrage an Studio OS, Bestätigung per Mail (Double-Opt-in)
+(function () {
+  var form = document.getElementById('liste-form');
+  if (!form) return;
+  var status = form.querySelector('.status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements;
+    var daten = { vorname: f.vorname.value.trim(), email: f.email.value.trim(), abend: f.abend.checked, morgen: f.morgen.checked,
+                  einwilligung: f.einwilligung.checked, website: f.website.value };
+    status.className = 'status';
+    if (!daten.vorname || !daten.email) { status.textContent = 'Bitte gib Vorname und E-Mail an.'; status.className = 'status fehler'; return; }
+    if (!daten.abend && !daten.morgen) { status.textContent = 'Bitte wähle mindestens eine Zeit.'; status.className = 'status fehler'; return; }
+    if (!daten.einwilligung) { status.textContent = 'Bitte setz das Häkchen zur Einwilligung.'; status.className = 'status fehler'; return; }
+    var knopf = form.querySelector('button'); knopf.disabled = true; knopf.textContent = 'Wird gesendet …'; status.textContent = '';
+    fetch('https://mitglieder.pilatescompany.de/.netlify/functions/last-minute-anmelden', {
+      method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(daten)
+    }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok && d.ok, d: d }; }); })
+      .then(function (x) {
+        if (x.ok) {
+          var p = document.createElement('p'); p.className = 'danke'; p.setAttribute('role', 'status');
+          p.textContent = 'Fast geschafft: Wir haben dir eine E-Mail an ' + daten.email + ' geschickt. Bitte bestätige darin, dann bist du eingetragen.';
+          form.replaceWith(p); return;
+        }
+        status.textContent = (x.d && x.d.fehler) || 'Das hat leider nicht geklappt. Bitte versuch es gleich noch einmal.';
+        status.className = 'status fehler'; knopf.disabled = false; knopf.textContent = 'Eintragen';
+      })
+      .catch(function () {
+        status.textContent = 'Das hat leider nicht geklappt. Bitte versuch es gleich noch einmal.';
+        status.className = 'status fehler'; knopf.disabled = false; knopf.textContent = 'Eintragen';
+      });
+  });
+})();
+</script>
 <script src="/last-minute.js" defer></script>
 <script>
 (function () {
