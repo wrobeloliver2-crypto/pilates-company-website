@@ -179,50 +179,46 @@ function parseCSV(text) {
   return rows;
 }
 
-// ── KONTAKT FORM (HubSpot) ──
-var kontaktFormLoaded = false;
-function loadKontaktForm() {
-  if (kontaktFormLoaded) return;
-  var wrapper = document.getElementById('kontakt-form-wrapper');
-  if (!wrapper) return;
-  if (typeof hbspt === 'undefined' || typeof hbspt.forms === 'undefined') { 
-    setTimeout(loadKontaktForm, 300); 
-    return; 
-  }
-  kontaktFormLoaded = true;
-  var loading = document.getElementById('kontakt-form-loading');
-  if (loading) loading.style.display = 'none';
-  hbspt.forms.create({
-    portalId: "147264621",
-    formId: "daeb21e5-4484-433b-8169-a021b54588d8",
-    region: "eu1",
-    target: "#kontakt-form-wrapper",
-    onFormSubmit: function() { pcConversion('kontakt'); },
-    onFormReady: function() {
-      wrapper.querySelectorAll('*').forEach(function(el) {
-        el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
-      });
-      new MutationObserver(function() {
-        wrapper.querySelectorAll('*').forEach(function(el) {
-          el.style.setProperty('font-family', "'Poppins', system-ui, sans-serif", 'important');
+// ── ANFRAGE-FORMULARE (Kontakt, Personal Training) ──
+// Eigene Formulare statt HubSpot (seit 24.10.2026): <form data-pc-anfrage="kontakt|personal-training">.
+// Absenden per fetch an /.netlify/functions/sendmail: Mail an info@ und Lead ins Dashboard.
+// Das versteckte Feld "website" fängt Bots ab.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('form[data-pc-anfrage]').forEach(function (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type=submit]');
+      var status = form.querySelector('.pc-anfrage-status');
+      var text = btn.textContent;
+      var daten = { art: form.dataset.pcAnfrage };
+      new FormData(form).forEach(function (v, k) { daten[k] = String(v); });
+      btn.disabled = true; btn.textContent = 'Wird gesendet …';
+      status.textContent = ''; status.classList.remove('fehler');
+      try {
+        var res = await fetch('/.netlify/functions/sendmail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(daten)
         });
-      }).observe(wrapper, { childList: true, subtree: true });
-    }
+        var d = await res.json().catch(function () { return { ok: false }; });
+        if (res.ok && d.ok) {
+          pcConversion(form.dataset.pcAnfrage === 'kontakt' ? 'kontakt' : 'personal');
+          var danke = document.createElement('p');
+          danke.className = 'pc-anfrage-danke';
+          danke.setAttribute('role', 'status');
+          danke.textContent = 'Danke für deine Nachricht! Wir melden uns so schnell wie möglich bei dir.';
+          form.replaceWith(danke);
+          return;
+        }
+        status.textContent = d.error || 'Das hat leider nicht geklappt. Ruf uns gern an: 0451 - 160 830 19';
+      } catch (err) {
+        status.textContent = 'Das hat leider nicht geklappt. Ruf uns gern an: 0451 - 160 830 19';
+      }
+      status.classList.add('fehler');
+      btn.disabled = false; btn.textContent = text;
+    });
   });
-}
-
-// Kontakt Form laden wenn Seite geladen ist
-document.addEventListener('DOMContentLoaded', loadKontaktForm);
-
-// ── PROBETRAINING FORM (HubSpot) ──
-// Hier bewusst KEIN Loader mehr. probetraining.html bringt einen eigenen mit
-// (voller Formular-ID, Google-Ads-Conversion und Beacon ans Lead-Dashboard).
-// Die frühere Funktion loadProbeForm() hing an DOMContentLoaded, lief damit vor
-// dem Loader der Seite und rief hbspt.forms.create mit einer ABGESCHNITTENEN
-// Formular-ID ("8c2d002d" statt der vollen UUID) auf: ein fehlschlagender
-// Ladeversuch pro Seitenaufruf, dazu wurde #hbspt-form-loading zu früh
-// ausgeblendet. Entfernt am 26.08.2026. Braucht eine weitere Seite dieses
-// Formular, dort den Loader aus probetraining.html übernehmen — nicht hier.
+});
 
 // ── NEWS LADEN auf studio-news.html ──
 document.addEventListener('DOMContentLoaded', () => {
@@ -589,53 +585,4 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = false; btn.textContent = 'Rückruf anfordern';
     }
   }
-})();
- 
-
-// ── HUBSPOT-FORMULARE: Schrift + Lesbarkeit ──
-// Die HubSpot-Formulare werden in einem iframe gerendert; die Seiten-CSS greift dort nicht.
-// Hier wird ein Stylesheet in das (same-origin) iframe injiziert: Poppins überall,
-// auf dunklem Hintergrund (Sektion .contact, z. B. /personal-training) helle, gut lesbare Farben.
-(function () {
-  var BASE =
-    "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');" +
-    "body,.hs-form,.hs-form *,.hs-form input,.hs-form textarea,.hs-form select,.hs-button{font-family:'Poppins',system-ui,sans-serif!important;letter-spacing:normal!important}";
-  var DARK =
-    ".hs-form .hs-form-field>label,.hs-form legend,.hs-form .hs-field-desc{color:#F3EFE6!important;font-size:15px!important;font-weight:500!important}" +
-    ".hs-form .hs-form-required{color:#F2B8A2!important}" +
-    ".hs-form .hs-form-checkbox label span,.hs-form .hs-form-booleancheckbox label span,.hs-form .hs-form-radio label span,.hs-form .inputs-list label{color:#F3EFE6!important;font-size:15px!important;font-weight:400!important}" +
-    ".hs-form .legal-consent-container,.hs-form .legal-consent-container *,.hs-form .hs-richtext,.hs-form .hs-richtext *{color:#E4E8DC!important;font-size:13.5px!important;line-height:1.55!important}" +
-    ".hs-form .legal-consent-container a,.hs-form .hs-richtext a{color:#fff!important;text-decoration:underline!important}" +
-    ".hs-form input[type=text],.hs-form input[type=email],.hs-form input[type=tel],.hs-form input[type=number],.hs-form textarea,.hs-form select{color:#2c2825!important;font-size:16px!important;border-radius:10px!important}" +
-    ".hs-form input[type=checkbox],.hs-form input[type=radio]{accent-color:#b0796e}" +
-    ".hs-form .hs-error-msg,.hs-form .hs-error-msgs label{color:#FFD2C4!important}" +
-    ".hs-form .hs-button,.hs-form input[type=submit]{background:#b0796e!important;border:0!important;color:#fff!important;font-weight:600!important;font-size:15px!important;border-radius:999px!important;padding:13px 30px!important;opacity:1!important}" +
-    ".submitted-message,.submitted-message *{color:#F3EFE6!important}";
-  function inject(frame) {
-    var d;
-    try { d = frame.contentDocument; } catch (e) { return false; }
-    if (!d || !d.head || !d.querySelector('form, .submitted-message')) return false;
-    if (d.getElementById('pc-hs-style')) return true;
-    var s = d.createElement('style');
-    s.id = 'pc-hs-style';
-    s.textContent = BASE + (frame.closest('.contact') ? DARK : '');
-    d.head.appendChild(s);
-    return true;
-  }
-  function scan() {
-    var frames = document.querySelectorAll('iframe.hs-form-iframe');
-    for (var i = 0; i < frames.length; i++) {
-      var f = frames[i];
-      if (!f.dataset.pcHs) {
-        f.dataset.pcHs = '1';
-        f.addEventListener('load', function () { var self = this; setTimeout(function () { inject(self); }, 50); });
-      }
-      inject(f);
-    }
-  }
-  var tries = 0;
-  (function wait() {
-    if (document.querySelector('iframe.hs-form-iframe')) { scan(); }
-    if (++tries < 60) { setTimeout(wait, 500); }
-  })();
 })();

@@ -1004,11 +1004,10 @@
 
 </style>
 <style id="pc-nav-priority">
-  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Videos, Gutschein, Downloads) liegen im Hamburger-Menü */
+  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Gutschein, Downloads) liegen im Hamburger-Menü */
   @media (min-width: 769px) {
     .nav-links li:has(> a[href="/ausbildung"]),
     .nav-links li:has(> a[href="/studio-news"]),
-    .nav-links li:has(> a[href="/challenge"]),
     .nav-links li:has(> a[href="/gutschein"]),
     .nav-links li:has(> a[href="/downloads"]) { display: none; }
     .hamburger { display: flex; margin-left: 1rem; }
@@ -1082,11 +1081,11 @@
 <main>
 <div class="legal-content">
     <h1>Datenschutzerklärung</h1>
-    <p><strong>Pilates Company Lübeck</strong><br>Stand: Mai 2026</p>
+    <p><strong>Pilates Company Lübeck</strong><br>Stand: 24.10.2026</p>
     <p>Diese Datenschutzerklärung informiert Sie gemäß Art. 13 und 14 der Datenschutz-Grundverordnung (DSGVO) über die Verarbeitung Ihrer personenbezogenen Daten durch die Pilates Company Lübeck. Ihre Privatsphäre ist uns wichtig – wir gehen verantwortungsvoll mit Ihren Daten um.</p>
 
     <h2>1. Verantwortlicher</h2>
-    <p>Pilates Company Lübeck<br>Kontakt per E-Mail oder über das Kontaktformular auf unserer Website<br>Website: <a href="https://pilatescompany.de">pilatescompany.de</a></p>
+    <p>Pilates Company Lübeck<br>Inhaberin: Hanna Wrobel<br>Segeberger Str. 1<br>23617 Stockelsdorf<br>Telefon: 0451 160 830 19<br>E-Mail: <a href="mailto:info@pilatescompany.de">info@pilatescompany.de</a><br>Website: <a href="https://pilatescompany.de">pilatescompany.de</a></p>
 
     <h2>2. Kategorien der verarbeiteten Daten</h2>
     <p>Wir verarbeiten folgende Kategorien personenbezogener Daten:</p>
@@ -1106,15 +1105,35 @@
       <li>Art. 6 Abs. 1 S. 1 Buchst. f DSGVO: Berechtigtes Interesse (z.B. Sicherheit, Marketing)</li>
     </ul>
 
-    <h2>4. HubSpot CRM</h2>
-    <h3>4.1 Verarbeitete Daten</h3>
-    <p>Wenn Sie eine Anfrage zum Probetraining oder Kontaktformular einreichen, werden Ihre Daten (Name, E-Mail, Telefonnummer) in unser HubSpot CRM-System übertragen und dort gespeichert.</p>
-    <h3>4.2 Zweck</h3>
-    <p>Kundenverwaltung, Kommunikation, Newsletter-Versand, Marketing-Kampagnen</p>
-    <h3>4.3 Auftragsverarbeiter</h3>
-    <p>HubSpot, Inc. (USA) — Datenverarbeitung basierend auf Standard-Vertragsklauseln (Art. 46 DSGVO)</p>
-    <h3>4.4 Speicherdauer</h3>
-    <p>Daten werden solange gespeichert, wie die Geschäftsbeziehung besteht, mindestens gemäß gesetzlicher Aufbewahrungspflichten. Sie können jederzeit widerrufen und die Löschung fordern.</p>
+    <h2 id="kontaktformular">4. Kontaktformular, Anfragen und Website-Chat</h2>
+    <h3>4.1 Verarbeitete Daten und Zweck</h3>
+    <p>Wenn Sie uns über das Kontaktformular, die Anfrage zum Personal Training oder den Rückrufwunsch im Chat „Frag mich was“ schreiben, verarbeiten wir Ihre Angaben (Name, E-Mail-Adresse und/oder Telefonnummer, Ihre Nachricht) und den Zeitpunkt, um Ihre Anfrage zu beantworten. Die Angaben werden als E-Mail an unser Postfach geschickt und in unsere interne Interessentenliste übernommen, damit unser Team die Anfrage bearbeitet und nachverfolgt. Die Website selbst speichert sie nicht.</p>
+    <h3>4.2 Website-Chat „Frag mich was“</h3>
+    <p>Die Antworten im Chat erstellt ein KI-Dienst (Anthropic, PBC, USA). Dafür wird der Text, den Sie in den Chat eingeben, zusammen mit dem bisherigen Chatverlauf an den Dienst übermittelt. Bitte geben Sie im Chat keine Gesundheitsdaten oder andere sensible Angaben ein. Den Chatverlauf speichern wir nicht. Die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</p>
+    <h3>4.3 Rechtsgrundlage</h3>
+    <p>Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf einen Vertrag zielt (z. B. Probetraining, Mitgliedschaft, Personal Training), sonst Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+    <h3>4.4 Dienstleister (Auftragsverarbeiter)</h3>
+    <ul>
+      <li><strong>Netlify, Inc. (USA):</strong> Hosting der Website und Weiterleitung der Formulare</li>
+      <li><strong>Neon (Datenbank-Dienst):</strong> Speicherung der Interessentenliste auf Servern in Frankfurt am Main</li>
+      <li><strong>Microsoft Ireland Operations Ltd. (Irland):</strong> E-Mail-Postfach (Microsoft 365), in das die Anfragen geschickt werden</li>
+      <li><strong>Anthropic, PBC (USA):</strong> Antworten im Website-Chat</li>
+    </ul>
+    <p>Soweit Daten in die USA übermittelt werden, geschieht das auf Grundlage des EU-US Data Privacy Framework oder von Standardvertragsklauseln (Art. 45, 46 DSGVO).</p>
+    <h3>4.5 Speicherdauer</h3>
+    <p>Wir löschen Ihre Anfrage, wenn sie erledigt ist und keine weitere Betreuung mehr nötig ist, soweit keine gesetzlichen Aufbewahrungspflichten bestehen (z. B. wenn aus der Anfrage ein Vertrag wird).</p>
+
+    <h2>4a. WhatsApp</h2>
+    <h3>4a.1 Verarbeitete Daten und Zweck</h3>
+    <p>Wir nutzen die WhatsApp Business Platform, um Ihnen Buchungsbestätigungen, Erinnerungen, Hinweise auf Kursausfälle und Wartelistenplätze zu schicken und um Ihre Fragen zu beantworten, wenn Sie uns per WhatsApp schreiben. Dabei verarbeiten wir Ihre Handynummer, Ihren Namen, den Inhalt der Nachrichten, den Zeitpunkt sowie den Zustell- und Lesestatus. Die Nachrichten speichern wir in unserem Buchungssystem, damit unser Team den Verlauf sieht.</p>
+    <h3>4a.2 Rechtsgrundlage und Wahlmöglichkeit</h3>
+    <p>Nachrichten zu Ihren Buchungen und Verträgen verschicken wir zur Vertragsdurchführung (Art. 6 Abs. 1 lit. b DSGVO). Wenn Sie uns per WhatsApp anschreiben oder bei einer Online-Buchung der Kontaktaufnahme per WhatsApp zustimmen, antworten wir Ihnen dort (Art. 6 Abs. 1 lit. b bzw. lit. a DSGVO). Im Mitgliederbereich können Sie Nachrichten per WhatsApp jederzeit abschalten; dann schreiben wir Ihnen per E-Mail. Eine erteilte Einwilligung können Sie jederzeit widerrufen, auch mit einer kurzen Nachricht an uns.</p>
+    <h3>4a.3 Anbieter</h3>
+    <p>WhatsApp wird von Meta Platforms Ireland Limited (Irland) bereitgestellt; dabei können Daten auch in die USA übermittelt werden. Das geschieht auf Grundlage des EU-US Data Privacy Framework bzw. von Standardvertragsklauseln (Art. 45, 46 DSGVO).</p>
+    <h3>4a.4 Antwortvorschläge mit KI</h3>
+    <p>Beim Beantworten von Nachrichten kann unser Team sich einen Textvorschlag von einem KI-Dienst erstellen lassen (Anthropic, PBC, USA). Dafür werden der bisherige Nachrichtenverlauf und Ihr Vorname an den Dienst übermittelt. Der Vorschlag wird nicht automatisch verschickt; eine Mitarbeiterin liest ihn und entscheidet, was gesendet wird. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer schnellen Beantwortung). Die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</p>
+    <h3>4a.5 Speicherdauer</h3>
+    <p>Für die Dauer der Kundenbeziehung bzw. bis Ihre Anfrage erledigt ist; danach löschen wir den Verlauf, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
 
     <h2>5. Google Analytics</h2>
     <h3>5.1 Verarbeitete Daten</h3>
@@ -1138,17 +1157,42 @@
     <h3>6.4 Speicherdauer</h3>
     <p>Daten werden für die Dauer der Kundenbeziehung sowie gemäß Aufbewahrungspflichten gespeichert</p>
 
-    <!-- Last-Minute (23.10.2026): zusammen mit der noch offenen Datenschutzerklärung prüfen lassen. -->
     <h2>6a. Anzeige freier Kursplätze (Last-Minute)</h2>
     <p>Auf einigen Seiten (Startseite, Preise, Kurse, Last-Minute) ruft Ihr Browser beim Aufruf und danach etwa einmal pro Minute, solange die Seite geöffnet und sichtbar ist, eine Liste kurzfristig freier Kursplätze von unserem Buchungssystem unter mitglieder.pilatescompany.de ab. Dabei werden keine Cookies gesetzt und keine Daten in Ihrem Browser gespeichert. Die Liste enthält nur Kurs, Uhrzeit, Preis und die Zahl freier Plätze, keine Angaben zu anderen Personen. Ein Werbe-Kennzeichen in der Adresse (zum Beispiel „?q=insta“) wird nur an den Buchungslink weitergegeben und erst bei einer Buchung zusammen mit dieser gespeichert.</p>
     <p>Beim Abruf verarbeitet unser Hosting-Anbieter Netlify, Inc. (Auftragsverarbeiter) technisch notwendige Verbindungsdaten wie IP-Adresse, Zeitpunkt und Browser-Kennung in seinen Server-Logs, um die Seite auszuliefern, Missbrauch zu begrenzen (Begrenzung der Abrufe je IP-Adresse) und die Sicherheit zu gewährleisten. In unserer Datenbank speichern wir dabei weder IP-Adresse noch Browser-Kennung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer aktuellen Anzeige freier Plätze und am sicheren Betrieb).</p>
+
+    <h2>6b. Mitgliederbereich, Online-Buchung und Zahlung (mitglieder.pilatescompany.de)</h2>
+    <h3>6b.1 Verarbeitete Daten und Zweck</h3>
+    <p>Für den Mitgliederbereich, die Online-Buchung (z. B. Probetraining, Drop-In, Gutscheine, Last-Minute-Tickets) und die Abrechnung nutzen wir unser eigenes Buchungssystem. Wir verarbeiten dabei Name, E-Mail-Adresse, Telefonnummer, Buchungen und Teilnahmen, Verträge, Zahlungen und Rechnungen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertrag und vorvertragliche Maßnahmen), für Rechnungen und Buchungsbelege zusätzlich Art. 6 Abs. 1 lit. c DSGVO (gesetzliche Aufbewahrungspflichten).</p>
+    <h3>6b.2 Anmeldung</h3>
+    <p>Sie melden sich mit einem Link an, den wir an Ihre E-Mail-Adresse schicken. Für Last-Minute-Tickets genügt dafür Ihre E-Mail-Adresse; ist sie uns noch nicht bekannt, fragen wir zusätzlich Vorname, Nachname und Handynummer ab (für Rückfragen und Kursänderungen). Ein Kundenkonto entsteht erst, wenn Sie den Link öffnen. Nicht eingelöste Anmelde-Links löschen wir nach 7 Tagen.</p>
+    <h3>6b.3 Zahlung und gespeicherte Karte</h3>
+    <p>Kartenzahlungen wickelt unser Zahlungsdienstleister SumUp ab. Die Kartendaten geben Sie direkt im Zahlungsformular von SumUp ein; sie gelangen nicht zu uns. Wenn Sie Ihre Karte für spätere Zahlungen hinterlegen, speichert SumUp sie, und wir erhalten nur ein Kennzeichen (Token) sowie Kartenmarke, die letzten vier Ziffern und das Ablaufdatum. Zur Prüfung der Karte wird kurz 1 € reserviert und sofort zurückgebucht. Die hinterlegte Karte belasten wir für Beiträge Ihrer Mitgliedschaft sowie für Einzelkäufe, die Sie selbst auswählen. Sie können eine hinterlegte Karte jederzeit entfernen (außer sie dient der Zahlung eines laufenden Vertrags; dann im Mitgliederbereich oder im Studio). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <h3>6b.4 E-Mails</h3>
+    <p>Bestätigungen, Rechnungen, Anmelde-Links und – nur mit Ihrer Einwilligung – Restplatz-Mails (Abschnitt 6c) versenden wir über Microsoft 365.</p>
+    <h3>6b.5 Dienstleister (Auftragsverarbeiter)</h3>
+    <ul>
+      <li><strong>Netlify, Inc. (USA):</strong> Hosting dieser Website (pilatescompany.de) sowie des Mitgliederbereichs und der Buchungsanwendung</li>
+      <li><strong>Neon (Datenbank-Dienst):</strong> Speicherung der Daten des Buchungssystems auf Servern in Frankfurt am Main</li>
+      <li><strong>SumUp:</strong> Kartenzahlung und Speicherung hinterlegter Karten</li>
+      <li><strong>Microsoft Ireland Operations Limited:</strong> E-Mail-Versand (Microsoft 365)</li>
+    </ul>
+    <p>Soweit Daten in die USA übermittelt werden, geschieht das auf Grundlage des EU-US Data Privacy Framework oder von Standardvertragsklauseln (Art. 45, 46 DSGVO).</p>
+    <h3>6b.6 Speicherdauer</h3>
+    <p>Wir speichern Ihre Daten für die Dauer der Kundenbeziehung. Rechnungen und Buchungsbelege bewahren wir nach den gesetzlichen Aufbewahrungsfristen des Handels- und Steuerrechts auf.</p>
+
+    <h2>6c. Last-Minute-Seite und Restplatz-Mail</h2>
+    <h3>6c.1 Zählung der Aufrufe</h3>
+    <p>Wenn Sie die Seite mitglieder.pilatescompany.de/last-minute aufrufen, zählen wir den Aufruf mit dem Werbe-Kennzeichen aus der Adresse (z. B. „?q=insta“), dem angesehenen Kurs und dem Zeitpunkt. Dabei speichern wir weder IP-Adresse noch Browser-Kennung, setzen kein Cookie und legen nichts in Ihrem Browser ab; ein Bezug zu Ihrer Person entsteht dadurch nicht. Kaufen Sie danach ein Ticket, speichern wir das Werbe-Kennzeichen an Ihrer Buchung, um zu sehen, über welchen Kanal Tickets verkauft werden (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse an der Wirksamkeit unserer Werbung).</p>
+    <h3>6c.2 Restplatz-Mail</h3>
+    <p>Wenn Sie es ausdrücklich wünschen, schicken wir Ihnen freie Kursplätze per E-Mail: abends um 20 Uhr für den nächsten Tag und/oder morgens um 7 Uhr für den selben Tag, nur wenn es freie Plätze gibt. Dafür müssen Sie angemeldet sein und einwilligen (Art. 6 Abs. 1 lit. a DSGVO). Wir speichern Ihre Auswahl, den Zeitpunkt und den Wortlaut der Einwilligung sowie, welche Mails wir geschickt haben. Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, über den Link „Zeiten ändern oder abmelden“ in jeder Mail oder per E-Mail an info@pilatescompany.de. Nach dem Widerruf bewahren wir den Nachweis der Einwilligung höchstens drei Jahre auf (Art. 7 Abs. 1 DSGVO) und löschen ihn dann.</p>
 
     <h2>7. Cookies und Tracking-Technologien</h2>
     <h3>7.1 Was sind Cookies?</h3>
     <p>Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden und die Website-Nutzung erleichtern.</p>
     <h3>7.2 Arten von Cookies</h3>
     <ul>
-      <li><strong>Notwendige Cookies:</strong> Für Sicherheit und Funktionalität erforderlich (Session-Cookies)</li>
+      <li><strong>Notwendige Cookies:</strong> Für Sicherheit und Funktionalität erforderlich (Session-Cookies). Im Mitgliederbereich und auf der Last-Minute-Seite unter mitglieder.pilatescompany.de setzen wir nach Ihrer Anmeldung ein Cookie, das Sie angemeldet hält („sos_kunde“, 90 Tage, bzw. „sos_lastminute“, nur für die Last-Minute-Seite, 30 Tage). Diese Cookies sind für die von Ihnen gewünschte Anmeldung unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG) und dienen nicht der Werbung.</li>
       <li><strong>Analytics-Cookies:</strong> Zur Analyse von Website-Nutzung (Google Analytics)</li>
       <li><strong>Marketing-Cookies:</strong> Für gezieltes Marketing (mit Einwilligung)</li>
       <li><strong>Funktions-Cookies:</strong> Für Nutzereinstellungen und Präferenzen</li>
@@ -1187,7 +1231,7 @@
 
     <h2>Änderungen dieser Datenschutzerklärung</h2>
     <p>Diese Datenschutzerklärung kann jederzeit aktualisiert werden, um Änderungen in unseren Datenschutzpraktiken oder rechtlichen Anforderungen widerzuspiegeln. Die aktuellste Version ist immer auf unserer Website verfügbar.</p>
-    <p><em>Letzte Aktualisierung: Mai 2026</em></p>
+    <p><em>Letzte Aktualisierung: 24.10.2026</em></p>
   </div>
 </div>
 
