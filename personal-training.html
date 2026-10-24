@@ -215,23 +215,12 @@
   .form-submit:hover{transform:translateY(-2px)}
   .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:#CFD4C4}
   .consent input{width:auto;margin-top:3px}
-  /* ── HubSpot-Formular: helle Schrift auf dunklem Hintergrund ── */
-  .contact .hs-form,.contact .hbspt-form{color:#EDEAE2}
-  .contact .hs-form label,.contact .hs-form .hs-field-desc,.contact .hs-form legend{color:#EDEAE2!important;font-size:.9rem;letter-spacing:.02em}
-  .contact .hs-form .hs-form-field>label{color:#D9C9A8!important;font-size:.82rem;letter-spacing:.04em;font-weight:600;margin-bottom:6px;display:block}
-  .contact .hs-form .hs-form-required{color:#E8B4A0!important}
-  .contact .hs-form input[type=text],.contact .hs-form input[type=email],.contact .hs-form input[type=tel],.contact .hs-form input[type=number],.contact .hs-form textarea,.contact .hs-form select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:#fff;color:#2c2826;font-size:.95rem;font-family:inherit}
-  .contact .hs-form input::placeholder,.contact .hs-form textarea::placeholder{color:#9a958f}
-  .contact .hs-form input:focus,.contact .hs-form textarea:focus,.contact .hs-form select:focus{outline:2px solid var(--clay);border-color:transparent}
-  .contact .hs-form .inputs-list{list-style:none;margin:6px 0 0;padding:0}
-  .contact .hs-form .hs-form-checkbox label,.contact .hs-form .hs-form-booleancheckbox label,.contact .hs-form .hs-form-radio label{color:#EDEAE2!important;font-size:.92rem;font-weight:400;display:flex;align-items:flex-start;gap:8px;letter-spacing:0}
-  .contact .hs-form .hs-form-checkbox input,.contact .hs-form .hs-form-booleancheckbox input,.contact .hs-form .hs-form-radio input{width:auto;margin-top:3px;accent-color:var(--clay)}
-  .contact .hs-form .legal-consent-container,.contact .hs-form .legal-consent-container *{color:#D6DBCB!important}
-  .contact .hs-form .legal-consent-container a{color:#fff!important;text-decoration:underline}
-  .contact .hs-form .hs-richtext,.contact .hs-form .hs-richtext p{color:#D6DBCB!important}
-  .contact .hs-form .hs-button,.contact .hs-form input[type=submit]{background:var(--clay);color:#fff!important;border:0;border-radius:999px;padding:14px 32px;font-size:.98rem;cursor:pointer;letter-spacing:.03em;transition:transform .15s;font-family:inherit}
-  .contact .hs-form .hs-button:hover,.contact .hs-form input[type=submit]:hover{transform:translateY(-2px)}
-  .contact .hs-form .hs-error-msg,.contact .hs-form .hs-error-msgs label{color:#FFC9B8!important}
+  .pc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .pc-anfrage-hinweis{font-size:.82rem;color:#CFD4C4;line-height:1.5}
+  .pc-anfrage-hinweis a{color:#fff;text-decoration:underline}
+  .pc-anfrage-status{font-size:.88rem;min-height:1.2em;margin:0}
+  .pc-anfrage-status.fehler{color:#FFC9B8}
+  .pc-anfrage-danke{padding:20px 22px;border-radius:12px;background:rgba(255,255,255,.1);color:#fff;font-size:1rem}
   @media(max-width:760px){.contact .grid{grid-template-columns:1fr;gap:28px}.row{grid-template-columns:1fr}}
 
   /* FOOTER */
@@ -482,32 +471,18 @@
         </div>
       </div>
       <div>
-        <!-- HubSpot-Formular (Portal 147264621, eu1, GUID 8fbc92bc-176b-47e0-b1fe-0aaba91c1732)
-             mit Google-Ads-Conversion beim Absenden.
-             HINWEIS: Der gtag-Lade-Block wurde hier bewusst WEGGELASSEN, da AW-18174020065
-             auf pilatescompany.de bereits global im <head> eingebunden ist. Der onFormSubmit-
-             Callback unten nutzt das global geladene Tag (Prüfung via typeof gtag). -->
-
-        <!-- HubSpot-Formular -->
-        <div id="hubspot-anfrage-form"></div>
-        <script src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script>
-        <script>
-          hbspt.forms.create({
-            region: "eu1",
-            portalId: "147264621",
-            formId: "8fbc92bc-176b-47e0-b1fe-0aaba91c1732",
-            target: "#hubspot-anfrage-form",
-            onFormSubmit: function($form) {
-              if (typeof gtag === "function") {
-                gtag('event', 'conversion', {
-                  send_to: 'AW-18174020065/kbdfCPGP57scEOGThtpD'
-                });
-              }
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({ event: 'pilates_lead_personal' });
-            }
-          });
-        </script>
+        <form data-pc-anfrage="personal-training">
+          <div><label for="pt-name">Name *</label><input id="pt-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+          <div class="row">
+            <div><label for="pt-email">E-Mail</label><input id="pt-email" name="email" type="email" autocomplete="email" maxlength="200"></div>
+            <div><label for="pt-tel">Telefon</label><input id="pt-tel" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+          </div>
+          <div><label for="pt-nachricht">Was möchtest du erreichen? (optional)</label><textarea id="pt-nachricht" name="message" rows="4" maxlength="4000" placeholder="z. B. Rücken stärken, nach einer Verletzung wieder einsteigen, Termine am Vormittag"></textarea></div>
+          <div class="pc-hp" aria-hidden="true"><label for="pt-website">Website</label><input id="pt-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="pc-anfrage-hinweis">E-Mail oder Telefon genügt. Wir nutzen deine Angaben nur, um deine Anfrage zu beantworten. Mehr in der <a href="/datenschutz#kontaktformular">Datenschutzerklärung</a>.</p>
+          <button type="submit" class="form-submit">Anfrage senden</button>
+          <p class="pc-anfrage-status" role="alert"></p>
+        </form>
       </div>
     </div>
   </div>

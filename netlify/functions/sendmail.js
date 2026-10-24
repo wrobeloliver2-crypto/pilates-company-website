@@ -8,6 +8,14 @@ const CLIENT_SECRET = process.env.AZURE_CLIENT_SECRET;
 
 const FROM_EMAIL = 'info@pilatescompany.de';        // Absender (Postfach)
 const TO_EMAIL = 'oliver.wrobel@pilatescompany.de';  // Empfaenger des Rueckrufwunsches
+const ANFRAGE_TO = 'info@pilatescompany.de';         // Empfaenger von Kontaktformular und Personal-Training-Anfrage
+
+// Formulare der Website (ersetzen seit 24.10.2026 die HubSpot-Formulare). Gespeichert wird nichts,
+// die Anfrage geht nur als Mail an ANFRAGE_TO, Antworten gehen per Reply-To direkt an die Absenderin.
+const FORMULARE = {
+  kontakt: { titel: 'Neue Nachricht &uuml;ber das Kontaktformular', betreff: 'Kontaktformular' },
+  'personal-training': { titel: 'Neue Anfrage: Personal Training', betreff: 'Personal-Training-Anfrage' },
+};
 
 async function getAccessToken() {
   const body = 'grant_type=client_credentials'
@@ -27,12 +35,13 @@ async function getAccessToken() {
   return data.access_token;
 }
 
-async function sendEmail(token, subject, htmlBody) {
+async function sendEmail(token, subject, htmlBody, an, antwortAn) {
   const mail = JSON.stringify({
     message: {
       subject: subject,
       body: { contentType: 'HTML', content: htmlBody },
-      toRecipients: [{ emailAddress: { address: TO_EMAIL } }]
+      toRecipients: [{ emailAddress: { address: an || TO_EMAIL } }],
+      ...(antwortAn ? { replyTo: [{ emailAddress: { address: antwortAn } }] } : {})
       // KEIN from-Feld (sonst Graph-Fehler)
     },
     saveToSentItems: true
@@ -53,6 +62,47 @@ function esc(s) {
   return String(s || '').replace(/[<>&"]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c]));
 }
 
+const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
+
+// Kontaktformular und Personal-Training-Anfrage: Name, E-Mail oder Telefon, Nachricht
+async function formularAnfrage(body, CORS) {
+  const f = FORMULARE[body.art];
+  const feld = (k, max) => String(body[k] || '').trim().slice(0, max);
+  const name = feld('name', 120);
+  const email = feld('email', 200);
+  const phone = feld('phone', 40);
+  const message = feld('message', 4000);
+  const antwort = (code, daten) => ({ statusCode: code, headers: CORS, body: JSON.stringify(daten) });
+
+  // Verstecktes Feld: von Menschen nie ausgefuellt. Bots bekommen „ok“, es geht keine Mail raus.
+  if (String(body.website || '').trim()) return antwort(200, { ok: true });
+  if (!name) return antwort(400, { ok: false, error: 'Bitte gib deinen Namen an.' });
+  if (email && !EMAIL_RE.test(email)) return antwort(400, { ok: false, error: 'Bitte prüfe deine E-Mail-Adresse.' });
+  if (body.art === 'kontakt' && !email) return antwort(400, { ok: false, error: 'Bitte gib deine E-Mail-Adresse an.' });
+  if (!email && !phone) return antwort(400, { ok: false, error: 'Bitte gib eine E-Mail-Adresse oder Telefonnummer an.' });
+  if (body.art === 'kontakt' && !message) return antwort(400, { ok: false, error: 'Bitte schreib uns kurz, worum es geht.' });
+
+  const now = new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
+  const zeile = (k, v) => '<tr><td style="padding:4px 12px 4px 0;vertical-align:top;"><strong>' + k + ':</strong></td><td>' + v + '</td></tr>';
+  const html =
+    '<div style="font-family:Arial,sans-serif;color:#2c2825;font-size:15px;line-height:1.6;">' +
+    '<h2 style="color:#b0796e;">' + f.titel + '</h2>' +
+    '<table style="border-collapse:collapse;">' +
+    zeile('Name', esc(name)) +
+    (email ? zeile('E-Mail', esc(email)) : '') +
+    (phone ? zeile('Telefon', esc(phone)) : '') +
+    zeile('Nachricht', esc(message).replace(/\n/g, '<br>') || '<em>keine</em>') +
+    zeile('Zeitpunkt', esc(now) + ' Uhr') +
+    '</table>' +
+    '<p style="margin-top:18px;font-size:13px;color:#8a847d;">Automatisch gesendet von der Website der Pilates Company L&uuml;beck. ' +
+    (email ? '&bdquo;Antworten&ldquo; geht direkt an die Absenderin.' : 'Keine E-Mail angegeben, bitte telefonisch melden.') + '</p>' +
+    '</div>';
+
+  const token = await getAccessToken();
+  await sendEmail(token, f.betreff + ': ' + name.replace(/[\r\n]/g, ' '), html, ANFRAGE_TO, email || null);
+  return antwort(200, { ok: true });
+}
+
 exports.handler = async (event) => {
   const CORS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
 
@@ -62,6 +112,7 @@ exports.handler = async (event) => {
 
   try {
     const body = JSON.parse(event.body || '{}');
+    if (FORMULARE[body.art]) return await formularAnfrage(body, CORS);
     const name = (body.name || '').trim();
     const phone = (body.phone || '').trim();
     const message = (body.message || '').trim();

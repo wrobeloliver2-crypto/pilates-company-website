@@ -1004,11 +1004,10 @@
 
 </style>
 <style id="pc-nav-priority">
-  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Videos, Gutschein, Downloads) liegen im Hamburger-Menü */
+  /* Desktop-Menü: Nebenpunkte (Ausbildung, News, Gutschein, Downloads) liegen im Hamburger-Menü */
   @media (min-width: 769px) {
     .nav-links li:has(> a[href="/ausbildung"]),
     .nav-links li:has(> a[href="/studio-news"]),
-    .nav-links li:has(> a[href="/challenge"]),
     .nav-links li:has(> a[href="/gutschein"]),
     .nav-links li:has(> a[href="/downloads"]) { display: none; }
     .hamburger { display: flex; margin-left: 1rem; }
@@ -1106,17 +1105,22 @@
       <li>Art. 6 Abs. 1 S. 1 Buchst. f DSGVO: Berechtigtes Interesse (z.B. Sicherheit, Marketing)</li>
     </ul>
 
-    <h2>4. Formulare (HubSpot)</h2>
-    <!-- Stand 24.10.2026: HubSpot ist noch eingebunden auf /kontakt (Kontaktformular), /personal-training (Anfrage),
-         /challenge (Warteliste) und /downloads. Abschnitt erst entfernen, wenn diese Formulare ersetzt sind. -->
-    <h3>4.1 Verarbeitete Daten</h3>
-    <p>Unser Kontaktformular, die Anfrage zum Personal Training und die Warteliste der Video-Challenge sind Formulare des Dienstes HubSpot. Wenn Sie ein solches Formular absenden, werden Ihre Angaben (z. B. Name, E-Mail-Adresse, Telefonnummer, Nachricht) an HubSpot übertragen und dort gespeichert. Beim Laden dieser Seiten wird das Formular-Skript von HubSpot abgerufen; dabei erhält HubSpot technisch notwendige Verbindungsdaten wie Ihre IP-Adresse.</p>
-    <h3>4.2 Zweck und Rechtsgrundlage</h3>
-    <p>Bearbeitung Ihrer Anfrage und Kontaktaufnahme (Art. 6 Abs. 1 lit. b DSGVO, vorvertragliche Maßnahmen, bzw. lit. f DSGVO, berechtigtes Interesse an der Beantwortung von Anfragen).</p>
-    <h3>4.3 Auftragsverarbeiter</h3>
-    <p>HubSpot, Inc. (USA); die Daten werden im Rechenzentrum der EU gespeichert. Soweit Daten in die USA übermittelt werden, geschieht das auf Grundlage des EU-US Data Privacy Framework oder von Standardvertragsklauseln (Art. 45, 46 DSGVO).</p>
-    <h3>4.4 Speicherdauer</h3>
-    <p>Bis Ihre Anfrage erledigt ist und solange es für die weitere Betreuung nötig ist, längstens bis Sie der Speicherung widersprechen oder die Löschung verlangen, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+    <h2 id="kontaktformular">4. Kontaktformular, Anfragen und Website-Chat</h2>
+    <h3>4.1 Verarbeitete Daten und Zweck</h3>
+    <p>Wenn Sie uns über das Kontaktformular, die Anfrage zum Personal Training oder den Rückrufwunsch im Chat „Frag mich was“ schreiben, verarbeiten wir Ihre Angaben (Name, E-Mail-Adresse und/oder Telefonnummer, Ihre Nachricht) und den Zeitpunkt, um Ihre Anfrage zu beantworten. Die Angaben werden nicht in einer Datenbank der Website gespeichert, sondern als E-Mail an unser Postfach geschickt. Einen Rückrufwunsch aus dem Chat übernehmen wir zusätzlich in unsere interne Interessentenliste, damit unser Team den Rückruf erledigt.</p>
+    <h3>4.2 Website-Chat „Frag mich was“</h3>
+    <p>Die Antworten im Chat erstellt ein KI-Dienst (Anthropic, PBC, USA). Dafür wird der Text, den Sie in den Chat eingeben, zusammen mit dem bisherigen Chatverlauf an den Dienst übermittelt. Bitte geben Sie im Chat keine Gesundheitsdaten oder andere sensible Angaben ein. Den Chatverlauf speichern wir nicht. Die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</p>
+    <h3>4.3 Rechtsgrundlage</h3>
+    <p>Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf einen Vertrag zielt (z. B. Probetraining, Mitgliedschaft, Personal Training), sonst Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+    <h3>4.4 Dienstleister (Auftragsverarbeiter)</h3>
+    <ul>
+      <li><strong>Netlify, Inc. (USA):</strong> Hosting der Website und Weiterleitung der Formulare</li>
+      <li><strong>Microsoft Ireland Operations Ltd. (Irland):</strong> E-Mail-Postfach (Microsoft 365), in das die Anfragen geschickt werden</li>
+      <li><strong>Anthropic, PBC (USA):</strong> Antworten im Website-Chat</li>
+    </ul>
+    <p>Soweit Daten in die USA übermittelt werden, geschieht das auf Grundlage des EU-US Data Privacy Framework oder von Standardvertragsklauseln (Art. 45, 46 DSGVO).</p>
+    <h3>4.5 Speicherdauer</h3>
+    <p>Wir löschen Ihre Anfrage, wenn sie erledigt ist und keine weitere Betreuung mehr nötig ist, soweit keine gesetzlichen Aufbewahrungspflichten bestehen (z. B. wenn aus der Anfrage ein Vertrag wird).</p>
 
     <h2>4a. WhatsApp</h2>
     <h3>4a.1 Verarbeitete Daten und Zweck</h3>
