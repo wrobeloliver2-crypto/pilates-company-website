@@ -6,7 +6,7 @@
   Elemente auf den Seiten:
     #lm-streifen            Streifen unter dem Hero (Startseite), <aside aria-live="polite" style="display:none">
     [data-lm-zeige]         Verweise (Preise-Karte, Kurse-Link, Footer), style="display:none", erscheinen bei aktiv=true
-    #lm-liste, #lm-leer     Seite /last-minute: Liste und Leerzustand
+    #lm-liste, #lm-leer     Seite /last-minute: Liste und Leerzustand (bei abgleich.veraltet: „wird gerade aktualisiert“)
 */
 (function () {
   'use strict';
@@ -97,7 +97,11 @@
     streifen.style.display = '';
   }
 
-  function zeigeListe(termine) {
+  // Der Abgleich mit Eversports ist veraltet (Studio OS meldet abgleich.veraltet): Technik, nicht „ausgebucht“.
+  var TEXT_LEER = 'Gerade ist nichts frei. Schau später wieder vorbei.';
+  var TEXT_VERALTET = 'Die Übersicht der freien Plätze wird gerade aktualisiert. Schau in ein paar Minuten noch einmal vorbei.';
+
+  function zeigeListe(termine, veraltet) {
     if (!liste) return;
     liste.textContent = '';
     termine.forEach(function (t) {
@@ -117,7 +121,11 @@
       liste.appendChild(li);
     });
     liste.style.display = termine.length ? '' : 'none';
-    if (leer) leer.style.display = termine.length ? 'none' : '';
+    if (leer) {
+      leer.style.display = termine.length ? 'none' : '';
+      var text = leer.querySelector('p');
+      if (text) text.textContent = veraltet ? TEXT_VERALTET : TEXT_LEER;
+    }
   }
 
   function anwenden(d) {
@@ -126,7 +134,7 @@
     termine.sort(function (a, b) { return new Date(a.start) - new Date(b.start); });
     for (var i = 0; i < verweise.length; i++) verweise[i].style.display = aktiv ? '' : 'none';
     zeigeStreifen(termine);
-    zeigeListe(termine);
+    zeigeListe(termine, aktiv && !termine.length && !!(d.abgleich && d.abgleich.veraltet === true));
   }
 
   var zuletzt = 0;
