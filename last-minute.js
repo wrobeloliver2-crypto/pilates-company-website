@@ -22,6 +22,8 @@
   var liste = document.getElementById('lm-liste');
   var leer = document.getElementById('lm-leer');
   var verweise = document.querySelectorAll('[data-lm-zeige]');
+  // Eintragen für die Restplatz-Mail nur, wenn gerade nichts frei ist: Wer schon einen Kurs vor sich hat, soll buchen, nicht abschweifen
+  var eintragen = document.getElementById('liste');
   if (!streifen && !liste && !verweise.length) return;
 
   function mitQuelle(url) {
@@ -134,6 +136,7 @@
     termine.sort(function (a, b) { return new Date(a.start) - new Date(b.start); });
     for (var i = 0; i < verweise.length; i++) verweise[i].style.display = aktiv ? '' : 'none';
     zeigeStreifen(termine);
+    if (eintragen) eintragen.style.display = aktiv && !termine.length ? '' : 'none';
     zeigeListe(termine, aktiv && !termine.length && !!(d.abgleich && d.abgleich.veraltet === true));
   }
 
