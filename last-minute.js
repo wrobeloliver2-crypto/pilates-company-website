@@ -24,6 +24,10 @@
   var verweise = document.querySelectorAll('[data-lm-zeige]');
   // Eintragen für die Restplatz-Mail nur, wenn gerade nichts frei ist: Wer schon einen Kurs vor sich hat, soll buchen, nicht abschweifen
   var eintragen = document.getElementById('liste');
+  // ?eintragen=1 (Link aus der WhatsApp-Einladung zur Restplatz-Mail): das Formular steht immer da, auch wenn gerade Plätze frei sind,
+  // und die Seite springt einmal dorthin. Ohne den Zusatz bleibt es wie bisher: Formular nur, wenn nichts frei ist.
+  var immerEintragen = /[?&]eintragen=1(&|$)/.test(location.search);
+  var zuFormularGesprungen = false;
   if (!streifen && !liste && !verweise.length) return;
 
   function mitQuelle(url) {
@@ -136,7 +140,11 @@
     termine.sort(function (a, b) { return new Date(a.start) - new Date(b.start); });
     for (var i = 0; i < verweise.length; i++) verweise[i].style.display = aktiv ? '' : 'none';
     zeigeStreifen(termine);
-    if (eintragen) eintragen.style.display = aktiv && !termine.length ? '' : 'none';
+    if (eintragen) eintragen.style.display = aktiv && (!termine.length || immerEintragen) ? '' : 'none';
+    if (eintragen && immerEintragen && aktiv && !zuFormularGesprungen) {
+      zuFormularGesprungen = true;
+      setTimeout(function () { try { eintragen.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { eintragen.scrollIntoView(); } }, 150);
+    }
     zeigeListe(termine, aktiv && !termine.length && !!(d.abgleich && d.abgleich.veraltet === true));
   }
 
