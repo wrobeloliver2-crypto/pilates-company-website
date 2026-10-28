@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/assets/site.css">
 
 </head>
-<body>
+<body data-ohne-leiste>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf">
   <a class="marke" href="/" aria-label="Pilates Company Lübeck – Startseite"><img src="/assets/logo.png" alt="Pilates Company Lübeck" width="83" height="52"></a>
@@ -53,15 +53,6 @@
   <p class="lead">Wird in einem Reformer-Kurs kurzfristig ein Platz frei, kannst du ihn bis 60 Minuten vor Beginn für 19,90 € buchen. Bezahlt wird direkt per Karte.</p>
 </section>
 
-<section class="abschnitt" aria-labelledby="termine-h">
-  <h2 id="termine-h">Gerade frei</h2>
-  <ul class="lm-liste" id="lm-liste" style="display:none"></ul>
-  <div class="lm-leer" id="lm-leer">
-    <p>Gerade ist nichts frei. Schau später wieder vorbei.</p>
-    <div class="links"><a href="/probetraining/">Probetraining</a><a href="/kurse">Kursplan</a></div>
-  </div>
-</section>
-
 <section class="liste" id="liste" aria-labelledby="liste-h" style="display:none">
   <h2 id="liste-h">Freie Plätze per E-Mail</h2>
   <p class="lead">Trag dich ein, und wir schicken dir freie Reformer-Plätze, sobald es welche gibt. Nur per E-Mail, nur wenn etwas frei ist.</p>
@@ -81,6 +72,16 @@
     <p class="status" role="status" aria-live="polite"></p>
   </form>
 </section>
+
+<section class="abschnitt" aria-labelledby="termine-h">
+  <h2 id="termine-h">Gerade frei</h2>
+  <ul class="lm-liste" id="lm-liste" style="display:none"></ul>
+  <div class="lm-leer" id="lm-leer">
+    <p>Gerade ist nichts frei. Schau später wieder vorbei.</p>
+    <a class="knopf hell" id="lm-leer-eintragen" href="#liste" style="display:none">Zur Eintragung</a>
+  </div>
+</section>
+
 
 <p class="neu">Neu bei uns? <a href="/probetraining/">Starte mit dem Probetraining für 9,90 €</a></p>
 

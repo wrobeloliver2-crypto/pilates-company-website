@@ -7,6 +7,8 @@
     #lm-streifen            Streifen unter dem Hero (Startseite), <aside aria-live="polite" style="display:none">
     [data-lm-zeige]         Verweise (Preise-Karte, Kurse-Link, Footer), style="display:none", erscheinen bei aktiv=true
     #lm-liste, #lm-leer     Seite /last-minute: Liste und Leerzustand (bei abgleich.veraltet: „wird gerade aktualisiert“)
+    #liste                  Seite /last-minute: Karte „Freie Plätze per E-Mail“ (steht über „Gerade frei“)
+    #lm-leer-eintragen      Leerzustand: einziger Weg ist die Eintragung, erscheint nur, wenn die Karte zu sehen ist
 */
 (function () {
   'use strict';
@@ -24,9 +26,16 @@
   var verweise = document.querySelectorAll('[data-lm-zeige]');
   // Eintragen für die Restplatz-Mail nur, wenn gerade nichts frei ist: Wer schon einen Kurs vor sich hat, soll buchen, nicht abschweifen
   var eintragen = document.getElementById('liste');
-  // ?eintragen=1 (Link aus der WhatsApp-Einladung zur Restplatz-Mail): das Formular steht immer da, auch wenn gerade Plätze frei sind,
-  // und die Seite springt einmal dorthin. Ohne den Zusatz bleibt es wie bisher: Formular nur, wenn nichts frei ist.
-  var immerEintragen = /[?&]eintragen=1(&|$)/.test(location.search);
+  // ?eintragen=1 (Link aus der WhatsApp-Einladung zur Restplatz-Mail) oder #liste: das Formular steht immer da, auch wenn gerade
+  // Plätze frei sind, und die Seite springt einmal dorthin. Ohne beides bleibt es wie bisher: Formular nur, wenn nichts frei ist.
+  // Den Sprung macht dieses Skript: Beim Laden ist die Karte noch versteckt, der Browser findet #liste dann nicht.
+  var immerEintragen = /[?&]eintragen=1(&|$)/.test(location.search) || location.hash === '#liste';
+  var leerEintragen = document.getElementById('lm-leer-eintragen');
+  if (leerEintragen) leerEintragen.addEventListener('click', function (e) {
+    if (!eintragen) return;
+    e.preventDefault();
+    zumFormular();
+  });
   var zuFormularGesprungen = false;
   if (!streifen && !liste && !verweise.length) return;
 
@@ -105,6 +114,7 @@
 
   // Der Abgleich mit Eversports ist veraltet (Studio OS meldet abgleich.veraltet): Technik, nicht „ausgebucht“.
   var TEXT_LEER = 'Gerade ist nichts frei. Schau später wieder vorbei.';
+  var TEXT_LEER_EINTRAGEN = 'Gerade ist nichts frei. Trag dich oben ein, dann schicken wir dir freie Plätze per E-Mail.';
   var TEXT_VERALTET = 'Die Übersicht der freien Plätze wird gerade aktualisiert. Schau in ein paar Minuten noch einmal vorbei.';
 
   function zeigeListe(termine, veraltet) {
@@ -130,8 +140,22 @@
     if (leer) {
       leer.style.display = termine.length ? 'none' : '';
       var text = leer.querySelector('p');
-      if (text) text.textContent = veraltet ? TEXT_VERALTET : TEXT_LEER;
+      var mitEintragen = !!(eintragen && eintragen.style.display === '');
+      if (text) text.textContent = veraltet ? TEXT_VERALTET : (mitEintragen ? TEXT_LEER_EINTRAGEN : TEXT_LEER);
     }
+  }
+
+  // Sprung zur Karte: Passt sie ganz unter die feste Kopfzeile, steht sie oben. Sonst (kleine Handys) so weit, dass das Formular
+  // vom Vornamen bis zum Knopf „Eintragen“ ganz zu sehen ist; die Überschrift darf dann oben angeschnitten sein.
+  function zumFormular() {
+    var kopf = document.querySelector('.kopf');
+    var oben = kopf ? kopf.getBoundingClientRect().bottom : 0;
+    var platz = window.innerHeight - oben - 12;
+    var karte = eintragen.getBoundingClientRect();
+    var form = document.getElementById('liste-form');
+    var ziel = window.scrollY + karte.top - oben - 12;
+    if (form && karte.height > platz) ziel = window.scrollY + form.getBoundingClientRect().bottom - window.innerHeight + 12;
+    try { window.scrollTo({ top: Math.max(0, ziel), behavior: 'smooth' }); } catch (e) { window.scrollTo(0, Math.max(0, ziel)); }
   }
 
   function anwenden(d) {
@@ -141,9 +165,10 @@
     for (var i = 0; i < verweise.length; i++) verweise[i].style.display = aktiv ? '' : 'none';
     zeigeStreifen(termine);
     if (eintragen) eintragen.style.display = aktiv && (!termine.length || immerEintragen) ? '' : 'none';
+    if (leerEintragen) leerEintragen.style.display = eintragen && eintragen.style.display === '' ? '' : 'none';
     if (eintragen && immerEintragen && aktiv && !zuFormularGesprungen) {
       zuFormularGesprungen = true;
-      setTimeout(function () { try { eintragen.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { eintragen.scrollIntoView(); } }, 150);
+      setTimeout(zumFormular, 150);
     }
     zeigeListe(termine, aktiv && !termine.length && !!(d.abgleich && d.abgleich.veraltet === true));
   }
