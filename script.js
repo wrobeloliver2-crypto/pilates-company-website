@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
       #pc-mobile-bar .pc-bar-chat{background:#fff;color:#241D1A;border:1px solid #E9DAD4;}
       #pc-mobile-bar .pc-bar-chat svg{width:16px;height:16px;}
       body.pc-chat-open #pc-mobile-bar{display:none!important;}
-      footer,.fuss{padding-bottom:6.5rem!important;}
+      body:not([data-ohne-leiste]) footer,body:not([data-ohne-leiste]) .fuss{padding-bottom:6.5rem!important;}
     }
   `;
   document.head.appendChild(style);
@@ -444,7 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
   mbar.innerHTML = '<a class="pc-bar-member" href="/preise">Mitglied werden</a>'
     + '<button class="pc-bar-chat" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>Frag mich was</button>';
   mbar.querySelector('.pc-bar-chat').onclick = openPcQA;
-  document.body.appendChild(mbar);
+  // Seiten mit eigenem Formular unten (z. B. /last-minute) setzen <body data-ohne-leiste>, damit die Leiste nichts verdeckt
+  if (!document.body.hasAttribute('data-ohne-leiste')) document.body.appendChild(mbar);
 
   // Chat Logic
   const STARTER = ['Probetraining 9,90 €','Was kostet Reformer?','Welche Kurse gibt es?','Bin ich Anfängerin – was passt?','Öffnungszeiten & Kontakt','Membership-Vergleich'];
