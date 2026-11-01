@@ -1,3 +1,7 @@
+// Spamschutz (01.11.2026): Zeit seit dem Laden der Seite, geht mit jeder Anfrage an sendmail. Bots, die direkt senden, haben sie nicht.
+var PC_GELADEN = Date.now();
+function pcDauer() { return Date.now() - PC_GELADEN; }
+
 // Google Ads Conversion Tracking (AW-18174020065)
 (function() {
   var script = document.createElement('script');
@@ -243,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var text = btn.textContent;
       var daten = { art: form.dataset.pcAnfrage };
       new FormData(form).forEach(function (v, k) { daten[k] = String(v); });
+      daten.dauer_ms = pcDauer(); // Spamschutz: Zeit seit dem Laden der Seite
       btn.disabled = true; btn.textContent = 'Wird gesendet …';
       status.textContent = ''; status.classList.remove('fehler');
       try {
@@ -577,6 +582,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'Du hast dir viele Gedanken gemacht – schön! 🌸 Am einfachsten klären wir deine offenen Fragen persönlich. ' +
       'Lass mir einfach deine Nummer da, dann ruft dich unser Team zurück – ganz unverbindlich.' +
       '<div id="pc-cb-form" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">' +
+        // Verstecktes Feld gegen Bots (01.11.2026): Menschen sehen es nicht und füllen es nie aus
+        '<input id="pc-cb-website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" ' +
+          'style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">' +
         '<input id="pc-cb-name" type="text" placeholder="Dein Name" autocomplete="name" ' +
           'style="border:1px solid #e0d8d4;border-radius:12px;padding:10px 13px;font-size:13.5px;font-family:inherit;outline:none;">' +
         '<input id="pc-cb-phone" type="tel" placeholder="Deine Telefonnummer" autocomplete="tel" ' +
@@ -618,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch('/.netlify/functions/sendmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, phone: phone, message: message })
+        body: JSON.stringify({ name: name, phone: phone, message: message, website: (document.getElementById('pc-cb-website') || {}).value || '', dauer_ms: pcDauer() })
       });
       const data = await res.json().catch(() => ({ ok: false }));
       if (res.ok && data.ok) {
