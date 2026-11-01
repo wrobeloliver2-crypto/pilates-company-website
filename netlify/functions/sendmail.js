@@ -82,6 +82,23 @@ async function leadInsDashboard(lead) {
 
 const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 
+// Spamschutz (01.11.2026, Bot-Anfrage „Xohgvaxf Pbhrg“ mit i.sop.i.c.e.63.3@gmail.com): Gründe für einen Verdacht.
+// 'honeypot' = verstecktes Feld ausgefüllt: still verwerfen. Alles andere: nur Mail an Oliver mit „[Spamverdacht]“, KEIN Lead ins
+// Dashboard bzw. nach Studio OS. So geht keine echte Anfrage verloren (zum Beispiel aus einer zwischengespeicherten alten Seite).
+//   dauer_ms  setzt das Seitenskript (Zeit seit dem Laden der Seite). Fehlt es, kam die Anfrage nicht über die Seite.
+function spamGrund(body) {
+  if (String(body.website || '').trim()) return 'honeypot';
+  const dauer = Number(body.dauer_ms);
+  if (!Number.isFinite(dauer)) return 'ohne Seitenskript gesendet';
+  if (dauer < 3000) return 'in weniger als 3 Sekunden ausgefüllt';
+  const email = String(body.email || '').trim().toLowerCase();
+  const m = email.match(/^([^@]+)@(gmail|googlemail)\.com$/);
+  if (m && (m[1].match(/\./g) || []).length >= 3) return 'Gmail-Adresse mit vielen Punkten';
+  if (/(https?:\/\/|www\.)/i.test(String(body.message || ''))) return 'Link in der Nachricht';
+  return null;
+}
+exports.spamGrund = spamGrund;
+
 // Kontaktformular und Personal-Training-Anfrage: Name, E-Mail oder Telefon, Nachricht
 async function formularAnfrage(body, CORS) {
   const f = FORMULARE[body.art];
@@ -93,7 +110,8 @@ async function formularAnfrage(body, CORS) {
   const antwort = (code, daten) => ({ statusCode: code, headers: CORS, body: JSON.stringify(daten) });
 
   // Verstecktes Feld: von Menschen nie ausgefuellt. Bots bekommen „ok“, es geht keine Mail raus.
-  if (String(body.website || '').trim()) return antwort(200, { ok: true });
+  const verdacht = spamGrund(body);
+  if (verdacht === 'honeypot') return antwort(200, { ok: true });
   if (!name) return antwort(400, { ok: false, error: 'Bitte gib deinen Namen an.' });
   if (email && !EMAIL_RE.test(email)) return antwort(400, { ok: false, error: 'Bitte prüfe deine E-Mail-Adresse.' });
   if (body.art === 'kontakt' && !email) return antwort(400, { ok: false, error: 'Bitte gib deine E-Mail-Adresse an.' });
@@ -117,8 +135,9 @@ async function formularAnfrage(body, CORS) {
     '</div>';
 
   const token = await getAccessToken();
-  await sendEmail(token, f.betreff + ': ' + name.replace(/[\r\n]/g, ' '), html, TO_EMAIL, email || null);
-  await leadInsDashboard({ name, telefon: phone, email, produkt: f.produkt, nachricht: message });
+  await sendEmail(token, (verdacht ? '[Spamverdacht: ' + verdacht + '] ' : '') + f.betreff + ': ' + name.replace(/[\r\n]/g, ' '), html, TO_EMAIL, email || null);
+  if (!verdacht) await leadInsDashboard({ name, telefon: phone, email, produkt: f.produkt, nachricht: message });
+  else console.warn('Spamverdacht (kein Lead):', verdacht);
   return antwort(200, { ok: true });
 }
 
@@ -132,6 +151,8 @@ exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body || '{}');
     if (FORMULARE[body.art]) return await formularAnfrage(body, CORS);
+    const verdacht = spamGrund(body);
+    if (verdacht === 'honeypot') return { statusCode: 200, headers: CORS, body: JSON.stringify({ ok: true }) };
     const name = (body.name || '').trim();
     const phone = (body.phone || '').trim();
     const message = (body.message || '').trim();
@@ -171,13 +192,14 @@ exports.handler = async (event) => {
 
     const subjectPrefix = isLangPage ? 'Personal-Training-Anfrage' : 'Rueckruf-Wunsch';
     const token = await getAccessToken();
-    await sendEmail(token, subjectPrefix + ': ' + name + (language ? ' (' + language + ')' : ''), html);
+    await sendEmail(token, (verdacht ? '[Spamverdacht: ' + verdacht + '] ' : '') + subjectPrefix + ': ' + name + (language ? ' (' + language + ')' : ''), html);
 
     // Zusätzlich als Lead ins Dashboard. Dedup übernimmt das Dashboard (Telefon-/E-Mail-Abgleich).
     const produkt = isLangPage
       ? ('Personal Training' + (language ? ' (' + language + ')' : '') + ' (Anfrage Sprachseite)')
       : 'Rückruf-Wunsch (Website-Chat)';
-    await leadInsDashboard({ name, telefon: phone, email, produkt, nachricht: message });
+    if (!verdacht) await leadInsDashboard({ name, telefon: phone, email, produkt, nachricht: message });
+    else console.warn('Spamverdacht (kein Lead):', verdacht);
 
     return { statusCode: 200, headers: CORS, body: JSON.stringify({ ok: true }) };
   } catch (e) {

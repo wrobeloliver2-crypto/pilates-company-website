@@ -233,7 +233,7 @@ function lfSubmit(sourcePage){
   fetch('/.netlify/functions/sendmail', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, phone: phone, email: email, language: lang, message: msg, source: sourcePage })
+    body: JSON.stringify({ name: name, phone: phone, email: email, language: lang, message: msg, source: sourcePage, dauer_ms: Date.now() - (window.PC_GELADEN || Date.now() - 5000) })
   })
   .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
   .then(function(d){
