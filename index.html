@@ -140,7 +140,7 @@
     <a class="knopf" href="/probetraining/">Probetraining für 9,90 €</a>
   </div>
   <div class="hero-video">
-    <video autoplay muted loop playsinline preload="metadata" poster="/hero-hanna-poster.webp" width="810" height="1080" aria-label="Hanna beim Reformer-Pilates und auf der Matte im Studio: Gesundheit beginnt in der Bewegung. Beweg dich mit uns.">
+    <video autoplay muted playsinline preload="metadata" poster="/hero-hanna-poster.webp" width="810" height="1080" aria-label="Hanna beim Reformer-Pilates und auf der Matte im Studio: Gesundheit beginnt in der Bewegung. Beweg dich mit uns.">
       <source src="/hero-hanna.mp4" type="video/mp4">
       <source src="/hero-hanna.webm" type="video/webm">
     </video>
@@ -276,7 +276,7 @@
 
 <script>(function(){var v=document.querySelector(".hero-video video"),b=document.querySelector(".hero-video-play");if(!v)return;
 if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();v.setAttribute("controls","");return}
-v.muted=true;
+v.muted=true;v.addEventListener("click",function(){if(v.ended){v.currentTime=0;v.play()}});
 function zeige(){if(v.paused&&b)b.hidden=false}
 function los(){var p=v.play();if(p&&p.catch)p.catch(zeige)}
 v.addEventListener("playing",function(){if(b)b.hidden=true});
