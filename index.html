@@ -100,6 +100,7 @@
 <meta name="theme-color" content="#FAF6F3">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preload" as="image" href="/hero-hanna-poster.webp" fetchpriority="high">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,7 +140,12 @@
     <a class="knopf" href="/probetraining/">Probetraining für 9,90 €</a>
     <a class="knopf hell" href="#mitgliedschaften">Mitgliedschaften ansehen</a>
   </div>
-  <div class="hero-bild quer"><img src="kurs-pilates.webp" alt="Frau in einer Stützposition auf der Pilates-Matte" width="779" height="520" fetchpriority="high" decoding="async"></div>
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="metadata" poster="/hero-hanna-poster.webp" width="720" height="1280" aria-label="Hanna beim Reformer-Pilates: Gesundheit beginnt in der Bewegung. Beweg dich mit uns.">
+      <source src="/hero-hanna.webm" type="video/webm">
+      <source src="/hero-hanna.mp4" type="video/mp4">
+    </video>
+  </div>
 </section>
 
 <!-- Last-Minute-Plätze (last-minute.js): nur sichtbar, wenn Studio OS aktiv=true und Termine meldet -->
@@ -268,5 +274,6 @@
 <script src="/script.js"></script>
 <script src="/last-minute.js" defer></script>
 
+<script>(function(){var v=document.querySelector(".hero-video video");if(v&&window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();v.setAttribute("controls","")}})();</script>
 </body>
 </html>
