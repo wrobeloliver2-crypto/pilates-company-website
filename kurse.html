@@ -194,21 +194,21 @@
       <div class="bild"><img src="/kurs-pilates.webp" alt="Frau in einer Stützposition auf der Pilates-Matte" width="779" height="520" fetchpriority="high" decoding="async" style="object-position:center 30%"></div>
       <h3>Classic Pilates</h3>
       <p class="t">Die klassische Pilates-Methode für eine starke Körpermitte, bessere Haltung und mehr Beweglichkeit. Unsere Kurse in Stockelsdorf bei Lübeck sind ideal für Einsteiger und Fortgeschrittene – auf der Matte, mit kleinen Geräten und viel Körpergefühl.</p>
-      <a class="knopf hell mittel" href="/probetraining/?art=dropin">Zum Kursplan</a>
+      <a class="knopf hell mittel" href="#kursplan">Zum Kursplan</a>
     </article>
     <article class="karte" id="reformer-pilates">
       <div class="bild"><img src="/Hanna_Reformer.webp" alt="Frau in seitlicher Dehnung auf einem Reformer" width="1050" height="1400" loading="lazy" decoding="async" style="object-position:center 45%"></div>
       <h3>Reformer-Pilates</h3>
       <p class="t">Effektives Ganzkörpertraining am Reformer-Gerät – gelenkschonend, hocheffizient und ideal für gezielten Muskelaufbau. Reformer Pilates in Lübeck &amp; Stockelsdorf: bei uns trainierst du in kleinen Gruppen unter professioneller Anleitung.</p>
       <a class="knopf hell mittel" href="/reformer-pilates-luebeck">Mehr über Reformer Pilates</a>
-      <a class="knopf hell mittel" href="/probetraining/?art=dropin">Zum Kursplan</a>
+      <a class="knopf hell mittel" href="#kursplan">Zum Kursplan</a>
       <p class="ku-lm" data-lm-zeige style="display:none"><a class="textlink" href="/last-minute">Kurzfristig frei? Last-Minute-Plätze ansehen</a></p>
     </article>
     <article class="karte">
       <div class="bild"><img src="/Bild_yoga_hanna.webp" alt="Yoga Pilates Company Lübeck" width="1050" height="1400" loading="lazy" decoding="async" style="object-position:center 65%"></div>
       <h3>Yoga</h3>
       <p class="t">Innere Ruhe, Balance und Flexibilität. Unsere Yoga-Kurse in Stockelsdorf richten sich an alle Erfahrungslevel – von sanftem Hatha bis zum dynamischen Flow. Der perfekte Ausgleich zum Alltag in und um Lübeck.</p>
-      <a class="knopf hell mittel" href="/probetraining/?art=dropin">Zum Kursplan</a>
+      <a class="knopf hell mittel" href="#kursplan">Zum Kursplan</a>
     </article>
     <article class="karte tint ku-breit">
       <div class="bild"><img src="/private-reformer-class.webp" alt="Trainerin korrigiert eine Frau in seitlicher Dehnung auf dem Reformer" width="1120" height="955" loading="lazy" decoding="async" style="object-position:center 35%"></div>
@@ -236,7 +236,16 @@
 
 <section class="abschnitt" id="kursplan" aria-labelledby="plan-h">
   <h2 id="plan-h">Kursplan &amp; <em>direkte Buchung</em></h2>
-  <p class="lead">Wähle deinen Kurs, deinen Wunschtermin und buche direkt deinen Platz.</p>
+  <p class="lead">Alle Kurse der nächsten zwei Wochen. <strong>E</strong> heißt: für Einsteiger geeignet. Deinen Platz buchst du direkt darunter.</p>
+  <!-- 03.11.2026: Kursplan aus Studio OS (über /kursplan/, Proxy in _redirects), ohne freie Plätze. Die Seite meldet ihre Höhe. -->
+  <iframe id="pc-kursplan" src="/kursplan/?titel=0" title="Kursplan der Pilates Company" loading="lazy" style="width:100%;border:0;min-height:900px;display:block;margin:4px 0 18px;border-radius:14px;background:#FAF6F3"></iframe>
+  <script>
+    window.addEventListener('message', function (e) {
+      if (e.origin === location.origin && e.data && e.data.typ === 'pc-kursplan-hoehe') {
+        document.getElementById('pc-kursplan').style.height = e.data.hoehe + 'px';
+      }
+    });
+  </script>
   <div class="hero" style="padding:0"><div class="knoepfe" style="margin-top:0">
     <a class="knopf" href="/probetraining/?art=dropin">Freie Plätze ansehen &amp; buchen (28 €)</a>
     <a class="knopf hell" href="/probetraining/">Neu hier? Probetraining für 9,90 €</a>

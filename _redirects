@@ -51,6 +51,11 @@
 /probetraining      https://mitglieder.pilatescompany.de/probetraining/        200!
 /probetraining/*    https://mitglieder.pilatescompany.de/probetraining/:splat  200!
 
+# 03.11.2026: Kursplan (Tag, Uhrzeit, Kurs, Erläuterung, Einsteiger-Hinweis; ohne freie Plätze) kommt aus Studio OS.
+# Die Adresse bleibt pilatescompany.de/kursplan/ – Netlify zeigt dort die Studio-OS-Seite (Proxy), wie beim Probetraining.
+/kursplan           https://mitglieder.pilatescompany.de/kursplan/             200!
+/kursplan/*         https://mitglieder.pilatescompany.de/kursplan/:splat       200!
+
 # Alter KI-Preisassistent (Eversports-Tarife) ist durch /preise ersetzt
 /preisassistent     /preise                                                  301!
 /preisassistent.html /preise                                                 301!
