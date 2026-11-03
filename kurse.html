@@ -236,9 +236,9 @@
 
 <section class="abschnitt" id="kursplan" aria-labelledby="plan-h">
   <h2 id="plan-h">Kursplan &amp; <em>direkte Buchung</em></h2>
-  <p class="lead">Alle Kurse der nächsten zwei Wochen. <strong>E</strong> heißt: für Einsteiger geeignet. Deinen Platz buchst du direkt darunter.</p>
+  <p class="lead">Alle Kurse der nächsten sieben Tage. <strong>E</strong> heißt: für Einsteiger geeignet. Deinen Platz buchst du direkt darunter.</p>
   <!-- 03.11.2026: Kursplan aus Studio OS (über /kursplan/, Proxy in _redirects), ohne freie Plätze. Die Seite meldet ihre Höhe. -->
-  <iframe id="pc-kursplan" src="/kursplan/?titel=0" title="Kursplan der Pilates Company" loading="lazy" style="width:100%;border:0;min-height:900px;display:block;margin:4px 0 18px;border-radius:14px;background:#FAF6F3"></iframe>
+  <iframe id="pc-kursplan" src="/kursplan/?titel=0&tage=7" title="Kursplan der Pilates Company" loading="lazy" style="width:100%;border:0;min-height:900px;display:block;margin:4px 0 18px;border-radius:14px;background:#FAF6F3"></iframe>
   <script>
     window.addEventListener('message', function (e) {
       if (e.origin === location.origin && e.data && e.data.typ === 'pc-kursplan-hoehe') {
