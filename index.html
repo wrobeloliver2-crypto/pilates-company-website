@@ -151,6 +151,16 @@
 <!-- Last-Minute-Plätze (last-minute.js): nur sichtbar, wenn Studio OS aktiv=true und Termine meldet -->
 <aside id="lm-streifen" class="lm-streifen" aria-label="Last-Minute-Plätze" aria-live="polite" style="display:none"></aside>
 
+<!-- Stimmen (stimmen.js): laufendes Band mit den neuesten Bewertungen, die das Team in Studio OS veröffentlicht hat und die die Kundin erlaubt hat. Ohne Daten oder bei Fehler bleibt der Abschnitt unsichtbar. -->
+<section id="stimmen" class="abschnitt stimmen" aria-labelledby="stimmen-h" hidden>
+  <div class="st-kopf">
+    <div><p class="ueber">Stimmen aus dem Studio</p><h2 id="stimmen-h">Das sagen unsere <em>Kundinnen</em></h2></div>
+    <button type="button" class="st-pause" aria-pressed="false" aria-label="Band anhalten" hidden>Pause</button>
+  </div>
+  <div class="st-fenster"><ul class="st-spur"></ul></div>
+  <p class="klein st-hinweis">Eine Auswahl aktueller Rückmeldungen aus unseren Kursen, veröffentlicht mit Einwilligung der Kundinnen.</p>
+</section>
+
 <section class="abschnitt vorteile" aria-labelledby="warum-h">
   <p class="ueber">Warum Pilates Company</p>
   <h2 id="warum-h">Klein, <em>persönlich</em>, flexibel</h2>
@@ -273,6 +283,7 @@
 </footer>
 <script src="/script.js"></script>
 <script src="/last-minute.js" defer></script>
+<script src="/stimmen.js" defer></script>
 
 <script>(function(){var v=document.querySelector(".hero-video video"),b=document.querySelector(".hero-video-play");if(!v)return;
 if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();v.setAttribute("controls","");return}
