@@ -2,6 +2,77 @@
 var PC_GELADEN = Date.now();
 function pcDauer() { return Date.now() - PC_GELADEN; }
 
+// Einwilligung (Google Consent Mode v2, Advanced) – muss VOR dem Google-Tag laufen
+/* Pilates Company – Cookie-Einwilligung mit Google Consent Mode v2 (Advanced)
+ * Einbindung: als ERSTES Skript im <head>, VOR dem gtag.js-Aufruf.
+ * Gilt für pilatescompany.de und mitglieder.pilatescompany.de (Cookie auf .pilatescompany.de).
+ * Dienste: nur Google Ads. */
+(function () {
+  var KEY = 'pc_consent_v1';
+  var DOMAIN = location.hostname.indexOf('pilatescompany.de') > -1 ? '; domain=.pilatescompany.de' : '';
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+
+  function readStored() {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + KEY + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function store(v) {
+    document.cookie = KEY + '=' + encodeURIComponent(v) + '; max-age=' + 60 * 60 * 24 * 180 +
+      '; path=/; SameSite=Lax; Secure' + DOMAIN;
+  }
+  function apply(v) {
+    var s = v === 'granted' ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      ad_storage: s, ad_user_data: s, ad_personalization: s, analytics_storage: 'denied'
+    });
+  }
+
+  // 1) Standard: alles verweigert (vor dem Laden von gtag.js)
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+
+  var stored = readStored();
+  if (stored) { apply(stored); return; }
+
+  // 2) Banner erst nach DOM-Ready zeigen
+  function show() {
+    var css = document.createElement('style');
+    css.textContent =
+      '#pc-consent{position:fixed;left:12px;right:12px;top:12px;z-index:99999;max-width:520px;margin:0 auto;' +
+      'background:#FAF6F3;color:#2b2b2b;border:1px solid #e3d6cf;border-radius:14px;padding:16px;' +
+      'font:14px/1.45 Poppins,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.15)}' +
+      '#pc-consent p{margin:0 0 12px}#pc-consent a{color:#8a5a4a}' +
+      '#pc-consent .row{display:flex;gap:8px}' +
+      '#pc-consent button{flex:1;min-height:44px;border-radius:10px;border:1px solid #8a5a4a;' +
+      'background:#fff;color:#8a5a4a;font:600 14px Poppins,system-ui,sans-serif;cursor:pointer}' +
+      '#pc-consent button.ok{background:#8a5a4a;color:#fff}';
+    document.head.appendChild(css);
+
+    var b = document.createElement('div');
+    b.id = 'pc-consent';
+    b.setAttribute('role', 'dialog');
+    b.setAttribute('aria-label', 'Cookie-Einwilligung');
+    b.innerHTML =
+      '<p>Wir nutzen Google Ads, um zu messen, welche Anzeigen zu Buchungen führen. ' +
+      'Das ist freiwillig. Mehr in der <a href="https://pilatescompany.de/datenschutz">Datenschutzerklärung</a>.</p>' +
+      '<div class="row"><button type="button" id="pc-no">Ablehnen</button>' +
+      '<button type="button" class="ok" id="pc-yes">Akzeptieren</button></div>';
+    document.body.appendChild(b);
+
+    function choose(v) { store(v); apply(v); b.remove(); }
+    document.getElementById('pc-yes').onclick = function () { choose('granted'); };
+    document.getElementById('pc-no').onclick = function () { choose('denied'); };
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show);
+  else show();
+})();
+
 // Google Ads Conversion Tracking (AW-18174020065)
 (function() {
   var script = document.createElement('script');
